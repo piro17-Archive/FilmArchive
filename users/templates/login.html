@@ -1,6 +1,7 @@
-{% extends 'main.html' %} {% block content %} {% load static %}
+{% extends 'main.html' %} {% block content %} {% load static %}{% load socialaccount %}
+{% providers_media_js %}
 <main>
-  <form method="POST" action="">
+  <form action="{% url 'users:login' %}" method="POST">
     {% csrf_token %}
     <div class="login-form">
       <div class="login-content">
@@ -30,10 +31,21 @@
               <img src="" class="logo" />
               <a href="{% provider_login_url 'naver' %}">Naver login</a>
             </div>
+            <div>
+              <img src="" class="logo" />
+              <a href="{% provider_login_url 'kakao' %}">Kakao login</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </form>
+
+  <form action="{% provider_login_url 'kakao' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="login_social_btn">
+      <img src="{% static 'img/kakao.png' %}" class="login_social_img2">
+    </button>
   </form>
 </main>
 {% endblock content %}
