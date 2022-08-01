@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>네컷-Archive</title>
+  </head>
+  <body>
+    <header>
+      <a href="{% url 'users:main' %}">
+        <span class="logo">네컷-Archive</span>
+      </a>
+      <nav>
+        {% if user.is_authenticated %}
+        <a href="">메뉴1</a>
+        <a href="">메뉴2</a>
+        <a href="{% url 'users:log_out' %}">로그아웃</a>
+        {% else %}
+        <a href="{% url 'users:login' %}">로그인</a>
+        <a href="{% url 'users:sign_up' %}">회원가입</a>
+        {% endif %}
+      </nav>
+    </header>
+    {% block content %}
+    <main></main>
+    {% endblock content %}
+    <footer>
+      <p>아카이브팀 화이티이이이잉</p>
+    </footer>
+  </body>
+</html>
