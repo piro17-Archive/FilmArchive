@@ -1,0 +1,35 @@
+{% extends 'main.html' %} {% block content %}
+<main>
+    <p>
+        {{ albuminfo.albumdate}}
+    </p>
+    <p>
+        사진
+        {% if albuminfo.albumphoto %}
+        <img src="{{ albuminfo.albumphoto.url }}" alt="">
+        {% else %}
+        <div>사진이없습니다.</div>
+        {% endif %}
+    </p>
+    <P>
+        동영상
+        {% if albuminfo.albumvideo %}
+        <video autoplay loop controls> <source src="{{ albuminfo.albumvideo.url }}"></video>
+        {% else %}
+        <div>동영상이없습니다.</div>
+        {% endif %}
+    </P>
+    <p>종류 | {{albuminfo.albumtype.name}}</p>
+    <p>위치 | {{albuminfo.albumlocation}}</p>
+    <p>메모 | {{albuminfo.albummemo}}</p>
+
+</main>
+
+<div>
+    업데이트 : <a href="/albumupdate/{{albuminfo.id}}">update</a>
+    <form action="/albumdelete/{{albuminfo.id}}" method="post">
+        {% csrf_token %}
+        <button>삭제</button>
+      </form>
+</div>
+{% endblock content %}

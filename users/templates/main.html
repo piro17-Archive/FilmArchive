@@ -15,7 +15,7 @@
       </a>
       <nav>
         {% if user.is_authenticated %}
-        <a href="">메뉴1</a>
+        <a href="{% url 'albums:album' user.id %}">나의 네컷사진</a>
         <a href="">메뉴2</a>
         <a href="{% url 'users:log_out' %}">로그아웃</a>
         {% else %}

@@ -40,12 +40,5 @@
       </div>
     </div>
   </form>
-
-  <form action="{% provider_login_url 'kakao' %}" method="post">
-    {% csrf_token %}
-    <button type="submit" class="login_social_btn">
-      <img src="{% static 'img/kakao.png' %}" class="login_social_img2">
-    </button>
-  </form>
 </main>
 {% endblock content %}
