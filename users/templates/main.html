@@ -26,8 +26,8 @@
         </div>
         <div class="main__right">
           <ul>
-            <li><a href="">My 네 컷 앨범</a></li>
-            <li><a href="">인생네컷<br/>프레임 공유</a></li>
+            <li><a href="{% url 'albums:album' user.id %}">My 네 컷 앨범</a></li>
+            <li><a href="{% url 'framesharings:frame' %}">인생네컷<br/>프레임 공유</a></li>
             <li>
               <a href="{% url 'recommends:recommend_list' %}">포즈/컨셉 추천</a>
             </li>
