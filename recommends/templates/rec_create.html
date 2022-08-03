@@ -1,0 +1,13 @@
+{% extends 'main.html' %} {% block content %} {% load static %}
+<main>
+  <form action="/create" method="get">
+    <h2>제목 <input type="text" name="title" /></h2>
+    키워드 <input type="text" name="keyword" /> 설명
+    <textarea name="content" id="" cols="30" rows="10"></textarea>
+
+    <div>
+      <input type="submit" value="글 작성" />
+    </div>
+  </form>
+</main>
+{% endblock content %}

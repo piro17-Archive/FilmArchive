@@ -20,8 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('users.urls')),
     path('accounts/', include('allauth.urls')),
+    path('', include('recommends.urls')),
     path('', include('albums.urls')),
     path('', include('framesharings.urls')),
-    
 ]
 

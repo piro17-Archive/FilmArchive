@@ -14,6 +14,10 @@
         <span class="logo">네컷-Archive</span>
       </a>
       <nav>
+        <a href="">My 네 컷 앨범</a>
+        <a href="">인생네컷 프레임 공유</a>
+        <a href="{% url 'recommends:recommend_list' %}">포즈/컨셉 추천</a>
+        <a href="">한정판 프레임</a>
         {% if user.is_authenticated %}
         <a href="{% url 'albums:album' user.id %}">나의 네컷사진</a>
         <a href="{% url 'framesharings:frame' %}">인생네컷 프레임공유</a>
@@ -28,7 +32,13 @@
     <main></main>
     {% endblock content %}
     <footer>
-      <p>아카이브팀 화이티이이이잉</p>
+      <h6>@ 네 컷 Archive</h6>
+      <div class="right">
+        <a href="">서비스 소개</a>
+        <a href="">커뮤니티</a>
+        <a href="">About us</a>
+      </div>
+      <p>서비스 소개 내용 쓰기</p>
     </footer>
   </body>
 </html>

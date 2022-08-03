@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from django.views import View
+
+from users.models import User
 from . import forms
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from .models import User
 
 #여기추가
@@ -19,6 +22,7 @@ def main(request):
     
     return render(request, "main.html", context=context)
 
+
 class LoginView(View):
     def get(self, request):
         form = forms.LoginForm()
@@ -34,7 +38,12 @@ class LoginView(View):
             if user is not None:
                 login(request, user)
                 return render(request, "main.html")
-                # 비밀번호/아이디 찾기?????
+
+        return render(request, "login.html", {"form": form})
+
+
+@login_required 
+        # 비밀번호/아이디 찾기?????
         context = {
             "forms":form,
         }
@@ -55,7 +64,6 @@ def sign_up(request):
         return redirect("users:sign_up")
     else:
         form = forms.SignupForm()
-        context = {
-            "form":form,
-        }
-        return render(request, "signup.html", context=context)
+        return render(request, "signup.html", {"form": form})
+
+
