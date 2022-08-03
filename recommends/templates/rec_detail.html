@@ -1,0 +1,24 @@
+{% extends 'main.html' %} {% block content %} {% load static %}
+<hr />
+<main>
+  <article>
+    <h2>제목 : {{ recommend.title }}</h2>
+    <div>{{recommend.content}}</div>
+    <div>{{recommend.keyword}}</div>
+  </article>
+
+  <div>
+    <form action="{% url 'recommends:rec_delete' recommend.id %}" method="post">
+      {% csrf_token %}
+      <button>글 삭제</button>
+    </form>
+    <div>
+      <a href="{% url 'recommends:rec_update' recommend.id %}">업데이트</a>
+    </div>
+    <div>
+      <a href="{% url 'recommends:recommend_list' %}">Home</a>
+    </div>
+  </div>
+</main>
+<hr />
+{% endblock content %}

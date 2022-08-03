@@ -1,0 +1,33 @@
+{% extends 'main.html' %} {% block content %} {% load static %}
+<form action="/update/{{recommend.id}}" method="post">
+  <h1>업데이트 페이지</h1>
+  {% csrf_token %}
+  <h2>
+    제목:
+    <input
+      type="text"
+      name="title"
+      placeholder="제목"
+      value="{{recommend.title}}"
+    />
+  </h2>
+  <div>
+    키워드:
+    <input
+      type="text"
+      name="keyword"
+      placeholder="키워드"
+      value="{{recommend.keyword}}"
+    />
+  </div>
+  <div>
+    설명:
+    <textarea name="content" id="" cols="30" rows="10">
+        {{recommend.content}}</textarea
+    >
+  </div>
+  <div>
+    <input type="submit" value="Save" />
+  </div>
+</form>
+{% endblock content %}
