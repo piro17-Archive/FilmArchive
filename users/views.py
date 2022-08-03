@@ -38,12 +38,6 @@ class LoginView(View):
             if user is not None:
                 login(request, user)
                 return render(request, "main.html")
-
-        return render(request, "login.html", {"form": form})
-
-
-@login_required 
-        # 비밀번호/아이디 찾기?????
         context = {
             "forms":form,
         }
