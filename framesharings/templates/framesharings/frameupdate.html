@@ -1,0 +1,44 @@
+{% extends 'main.html' %} {% block content %}
+<main>
+    
+    <form action="/framecreate" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>
+            {%if frameinfo.framephoto %}
+            이전사진 {{frameinfo.framephoto.url}} <input type="checkbox" name="clearphoto" value="clearphoto" id="clearphoto"><label for="clearphoto">clear</label>
+            {% endif %}
+            <input type="file" name="framephoto">
+        </p>
+        <p>
+            제목 <input type="text" name="frametitle" placeholder="프레임제목" value="{{ frameinfo.frametitle}}"/>
+        </p>
+        <p>
+            키워드
+                {%  for keywordinfo in keywordinfo %}
+                {% if keywordinfo in frameinfo.framekeyword.all %}
+                <input  type="checkbox" name="{{forloop.counter}}" value="{{forloop.counter}}" id="keywordid{{forloop.counter}}" checked="checked"><label for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
+                {% else %}
+                <input type="checkbox" name="{{forloop.counter}}" value="{{forloop.counter}}" id="keywordid{{forloop.counter}}"><label for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
+                {% endif %}
+                {% endfor %}
+        </p>
+        <p>
+            {%if frameinfo.frameexample %}
+            이전 적용 예시 {{frameinfo.frameexample.url}} <input type="checkbox" name="clearexample" value="clearexample" id="clearexample"><label for="clearexample">clear</label>
+            {% endif %}
+            <input type="file" name="frameexample">
+        </p>
+        <p>
+            {% if frameinfo.framepublic %}
+            공개범위 <input type="checkbox" name="framepublic" value="False" id="framepublic"><label for="framepublic">비공개</label>
+            {%else%}
+            공개범위 <input checked="checked" type="checkbox" name="framepublic" value="False" id="framepublic"><label for="framepublic">비공개</label>
+            {% endif %}
+        </p>
+        <p>
+            메모 <textarea name="framememo" id="" cols="30" rows="10">{{frameinfo.framememo}}</textarea>
+        </p>
+        <input type="submit" value="글 수정" />
+    </form>
+</main>
+{% endblock content %}
