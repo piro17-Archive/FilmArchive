@@ -5,11 +5,22 @@ from users.models import User
 from . import forms
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from .models import User
 
+#여기추가
+from ctypes import wintypes
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def main(request):
-    return render(request, "main.html")
+    # return render(request, "main.html")
+    #새로추가
+    users=User.objects.all()
+    context={
+        "users": users,
+    }
+    
+    return render(request, "main.html", context=context)
 
 
 class LoginView(View):
@@ -32,6 +43,13 @@ class LoginView(View):
 
 
 @login_required 
+        # 비밀번호/아이디 찾기?????
+        context = {
+            "forms":form,
+        }
+        return render(request, "login.html", context=context)
+
+@login_required(login_url='login')
 def Log_out(request):
     logout(request)
     return redirect("users:main")
@@ -48,27 +66,4 @@ def sign_up(request):
         form = forms.SignupForm()
         return render(request, "signup.html", {"form": form})
 
-
-# from .forms import RecoveryIdForm
-# from django.views.generic import View
-
-# class RecoveryIdView(View):
-#     template_name = 'recovery_id.html'
-#     form = RecoveryIdForm
-
-#     def get(self, request):
-#         if request.method=='GET':
-#             form = self.recovery_id(None)
-#         return render(request, self.template_name, { 'form':form, })
-
-# import json
-# from django.core.serializers.json import DjangoJSONEncoder
-# from django.http import HttpResponse
-
-# def ajax_find_id_view(request):
-#     name = request.POST.get('name')
-#     email = request.POST.get('email')
-#     result_id = User.objects.get(name=name, email=email)
-       
-#     return HttpResponse(json.dumps({"result_id": result_id.user_username}, cls=DjangoJSONEncoder), content_type = "application/json")
 

@@ -1,0 +1,31 @@
+{% extends 'main.html' %} {% block content %}
+<main>
+    <form action="/albumcreate" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>
+            사진 <input type="file" name="albumphoto">
+        </p>
+        <p>
+            동영상 <input type="file" name="albumvideo">
+        </p>
+        <p>
+            날짜 <input type="date" name="albumdate" placeholder="앨범날짜" value="{{today}}" min="2022-01-01" max="2023-01-01" />
+        </p>
+        <p>
+            종류 <select name="albumtypename" id="">
+                {%  for typeinfo in typeinfo %}
+                <option value="{{typeinfo.id}}">{{typeinfo.name}}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <p>
+            위치 <input type="text" name="albumlocation" placeholder="앨범위치" />
+        </p>
+        
+        <p>
+             메모 <textarea name="albummemo" id="" cols="30" rows="10"></textarea>
+        </p>
+        <input type="submit" value="글 작성" />
+    </form>
+</main>
+{% endblock content %}

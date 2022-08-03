@@ -1,0 +1,42 @@
+{% extends 'main.html' %} {% block content %}
+<main>
+    <form action="/albumupdate/{{albuminfo.id}}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>
+            {%if albuminfo.albumphoto %}
+            이전사진 {{albuminfo.albumphoto.url}} <input type="checkbox" name="clearphoto" value="clearphoto" id="clearphoto"><label for="clearphoto">clear</label>
+            {%endif%}
+            <input type="file" name="albumphoto">
+        </p>
+        <p>
+            {%if albuminfo.albumvideo %}
+            이전동영상 {{albuminfo.albumvideo.url}} <input type="checkbox" name="clearvideo" value="clearvideo" id="clearvideo"><label for="clearvideo">clear</label>
+            {%endif%}
+            <input type="file" name="albumvideo">
+        </p>
+        <p>
+            날짜 <input type="date" name="albumdate" placeholder="앨범날짜" value="{{albuminfo.albumdate| date:'Y-m-d'}}" min="2022-01-01" max="2023-01-01"/>
+        </p>
+        <p>
+            종류 <select name="albumtypename" id="">
+                {%  for typeinfo in typeinfo %}
+                {%if albuminfo.albumtype == typeinfo.name %}
+                <option selected="selected" value="{{typeinfo.id}}">{{typeinfo.name}}</option>
+                {%else%}
+                <option value="{{typeinfo.id}}">{{typeinfo.name}}</option>
+                {%endif%}
+                {% endfor %}
+            </select>
+        </p>
+
+
+        <p>
+            위치 <input type="text" name="albumlocation" placeholder="앨범위치" value="{{albuminfo.albumlocation}}"/>
+        </p>
+        <p>
+            메모 <textarea name="albummemo" id="" cols="30" rows="10">{{albuminfo.albummemo}}</textarea>
+        </p>
+        <input type="submit" value="글 수정" />
+    </form>
+</main>
+{% endblock content %}
