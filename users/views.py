@@ -2,10 +2,22 @@ from django.shortcuts import render, redirect
 from django.views import View
 from . import forms
 from django.contrib.auth import authenticate, login, logout
+from .models import User
+
+#여기추가
+from ctypes import wintypes
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def main(request):
-    return render(request, "main.html")
+    # return render(request, "main.html")
+    #새로추가
+    users=User.objects.all()
+    context={
+        "users": users,
+    }
+    
+    return render(request, "main.html", context=context)
 
 class LoginView(View):
     def get(self, request):
@@ -23,9 +35,12 @@ class LoginView(View):
                 login(request, user)
                 return render(request, "main.html")
                 # 비밀번호/아이디 찾기?????
+        context = {
+            "forms":form,
+        }
+        return render(request, "login.html", context=context)
 
-        return render(request, "login.html", {"form": form})
-    
+@login_required(login_url='login')
 def Log_out(request):
     logout(request)
     return redirect("users:main")
@@ -40,4 +55,7 @@ def sign_up(request):
         return redirect("users:sign_up")
     else:
         form = forms.SignupForm()
-        return render(request, "signup.html", {"form": form})
+        context = {
+            "form":form,
+        }
+        return render(request, "signup.html", context=context)

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   {% load static %}
+  {% load socialaccount %}
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,8 +15,8 @@
       </a>
       <nav>
         {% if user.is_authenticated %}
-        <a href="">메뉴1</a>
-        <a href="">메뉴2</a>
+        <a href="{% url 'albums:album' user.id %}">나의 네컷사진</a>
+        <a href="{% url 'framesharings:frame' %}">인생네컷 프레임공유</a>
         <a href="{% url 'users:log_out' %}">로그아웃</a>
         {% else %}
         <a href="{% url 'users:login' %}">로그인</a>
