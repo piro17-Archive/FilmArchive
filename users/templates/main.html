@@ -6,39 +6,94 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/variables.css' %}" />
     <title>네컷-Archive</title>
   </head>
   <body>
     <header>
-      <a href="{% url 'users:main' %}">
-        <span class="logo">네컷-Archive</span>
-      </a>
-      <nav>
-        <a href="">My 네 컷 앨범</a>
-        <a href="">인생네컷 프레임 공유</a>
-        <a href="{% url 'recommends:recommend_list' %}">포즈/컨셉 추천</a>
-        <a href="">한정판 프레임</a>
-        {% if user.is_authenticated %}
-        <a href="{% url 'albums:album' user.id %}">나의 네컷사진</a>
-        <a href="{% url 'framesharings:frame' %}">인생네컷 프레임공유</a>
-        <a href="{% url 'users:log_out' %}">로그아웃</a>
-        {% else %}
-        <a href="{% url 'users:login' %}">로그인</a>
-        <a href="{% url 'users:sign_up' %}">회원가입</a>
-        {% endif %}
-      </nav>
+      <div class="main__navbar">
+        <div class="main__left">
+          <a href="{% url 'users:main' %}" class="main__logo">네 컷 Archive </a>
+        </div>
+        <div class="main__right">
+          <ul>
+            <li><a href="">My 네 컷 앨범</a></li>
+            <li><a href="">인생네컷<br/>프레임 공유</a></li>
+            <li>
+              <a href="{% url 'recommends:recommend_list' %}">포즈/컨셉 추천</a>
+            </li>
+            <li><a href="">한정판 프레임</a></li>
+            <li>
+              {% if user.is_authenticated %}
+              <a href="{% url 'users:log_out' %}" class="main__user"
+                >로그아웃</a
+              > <span> | </span>
+              <a href="" class="main__user"
+                >마이페이지</a
+              >
+              {% else %}
+              <a href="{% url 'users:login' %}" class="main__user">로그인</a> <span> | </span>
+              <a href="{% url 'users:sign_up' %}" class="main__user"
+                >회원가입</a
+              >
+              {% endif %}
+              <li class="main__navbar-btn">
+                <img src="{% static 'image/navbar.svg' %}" alt="">
+              </li>
+            </li>
+          </ul>
+        </div>
+        <!-- navbar-btn click 했을 때 -->
+        <div class="main__navbar-list hidden">
+          <ul>
+            <li><a href="">My 네 컷 앨범</a></li>
+            <li><a href="">인생네컷 프레임 공유</a></li>
+            <li>
+              <a href="{% url 'recommends:recommend_list' %}">포즈/컨셉 추천</a>
+            </li>
+            <li><a href="">한정판 프레임</a></li>
+            {% if user.is_authenticated %}
+            <li>
+              <a href="{% url 'users:log_out' %}" class="main__user"
+                >로그아웃</a
+              > 
+            </li>
+            <li>
+              <a href="" class="main__user"
+                >마이페이지</a
+              >
+            </li>
+            {% else %}
+            <li><a href="{% url 'users:login' %}" class="main__user">로그인</a></li>
+            <li><a href="{% url 'users:sign_up' %}" class="main__user"
+              >회원가입</a
+            ></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
     </header>
     {% block content %}
     <main></main>
     {% endblock content %}
     <footer>
       <h6>@ 네 컷 Archive</h6>
-      <div class="right">
+      <div>
         <a href="">서비스 소개</a>
         <a href="">커뮤니티</a>
         <a href="">About us</a>
       </div>
       <p>서비스 소개 내용 쓰기</p>
     </footer>
+    <script src="{% static 'js/navbar.js' %}"></script>
   </body>
 </html>
