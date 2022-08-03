@@ -11,7 +11,7 @@ def recommends(request):
     context = {
         "recommends":recommends
     }
-    return render(request, template_name="rec_main.html", context=context)
+    return render(request, template_name="recommends/rec_main.html", context=context)
 
 
 def rec_create(request):
@@ -28,14 +28,14 @@ def rec_create(request):
 
     context = {}
 
-    return render(request, template_name="rec_create.html", context=context)
+    return render(request, template_name="recommends/rec_create.html", context=context)
 
 def rec_detail(request, id):
     recommend = Recommend.objects.get(id=id)
     context = {
         "recommend": recommend
     }
-    return render(request, template_name="rec_detail.html", context=context)
+    return render(request, template_name="recommends/rec_detail.html", context=context)
 
 def rec_update(request, id):
         if request.method == "POST":
@@ -51,7 +51,7 @@ def rec_update(request, id):
             context = {
                 "recommend":recommend
             }
-            return render(request, template_name="rec_update.html", context=context)
+            return render(request, template_name="recommends/rec_update.html", context=context)
 
 def rec_delete(request, id):
     if request.method == "POST":
