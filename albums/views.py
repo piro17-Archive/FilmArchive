@@ -67,23 +67,23 @@ def albumupdate(request,id):
         #추가 경우의수 있을수있음
             if clearphoto == 'clearphoto' or clearvideo == 'clearvideo':
                 if clearphoto == 'clearphoto' and clearvideo == 'clearvideo':
-                    Album.objects.filter(id=id).delete
+                    Album.objects.filter(id=id).delete()
                     Album.objects.create(userid = userid, albumphoto=None,albumvideo=None,albummemo=albummemo,albumlocation=albumlocation,albumdate=albumdate,albumtype=albumtype)
                     a = Album.objects.all()
                     return redirect(f"/albumdetail/{a.last().id}")
                 elif clearphoto == 'clearphoto' and clearvideo != 'clearvideo':
                     Album.objects.create(userid = userid, albumphoto=None,albumvideo=Album.objects.filter(id=id)[0].albumvideo,albummemo=albummemo,albumlocation=albumlocation,albumdate=albumdate,albumtype=albumtype)
-                    Album.objects.filter(id=id).delete
+                    Album.objects.filter(id=id).delete()
                     a = Album.objects.all()
                     return redirect(f"/albumdetail/{a.last().id}")
                 elif clearphoto != 'clearphoto' and clearvideo == 'clearvideo':
-                    Album.objects.filter(id=id).delete
+                    Album.objects.filter(id=id).delete()
                     Album.objects.create(userid = userid, albumphoto=Album.objects.filter(id=id)[0].albumphoto,albumvideo=None,albummemo=albummemo,albumlocation=albumlocation,albumdate=albumdate,albumtype=albumtype)
                     a = Album.objects.all()
                     return redirect(f"/albumdetail/{a.last().id}")
             else:
                 Album.objects.create(userid = userid, albumphoto=Album.objects.filter(id=id)[0].albumphoto,albumvideo=Album.objects.filter(id=id)[0].albumvideo,albummemo=albummemo,albumlocation=albumlocation,albumdate=albumdate,albumtype=albumtype)
-                Album.objects.filter(id=id).delete
+                Album.objects.filter(id=id).delete()
                 a = Album.objects.all()
                 return redirect(f"/albumdetail/{a.last().id}")
 
@@ -91,50 +91,50 @@ def albumupdate(request,id):
         elif albumphoto and albumvideo == None:
             if clearphoto == 'clearphoto' or clearvideo == 'clearvideo':
                 if clearphoto == 'clearphoto' and clearvideo == 'clearvideo':
-                    Album.objects.filter(id=id).delete
+                    Album.objects.filter(id=id).delete()
                     Album.objects.create(userid = userid, albumphoto=albumphoto,albumvideo=None,albummemo=albummemo,albumlocation=albumlocation,albumdate=albumdate,albumtype=albumtype)
                     a = Album.objects.all()
                     return redirect(f"/albumdetail/{a.last().id}")
                 elif clearphoto == 'clearphoto' and clearvideo != 'clearvideo':
                     Album.objects.create(userid = userid, albumphoto=albumphoto,albumvideo=Album.objects.filter(id=id)[0].albumvideo,albummemo=albummemo,albumlocation=albumlocation,albumdate=albumdate,albumtype=albumtype)
-                    Album.objects.filter(id=id).delete
+                    Album.objects.filter(id=id).delete()
                     a = Album.objects.all()
                     return redirect(f"/albumdetail/{a.last().id}")
                 elif clearphoto != 'clearphoto' and clearvideo == 'clearvideo':
                     Album.objects.create(userid = userid, albumphoto=albumphoto,albumvideo=None,albummemo=albummemo,albumlocation=albumlocation,albumdate=albumdate,albumtype=albumtype)
-                    Album.objects.filter(id=id).delete
+                    Album.objects.filter(id=id).delete()
                     a = Album.objects.all()
                     return redirect(f"/albumdetail/{a.last().id}")
             else:
-                Album.objects.filter(id=id).delete
+                Album.objects.filter(id=id).delete()
                 Album.objects.create(userid = userid, albumphoto=albumphoto,albumvideo=albumvideo,albummemo=albummemo,albumlocation=albumlocation,albumdate=albumdate,albumtype=albumtype)
                 a = Album.objects.all()
                 return redirect(f"/albumdetail/{a.last().id}")
         elif albumphoto == None and albumvideo:
             if clearphoto == 'clearphoto' or clearvideo == 'clearvideo':
                 if clearphoto == 'clearphoto' and clearvideo == 'clearvideo':
-                    Album.objects.filter(id=id).delete
+                    Album.objects.filter(id=id).delete()
                     Album.objects.create(userid = userid, albumphoto=None,albumvideo=albumvideo,albummemo=albummemo,albumlocation=albumlocation,albumdate=albumdate,albumtype=albumtype)
                     a = Album.objects.all()
                     return redirect(f"/albumdetail/{a.last().id}")
                 elif clearphoto == 'clearphoto' and clearvideo != 'clearvideo':
-                    Album.objects.filter(id=id).delete
+                    Album.objects.filter(id=id).delete()
                     Album.objects.create(userid = userid, albumphoto=None,albumvideo=albumvideo,albummemo=albummemo,albumlocation=albumlocation,albumdate=albumdate,albumtype=albumtype)
                     a = Album.objects.all()
                     return redirect(f"/albumdetail/{a.last().id}")
                 elif clearphoto != 'clearphoto' and clearvideo == 'clearvideo':
                     Album.objects.create(userid = userid, albumphoto=Album.objects.filter(id=id)[0].albumphoto,albumvideo=albumvideo,albummemo=albummemo,albumlocation=albumlocation,albumdate=albumdate,albumtype=albumtype)
-                    Album.objects.filter(id=id).delete
+                    Album.objects.filter(id=id).delete()
                     a = Album.objects.all()
                     return redirect(f"/albumdetail/{a.last().id}")
             else:
-                Album.objects.filter(id=id).delete
+                Album.objects.filter(id=id).delete()
                 Album.objects.create(userid = userid, albumphoto=albumphoto,albumvideo=albumvideo,albummemo=albummemo,albumlocation=albumlocation,albumdate=albumdate,albumtype=albumtype)
                 a = Album.objects.all()
                 return redirect(f"/albumdetail/{a.last().id}")
 
         else:
-            Album.objects.filter(id=id).delete
+            Album.objects.filter(id=id).delete()
             Album.objects.create(userid = userid, albumphoto=albumphoto,albumvideo=albumvideo,albummemo=albummemo,albumlocation=albumlocation,albumdate=albumdate,albumtype=albumtype)
             a = Album.objects.all()
             return redirect(f"/albumdetail/{a.last().id}")

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "users",
     'albums',
+    'framesharings',
 
     #allauth
     'allauth',

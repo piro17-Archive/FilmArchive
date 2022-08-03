@@ -21,6 +21,7 @@ urlpatterns = [
     path('', include('users.urls')),
     path('accounts/', include('allauth.urls')),
     path('', include('albums.urls')),
+    path('', include('framesharings.urls')),
     
 ]
 
