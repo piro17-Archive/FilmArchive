@@ -2,10 +2,10 @@
 <main>
   <form action="/framecreate" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="frame-form">
-      <div class="frame__title">프레임 공유 글 작성</div>
-      <div class="frame__hr"></div>
-      <div class="frame__info">
+    <div class="framecreate-form">
+      <div class="framecreate__title">프레임 공유 글 작성</div>
+      <div class="framecreate__hr"></div>
+      <div class="framecreate__info">
         <div><span>사진</span><input type="file" name="framephoto"/></div>
         <div><span>제목</span><input type="text" name="frametitle"/></div>
         <div>
@@ -17,8 +17,8 @@
         <div><span>적용예시</span><input type="file" name="frameexample"></div>
         <div><span>공개범위</span><input type="checkbox" name="framepublic" value="False" id="framepublic"><label for="framepublic">비공개</label></div>
         <div><span>메모</span><textarea name="framememo" id="" cols="30" rows="10"></textarea></div>
-        <div class="frame__btn-box">
-          <input type="submit" value="글 작성" class="frame__btn"/>
+        <div class="framecreate__btn-box">
+          <input type="submit" value="글 작성" class="framecreate__btn"/>
         </div>
       </div>
     </div>
