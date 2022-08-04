@@ -1,6 +1,7 @@
 @media screen and (max-width: 475px) {
   .mypage__container {
     margin: 0 5rem;
+    height: 100vh;
   }
 
   .mypage__title {
@@ -79,6 +80,7 @@
 @media screen and (min-width: 475px) and (max-width: 1024px) {
   .mypage__container {
     margin: 0 7rem;
+    height: 80vh;
   }
 
   .mypage__title {
@@ -152,6 +154,7 @@
 @media screen and (min-width: 1024px) {
   .mypage__container {
     margin: 0 12rem;
+    height: 80vh;
   }
 
   .mypage__title {
