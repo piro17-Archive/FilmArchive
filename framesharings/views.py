@@ -4,10 +4,20 @@ from .models import User, Keyword, Frame
 # Create your views here.
 
 def frame(request):
-    like = request.user.likeMany.all()
-    save = request.user.saveMany.all()
+    if request.user.is_authenticated:
+        like = request.user.likeMany.all()
+        save = request.user.saveMany.all()
+    else:
+        like = None
+        save = None
     keywordinfo = Keyword.objects.all()
-    frameinfo = Frame.objects.all()
+
+    query = request.GET.get('title', None)
+    if query:
+        frameinfo = Frame.objects.filter(frametitle__contains=query)
+    else:
+        frameinfo = Frame.objects.all()
+        
     likereq = request.GET.get('like',None)
     savereq = request.GET.get('save',None)
     if likereq != None:
@@ -111,46 +121,54 @@ def frameupdate(request,id):
         clearphoto = request.POST.get("clearphoto")
         clearexample = request.POST.get("clearexample")
 
-
         if framephoto == None and frameexample == None:
             if clearphoto == 'clearphoto' and clearexample == 'clearexample':
-                Frame.objects.creat(userid = userid, framephoto = None,frametitle=frametitle,frameexample=None,framememo=framememo,framepublic=decision,)
+                Frame.objects.create(userid = userid, framephoto = None,frametitle=frametitle,frameexample=None,framememo=framememo,framepublic=decision,)
 
             elif clearphoto != 'clearphoto' and clearexample == 'clearexample':
-                Frame.objects.creat(userid = userid, framephoto = Frame.objects.filter(id = id)[0].framephoto,frametitle=frametitle,frameexample=None,framememo=framememo,framepublic=decision,)
+                Frame.objects.create(userid = userid, framephoto = Frame.objects.filter(id = id)[0].framephoto,frametitle=frametitle,frameexample=None,framememo=framememo,framepublic=decision,)
 
             elif clearphoto == 'clearphoto' and clearexample != 'clearexample':
-                Frame.objects.creat(userid = userid, framephoto = None,frametitle=frametitle,frameexample=Frame.objects.filter(id = id)[0].frameexample,framememo=framememo,framepublic=decision,)
+                Frame.objects.create(userid = userid, framephoto = None,frametitle=frametitle,frameexample=Frame.objects.filter(id = id)[0].frameexample,framememo=framememo,framepublic=decision,)
 
             else :
-                Frame.objects.creat(userid = userid, framephoto = Frame.objects.filter(id = id)[0].framephoto,frametitle=frametitle,frameexample=Frame.objects.filter(id = id)[0].frameexample,framememo=framememo,framepublic=decision,)
+                Frame.objects.create(userid = userid, framephoto = Frame.objects.filter(id = id)[0].framephoto,frametitle=frametitle,frameexample=Frame.objects.filter(id = id)[0].frameexample,framememo=framememo,framepublic=decision,)
 
 
-        if framephoto and frameexample == None:
+        elif framephoto and frameexample == None:
             if clearphoto == 'clearphoto' and clearexample == 'clearexample':
-                Frame.objects.creat(userid = userid, framephoto = framephoto,frametitle=frametitle,frameexample=None,framememo=framememo,framepublic=decision,)
+                Frame.objects.create(userid = userid, framephoto = framephoto,frametitle=frametitle,frameexample=None,framememo=framememo,framepublic=decision,)
 
             elif clearphoto != 'clearphoto' and clearexample == 'clearexample':
-                Frame.objects.creat(userid = userid, framephoto = framephoto,frametitle=frametitle,frameexample=None,framememo=framememo,framepublic=decision,)
+                Frame.objects.create(userid = userid, framephoto = framephoto,frametitle=frametitle,frameexample=None,framememo=framememo,framepublic=decision,)
 
             elif clearphoto == 'clearphoto' and clearexample != 'clearexample':
-                Frame.objects.creat(userid = userid, framephoto = None,frametitle=frametitle,frameexample=Frame.objects.filter(id = id)[0].frameexample,framememo=framememo,framepublic=decision,)
+                Frame.objects.create(userid = userid, framephoto = framephoto,frametitle=frametitle,frameexample=Frame.objects.filter(id = id)[0].frameexample,framememo=framememo,framepublic=decision,)
 
             else :
-                Frame.objects.creat(userid = userid, framephoto = framephoto,frametitle=frametitle,frameexample=Frame.objects.filter(id = id)[0].frameexample,framememo=framememo,framepublic=decision,)
+                Frame.objects.create(userid = userid, framephoto = framephoto,frametitle=frametitle,frameexample=Frame.objects.filter(id = id)[0].frameexample,framememo=framememo,framepublic=decision,)
 
 
-        if framephoto == None and frameexample:
+        elif framephoto == None and frameexample:
             if clearphoto == 'clearphoto' and clearexample == 'clearexample':
-                Frame.objects.creat(userid = userid, framephoto = None,frametitle=frametitle,frameexample=frameexample,framememo=framememo,framepublic=decision,)
+                Frame.objects.create(userid = userid, framephoto = None,frametitle=frametitle,frameexample=frameexample,framememo=framememo,framepublic=decision,)
 
             elif clearphoto != 'clearphoto' and clearexample == 'clearexample':
-                Frame.objects.creat(userid = userid, framephoto = Frame.objects.filter(id = id)[0].framephoto,frametitle=frametitle,frameexample=frameexample,framememo=framememo,framepublic=decision,)
+                Frame.objects.create(userid = userid, framephoto = Frame.objects.filter(id = id)[0].framephoto,frametitle=frametitle,frameexample=frameexample,framememo=framememo,framepublic=decision,)
 
             elif clearphoto == 'clearphoto' and clearexample != 'clearexample':
-                Frame.objects.creat(userid = userid, framephoto = None,frametitle=frametitle,frameexample=frameexample,framememo=framememo,framepublic=decision,)
+                Frame.objects.create(userid = userid, framephoto = None,frametitle=frametitle,frameexample=frameexample,framememo=framememo,framepublic=decision,)
+            else :
+                Frame.objects.create(userid = userid, framephoto = Frame.objects.filter(id = id)[0].framephoto,frametitle=frametitle,frameexample=frameexample,framememo=framememo,framepublic=decision,)
         else:
-            Frame.objects.creat(userid = userid, framephoto = framephoto,frametitle=frametitle,frameexample=frameexample,framememo=framememo,framepublic=decision,)
+            Frame.objects.create(userid = userid, framephoto = framephoto,frametitle=frametitle,frameexample=frameexample,framememo=framememo,framepublic=decision,)
+
+
+        
+
+
+
+
         Frame.objects.filter(id=id).delete()
         a = Frame.objects.all()
         keywordoj = a.last()

@@ -1,6 +1,10 @@
 {% extends 'users/main.html' %} {% block content %}
 <main>
     <h1>인생네컷 프레임공유 홈</h1>
+    <form action="{% url 'framesharings:frame'%}">
+        <input type="search" name="title" placeholder="프레임공유 검색" />
+        <input type="submit" value="검색" />
+      </form>
     <a href="/framecreate">글 작성</a>
     {% for frameinfo in frameinfo %}
     {% if frameinfo.framepublic %}

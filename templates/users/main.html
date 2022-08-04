@@ -36,7 +36,13 @@
               <li><a href="{% url 'users:login' %}">My 네 컷 앨범</a></li>
             {% endif %}
             
+            
+            {%if user.is_authenticated %}
             <li><a href="{% url 'framesharings:frame' %}">인생네컷<br/>프레임 공유</a></li>
+            {% else %}
+            <li><a href="{% url 'users:login' %}">인생네컷<br/>프레임 공유</a></li>
+            {% endif %}
+
             <li>
               <a href="{% url 'recommends:recommend_list' %}">포즈/컨셉 추천</a>
             </li>
