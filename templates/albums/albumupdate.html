@@ -42,8 +42,7 @@
     <p>
       종류
       <select name="albumtypename" id="">
-        {% for typeinfo in typeinfo %} {%if albuminfo.albumtype == typeinfo.name
-        %}
+        {% for typeinfo in typeinfo %} {%if albuminfo.albumtype == typeinfo.name%}
         <option selected="selected" value="{{typeinfo.id}}">
           {{typeinfo.name}}
         </option>

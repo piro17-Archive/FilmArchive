@@ -107,7 +107,8 @@ def framecreate(request):
         keywordoj.save()
             
         
-        return redirect(f"framedetail/{a.last().id}")
+        return redirect(f"/framedetail/{a.last().id}")
+        
     context = {
         "keywordinfo": keywordinfo,
         # "form": form
@@ -188,7 +189,7 @@ def frameupdate(request,id):
         keywordoj.save()
             
         
-        return redirect(f"framedetail/{a.last().id}")
+        return redirect(f"/framedetail/{a.last().id}")
 
     frameinfo = Frame.objects.get(id = id)
     context = {
