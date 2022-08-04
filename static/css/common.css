@@ -7,6 +7,10 @@ html {
   /* 1rem = 10px */
 }
 
+body {
+  line-height: normal;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -20,6 +24,7 @@ ul {
   display: none;
 }
 
-img {
+img,
+button {
   cursor: pointer;
 }
