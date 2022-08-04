@@ -2,13 +2,15 @@
 <main>
   <div class="frame__container">
     <div class="frame__flex-box">
-      <h1 class="frame__title">인생네컷 프레임공유 홈</h1>
-      <form action="{% url 'framesharings:frame' %}">
-        <input type="search" name="title" placeholder="프레임 검색" />
-        <input type="submit" value="검색" />
-      </form>
-      <div class="frame__letter">
-        <a href="/framecreate" class="frame__create">글 작성</a>
+      <div class="frame__title">인생네컷 프레임 공유</div>
+      <div class="frame__right">
+        <div class="frame__search">
+          <form action="{% url 'framesharings:frame' %}">
+            <input type="search" name="title" />
+            <input type="submit" value="검색" />
+          </form>
+        </div>
+        <a href="/framecreate"><div class="frame__create">글 작성</div></a>
       </div>
     </div>
 
