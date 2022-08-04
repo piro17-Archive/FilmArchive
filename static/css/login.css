@@ -1,0 +1,219 @@
+html { font-size: 62.5%; }
+/* 1rem = 10px */
+
+@media screen and (max-width: 480px) {
+  .login--section{
+    padding: 6rem 0;
+  }
+
+	.login--btn,
+  .signup--btn{
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  .login--btn{
+    margin-right: 0.3rem;
+  }
+
+  input{
+    width: 15rem;
+    height: 3rem;
+    font-size: 1.3rem;
+  }
+
+  .login--text{
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-right: 1rem;
+  }
+
+  .social-login--btn{
+    width: 20rem;
+    height: 4.5rem;
+    margin: 0.1rem;
+  }
+
+  .line{
+    width: 30rem;
+    height: 0.2rem;
+    background-color: var(--main-red);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .login--main--text{
+    font-size: 1.7rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
+  }
+
+  .login--main--section{
+    padding: 5rem;
+  }
+}
+/* screen의 width가 480px 이하일 때 적용 */
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .login--section{
+    padding: 8rem 0;
+  }
+  .login--btn,
+  .signup--btn{
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .login--btn{
+    margin-right: 0.7rem;
+  }
+
+  input{
+    width: 20rem;
+    height: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .login--text{
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding-right: 1rem;
+  }
+
+  .social-login--btn{
+    width: 20rem;
+    height: 4.5rem;
+    margin: 0.2rem;
+  }
+
+  .line{
+    width: 40rem;
+    height: 0.2rem;
+    background-color: var(--main-red);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .login--main--text{
+    font-size: 2rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
+  }
+
+  .login--main--section{
+    padding: 7rem;
+  }
+}
+/* screen의 width가 480px 이상 1024px 이하일 때 적용 */
+
+@media screen and (min-width: 1024px) {
+  .login--section{
+    padding: 8rem 0;
+  }
+  .login--btn,
+  .signup--btn{
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .login--btn{
+    margin-right: 0.9rem;
+  }
+
+  input{
+    width: 20rem;
+    height: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .login--text{
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding-right: 1rem;
+  }
+
+  .social-login--btn{
+    width: 20rem;
+    height: 4.5rem;
+    margin: 0.2rem;
+  }
+
+  .line{
+    width: 60rem;
+    height: 0.2rem;
+    background-color: var(--main-red);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .login--main--text{
+    font-size: 2rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
+  }
+
+  .login--main--section{
+    padding: 8rem;
+  }
+
+}
+
+
+a{
+  text-decoration: none;
+}
+
+button{
+  background-color: var(--main-red);
+  color: white;
+  border: none;
+  border-radius: 1rem;
+}
+
+input{
+  background-color: var(--main-background);
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+.login--section{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login--btn--section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.social--login--section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login--input{
+  padding: 1rem;
+  display:flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.login--btn,
+.signup--btn{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
