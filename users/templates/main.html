@@ -42,7 +42,7 @@
               <a href="{% url 'users:log_out' %}" class="main__user"
                 >로그아웃</a
               > <span> | </span>
-              <a href="" class="main__user"
+              <a href="{% url 'users:mypage' %}" class="main__user"
                 >마이페이지</a
               >
               {% else %}
@@ -77,7 +77,7 @@
               > 
             </li>
             <li>
-              <a href="" class="main__user"
+              <a href="{% url 'users:mypage' %}" class="main__user"
                 >마이페이지</a
               >
             </li>

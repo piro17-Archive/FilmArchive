@@ -71,3 +71,9 @@ def sign_up(request):
         return render(request, "signup.html", {"form": form})
 
 
+def mypage(request):
+    users=User.objects.all()
+    context={
+        "users": users,
+    }
+    return render(request, "mypage.html", context=context)
