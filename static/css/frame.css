@@ -1,0 +1,156 @@
+@media screen and (max-width: 480px) {
+  .frame__container {
+    margin: 0 2rem;
+  }
+
+  .frame__flex-box {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+
+  .frame__title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    width: 70%;
+  }
+
+  .frame__letter {
+    width: 30%;
+    text-align: right;
+  }
+
+  .frame__create {
+    background: var(--main-red);
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.4rem 1rem;
+    font-size: 1.2rem;
+  }
+
+  .frame__img img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .frame__frametitle {
+    font-size: 1.15rem;
+    margin: 0.5rem 0;
+  }
+
+  .frame__box {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-gap: 1rem;
+    justify-content: center;
+  }
+
+  .frame__one-box {
+    padding: 0.5rem;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .frame__container {
+    margin: 0 6rem;
+  }
+
+  .frame__flex-box {
+    display: flex;
+    margin-bottom: 3rem;
+  }
+
+  .frame__title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    width: 70%;
+  }
+
+  .frame__letter {
+    width: 30%;
+    text-align: right;
+  }
+
+  .frame__create {
+    background: var(--main-red);
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.4rem 1rem;
+    font-size: 1.2rem;
+  }
+
+  .frame__img img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .frame__frametitle {
+    font-size: 1.15rem;
+    margin: 0.5rem 0;
+  }
+
+  .frame__box {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-gap: 2rem;
+    justify-content: center;
+  }
+
+  .frame__one-box {
+    padding: 0.5rem;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .frame__container {
+    margin: 0 10rem;
+  }
+
+  .frame__flex-box {
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .frame__title {
+    font-size: 2rem;
+    font-weight: 800;
+    width: 70%;
+  }
+
+  .frame__letter {
+    width: 30%;
+    text-align: right;
+  }
+
+  .frame__create {
+    background: var(--main-red);
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.4rem 1rem;
+    font-size: 1.2rem;
+  }
+
+  .frame__img img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .frame__frametitle {
+    font-size: 1.15rem;
+    margin: 0.5rem 0;
+  }
+
+  .frame__box {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-gap: 2rem;
+    justify-content: center;
+  }
+
+  .frame__one-box {
+    padding: 0.5rem;
+    height: 100%;
+  }
+}
