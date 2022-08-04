@@ -2,21 +2,32 @@
 <hr />
 <main>
   <article>
+    {% if recommend.recImage %}
+    <p>
+      <img
+        src="{{ recommend.recImage.url }}"
+        style="width: 300px; height: 300px"
+      />
+    </p>
+    {% endif %}
     <h2>제목 : {{ recommend.title }}</h2>
+    <p>
+      {% for keyword in recommend.recKeyword.all %}
+        #{{ keyword.name }} 
+      {% endfor %}
+    </p>
     <div>{{recommend.content}}</div>
-    <div>{{recommend.keyword}}</div>
   </article>
-
   <div>
     <form action="{% url 'recommends:rec_delete' recommend.id %}" method="post">
       {% csrf_token %}
       <button>글 삭제</button>
     </form>
     <div>
-      <a href="{% url 'recommends:rec_update' recommend.id %}">업데이트</a>
+      <a href="{% url 'recommends:rec_update' recommend.id %}"><button>업데이트</button></a>
     </div>
     <div>
-      <a href="{% url 'recommends:recommend_list' %}">Home</a>
+      <a href="{% url 'recommends:recommend_list' %}"><button>Home</button></a>
     </div>
   </div>
 </main>
