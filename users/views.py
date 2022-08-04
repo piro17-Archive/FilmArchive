@@ -12,6 +12,16 @@ from ctypes import wintypes
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+def start(request):
+    # return render(request, "main.html")
+    #새로추가
+    users=User.objects.all()
+    context={
+        "users": users,
+    }
+    
+    return render(request, "start.html", context=context)
+
 def main(request):
     # return render(request, "main.html")
     #새로추가
@@ -61,3 +71,9 @@ def sign_up(request):
         return render(request, "signup.html", {"form": form})
 
 
+def mypage(request):
+    users=User.objects.all()
+    context={
+        "users": users,
+    }
+    return render(request, "mypage.html", context=context)
