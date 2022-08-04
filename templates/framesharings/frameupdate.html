@@ -1,6 +1,6 @@
 {% extends 'users/main.html' %} {% block content %}
 <main>
-  <form action="/framecreate" method="post" enctype="multipart/form-data">
+  <form action="/frameupdate/{{frameinfo.id}}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="frameupdate-form">
       <div class="frameupdate__title">프레임 공유 글 수정</div>
