@@ -1,57 +1,55 @@
 {% extends 'users/main.html' %} {% block content %}
- <main>
-    <h1>인셍네컷 프레임공유 디테일</h1>
-    <p>{{ frameinfo.frametitle }}</p>
-    <p>
-        <form action="{% url 'framesharings:framedetail' frameinfo.id%}">
-        {% if frameinfo in save %}
-        <button name="save" value="{{frameinfo.id}}">찜완료</button>
-        {% else %}
-        <button name="save" value="{{frameinfo.id}}">찜하기</button>
-        {% endif %}
-        </form>
-    </p>
-    <p>
-        <form action="{% url 'framesharings:framedetail' frameinfo.id%}">
-        {% if frameinfo in like %}
-        <button name="like" value="{{frameinfo.id}}">추천완료</button>
-        {% else %}
-        <button name="like" value="{{frameinfo.id}}">추천하기</button>
-        {% endif %}
-        </form>
-    </p>
-    <p> 
-        {% for keyword in frameinfo.framekeyword.all %}
-        #{{keyword.name}}
-        {% endfor%}
-    </p>
-    <p> 추천수 {{frameinfo.framelikeuser.count}}</p>
-    <p>
-        사진
-        {% if frameinfo.framephoto %}
-        <img src="{{ frameinfo.framephoto.url }}" alt="">
-        {% else %}
-        <div>사진이없습니다.</div>
-        {% endif %}
-    </p>
-    <p>
-        예시사진
-        {% if frameinfo.frameexample %}
-        <img src="{{ frameinfo.frameexample.url }}" alt="">
-        {% else %}
-        <div>예시사진이없습니다.</div>
-        {% endif %}
-    </p>
-    <p>{{ frameinfo.framememo }}</p>
+<main>
+  <div class="framedetail">
+    <div class="framedetail__title">인셍네컷 프레임공유</div>
+    <div class="framedetail__hr"></div>
+    <div class="framedetail__frametitle">{{ frameinfo.frametitle }}</div>
 
-    
+    <form action="{% url 'framesharings:framedetail' frameinfo.id%}">
+    {% if frameinfo in save %}
+    <button name="save" value="{{frameinfo.id}}">찜완료</button>
+    {% else %}
+    <button name="save" value="{{frameinfo.id}}">찜하기</button>
+    {% endif %}
+    </form>
 
- </main>
- <div>
-    업데이트 : <a href="/frameupdate/{{frameinfo.id}}">update</a>
-    <form action="/framedelete/{{frameinfo.id}}" method="post">
-        {% csrf_token %}
-        <button>삭제</button>
-      </form>
-</div>
+    <form action="{% url 'framesharings:framedetail' frameinfo.id%}">
+    {% if frameinfo in like %}
+    <button name="like" value="{{frameinfo.id}}">추천완료</button>
+    {% else %}
+    <button name="like" value="{{frameinfo.id}}">추천하기</button>
+    {% endif %}
+    </form>
+
+    {% for keyword in frameinfo.framekeyword.all %}
+    #{{keyword.name}}
+    {% endfor%}
+
+    <div> 추천수 {{frameinfo.framelikeuser.count}}</div>
+
+    {% if frameinfo.framephoto %}
+    <div class="framedetail__img">
+      <img src="{{ frameinfo.framephoto.url }}" alt="프레임공유">
+    </div>
+    {% endif %}
+
+    {% if frameinfo.frameexample %}
+    <img src="{{ frameinfo.frameexample.url }}" alt="">
+    {% else %}
+    <div>예시사진이없습니다.</div>
+    {% endif %}
+
+    <div class="framedetail__memo">{{ frameinfo.framememo }}</div>
+    <div class="framedetail__btn-box">
+      <a href="/frameupdate/{{frameinfo.id}}"><div class="framedetail__update">수정</div></a>
+      <div class="framedetail__delete">
+        <form action="/framedelete/{{frameinfo.id}}" method="post">
+          {% csrf_token %}
+          삭제
+        </form>
+      </div>
+    </div>
+
+  </div>
+</main>
 {% endblock content %}
