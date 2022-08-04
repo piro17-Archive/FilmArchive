@@ -20,7 +20,7 @@ def start(request):
         "users": users,
     }
     
-    return render(request, "start.html", context=context)
+    return render(request, "users/start.html", context=context)
 
 def main(request):
     # return render(request, "main.html")
