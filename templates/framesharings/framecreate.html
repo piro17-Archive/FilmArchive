@@ -1,29 +1,27 @@
 {% extends 'users/main.html' %} {% block content %}
 <main>
-    <form action="/framecreate" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <p>
-            사진 <input type="file" name="framephoto">
-        </p>
-        <p>
-            제목 <input type="text" name="frametitle" placeholder="프레임제목" />
-        </p>
-        <p>
-            키워드
-                {%  for keywordinfo in keywordinfo %}
-                <input type="checkbox" name="{{forloop.counter}}" value="{{forloop.counter}}" id="keywordid{{forloop.counter}}"><label for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
-                {% endfor %}
-        </p>
-        <p>
-            적용예시 <input type="file" name="frameexample">
-        </p>
-        <p>
-            공개범위 <input type="checkbox" name="framepublic" value="False" id="framepublic"><label for="framepublic">비공개</label>
-        </p>
-        <p>
-            메모 <textarea name="framememo" id="" cols="30" rows="10"></textarea>
-        </p>
-        <input type="submit" value="글 작성" />
-    </form>
+  <form action="/framecreate" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="framecreate-form">
+      <div class="framecreate__title">프레임 공유 글 작성</div>
+      <div class="framecreate__hr"></div>
+      <div class="framecreate__info">
+        <div><span>사진</span><input type="file" name="framephoto"/></div>
+        <div><span>제목</span><input type="text" name="frametitle"/></div>
+        <div>
+          <span>키워드</span>
+          {%  for keywordinfo in keywordinfo %}
+          <input type="checkbox" name="{{forloop.counter}}" value="{{forloop.counter}}" id="keywordid{{forloop.counter}}"><label for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
+          {% endfor %}
+        </div>
+        <div><span>적용예시</span><input type="file" name="frameexample"></div>
+        <div><span>공개범위</span><input type="checkbox" name="framepublic" value="False" id="framepublic"><label for="framepublic">비공개</label></div>
+        <div><span>메모</span><textarea name="framememo" id="" cols="30" rows="10"></textarea></div>
+        <div class="framecreate__btn-box">
+          <input type="submit" value="글 작성" class="framecreate__btn"/>
+        </div>
+      </div>
+    </div>
+  </form>
 </main>
 {% endblock content %}

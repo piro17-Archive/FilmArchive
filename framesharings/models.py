@@ -7,7 +7,7 @@ class Keyword(models.Model):
 
 class Frame(models.Model):
     userid = models.ForeignKey(User,on_delete=models.CASCADE, related_name='userframeFor')
-    framephoto = models.ImageField(blank=True,upload_to='framephoto/',verbose_name="프레임사진", null=True)
+    framephoto = models.ImageField(default = None,blank=True,upload_to='framephoto/',verbose_name="프레임사진",null=False)
     frametitle = models.CharField(max_length=50,verbose_name="프레임제목", null=True,blank=True,)
     framekeyword = models.ManyToManyField(Keyword,blank=True)
     frameexample = models.ImageField(blank=True,upload_to='frameexample/',verbose_name="프레임예시", null=True)

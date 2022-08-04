@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from requests import delete
 from .models import User, Keyword, Frame
+from .froms import PostFrame
+from django.contrib import messages
 # Create your views here.
 
 def frame(request):
@@ -78,9 +80,15 @@ def framedetail(request,id):
 
 def framecreate(request):
     keywordinfo = Keyword.objects.all()
+    # form = PostFrame()
 
     if request.method == "POST":
+        
         framephoto = request.FILES.get("framephoto")
+        if framephoto == None:
+            messages.warning(request, '사진은 필수입니다.')
+            return redirect("framesharings:framecreate")
+        
         frametitle = request.POST["frametitle"]
         frameexample = request.FILES.get("frameexamle")
         framememo = request.POST["framememo"]
@@ -102,6 +110,7 @@ def framecreate(request):
         return redirect(f"framedetail/{a.last().id}")
     context = {
         "keywordinfo": keywordinfo,
+        # "form": form
     }
     return render(request, template_name="framesharings/framecreate.html",context=context)
 
