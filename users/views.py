@@ -12,6 +12,16 @@ from ctypes import wintypes
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+def start(request):
+    # return render(request, "main.html")
+    #새로추가
+    users=User.objects.all()
+    context={
+        "users": users,
+    }
+    
+    return render(request, "start.html", context=context)
+
 def main(request):
     # return render(request, "main.html")
     #새로추가
@@ -20,14 +30,14 @@ def main(request):
         "users": users,
     }
     
-    return render(request, "main.html", context=context)
+    return render(request, "users/main.html", context=context)
 
 
 class LoginView(View):
     def get(self, request):
         form = forms.LoginForm()
         ctx = {"form": form}
-        return render(request, "login.html", ctx)
+        return render(request, "users/login.html", ctx)
 
     def post(self, request):
         form = forms.LoginForm(request.POST)
@@ -37,11 +47,11 @@ class LoginView(View):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return render(request, "main.html")
+                return render(request, "users/main.html")
         context = {
             "forms":form,
         }
-        return render(request, "login.html", context=context)
+        return render(request, "users/login.html", context=context)
 
 @login_required(login_url='login')
 def Log_out(request):
@@ -54,10 +64,10 @@ def sign_up(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return render(request, "main.html")
+            return render(request, "users/main.html")
         return redirect("users:sign_up")
     else:
         form = forms.SignupForm()
-        return render(request, "signup.html", {"form": form})
+        return render(request, "users/signup.html", {"form": form})
 
 

@@ -1,4 +1,4 @@
-{% extends 'main.html' %} {% block content %} {% load static %}
+{% extends 'users/main.html' %} {% block content %} {% load static %}
 <form action="/update/{{recommend.id}}" method="post">
   <h1>업데이트 페이지</h1>
   {% csrf_token %}
