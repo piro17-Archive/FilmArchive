@@ -1,0 +1,24 @@
+{% extends 'users/main.html' %} {% block content %}
+<body>
+    <form action="{% url 'albums:album' user.id%}">
+        <input type="search" name="title" placeholder="My 네 컷 앨범 메모검색" />
+        <input type="submit" value="검색" />
+      </form>
+    <a href="/albumcreate">글 작성</a>
+    {% for albuminfo in allalbum %}
+    <p>{{albuminfo.albumdate}}</p>
+    <p>
+        사진
+        {% if albuminfo.albumphoto %}
+        <a href="/albumdetail/{{albuminfo.id}}">
+        <img src="{{ albuminfo.albumphoto.url }}" alt=""></a>
+        {% else %}
+        <a href="/albumdetail/{{albuminfo.id}}"><div>사진이없습니다.</div></a>
+        {% endif %}
+    </p>
+    <p>종류 | {{albuminfo.albumtype.name}}</p>
+    <p>위치 | {{albuminfo.albumlocation}}</p>
+    <p>메모 | {{albuminfo.albummemo}}</p>
+    {% endfor %}
+</body>
+{% endblock content %}

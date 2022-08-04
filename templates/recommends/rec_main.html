@@ -1,0 +1,36 @@
+{% extends 'users/main.html' %} {% block content %} {% load static %}
+<hr />
+<main>
+  <h1>포즈/컨셉 추천</h1>
+  <form action="{% url 'recommends:recommend_list' %}">
+    <input type="search" name="title" placeholder="포즈 또는 컨셉 찾기" />
+    <input type="submit" value="검색" />
+  </form>
+  <a href="{% url 'recommends:rec_create' %}"><button>글 작성</button></a>
+  {% for recommend in recommends %}
+  <article>
+    {% if recommend.recImage %}
+    <p>
+      <img
+        src="{{ recommend.recImage.url }}"
+        style="width: 300px; height: 300px"
+      />
+    </p>
+    {% endif %}
+    <h3>
+      <a href="{% url 'recommends:rec_detail' recommend.id %}"
+        >{{recommend.title}}</a
+      >
+    </h3>
+    <p>{{recommend.postUser}}</p>
+    <p>
+      {% for keyword in recommend.recKeyword.all %}
+        #{{keyword.name}} 
+      {% endfor %}
+    </p>
+    <p>{{recommend.content}}</p>
+  </article>
+  {% endfor %}
+</main>
+<hr />
+{% endblock content %}

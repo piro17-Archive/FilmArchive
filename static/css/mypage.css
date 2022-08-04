@@ -1,0 +1,226 @@
+@media screen and (max-width: 475px) {
+  .mypage__container {
+    margin: 0 5rem;
+    height: 100vh;
+  }
+
+  .mypage__title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .mypage__flexbox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .mypage__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .mypage__left .mypage__btn-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .mypage__left .mypage__btn {
+    font-size: 1.4rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1.5rem;
+    padding: 1rem 1.2rem;
+    background: var(--main-red);
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    width: 15rem;
+  }
+
+  .mypage__left .mypage__btn:last-child {
+    margin-right: 0;
+  }
+
+  .mypage__left img {
+    border-radius: 50%;
+    width: 80%;
+  }
+
+  .mypage__storage-title {
+    font-size: 1.7rem;
+  }
+
+  .mypage__hr {
+    background: var(--main-red);
+    border-color: var(--main-red);
+    margin: 1.5rem 0 3.5rem 0;
+    height: 1px;
+  }
+
+  .mypage__right .mypage__storage-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mypage__right .mypage__storage-box .mypage__storage {
+    background: var(--main-background);
+    margin-bottom: 2rem;
+    height: 12rem;
+  }
+}
+
+@media screen and (min-width: 475px) and (max-width: 1024px) {
+  .mypage__container {
+    margin: 0 7rem;
+    height: 80vh;
+  }
+
+  .mypage__title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 5rem;
+  }
+
+  .mypage__flexbox {
+    display: flex;
+  }
+
+  .mypage__left {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mypage__left .mypage__btn {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    border-radius: 1.2rem;
+    padding: 0.8rem 1.2rem;
+    background: var(--main-red);
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    width: 15rem;
+  }
+
+  .mypage__left img {
+    border-radius: 50%;
+    width: 100%;
+    margin-bottom: 2em;
+  }
+
+  .mypage__storage-title {
+    font-size: 1.5rem;
+  }
+
+  .mypage__hr {
+    background: var(--main-red);
+    border-color: var(--main-red);
+    margin: 1rem 0 3rem 0;
+    height: 1px;
+  }
+
+  .mypage__right {
+    width: 70%;
+    margin-left: 5rem;
+  }
+
+  .mypage__right .mypage__storage-box {
+    display: flex;
+    height: 90%;
+  }
+
+  .mypage__right .mypage__storage-box .mypage__storage {
+    background: var(--main-background);
+    width: 50%;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .mypage__right .mypage__storage-box .mypage__storage:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mypage__container {
+    margin: 0 12rem;
+    height: 80vh;
+  }
+
+  .mypage__title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 2rem 0 5rem 0;
+  }
+
+  .mypage__flexbox {
+    display: flex;
+  }
+
+  .mypage__left {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mypage__left .mypage__btn {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    border-radius: 1.2rem;
+    padding: 0.8rem 1.2rem;
+    background: var(--main-red);
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    width: 15rem;
+  }
+
+  .mypage__left img {
+    border-radius: 50%;
+    width: 60%;
+    margin-bottom: 2em;
+  }
+
+  .mypage__storage-title {
+    font-size: 1.7rem;
+  }
+
+  .mypage__hr {
+    background: var(--main-red);
+    border-color: var(--main-red);
+    margin: 1.5rem 0 3.5rem 0;
+    height: 1px;
+  }
+
+  .mypage__right {
+    width: 70%;
+    margin-left: 5rem;
+  }
+
+  .mypage__right .mypage__storage-box {
+    display: flex;
+    height: 90%;
+  }
+
+  .mypage__right .mypage__storage-box .mypage__storage {
+    background: var(--main-background);
+    width: 50%;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .mypage__right .mypage__storage-box .mypage__storage:last-child {
+    margin-right: 0;
+  }
+}

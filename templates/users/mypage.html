@@ -1,0 +1,24 @@
+{% extends 'users/main.html' %} {% block content %} {% load static %}
+<main class="mypage">
+  <div class="mypage__container">
+    <h1 class="mypage__title">마이페이지</h1>
+    <div class="mypage__flexbox">
+      <div class="mypage__left">
+        <img src="{% static 'image/profile.svg' %}" alt="프로필사진" />
+        <div class="mypage__btn-box">
+          <div class="mypage__btn">회원정보 수정</div>
+          <div class="mypage__btn">회원 탈퇴</div>
+        </div>
+      </div>
+      <div class="mypage__right">
+        <div class="mypage__storage-title">저장 목록</div>
+        <div class="mypage__hr"></div>
+        <div class="mypage__storage-box">
+          <div class="mypage__storage"><img src="" alt="" /></div>
+          <div class="mypage__storage"><img src="" alt="" /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}
