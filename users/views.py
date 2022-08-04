@@ -76,4 +76,4 @@ def mypage(request):
     context={
         "users": users,
     }
-    return render(request, "mypage.html", context=context)
+    return render(request, "users/mypage.html", context=context)
