@@ -1,47 +1,43 @@
 {% extends 'users/main.html' %} {% block content %}
 <main>
-    <h1>인생네컷 프레임공유 홈</h1>
-    <a href="/framecreate">글 작성</a>
-    {% for frameinfo in frameinfo %}
-    {% if frameinfo.framepublic %}
-    
-    <p>
-        <a href="{%url 'framesharings:framedetail' frameinfo.id %}"> 디테일보러가기</a>
-        {% if frameinfo.framephoto %}
-        <img src="{{ frameinfo.framephoto.url }}" alt="">
-        {% else %}
-        <div>사진이없습니다.</div>
-        {% endif %}
-    </p>
-    <p>{{ frameinfo.frametitle }}</p>
-    <p> 
-        {% for keyword in frameinfo.framekeyword.all %}
-        #{{keyword.name}}
-        {% endfor%}
-    </p>
-    <p>
-        <form action="{% url 'framesharings:frame' %}">
-        {% if frameinfo in like %}
-        <button name="like" value="{{frameinfo.id}}">추천완료</button>
-        {% else %}
-        <button name="like" value="{{frameinfo.id}}">추천하기</button>
-        {% endif %}
-        </form>
-    </p>
-    <p>
-        <form action="{% url 'framesharings:frame' %}">
-        {% if frameinfo in save %}
-        <button name="save" value="{{frameinfo.id}}">찜완료</button>
-        {% else %}
-        <button name="save" value="{{frameinfo.id}}">찜하기</button>
-        {% endif %}
-        </form>
-    </p>
-    <div>---------------------------------------다음프레임--------------------------------------------</div>
-    {% endif %}
-    
-    {% endfor %}
-    
+  <div class="frame__container">
+    <div class="frame__flex-box">
+      <h1 class="frame__title">인생네컷 프레임공유 홈</h1>
+      <div class="frame__letter">
+        <a href="/framecreate" class="frame__create">글 작성</a>
+      </div>
+    </div>
 
+    <div class="frame__box">
+      {% for frameinfo in frameinfo %} {% if frameinfo.framepublic %} 
+      {% if frameinfo.framephoto %}
+      <div class="frame__one-box">
+        <div class="frame__img">
+          <a href="{%url 'framesharings:framedetail' frameinfo.id %}"
+            ><img src="{{ frameinfo.framephoto.url }}" alt="프레임사진"
+          /></a>
+        </div>
+        <div class="frame__frametitle">{{ frameinfo.frametitle }}</div>
+        {% for keyword in frameinfo.framekeyword.all %} {% endfor%}
+        <div>
+          <form action="{% url 'framesharings:frame' %}">
+            {% if frameinfo in like %}
+            <button name="like" value="{{frameinfo.id}}">추천완료</button>
+            {% else %}
+            <button name="like" value="{{frameinfo.id}}">추천하기</button>
+            {% endif %}
+          </form>
+          <form action="{% url 'framesharings:frame' %}">
+            {% if frameinfo in save %}
+            <button name="save" value="{{frameinfo.id}}">찜완료</button>
+            {% else %}
+            <button name="save" value="{{frameinfo.id}}">찜하기</button>
+            {% endif %}
+          </form>
+        </div>
+      </div>
+      {% endif %} {% endif %} {% endfor %}
+    </div>
+  </div>
 </main>
 {% endblock content %}
