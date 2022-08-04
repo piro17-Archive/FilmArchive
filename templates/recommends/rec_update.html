@@ -11,21 +11,33 @@
       value="{{recommend.title}}"
     />
   </h2>
-  <div>
-    키워드:
-    <input
-      type="text"
-      name="keyword"
-      placeholder="키워드"
-      value="{{recommend.keyword}}"
-    />
-  </div>
-  <div>
+  <p>
+    키워드
+    {% for keywordinfo in keywordinfo %}
+      {% if keywordinfo in recommend.recKeyword.all %}
+        <input
+          type="checkbox"
+          name="{{forloop.counter}}"
+          value="{{forloop.counter}}"
+          id="keywordid{{forloop.counter}}"
+          checked="checked"
+        /><label for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
+      {% else %}
+        <input
+          type="checkbox"
+          name="{{forloop.counter}}"
+          value="{{forloop.counter}}"
+          id="keywordid{{forloop.counter}}"
+        /><label for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
+      {% endif %}
+    {% endfor %}
+  </p>
+  <p>
     설명:
     <textarea name="content" id="" cols="30" rows="10">
         {{recommend.content}}</textarea
     >
-  </div>
+  </p>
   <div>
     <input type="submit" value="Save" />
   </div>
