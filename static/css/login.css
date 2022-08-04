@@ -3,22 +3,18 @@ html { font-size: 62.5%; }
 
 @media screen and (max-width: 480px) {
   .login--section{
-    padding: 6rem 0;
+    padding: 4rem 3rem;
   }
 
 	.login--btn,
   .signup--btn{
-    width: 10rem;
+    width: 15rem;
     height: 3rem;
     font-size: 1.2rem;
     font-weight: 500;
   }
-  
-  .login--btn{
-    margin-right: 0.3rem;
-  }
 
-  input{
+  .login--input input{
     width: 15rem;
     height: 3rem;
     font-size: 1.3rem;
@@ -34,6 +30,7 @@ html { font-size: 62.5%; }
     width: 20rem;
     height: 4.5rem;
     margin: 0.1rem;
+    cursor: pointer;
   }
 
   .line{
@@ -46,33 +43,29 @@ html { font-size: 62.5%; }
 
   .login--main--text{
     font-size: 1.7rem;
-    font-weight: 500;
+    font-weight: 600;
     padding-bottom: 1rem;
   }
 
   .login--main--section{
-    padding: 5rem;
+    padding: 3rem 2rem 2.5rem 2rem;
   }
 }
 /* screen의 width가 480px 이하일 때 적용 */
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .login--section{
-    padding: 8rem 0;
+    padding: 6rem 6rem;
   }
   .login--btn,
   .signup--btn{
-    width: 10rem;
+    width: 17rem;
     height: 3rem;
     font-size: 1.5rem;
     font-weight: 500;
   }
 
-  .login--btn{
-    margin-right: 0.7rem;
-  }
-
-  input{
+  .login--input input{
     width: 20rem;
     height: 3rem;
     font-size: 1.5rem;
@@ -88,6 +81,7 @@ html { font-size: 62.5%; }
     width: 20rem;
     height: 4.5rem;
     margin: 0.2rem;
+    cursor: pointer;
   }
 
   .line{
@@ -100,33 +94,30 @@ html { font-size: 62.5%; }
 
   .login--main--text{
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 600;
     padding-bottom: 1rem;
   }
 
   .login--main--section{
-    padding: 7rem;
+    padding: 4rem 3rem 3rem 3rem;
   }
 }
 /* screen의 width가 480px 이상 1024px 이하일 때 적용 */
 
 @media screen and (min-width: 1024px) {
   .login--section{
-    padding: 8rem 0;
+    padding: 6rem 35rem;
   }
+
   .login--btn,
   .signup--btn{
-    width: 10rem;
+    width: 18rem;
     height: 3rem;
     font-size: 1.5rem;
     font-weight: 500;
   }
 
-  .login--btn{
-    margin-right: 0.9rem;
-  }
-
-  input{
+  .login--input input{
     width: 20rem;
     height: 3rem;
     font-size: 1.5rem;
@@ -142,6 +133,7 @@ html { font-size: 62.5%; }
     width: 20rem;
     height: 4.5rem;
     margin: 0.2rem;
+    cursor: pointer;
   }
 
   .line{
@@ -154,19 +146,14 @@ html { font-size: 62.5%; }
 
   .login--main--text{
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 600;
     padding-bottom: 1rem;
   }
 
   .login--main--section{
-    padding: 8rem;
+    padding: 6rem 2rem 5rem 2rem;
   }
 
-}
-
-
-a{
-  text-decoration: none;
 }
 
 button{
@@ -176,7 +163,7 @@ button{
   border-radius: 1rem;
 }
 
-input{
+.login--input input{
   background-color: var(--main-background);
   border: none;
   border-radius: 1rem;
@@ -191,11 +178,12 @@ input{
   align-items: center;
 }
 
-.login--btn--section{
-  display: flex;
+.login--btn--section,
+.signup--btn--section{
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .social--login--section{
@@ -216,4 +204,33 @@ input{
   display:flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.login--btn{
+  display:inline-block;
+}
+
+.signup--link{
+  display:flex;
+}
+
+.login--main--section{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login--form--section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text--input--section{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
