@@ -1,0 +1,161 @@
+@media screen and (max-width: 480px) {
+  .signup-form {
+    width: 30rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .signup-form .signup__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .signup-form .signup__hr {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .signup__info div input {
+    width: 20rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .signup__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    width: 6rem;
+    margin-right: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .signup__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .signup__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .signup-form {
+    width: 30rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .signup-form .signup__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .signup-form .signup__hr {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .signup__info div input {
+    width: 20rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .signup__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    width: 6rem;
+    margin-right: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .signup__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .signup__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .signup-form {
+    width: 40rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .signup-form .signup__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .signup-form .signup__hr {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .signup__info div input {
+    width: 25rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .signup__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    width: 6rem;
+    margin-right: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .signup__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .signup__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+}
