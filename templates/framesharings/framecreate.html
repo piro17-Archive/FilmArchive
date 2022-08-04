@@ -1,9 +1,17 @@
 {% extends 'users/main.html' %} {% block content %}
 <main>
+    {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+
     <form action="/framecreate" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <p>
-            사진 <input type="file" name="framephoto">
+            사진 <input type="file" name="framephoto"> *필수
         </p>
         <p>
             제목 <input type="text" name="frametitle" placeholder="프레임제목" />
