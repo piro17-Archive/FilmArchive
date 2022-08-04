@@ -3,6 +3,9 @@ from django.views import View
 
 from users.models import User
 from . import forms
+from users.forms import MyUpdateForm
+from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .models import User
@@ -77,3 +80,33 @@ def mypage(request):
         "users": users,
     }
     return render(request, "users/mypage.html", context=context)
+
+
+@login_required(login_url='login')
+def user_update(request):
+    if request.method == "POST":
+        form = MyUpdateForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('users:mypage')
+
+    else:
+        form = MyUpdateForm(instance=request.user)
+        args = {'form': form}
+        return render(request, 'users/user_update.html', args)
+
+
+@login_required(login_url='login')
+def change_pw(request):
+    if request.method == "POST":
+        form = PasswordChangeForm(data=request.POST, user=request.user)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            return redirect('users:mypage')
+        else:
+            return redirect('users:change_pw')
+    else:
+        form = PasswordChangeForm(user=request.user)
+        args = {'form':form}
+        return render(request, 'users/change_pw.html', args)
