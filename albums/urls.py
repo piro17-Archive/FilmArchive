@@ -11,4 +11,5 @@ urlpatterns = [
     path('albumcreate', views.albumcreate,name='albumcreate'),
     path('albumupdate/<int:id>', views.albumupdate,name='albumupdate'),
     path('albumdelete/<int:id>',views.albumdelete,name='albumdelete'),
+    path('albumdcalendar/<int:id>',views.albumcalendar,name='albumcalendar'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

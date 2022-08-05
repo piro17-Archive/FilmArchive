@@ -156,3 +156,11 @@ def albumdelete(request,id):
         Album.objects.filter(id=id).delete()
         userid = User.objects.get(id = request.user.id)
         return redirect(f"/album/{userid.id}")
+
+def albumcalendar(request,id):
+    userinfo = User.objects.get(id=id)
+    allalbum = userinfo.userFor.all()
+    context = {
+        "allalbum": allalbum,
+    }
+    return render(request, template_name='albums/albumcalendar.html',context=context)
