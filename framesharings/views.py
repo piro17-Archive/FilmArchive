@@ -22,6 +22,12 @@ def frame(request):
         
     likereq = request.GET.get('like',None)
     savereq = request.GET.get('save',None)
+    querykeyword = request.GET.get('sortkeyword',"None")
+    if querykeyword != "None":
+        frameinfo = Frame.objects.filter(framekeyword__id__contains=querykeyword)
+        querykeyword = int(querykeyword)
+    else:
+        frameinfo = Frame.objects.all()
     if likereq != None:
         sltframe = Frame.objects.filter(id = likereq)
         if request.user in sltframe[0].framelikeuser.all():
@@ -41,7 +47,8 @@ def frame(request):
         "frameinfo": frameinfo,
         "like": like,
         "save": save,
-        "keywordinfo": keywordinfo
+        "keywordinfo": keywordinfo,
+        "querykeyword": querykeyword
     }
 
     return render(request, template_name='framesharings/frame.html',context=context)

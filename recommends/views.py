@@ -8,10 +8,18 @@ def recommends(request):
         recommends = Recommend.objects.filter(title__contains=query)
     else:
         recommends = Recommend.objects.all()
+    
+    querykeyword = request.GET.get('sortkeyword',"None")
+    if querykeyword != "None":
+        recommends = Recommend.objects.filter(recKeyword__id__contains=querykeyword)
+        querykeyword = int(querykeyword)
+    else:
+        recommends = Recommend.objects.all()
 
     context = {
         "recommends":recommends,
-        "keywordinfo": keywordinfo
+        "keywordinfo": keywordinfo,
+        "querykeyword": querykeyword,
     }
     return render(request, template_name="recommends/rec_main.html", context=context)
 

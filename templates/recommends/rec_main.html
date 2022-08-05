@@ -7,6 +7,19 @@
     <input type="submit" value="검색" />
   </form>
   <a href="{% url 'recommends:rec_create' %}"><button>글 작성</button></a>
+  <div>
+    <form action="{% url 'recommends:recommend_list' %}">
+      <button name="sortkeyword" value="None">#HOME</button>
+      {% for keywordinfo in keywordinfo  %}
+      {% if  querykeyword == keywordinfo.id %}
+    <button name="sortkeyword" value="{{keywordinfo.id}}" style="background-color: black;">#{{keywordinfo.name}}</button>
+    {% else %}
+    <button name="sortkeyword" value="{{keywordinfo.id}}">#{{keywordinfo.name}}</button>
+    {% endif%}
+    {% endfor%}
+  </form>
+    
+  </div>
   {% for recommend in recommends %}
   <article>
     {% if recommend.recImage %}
