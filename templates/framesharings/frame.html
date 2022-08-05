@@ -14,6 +14,22 @@
       </div>
     </div>
 
+    
+    <div>
+      <form action="{% url 'framesharings:frame' %}">
+        <button name="sortkeyword" value="None">#HOME</button>
+        {% for keywordinfo in keywordinfo  %}
+        {% if  querykeyword == keywordinfo.id %}
+      <button name="sortkeyword" value="{{keywordinfo.id}}" style="background-color: black;">#{{keywordinfo.name}}</button>
+      {% else %}
+      <button name="sortkeyword" value="{{keywordinfo.id}}">#{{keywordinfo.name}}</button>
+      {% endif%}
+      {% endfor%}
+    </form>
+      
+    </div>
+   
+
     <div class="frame__box">
       {% for frameinfo in frameinfo %} {% if frameinfo.framepublic %} 
       {% if frameinfo.framephoto %}
