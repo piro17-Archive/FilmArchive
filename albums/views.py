@@ -9,11 +9,19 @@ from django.utils.dateformat import DateFormat
 
 def album(request,id):
     userinfo = User.objects.get(id=id)
+    allalbum = userinfo.userFor.all()
+    sort = request.GET.get('sort',None)
+    if sort == '1':
+        allalbum = userinfo.userFor.all().order_by('albumdate')
+        print(allalbum)
+    elif sort == '2':
+        allalbum = userinfo.userFor.all().order_by('-id')
+    
+
     query = request.GET.get('title', None)
     if query:
         allalbum = userinfo.userFor.filter(albummemo__contains=query)
-    else:
-        allalbum = userinfo.userFor.all()
+
     context = {
         "allalbum": allalbum,
     }
