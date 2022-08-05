@@ -1,3 +1,4 @@
+/* mypage */
 @media screen and (max-width: 475px) {
   .mypage__container {
     margin: 0 5rem;
@@ -222,5 +223,214 @@
 
   .mypage__right .mypage__storage-box .mypage__storage:last-child {
     margin-right: 0;
+  }
+}
+
+/* 회원 정보 수정 */
+@media screen and (max-width: 480px) {
+  .userupdate-form {
+    width: 30rem;
+    margin: 5rem auto;
+  }
+
+  .userupdate-form .userupdate__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .userupdate-form .userupdate__hr {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .userupdate-form .userupdate__hr-bottom {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0;
+  }
+
+  .userupdate__info p label {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    width: 6rem;
+    margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.3rem;
+  }
+
+  .userupdate__info p input {
+    width: 20rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .userupdate__info #id_password,
+  .userupdate__info .helptext {
+    display: none;
+  }
+
+  .userupdate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .userupdate__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+
+  .userupdate__pw-udpate {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .userupdate-form {
+    width: 35rem;
+    margin: 5rem auto;
+  }
+
+  .userupdate-form .userupdate__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .userupdate-form .userupdate__hr {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .userupdate-form .userupdate__hr-bottom {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0;
+  }
+
+
+  .userupdate__info p label {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    width: 6rem;
+    margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.3rem;
+  }
+
+  .userupdate__info p input {
+    width: 25rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .userupdate__info #id_password,
+  .userupdate__info .helptext {
+    display: none;
+  }
+
+  .userupdate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .userupdate__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+
+  .userupdate__pw-udpate {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .userupdate-form {
+    width: 45rem;
+    margin: 5rem auto;
+  }
+
+  .userupdate-form .userupdate__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .userupdate-form .userupdate__hr {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .userupdate-form .userupdate__hr-bottom {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0;
+  }
+
+  .userupdate__info p label {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    width: 6rem;
+    margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.3rem;
+  }
+
+  .userupdate__info p input {
+    width: 30rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+  }
+
+  .userupdate__info #id_password,
+  .userupdate__info .helptext {
+    display: none;
+  }
+
+  .userupdate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .userupdate__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+
+  .userupdate__pw-udpate {
+    text-align: center;
+    font-size: 1.2rem;
   }
 }
