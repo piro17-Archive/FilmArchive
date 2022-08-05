@@ -13,7 +13,6 @@ def album(request,id):
     sort = request.GET.get('sort',None)
     if sort == '1':
         allalbum = userinfo.userFor.all().order_by('albumdate')
-        print(allalbum)
     elif sort == '2':
         allalbum = userinfo.userFor.all().order_by('-id')
     
