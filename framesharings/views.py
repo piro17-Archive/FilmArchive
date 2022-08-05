@@ -1,11 +1,21 @@
+from itertools import count
 from django.shortcuts import render, redirect
 from requests import delete
 from .models import User, Keyword, Frame
 from .froms import PostFrame
 from django.contrib import messages
+from django.db.models import Count
 # Create your views here.
 
 def frame(request):
+    frameinfo = Frame.objects.all()
+    sort = request.GET.get('sort',None)
+    if sort == '1':
+        frameinfo = frameinfo.annotate(like_count= Count('framelikeuser')).order_by('-like_count')
+        print(frameinfo)
+    elif sort == '2':
+        frameinfo = Frame.objects.all().order_by('-id')
+        
     if request.user.is_authenticated:
         like = request.user.likeMany.all()
         save = request.user.saveMany.all()
@@ -17,8 +27,6 @@ def frame(request):
     query = request.GET.get('title', None)
     if query:
         frameinfo = Frame.objects.filter(frametitle__contains=query)
-    else:
-        frameinfo = Frame.objects.all()
         
     likereq = request.GET.get('like',None)
     savereq = request.GET.get('save',None)
@@ -26,8 +34,6 @@ def frame(request):
     if querykeyword != "None":
         frameinfo = Frame.objects.filter(framekeyword__id__contains=querykeyword)
         querykeyword = int(querykeyword)
-    else:
-        frameinfo = Frame.objects.all()
     if likereq != None:
         sltframe = Frame.objects.filter(id = likereq)
         if request.user in sltframe[0].framelikeuser.all():
