@@ -1,9 +1,11 @@
 {% extends 'users/main.html' %} {% block content %}
 <body>
+    <a href="{% url 'albums:albumcalendar' user.id %}">달력보기</a>
     <form action="{% url 'albums:album' user.id%}">
         <input type="search" name="title" placeholder="My 네 컷 앨범 메모검색" />
         <input type="submit" value="검색" />
       </form>
+
     <a href="/albumcreate">글 작성</a>
     {% for albuminfo in allalbum %}
     <p>{{albuminfo.albumdate}}</p>
