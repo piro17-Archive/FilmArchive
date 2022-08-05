@@ -6,7 +6,7 @@
       <div class="mypage__left">
         <img src="{% static 'image/profile.svg' %}" alt="프로필사진" />
         <div class="mypage__btn-box">
-          <div class="mypage__btn">회원정보 수정</div>
+          <a href="{% url 'users:user_update' %}"><div class="mypage__btn">회원정보 수정</div></a>
           <div class="mypage__btn">회원 탈퇴</div>
         </div>
       </div>

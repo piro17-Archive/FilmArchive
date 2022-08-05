@@ -13,4 +13,6 @@ urlpatterns = [
     path("signup/", views.sign_up, name="sign_up"),
     path("accounts/", include('allauth.urls')),
     path("mypage/", views.mypage, name="mypage"),
+    path("mypage/myupdate", views.user_update, name="user_update"),
+    path("mypage/changepw", views.change_pw, name="change_pw"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -61,7 +61,7 @@ def rec_update(request, id):
     if request.method == "POST":
         title = request.POST["title"]
         content = request.POST["content"]
-        Recommend.objects.filter(id=id).update(title= title, content=content)
+        Recommend.objects.filter(id=id).update(title=title, content=content)
         
         keywordoj = Recommend.objects.filter(id=id)[0]
         for i in range(1,len(keywordinfo)+1):
