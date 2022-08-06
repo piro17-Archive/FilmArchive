@@ -1,9 +1,5 @@
 /* frame */
 @media screen and (max-width: 640px) {
-  main {
-    height: 80vh;
-  }
-
   .frame__container {
     margin: 0 2rem;
   }
@@ -90,10 +86,6 @@
 }
 
 @media screen and (min-width: 640px) and (max-width: 1024px) {
-  main {
-    height: 100vh;
-  }
-
   .frame__container {
     margin: 0 6rem;
   }
@@ -163,10 +155,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-  main {
-    height: 100vh;
-  }
-
   .frame__container {
     margin: 0 10rem;
   }
@@ -238,10 +226,6 @@
 
 /* framecreate */
 @media screen and (max-width: 480px) {
-  main {
-    height: 80vh;
-  }
-  
   .framecreate-form {
     width: 30rem;
     margin: 0 auto;
@@ -314,10 +298,6 @@
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
-  main {
-    height: 100vh;
-  }
-  
   .framecreate-form {
     width: 40rem;
     margin: 0 auto;
@@ -383,10 +363,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-  main {
-    height: 100vh;
-  }
-
   .framecreate-form {
     width: 40rem;
     margin: 0 auto;
@@ -453,10 +429,6 @@
 
 /* framedetail */
 @media screen and (max-width: 480px) {
-  main {
-    height: 80vh;
-  }
-  
   .framedetail {
     width: 30rem;
     margin: 0 auto;
@@ -521,10 +493,6 @@
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
-  main {
-    height: 100vh;
-  }
-  
   .framedetail {
     width: 50rem;
     margin: 0 auto;
@@ -589,10 +557,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-  main {
-    height: 100vh;
-  }
-  
   .framedetail {
     width: 50rem;
     margin: 0 auto;
@@ -658,10 +622,6 @@
 
 /* frameupdate */
 @media screen and (max-width: 480px) {
-  main {
-    height: 80vh;
-  }
-  
   .frameupdate-form {
     width: 30rem;
     margin: 0 auto;
@@ -735,10 +695,6 @@
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
-  main {
-    height: 100vh;
-  }
-  
   .frameupdate-form {
     width: 40rem;
     margin: 0 auto;
@@ -804,10 +760,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-  main {
-    height: 100vh;
-  }
-
   .frameupdate-form {
     width: 40rem;
     margin: 0 auto;
