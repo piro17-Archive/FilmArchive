@@ -6,13 +6,17 @@
       <div class="albumupdate__title">My 네 컷 앨범 글 수정</div>
       <div class="albumupdate__hr"></div>
       <div class="albumupdate__info">
-        {% if albuminfo.albumphoto %} <span>이전 사진</span> {{albuminfo.albumphoto.url}}
-        <input type="checkbox" name="clearphoto" value="clearphoto" id="clearphoto"/><label for="clearphoto">clear</label>
-        {% endif %}
-        <input type="file" name="albumphoto" />
         <div>
+          <span>사진</span>
+          {% if albuminfo.albumphoto %} 
+          {{albuminfo.albumphoto.url}}
+          <input type="checkbox" name="clearphoto" value="clearphoto" id="clearphoto"/><label for="clearphoto">clear</label>
+          {% endif %}
+          <input type="file" name="albumphoto" />
+        </div>
+        <div>
+          <span>동영상</span> 
           {%if albuminfo.albumvideo %} 
-          <span>이전 동영상</span> 
           {{albuminfo.albumvideo.url}}
           <input
             type="checkbox"
