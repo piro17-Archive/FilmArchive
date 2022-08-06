@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1rem 0 3rem 0;
+    margin: 1rem 0;
   }
 
   .album__right {
@@ -110,6 +110,12 @@
     padding: 0.5rem;
     height: 100%;
   }
+
+  .album__one-box .album__photo-date {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1024px) {
@@ -180,14 +186,9 @@
     font-size: 1.2rem;
   }
 
-  .album__img img {
+  .album__img a img {
     width: 100%;
     height: 100%;
-  }
-
-  .album__albumtitle {
-    font-size: 1.15rem;
-    margin: 0.5rem 0;
   }
 
   .album__box {
@@ -200,6 +201,12 @@
   .album__one-box {
     padding: 0.5rem;
     height: 100%;
+  }
+
+  .album__one-box .album__photo-date {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -293,6 +300,12 @@
     padding: 0.5rem;
     height: 100%;
   }
+
+  .album__one-box .album__photo-date {
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .calendar__btn{
@@ -305,6 +318,212 @@
 }
 
 /* albumcreate */
+@media screen and (max-width: 480px) {
+  .albumcreate-form {
+    width: 30rem;
+    margin: 0 auto;
+    padding: 5rem 0;
+  }
+
+  .albumcreate-form .albumcreate__title {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .albumcreate-form .albumcreate__hr {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .albumcreate__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.3rem;
+    width: 6rem;
+  }
+  
+  .albumcreate__info div input {
+    width: 20rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .albumcreate__info div input[type="checkbox"] {
+    width: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .albumcreate__info div input[type="text"] {
+    width: 20rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .albumcreate__info div textarea{
+    background-color: var(--main-background);
+    border: none;
+    border-radius: 1rem;
+    width: 20rem;
+    padding: 1rem;
+  }
+
+  .albumcreate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .albumcreate__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 0;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .albumcreate-form {
+    width: 40rem;
+    margin: 0 auto;
+    padding: 5rem 0;
+  }
+
+  .albumcreate-form .albumcreate__title {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .albumcreate-form .albumcreate__hr {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .albumcreate__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    font-size: 1.3rem;
+    margin: 0 1.5rem 1.5rem 0;
+  }
+  
+  .albumcreate__info div input {
+    margin-bottom: 1.5rem;
+  }
+
+  .albumcreate__info div input[type="text"] {
+    width: 30rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .albumcreate__info div textarea{
+    background-color: var(--main-background);
+    border: none;
+    border-radius: 1rem;
+    width: 30rem;
+    padding: 1rem;
+  }
+
+  .albumcreate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .albumcreate__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .albumcreate-form {
+    width: 40rem;
+    margin: 0 auto;
+    padding: 5rem 0;
+  }
+
+  .albumcreate-form .albumcreate__title {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .albumcreate-form .albumcreate__hr {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .albumcreate__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.3rem;
+  }
+  
+  .albumcreate__info div input {
+    margin-bottom: 1.5rem;
+  }
+
+  .albumcreate__info div input[type="text"] {
+    width: 30rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .albumcreate__info div textarea{
+    background-color: var(--main-background);
+    border: none;
+    border-radius: 1rem;
+    width: 30rem;
+    padding: 1rem;
+  }
+
+  .albumcreate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .albumcreate__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+}
+
+/* albumdetail */
 @media screen and (max-width: 480px) {
   .albumcreate-form {
     width: 30rem;

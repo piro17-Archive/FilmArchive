@@ -11,6 +11,7 @@
     padding: 0 5%;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     background: white;
+    z-index: 1;
   }
 
   .main__navbar a {
@@ -59,6 +60,7 @@
     padding: 0 5%;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     background: white;
+    z-index: 1;
   }
 
   .main__navbar {
@@ -111,6 +113,7 @@
     padding: 0 5%;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     background: white;
+    z-index: 1;
   }
 
   .main__navbar a {
