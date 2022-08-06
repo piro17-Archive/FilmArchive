@@ -690,7 +690,7 @@
   }
   
   .frameupdate__info div input {
-    width: 20rem;
+    width: 25rem;
     margin-bottom: 1.5rem;
   }
 
@@ -700,7 +700,7 @@
   }
 
   .frameupdate__info div input[type="text"] {
-    width: 20rem;
+    width: 25rem;
     height: 3.2rem;
     font-size: 1.3rem;
     border-radius: 1rem;
@@ -767,7 +767,7 @@
   }
 
   .frameupdate__info div input[type="text"] {
-    width: 25rem;
+    width: 30rem;
     height: 3.2rem;
     font-size: 1.3rem;
     border-radius: 1rem;
@@ -781,7 +781,7 @@
     background-color: var(--main-background);
     border: none;
     border-radius: 1rem;
-    width: 25rem;
+    width: 30rem;
     padding: 1rem;
   }
 
@@ -833,7 +833,7 @@
   }
 
   .frameupdate__info div input[type="text"] {
-    width: 25rem;
+    width: 30rem;
     height: 3.2rem;
     font-size: 1.3rem;
     border-radius: 1rem;
@@ -847,7 +847,7 @@
     background-color: var(--main-background);
     border: none;
     border-radius: 1rem;
-    width: 25rem;
+    width: 30rem;
     padding: 1rem;
   }
 
