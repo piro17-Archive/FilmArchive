@@ -1,7 +1,7 @@
 @media screen and (max-width: 480px) {
   .signup-form {
     width: 30rem;
-    margin: 0 auto;
+    margin: 1rem auto;
     text-align: center;
     padding: 5rem 1rem;
   }
@@ -56,7 +56,7 @@
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .signup-form {
     width: 40rem;
-    margin: 0 auto;
+    margin: 1rem auto;
     text-align: center;
     padding: 5rem 0;
   }
@@ -111,7 +111,7 @@
 @media screen and (min-width: 1024px) {
   .signup-form {
     width: 50rem;
-    margin: 0 auto;
+    margin: 1rem auto;
     text-align: center;
     padding: 5rem 0;
   }

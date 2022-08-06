@@ -7,7 +7,7 @@
   .frame__title {
     font-size: 1.8rem;
     font-weight: 800;
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
   }
 
   .frame__flex-box {
@@ -30,11 +30,17 @@
     margin-bottom: 1rem;
   }
 
+  .frame__sort form {
+    width: 100%;
+  }
+
   .frame__sort select{
     align-items: flex-end;
     border-radius: 1rem;
-    padding: 0.2rem 0.5rem;
+    padding: 0.5rem 0.5rem;
     font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
   }
 
   .frame__search {
@@ -675,7 +681,7 @@
 
   .frameupdate-form .frameupdate__hr {
     background-color: var(--main-red);
-    height: 0.1rem;
+    height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
 
@@ -749,7 +755,7 @@
 
   .frameupdate-form .frameupdate__hr {
     background-color: var(--main-red);
-    height: 0.1rem;
+    height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
 
@@ -815,7 +821,7 @@
 
   .frameupdate-form .frameupdate__hr {
     background-color: var(--main-red);
-    height: 0.1rem;
+    height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
 
