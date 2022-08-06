@@ -1,0 +1,159 @@
+@media screen and (max-width: 480px) {
+  .limited--container{
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .limited--title {
+    font-size: 1.8rem;
+  }
+  
+  .more--text{
+    font-size: 1.2rem;
+  }
+
+  .arrow-icon{
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .company--name{
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  .limited-frame--section{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 0.5rem;
+  }
+
+  .limited-frame--section img{
+    height: 20rem;
+  }
+
+  .limited-frame--section a:nth-last-child(1){
+    display:none;
+  }
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 1024px){
+  .limited--container{
+    margin: 4rem 6rem;
+  }
+
+  .limited--title {
+    font-size: 2rem;
+  }
+
+  .more--text{
+    font-size: 1.4rem;
+  }
+
+  .arrow-icon{
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .company--name{
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  .limited-frame--section{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 0.5rem;
+  }
+  
+  .limited-frame--section img{
+    height: 23rem;
+  }
+  
+}
+
+@media screen and (min-width: 1024px) {
+  .limited--container{
+    margin: 4rem 6rem;
+  }
+
+  .limited--title {
+    font-size: 2rem;
+  }
+
+  .more--text{
+    font-size: 1.4rem;
+  }
+
+  .arrow-icon{
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .company--name{
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  .limited-frame--section{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 0.5rem;
+  }
+  
+  .limited-frame--section img{
+    height: 25rem;
+  }
+}
+
+
+/* 공통 */
+.limited--container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.limited--title {
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  width: 100%;  
+  text-align: center;
+}
+
+.per-company{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin-bottom: 5rem;
+}
+
+.company--header{
+  display: flex;
+  width: 100%;
+  justify-content : space-between;
+}
+
+.more--link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line{
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.limited-frame--section a{
+  text-align: center;
+  background-color: rgb(247, 247, 247);
+}
