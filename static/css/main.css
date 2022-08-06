@@ -141,11 +141,9 @@
   }
 
   .main__navbar .main__right ul li {
-    margin-right: 1rem;
     text-align: center;
-    width: 100%;
     line-height: 1.4rem;
-    padding-left: 1.5rem;
+    width: 100%;
   }
 
   .main__navbar .main__right .main__user {
