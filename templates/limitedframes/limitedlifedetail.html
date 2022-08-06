@@ -1,0 +1,8 @@
+{% extends 'users/main.html' %} {% block content %}
+   
+
+        <img src="{{ lifeframeinfo.lifephotourl }}" style="height: 300px; width: 100px" alt="">
+    <span>{{lifeframeinfo.lifecontext}}</span>
+    
+    <a href="{%url 'limitedframes:limitedlife' %}">뒤로가기</a>
+{% endblock content %}
