@@ -1,35 +1,65 @@
-{% extends 'users/main.html' %} {% block content %}
-<body>
-    <a href="{% url 'albums:albumcalendar' user.id %}">달력보기</a>
-    <div>
-    <form action="{% url 'albums:album' user.id%}" >
-        <select name="sort" onchange="this.form.submit()">
-            <option selected="selected"  value="none">--정렬기준--</option>
-            <option value="1">날짜순</option>
-            <option value="2">최신순</option>
-        </select>
-    </form>
-    </div>
-    <form action="{% url 'albums:album' user.id%}">
-        <input type="search" name="title" placeholder="My 네 컷 앨범 메모검색" />
-        <input type="submit" value="검색" />
-      </form>
-
-    <a href="/albumcreate">글 작성</a>
-    {% for albuminfo in allalbum %}
-    <p>{{albuminfo.albumdate}}</p>
-    <p>
-        사진
-        {% if albuminfo.albumphoto %}
-        <a href="/albumdetail/{{albuminfo.id}}">
-        <img src="{{ albuminfo.albumphoto.url }}" alt=""></a>
-        {% else %}
-        <a href="/albumdetail/{{albuminfo.id}}"><div>사진이없습니다.</div></a>
-        {% endif %}
-    </p>
-    <p>종류 | {{albuminfo.albumtype.name}}</p>
-    <p>위치 | {{albuminfo.albumlocation}}</p>
-    <p>메모 | {{albuminfo.albummemo}}</p>
-    {% endfor %}
-</body>
+{% extends 'users/main.html' %} {% block content %} {% load static %}
+<main>
+  <div class="album--container">
+      <div class="album--head--section">
+          <div class="head--left">
+              <span class="album--title">My 네 컷 앨범</span>
+              <a href="{% url 'albums:albumcalendar' user.id %}" class="calendar--section">
+                  <button class="calendar--btn">
+                      <img src="{% static 'image/calendar.svg' %}">
+                  </button>
+              </a>
+          </div>
+          <div class="head--right">
+              <div class="sort--album">
+                  <form action="{% url 'albums:album' user.id %}" >
+                      <select name="sort" onchange="this.form.submit()">
+                          <option selected="selected"  value="none">정렬기준</option>
+                          <option value="1">인기순</option>
+                          <option value="2">최신순</option>
+                      </select>
+                  </form>
+              </div>
+              <div class="album--search">
+                  <form action="{% url 'albums:album' user.id%}">
+                      <input type="search" name="title" placeholder="메모로 검색" />
+                      <img src="{% static 'image/glass.svg' %}" class="glass--icon">
+                      <!-- <input type="submit" value="검색" class="album--search--btn" /> -->
+                  </form>
+              </div>
+              <a href="/albumcreate"><div class="album--create">글 작성</div></a>
+          </div>
+      </div>
+      <div class="album--grid--section">
+          {% for albuminfo in allalbum %}
+          <div class="album--one--box">
+              <span class="album--photo--date">{{albuminfo.albumdate}}</span>
+              <div class="album--photo--section">
+                  {% if albuminfo.albumphoto %}
+                  <a href="/albumdetail/{{albuminfo.id}}" class="album--photo--id">
+                      <img src="{{ albuminfo.albumphoto.url }}" class="album--photo">
+                  </a>
+                  {% else %}
+                  <a href="/albumdetail/{{albuminfo.id}}" class="album--photo--id">
+                      <span class="photo--none">사진이 존재하지 않습니다.</span>
+                  </a>
+                  {% endif %}
+              </div>
+              <div class="photo--type">
+                  <span class="photo—text">종류</span>
+                  <span class="save—type"> {{albuminfo.albumtype.name}}</span>
+              </div>
+              <div class="photo—location">
+                  <span class="photo—text">위치</span>
+                  <span class="save—location">{{albuminfo.albumlocation}}</span>
+              </div>
+              <div class="photo—memo">
+                  <span class="photo—text">메모</span>
+                  <span class="save—memo">{{albuminfo.albummemo}}</span>
+              </div>
+              {% endfor %}
+          </div>
+      </div>
+  </div>
+</main>
 {% endblock content %}
