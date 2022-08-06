@@ -1,15 +1,19 @@
 /* nav */
 @media screen and (max-width: 475px) {
   .main__navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 12rem;
-    margin: 0 2rem;
+    padding: 0 5%;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   }
 
   .main__navbar a {
-    color: var(--main-red);
+    font-weight: 800;
   }
 
   .main__navbar .main__left {
@@ -20,6 +24,7 @@
   .main__navbar .main__left .main__logo {
     font-weight: 800;
     font-size: 2.2rem;
+    color: var(--main-red);
   }
 
   .main__navbar .main__right {
@@ -43,26 +48,34 @@
 
 @media screen and (min-width: 475px) and (max-width: 1024px) {
   .main__navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10rem;
-    margin: 0 3.5rem;
+    padding: 0 5%;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .main__navbar {
+    font-weight: 80;
   }
 
   .main__navbar a {
-    color: var(--main-red);
+    font-weight: 800;
   }
 
   .main__navbar .main__left {
-    width: 25%;
     text-align: center;
+    width: 25%;
   }
 
   .main__navbar .main__left .main__logo {
     font-weight: 800;
-    font-size: 2.3rem;
-    text-align: center;
+    font-size: 2.5rem;
+    color: var(--main-red);
   }
 
   .main__navbar .main__right {
@@ -86,28 +99,39 @@
 
 @media screen and (min-width: 1024px) {
   .main__navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10rem;
-    margin: 0 5rem;
+    padding: 0 5%;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   }
 
   .main__navbar a {
+    font-weight: 800;
+    line-height: 1.3em;
+  }
+
+  .main__navbar a:hover {
     color: var(--main-red);
+    transition: 0.2s;
   }
 
   .main__navbar .main__left {
-    width: 25%;
+    width: 40%;
   }
 
   .main__navbar .main__left .main__logo {
     font-weight: 800;
     font-size: 2.8rem;
+    color: var(--main-red);
   }
 
   .main__navbar .main__right {
-    width: 75%;
+    width: 60%;
     font-size: 1.5rem;
   }
 
