@@ -374,6 +374,7 @@ footer {
 
 .main__navbar-list ul {
   position: fixed;
+  z-index: 999;
   top: 10rem;
   width: 100%;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
