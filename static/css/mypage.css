@@ -1,7 +1,9 @@
+/* mypage */
 @media screen and (max-width: 475px) {
   .mypage__container {
     margin: 0 5rem;
     height: 100vh;
+    padding: 4rem 0;
   }
 
   .mypage__title {
@@ -62,7 +64,7 @@
     background: var(--main-red);
     border-color: var(--main-red);
     margin: 1.5rem 0 3.5rem 0;
-    height: 1px;
+    height: 0.15rem;
   }
 
   .mypage__right .mypage__storage-box {
@@ -81,6 +83,7 @@
   .mypage__container {
     margin: 0 7rem;
     height: 80vh;
+    padding: 4rem 0;
   }
 
   .mypage__title {
@@ -126,7 +129,7 @@
     background: var(--main-red);
     border-color: var(--main-red);
     margin: 1rem 0 3rem 0;
-    height: 1px;
+    height: 0.15rem;
   }
 
   .mypage__right {
@@ -155,10 +158,11 @@
   .mypage__container {
     margin: 0 12rem;
     height: 80vh;
+    padding: 4rem 0;
   }
 
   .mypage__title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 800;
     margin: 2rem 0 5rem 0;
   }
@@ -200,7 +204,7 @@
     background: var(--main-red);
     border-color: var(--main-red);
     margin: 1.5rem 0 3.5rem 0;
-    height: 1px;
+    height: 0.15rem;
   }
 
   .mypage__right {
@@ -222,5 +226,217 @@
 
   .mypage__right .mypage__storage-box .mypage__storage:last-child {
     margin-right: 0;
+  }
+}
+
+/* 회원 정보 수정 */
+@media screen and (max-width: 480px) {
+  .userupdate-form {
+    width: 30rem;
+    margin: 1rem auto;
+    padding: 5rem 0;
+  }
+
+  .userupdate-form .userupdate__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .userupdate-form .userupdate__hr {
+    background-color: var(--main-red);
+    height: 0.15rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .userupdate-form .userupdate__hr-bottom {
+    background-color: var(--main-red);
+    height: 0.15rem;
+    margin: 2rem 0;
+  }
+
+  .userupdate__info p label {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    width: 6rem;
+    margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.3rem;
+  }
+
+  .userupdate__info p input {
+    width: 20rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .userupdate__info #id_password,
+  .userupdate__info .helptext {
+    display: none;
+  }
+
+  .userupdate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .userupdate__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+
+  .userupdate__pw-udpate {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .userupdate-form {
+    width: 35rem;
+    margin: 1rem auto;
+    padding: 5rem 0;
+  }
+
+  .userupdate-form .userupdate__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .userupdate-form .userupdate__hr {
+    background-color: var(--main-red);
+    height: 0.15rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .userupdate-form .userupdate__hr-bottom {
+    background-color: var(--main-red);
+    height: 0.15rem;
+    margin: 2rem 0;
+  }
+
+
+  .userupdate__info p label {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    width: 6rem;
+    margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.3rem;
+  }
+
+  .userupdate__info p input {
+    width: 25rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .userupdate__info #id_password,
+  .userupdate__info .helptext {
+    display: none;
+  }
+
+  .userupdate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .userupdate__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+
+  .userupdate__pw-udpate {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .userupdate-form {
+    width: 45rem;
+    margin: 1rem auto;
+    padding: 5rem 0;
+  }
+
+  .userupdate-form .userupdate__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .userupdate-form .userupdate__hr {
+    background-color: var(--main-red);
+    height: 0.15rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .userupdate-form .userupdate__hr-bottom {
+    background-color: var(--main-red);
+    height: 0.15rem;
+    margin: 2rem 0;
+  }
+
+  .userupdate__info p label {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    width: 6rem;
+    margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.3rem;
+  }
+
+  .userupdate__info p input {
+    width: 30rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+  }
+
+  .userupdate__info #id_password,
+  .userupdate__info .helptext {
+    display: none;
+  }
+
+  .userupdate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .userupdate__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+
+  .userupdate__pw-udpate {
+    text-align: center;
+    font-size: 1.2rem;
   }
 }

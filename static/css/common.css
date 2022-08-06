@@ -28,3 +28,7 @@ img,
 button {
   cursor: pointer;
 }
+
+main {
+  padding-top: 8rem;
+}

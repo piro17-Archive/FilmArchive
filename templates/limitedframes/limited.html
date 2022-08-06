@@ -1,0 +1,45 @@
+{% extends 'users/main.html' %} {% block content %} {% load static%}
+  <main>
+    <div class="limited--container">
+      <div class="limited--title">한정판 프레임</div>
+      <div class="lifefourcut--section per-company">
+        <div class="company--header">
+          <span class="company--name">인생네컷</span> 
+          <a href="{%url 'limitedframes:limitedlife' %}" class="more--link">
+            <span class="more--text">더보기</span>
+            <img src="{% static 'image/chevron-right.svg' %}" class="arrow-icon">
+          </a>
+        </div>
+        <div class="line"></div>
+        <div class="limited-frame--section">
+          {% for lifeframeinfo in lifeframeinfo %} 
+          <a href="{% url 'limitedframes:limitedlifedetail' lifeframeinfo.id %}">
+            <img src="{{ lifeframeinfo.lifephotourl }}" alt=""></a>
+            {% endfor %}
+        </div>
+      </div>
+
+      <div class="photoism--section per-company">
+        <div class="company--header">
+          <span class="company--name">포토이즘</span> 
+          <a href="{%url 'limitedframes:limitedlife' %}" class="more--link">
+            <span class="more--text">더보기</span>
+            <img src="{% static 'image/chevron-right.svg' %}" class="arrow-icon">
+          </a>
+        </div>
+        <div class="line"></div>
+      </div>
+
+      <div class="phogosignature--section per-company">
+        <div class="company--header">
+          <span class="company--name">포토시그니처</span> 
+          <a href="{%url 'limitedframes:limitedlife' %}" class="more--link">
+            <span class="more--text">더보기</span>
+            <img src="{% static 'image/chevron-right.svg' %}" class="arrow-icon">
+          </a>
+        </div>
+        <div class="line"></div>  
+      </div>
+    </div>
+  </main>
+{% endblock content %}

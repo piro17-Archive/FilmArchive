@@ -32,7 +32,7 @@
 
   .line {
     width: 30rem;
-    height: 0.2rem;
+    height: 0.15rem;
     background-color: var(--main-red);
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -83,7 +83,7 @@
 
   .line {
     width: 40rem;
-    height: 0.2rem;
+    height: 0.15rem;
     background-color: var(--main-red);
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -135,7 +135,7 @@
 
   .line {
     width: 60rem;
-    height: 0.2rem;
+    height: 0.15rem;
     background-color: var(--main-red);
     margin-bottom: 1rem;
     margin-top: 1rem;

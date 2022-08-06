@@ -1,40 +1,47 @@
-/* frame */
+/* album */
 @media screen and (max-width: 600px) {
-  .frame__container {
+  .album__container {
     margin: 3rem 7%;
   }
 
-  .frame__title {
-    font-size: 1.8rem;
-    font-weight: 800;
-    margin-bottom: 2.5rem;
+  .album__left {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
-  .frame__flex-box {
+  .album__title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    margin-right: 1rem;
+  }
+
+  .album__flex-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1rem 0 3rem 0;
+    margin: 1rem 0;
   }
 
-  .frame__right {
+  .album__right {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
 
-  .frame__sort {
+  .album__sort {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     margin-bottom: 1rem;
   }
 
-  .frame__sort form {
+  .album__sort form {
     width: 100%;
   }
 
-  .frame__sort select{
+  .album__sort select{
     align-items: flex-end;
     border-radius: 1rem;
     padding: 0.5rem 0.5rem;
@@ -43,18 +50,25 @@
     text-align: center;
   }
 
-  .frame__search {
+  .album__search {
     width: 100%;
     margin-bottom: 1rem;
+    position: relative;
   }
 
-  .frame__search form {
+  .album__search form {
     display: flex;
     justify-content: center;
     width: 100%;
   }
 
-  .frame__search form input {
+  .album__search .glass__icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+  }
+
+  .album__search form input {
     background-color: var(--main-skin);
     border: none;
     padding: 0.7rem;
@@ -62,12 +76,12 @@
     width: 100%;
   }
 
-  .frame__create {
+  .album__create {
     width: 100%;
     text-align: center;
   }
 
-  .frame__right a {
+  .album__right a {
     background: var(--main-red);
     color: white;
     border-radius: 1rem;
@@ -75,156 +89,188 @@
     font-size: 1.2rem;
   }
 
-  .frame__img img {
+  .album__img img {
     width: 100%;
     height: 100%;
   }
 
-  .frame__frametitle {
+  .album__albumtitle {
     font-size: 1.15rem;
     margin: 0.5rem 0;
   }
 
-  .frame__box {
+  .album__box {
     display: grid;
     grid-template-columns: repeat(2, 50%);
     grid-gap: 1rem;
     justify-content: center;
   }
 
-  .frame__one-box {
+  .album__one-box {
     padding: 0.5rem;
     height: 100%;
+  }
+
+  .album__one-box .album__photo-date {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
   }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1024px) {
-  .frame__container {
+  .album__container {
     margin: 4rem 6rem;
   }
 
-  .frame__flex-box {
+  .album__flex-box {
     display: flex;
     margin: 1rem 0 3rem 0;
   }
 
-  .frame__title {
-    font-size: 2rem;
-    font-weight: 800;
+  .album__left {
+    display: flex;
+    align-items: center;
     width: 30%;
   }
 
-  .frame__right {
+  .album__left .album__title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-right: 1rem;
+  }
+
+  .album__right {
     display: flex;
     align-items: center;
     justify-content: right;
     width: 70%;
   }
 
-  .frame__right .frame__sort {
+  .album__right .album__sort {
     margin-right: 0.5rem;
   }
 
-  .frame__right .frame__sort select{
+  .album__right .album__sort select{
     border-radius: 1rem;
     padding: 0.5rem;
   }
 
-  .frame__right .frame__search {
+  .album__right .album__search {
     margin-right: 0.5rem;
+    position: relative;
   }
 
-  .frame__right .frame__search input {
+  .album__search .glass__icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+  }
+
+  .album__right .album__search input {
     background-color: var(--main-skin);
     border: none;
     padding: 0.7rem;
     border-radius: 1rem;
   }
 
-  .frame__right .frame__create {
+  .album__right .album__create {
     margin-bottom: 0;
   }
 
-  .frame__create {
+  .album__create {
     background: var(--main-red);
     color: white;
     border-radius: 1rem;
     padding: 0.7rem 1rem;
     font-size: 1.2rem;
-    font-weight: 800;
   }
 
-  .frame__img img {
+  .album__img a img {
     width: 100%;
     height: 100%;
   }
 
-  .frame__frametitle {
-    font-size: 1.15rem;
-    margin: 0.5rem 0;
-  }
-
-  .frame__box {
+  .album__box {
     display: grid;
     grid-template-columns: repeat(3, 33%);
     grid-gap: 2rem;
     justify-content: center;
   }
 
-  .frame__one-box {
+  .album__one-box {
     padding: 0.5rem;
     height: 100%;
+  }
+
+  .album__one-box .album__photo-date {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .frame__container {
+  .album__container {
     margin: 4rem 6rem;
   }
 
-  .frame__flex-box {
+  .album__flex-box {
     display: flex;
     margin: 1rem 0 3rem 0;
   }
 
-  .frame__title {
-    font-size: 2rem;
-    font-weight: 800;
-    width: 70%;
+  .album__left {
+    display: flex;
+    align-items: center;
+    width: 30%;
   }
 
-  .frame__right {
+  .album__left .album__title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-right: 1rem;
+  }
+
+  .album__right {
     display: flex;
     align-items: center;
     justify-content: right;
-    width: 60%;
+    width: 70%;
   }
 
-  .frame__right .frame__sort {
+  .album__right .album__sort {
     margin-right: 0.5rem;
   }
 
-  .frame__right .frame__sort select{
+  .album__right .album__sort select{
     border-radius: 1rem;
     padding: 0.5rem;
   }
 
-  .frame__right .frame__search {
+  .album__right .album__search {
     margin-right: 0.5rem;
+    position: relative;
   }
 
-  .frame__right .frame__search input {
+  .album__right .album__search .glass__icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+  }
+
+  .album__right .album__search input {
     background-color: var(--main-skin);
     border: none;
     padding: 0.7rem;
     border-radius: 1rem;
   }
 
-  .frame__right .frame__create {
+  .album__right .album__create {
     margin-bottom: 0;
   }
 
-  .frame__create {
+  .album__create {
     background: var(--main-red);
     color: white;
     border-radius: 1rem;
@@ -233,38 +279,53 @@
     font-weight: 800;
   }
 
-  .frame__img img {
+  .album__img img {
     width: 100%;
     height: 100%;
   }
 
-  .frame__frametitle {
+  .album__albumtitle {
     font-size: 1.15rem;
     margin: 0.5rem 0;
   }
 
-  .frame__box {
+  .album__box {
     display: grid;
     grid-template-columns: repeat(3, 33%);
     grid-gap: 2rem;
     justify-content: center;
   }
 
-  .frame__one-box {
+  .album__one-box {
     padding: 0.5rem;
     height: 100%;
   }
+
+  .album__one-box .album__photo-date {
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+  }
 }
 
-/* framecreate */
+.calendar__btn{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: transparent;
+  border: 1px solid var(--main-red);
+}
+
+/* albumcreate */
 @media screen and (max-width: 480px) {
-  .framecreate-form {
+  .albumcreate-form {
     width: 30rem;
     margin: 0 auto;
     padding: 5rem 0;
   }
 
-  .framecreate-form .framecreate__title {
+  .albumcreate-form .albumcreate__title {
     width: 100%;
     font-size: 2rem;
     text-align: center;
@@ -272,13 +333,13 @@
     margin-bottom: 2rem;
   }
 
-  .framecreate-form .framecreate__hr {
+  .albumcreate-form .albumcreate__hr {
     background-color: var(--main-red);
     height: 0.1rem;
     margin: 2rem 0 4rem 0;
   }
 
-  .framecreate__info div span {
+  .albumcreate__info div span {
     display: inline-block;
     text-align: center;
     line-height: 1.4rem;
@@ -287,17 +348,17 @@
     width: 6rem;
   }
   
-  .framecreate__info div input {
+  .albumcreate__info div input {
     width: 20rem;
     margin-bottom: 1.5rem;
   }
 
-  .framecreate__info div input[type="checkbox"] {
+  .albumcreate__info div input[type="checkbox"] {
     width: 1.5rem;
     margin-bottom: 0;
   }
 
-  .framecreate__info div input[type="text"] {
+  .albumcreate__info div input[type="text"] {
     width: 20rem;
     height: 3.2rem;
     font-size: 1.3rem;
@@ -308,7 +369,7 @@
     padding: 1rem;
   }
 
-  .framecreate__info div textarea{
+  .albumcreate__info div textarea{
     background-color: var(--main-background);
     border: none;
     border-radius: 1rem;
@@ -316,12 +377,12 @@
     padding: 1rem;
   }
 
-  .framecreate__btn-box {
+  .albumcreate__btn-box {
     text-align: center;
     margin: 2rem 0;
   }
 
-  .framecreate__btn {
+  .albumcreate__btn {
     background: var(--main-red);
     border: none;
     border-radius: 1rem;
@@ -331,13 +392,13 @@
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
-  .framecreate-form {
+  .albumcreate-form {
     width: 40rem;
     margin: 0 auto;
     padding: 5rem 0;
   }
 
-  .framecreate-form .framecreate__title {
+  .albumcreate-form .albumcreate__title {
     width: 100%;
     font-size: 2rem;
     text-align: center;
@@ -345,13 +406,13 @@
     margin-bottom: 2rem;
   }
 
-  .framecreate-form .framecreate__hr {
+  .albumcreate-form .albumcreate__hr {
     background-color: var(--main-red);
     height: 0.1rem;
     margin: 2rem 0 4rem 0;
   }
 
-  .framecreate__info div span {
+  .albumcreate__info div span {
     display: inline-block;
     text-align: center;
     line-height: 1.4rem;
@@ -359,11 +420,11 @@
     margin: 0 1.5rem 1.5rem 0;
   }
   
-  .framecreate__info div input {
+  .albumcreate__info div input {
     margin-bottom: 1.5rem;
   }
 
-  .framecreate__info div input[type="text"] {
+  .albumcreate__info div input[type="text"] {
     width: 30rem;
     height: 3.2rem;
     font-size: 1.3rem;
@@ -374,7 +435,7 @@
     padding: 1rem;
   }
 
-  .framecreate__info div textarea{
+  .albumcreate__info div textarea{
     background-color: var(--main-background);
     border: none;
     border-radius: 1rem;
@@ -382,12 +443,12 @@
     padding: 1rem;
   }
 
-  .framecreate__btn-box {
+  .albumcreate__btn-box {
     text-align: center;
     margin: 2rem 0;
   }
 
-  .framecreate__btn {
+  .albumcreate__btn {
     background: var(--main-red);
     border: none;
     border-radius: 1rem;
@@ -397,13 +458,13 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .framecreate-form {
+  .albumcreate-form {
     width: 40rem;
     margin: 0 auto;
     padding: 5rem 0;
   }
 
-  .framecreate-form .framecreate__title {
+  .albumcreate-form .albumcreate__title {
     width: 100%;
     font-size: 2rem;
     text-align: center;
@@ -411,13 +472,13 @@
     margin-bottom: 2rem;
   }
 
-  .framecreate-form .framecreate__hr {
+  .albumcreate-form .albumcreate__hr {
     background-color: var(--main-red);
     height: 0.1rem;
     margin: 2rem 0 4rem 0;
   }
 
-  .framecreate__info div span {
+  .albumcreate__info div span {
     display: inline-block;
     text-align: center;
     line-height: 1.4rem;
@@ -425,11 +486,11 @@
     font-size: 1.3rem;
   }
   
-  .framecreate__info div input {
+  .albumcreate__info div input {
     margin-bottom: 1.5rem;
   }
 
-  .framecreate__info div input[type="text"] {
+  .albumcreate__info div input[type="text"] {
     width: 30rem;
     height: 3.2rem;
     font-size: 1.3rem;
@@ -440,7 +501,7 @@
     padding: 1rem;
   }
 
-  .framecreate__info div textarea{
+  .albumcreate__info div textarea{
     background-color: var(--main-background);
     border: none;
     border-radius: 1rem;
@@ -448,12 +509,12 @@
     padding: 1rem;
   }
 
-  .framecreate__btn-box {
+  .albumcreate__btn-box {
     text-align: center;
     margin: 2rem 0;
   }
 
-  .framecreate__btn {
+  .albumcreate__btn {
     background: var(--main-red);
     border: none;
     border-radius: 1rem;
@@ -462,15 +523,15 @@
   }
 }
 
-/* framedetail */
+/* albumdetail */
 @media screen and (max-width: 480px) {
-  .framedetail {
+  .albumdetail {
     width: 30rem;
     margin: 0 auto;
     padding: 5rem 0;
   }
 
-  .framedetail__title {
+  .albumdetail__title {
     width: 100%;
     font-size: 2rem;
     text-align: center;
@@ -478,32 +539,32 @@
     margin-bottom: 2rem;
   }
 
-  .framedetail__hr {
+  .albumdetail__hr {
     background-color: var(--main-red);
     height: 0.1rem;
     margin: 2rem 0;
   }
 
-  .framedetail__frametitle {
+  .albumdetail__albumtitle {
     font-size: 1.5rem;
     text-align: center;
   }
 
-  .framedetail__img img{
+  .albumdetail__img img{
     width: 100%;
     height: auto;
   }
 
-  .framedetail__memo {
+  .albumdetail__memo {
     font-size: 1.4rem;
     margin: 2rem 0;
   }
 
-  .framedetail__btn-box {
+  .albumdetail__btn-box {
     display: flex;
   }
 
-  .framedetail__btn-box .framedetail__update {
+  .albumdetail__btn-box .albumdetail__update {
     border: 1px solid var(--main-red);
     width: 7rem;
     padding: 0.3rem 1rem;
@@ -512,12 +573,12 @@
     margin-right: 1rem;
   }
 
-  .framedetail__btn-box a{
+  .albumdetail__btn-box a{
     font-size: 1.3rem;
     font-weight: 800;
   }
 
-  .framedetail__btn-box .framedetail__delete {
+  .albumdetail__btn-box .albumdetail__delete {
     border: 1px solid var(--main-red);
     width: 7rem;
     padding: 0.3rem 1rem;
@@ -529,13 +590,13 @@
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
-  .framedetail {
+  .albumdetail {
     width: 50rem;
     margin: 0 auto;
     padding: 5rem 0;
   }
 
-  .framedetail__title {
+  .albumdetail__title {
     width: 100%;
     font-size: 2rem;
     text-align: center;
@@ -543,46 +604,54 @@
     margin-bottom: 2rem;
   }
 
-  .framedetail__hr {
+  .albumdetail__hr {
     background-color: var(--main-red);
     height: 0.1rem;
     margin: 2rem 0;
   }
 
-  .framedetail__frametitle {
+  .albumdetail__date {
     font-size: 1.5rem;
     text-align: center;
+    margin-bottom: 1rem;
   }
 
-  .framedetail__img img{
+  .albumdetail__img {
+    margin-bottom: 1rem;
+  }
+
+  .albumdetail__img img{
     width: 100%;
     height: auto;
   }
 
-  .framedetail__memo {
+  .albumdetail__kind,
+  .albumdetail__position,
+  .albumdetail__memo {
     font-size: 1.4rem;
     margin: 2rem 0;
   }
 
-  .framedetail__btn-box {
+  .albumdetail__btn-box {
     display: flex;
   }
 
-  .framedetail__btn-box .framedetail__update {
+  .albumdetail__btn-box .albumdetail__update {
     border: 1px solid var(--main-red);
     width: 7rem;
     padding: 0.3rem 1rem;
     border-radius: 1rem;
     text-align: center;
     margin-right: 1rem;
+    cursor: pointer;
   }
 
-  .framedetail__btn-box a{
+  .albumdetail__btn-box a{
     font-size: 1.3rem;
     font-weight: 800;
   }
 
-  .framedetail__btn-box .framedetail__delete {
+  .albumdetail__btn-box .albumdetail__delete {
     border: 1px solid var(--main-red);
     width: 7rem;
     padding: 0.3rem 1rem;
@@ -590,17 +659,18 @@
     text-align: center;
     font-size: 1.3rem;
     font-weight: 800;
+    cursor: pointer;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .framedetail {
+  .albumdetail {
     width: 50rem;
     margin: 0 auto;
     padding: 5rem 0;
   }
 
-  .framedetail__title {
+  .albumdetail__title {
     width: 100%;
     font-size: 2rem;
     text-align: center;
@@ -608,32 +678,32 @@
     margin-bottom: 2rem;
   }
 
-  .framedetail__hr {
+  .albumdetail__hr {
     background-color: var(--main-red);
     height: 0.1rem;
     margin: 2rem 0;
   }
 
-  .framedetail__frametitle {
+  .albumdetail__albumtitle {
     font-size: 1.5rem;
     text-align: center;
   }
 
-  .framedetail__img img{
+  .albumdetail__img img{
     width: 100%;
     height: auto;
   }
 
-  .framedetail__memo {
+  .albumdetail__memo {
     font-size: 1.4rem;
     margin: 2rem 0;
   }
 
-  .framedetail__btn-box {
+  .albumdetail__btn-box {
     display: flex;
   }
 
-  .framedetail__btn-box .framedetail__update {
+  .albumdetail__btn-box .albumdetail__update {
     border: 1px solid var(--main-red);
     width: 7rem;
     padding: 0.3rem 1rem;
@@ -642,12 +712,12 @@
     margin-right: 1rem;
   }
 
-  .framedetail__btn-box a{
+  .albumdetail__btn-box a{
     font-size: 1.3rem;
     font-weight: 800;
   }
 
-  .framedetail__btn-box .framedetail__delete {
+  .albumdetail__btn-box .albumdetail__delete {
     border: 1px solid var(--main-red);
     width: 7rem;
     padding: 0.3rem 1rem;
@@ -658,15 +728,15 @@
   }
 }
 
-/* frameupdate */
+/* albumupdate */
 @media screen and (max-width: 480px) {
-  .frameupdate-form {
+  .albumupdate-form {
     width: 30rem;
     margin: 0 auto;
     padding: 5rem 0;
   }
 
-  .frameupdate-form .frameupdate__title {
+  .albumupdate-form .albumupdate__title {
     width: 100%;
     font-size: 2rem;
     text-align: center;
@@ -674,13 +744,13 @@
     margin-bottom: 2rem;
   }
 
-  .frameupdate-form .frameupdate__hr {
+  .albumupdate-form .albumupdate__hr {
     background-color: var(--main-red);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
 
-  .frameupdate__info div span {
+  .albumupdate__info div span {
     display: inline-block;
     text-align: center;
     line-height: 1.4rem;
@@ -689,17 +759,17 @@
     width: 6rem;
   }
   
-  .frameupdate__info div input {
+  .albumupdate__info div input {
     width: 25rem;
     margin-bottom: 1.5rem;
   }
 
-  .frameupdate__info div input[type="checkbox"] {
+  .albumupdate__info div input[type="checkbox"] {
     width: 1.5rem;
     margin-bottom: 0;
   }
 
-  .frameupdate__info div input[type="text"] {
+  .albumupdate__info div input[type="text"] {
     width: 25rem;
     height: 3.2rem;
     font-size: 1.3rem;
@@ -710,7 +780,7 @@
     padding: 1rem;
   }
 
-  .frameupdate__info div textarea{
+  .albumupdate__info div textarea{
     background-color: var(--main-background);
     border: none;
     border-radius: 1rem;
@@ -719,12 +789,12 @@
 
   }
 
-  .frameupdate__btn-box {
+  .albumupdate__btn-box {
     text-align: center;
     margin: 2rem 0;
   }
 
-  .frameupdate__btn {
+  .albumupdate__btn {
     background: var(--main-red);
     border: none;
     border-radius: 1rem;
@@ -734,13 +804,13 @@
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
-  .frameupdate-form {
+  .albumupdate-form {
     width: 40rem;
     margin: 0 auto;
     padding: 5rem 0;
   }
 
-  .frameupdate-form .frameupdate__title {
+  .albumupdate-form .albumupdate__title {
     width: 100%;
     font-size: 2rem;
     text-align: center;
@@ -748,13 +818,13 @@
     margin-bottom: 2rem;
   }
 
-  .frameupdate-form .frameupdate__hr {
+  .albumupdate-form .albumupdate__hr {
     background-color: var(--main-red);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
 
-  .frameupdate__info div span {
+  .albumupdate__info div span {
     display: inline-block;
     text-align: center;
     line-height: 1.4rem;
@@ -762,11 +832,11 @@
     margin: 0 1.5rem 1.5rem 0;
   }
   
-  .frameupdate__info div input {
+  .albumupdate__info div input {
     margin-bottom: 1.5rem;
   }
 
-  .frameupdate__info div input[type="text"] {
+  .albumupdate__info div input[type="text"] {
     width: 30rem;
     height: 3.2rem;
     font-size: 1.3rem;
@@ -777,7 +847,7 @@
     padding: 1rem;
   }
 
-  .frameupdate__info div textarea{
+  .albumupdate__info div textarea{
     background-color: var(--main-background);
     border: none;
     border-radius: 1rem;
@@ -785,12 +855,12 @@
     padding: 1rem;
   }
 
-  .frameupdate__btn-box {
+  .albumupdate__btn-box {
     text-align: center;
     margin: 2rem 0;
   }
 
-  .frameupdate__btn {
+  .albumupdate__btn {
     background: var(--main-red);
     border: none;
     border-radius: 1rem;
@@ -800,13 +870,13 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .frameupdate-form {
+  .albumupdate-form {
     width: 40rem;
     margin: 0 auto;
     padding: 5rem 0;
   }
 
-  .frameupdate-form .frameupdate__title {
+  .albumupdate-form .albumupdate__title {
     width: 100%;
     font-size: 2rem;
     text-align: center;
@@ -814,13 +884,13 @@
     margin-bottom: 2rem;
   }
 
-  .frameupdate-form .frameupdate__hr {
+  .albumupdate-form .albumupdate__hr {
     background-color: var(--main-red);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
 
-  .frameupdate__info div span {
+  .albumupdate__info div span {
     display: inline-block;
     text-align: center;
     line-height: 1.4rem;
@@ -828,11 +898,11 @@
     font-size: 1.3rem;
   }
   
-  .frameupdate__info div input {
+  .albumupdate__info div input {
     margin-bottom: 1.5rem;
   }
 
-  .frameupdate__info div input[type="text"] {
+  .albumupdate__info div input[type="text"] {
     width: 30rem;
     height: 3.2rem;
     font-size: 1.3rem;
@@ -843,7 +913,7 @@
     padding: 1rem;
   }
 
-  .frameupdate__info div textarea{
+  .albumupdate__info div textarea{
     background-color: var(--main-background);
     border: none;
     border-radius: 1rem;
@@ -851,12 +921,12 @@
     padding: 1rem;
   }
 
-  .frameupdate__btn-box {
+  .albumupdate__btn-box {
     text-align: center;
     margin: 2rem 0;
   }
 
-  .frameupdate__btn {
+  .albumupdate__btn {
     background: var(--main-red);
     border: none;
     border-radius: 1rem;

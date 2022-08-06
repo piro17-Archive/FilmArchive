@@ -1,18 +1,22 @@
 {% extends 'users/main.html' %} {% block content %} {% load static %}
 <main>
-        <form method="post">
-            <h1>회원 정보 수정</h1>
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">수정</button>
-            <p>
-                <h5>비밀번호를 바꾸고 싶으신가요?</h5>
-                <a href="{% url 'users:change_pw' %}">비밀번호 바꾸기 페이지로 이동</a> 
-            </p>
-            <p>
-                <a href="{% url 'users:update_profpic' %}">프로필 사진 수정하기 페이지로 이동</a>
-            </p>
-        </form>
-        <br>
+  <form method="post">
+    <div class="userupdate-form">
+      <div class="userupdate__title">회원 정보 수정</div>
+      <div class="userupdate__hr"></div>
+      {% csrf_token %}
+      <div class="userupdate__info">
+        {{ form.as_p }}
+      </div>
+      <div class="userupdate__btn-box">
+        <button type="submit" class="userupdate__btn">수정</button>
+      </div>
+      <div class="userupdate__hr-bottom"></div>
+      <div class="userupdate__pw-udpate">
+        <div>비밀번호를 바꾸고 싶으신가요?</div>
+        <a href="{% url 'users:change_pw' %}">비밀번호 변경</a> 
+      </div>
+    </div>
+  </form>
 </main>
 {% endblock content %}

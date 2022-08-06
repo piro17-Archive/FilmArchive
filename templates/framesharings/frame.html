@@ -4,16 +4,37 @@
     <div class="frame__flex-box">
       <div class="frame__title">인생네컷 프레임 공유</div>
       <div class="frame__right">
+        <div class="frame__sort">
+          <form action="{% url 'framesharings:frame' %}" >
+            <select name="sort" onchange="this.form.submit()">
+              <option selected="selected"  value="none">정렬기준</option>
+              <option value="1">인기순</option>
+              <option value="2">최신순</option>
+            </select>
+          </form>
+          </div>
         <div class="frame__search">
           <form action="{% url 'framesharings:frame' %}">
             <input type="search" name="title" />
-            <input type="submit" value="검색" />
           </form>
         </div>
         <a href="/framecreate"><div class="frame__create">글 작성</div></a>
       </div>
     </div>
 
+    <div>
+      <form action="{% url 'framesharings:frame' %}">
+        <button name="sortkeyword" value="None">#HOME</button>
+        {% for keywordinfo in keywordinfo  %}
+        {% if  querykeyword == keywordinfo.id %}
+        <button name="sortkeyword" value="{{keywordinfo.id}}" style="background-color: black;">#{{keywordinfo.name}}</button>
+        {% else %}
+        <button name="sortkeyword" value="{{keywordinfo.id}}">#{{keywordinfo.name}}</button>
+        {% endif%}
+        {% endfor%}
+      </form>
+    </div>
+   
     <div class="frame__box">
       {% for frameinfo in frameinfo %} {% if frameinfo.framepublic %} 
       {% if frameinfo.framephoto %}

@@ -1,0 +1,273 @@
+{% extends 'users/main.html' %} {% block content %}
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+/* main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+} */
+
+.calendar {
+  width: 600px;
+  margin: 50px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.year-month {
+  font-size: 35px;
+}
+
+.nav {
+  display: flex;
+  border: 1px solid #2e2e2e;
+  border-radius: 5px;
+}
+
+.nav-btn {
+  width: 28px;
+  height: 30px;
+  border: none;
+  font-size: 16px;
+  line-height: 34px;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+}
+
+.go-today {
+  width: 75px;
+  border-left: 1px solid #2e2e2e;
+  border-right: 1px solid #2e2e2e;
+}
+
+.days {
+  display: flex;
+  margin: 25px 0 10px;
+}
+
+.day {
+  width: calc(100% / 7);
+  text-align: center;
+}
+
+.dates {
+  display: flex;
+  flex-flow: row wrap;
+  height: 500px;
+  border-top: 1px solid #2e2e2e;
+  border-right: 1px solid #2e2e2e;
+}
+
+.date {
+  width: calc(100% / 7);
+  padding: 15px;
+  text-align: right;
+  border-bottom: 1px solid #2e2e2e;
+  border-left: 1px solid #2e2e2e;
+}
+
+.other {
+  opacity: 0.3;
+}
+
+.day:nth-child(7n + 1),
+.date:nth-child(7n + 1) {
+  color: #ff3838;
+}
+
+.day:nth-child(7n),
+.date:nth-child(7n) {
+  color: #3374ff;
+}
+
+.today {
+  position: relative;
+  color: #ffffff;
+}
+
+.today::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-color: #ff0000;
+  border-radius: 50%;
+  content: "";
+}
+
+</style>
+<main>
+    <a href="{% url 'albums:album' user.id %}">리스트로</a>
+    <div class="calendar">
+        <!-- 캘린더 위쪽 헤더 영역 -->
+        <!-- 2022.07 버튼3개 -->
+        <div class="header">
+          <div class="year-month"></div>
+          <input type="month" id='field1' >
+        <button onclick="dateget()">날자선택</button>
+          <div class="nav">
+            
+            <button class="nav-btn go-prev" onclick="prevMonth()">&lt;</button>
+            <button class="nav-btn go-today" onclick="curMonth()">Today</button>
+            <button class="nav-btn go-next" onclick="nextMonth()">&gt;</button>
+          </div>
+        </div>
+        <!-- 캘린더 메인 영역 -->
+        <!-- 요일, 날짜들 -->
+        <div class="main">
+          <!-- 요일 영역 -->
+          <div class="days">
+            <div class="day">일</div>
+            <div class="day">월</div>
+            <div class="day">화</div>
+            <div class="day">수</div>
+            <div class="day">목</div>
+            <div class="day">금</div>
+            <div class="day">토</div>
+          </div>
+          <!-- 날짜들 -->
+          <div class="dates"></div>
+        </div>
+      </div>
+
+
+
+    <script>
+       
+const makeCalendar = () => {
+  const date2 = new Date(2022, 8, 7);
+  console.log(date)
+  const viewYear = date.getFullYear();
+
+  const viewMonth = date.getMonth();
+  const viewDate = date.getDate();
+  const viewDay = date.getDay();
+
+  //캘린더 년도 달 채우기
+  document.querySelector(".year-month").textContent = `${viewYear}년 ${
+    viewMonth + 1
+  }월`;
+
+  //이번달
+  // 0을넣으면 마지막날자를 가진 date 객체 생성
+  const thisLast = new Date(viewYear, viewMonth + 1, 0);
+  const thisDate = thisLast.getDate();
+  const thisDay = thisLast.getDay();
+
+  //저번달
+  const prevLast = new Date(viewYear, viewMonth, 0);
+  const prevDate = prevLast.getDate();
+  const prevDay = prevLast.getDay();
+
+  const prevDates = [];
+  const thisDates = [...Array(thisDate + 1).keys()].slice(1);
+  const nextDates = [];
+
+  if (prevDay !== 6) {
+    for (let i = 0; i < prevDay + 1; i++) {
+      prevDates.unshift(prevDate - i);
+    }
+  }
+  for (let i = 1; i < 7 - thisDay; i++) {
+    nextDates.push(i);
+  }
+
+  const dates = prevDates.concat(thisDates, nextDates);
+  const firstDateIndex = dates.indexOf(1);
+  const lastDateIndex = dates.lastIndexOf(thisDate);
+  let albumdate = 0
+
+  dates.forEach((date, i) => {
+    const condition = i >= firstDateIndex && i < lastDateIndex + 1 ? "this" : "other";
+    for(var j=0;j<1;j++){
+    var k = 0;
+    "{% for albuminfo in allalbum %}";
+    albumdate = "{{albuminfo.albumdate}}";
+    if (condition == "this" && albumdate == (viewYear).toString()+'년 '+(viewMonth+1).toString()+'월 '+(date).toString()+'일') {
+        if (k == 0){
+        dates[i] = `<div class="date" ><span class="${condition}">${date}</span><a href="/albumdetail/{{albuminfo.id}}" ><img src="/media/{{ albuminfo.albumphoto }}" style="width: 50px; height: 50px;border-radius: 70%; overflow: hidden;" " alt=""></a>`;
+        } if (k > 0) {
+            dates[i] = dates[i] + '<a href="/albumdetail/{{albuminfo.id}}"><img src="/media/{{ albuminfo.albumphoto }}" style="width: 50px; height: 50px;border-radius: 70%; overflow: hidden;" alt=""></a>'
+        }
+        k++
+    }
+    "{% endfor %}";
+    if (k == 0) {
+    dates[i] = `<div class="date" ><span class="${condition}">${date}</span><div style="width: 50px; height: 50px;border-radius: 70%; overflow: hidden;"></div>`; 
+    }
+    dates[i] = dates[i] + '</div>'
+    }
+  });
+
+  document.querySelector(".dates").innerHTML = dates.join("");
+
+  const today = new Date();
+  if (viewMonth === today.getMonth() && viewYear === today.getFullYear()) {
+    for (let date of document.querySelectorAll(".this")) {
+      if (+date.innerText === today.getDate()) {
+        date.classList.add("today");
+        break;
+      }
+    }
+  }
+};
+
+let date = new Date();
+
+makeCalendar();
+
+//이전 달 그리기
+const prevMonth = () => {
+  date.setDate(1);
+  date.setMonth(date.getMonth() - 1);
+  makeCalendar();
+};
+
+//다음 달 그리기
+const nextMonth = () => {
+  date.setDate(1);
+  date.setMonth(date.getMonth() + 1);
+  makeCalendar();
+};
+
+//현재 달 그리기
+const curMonth = () => {
+  date = new Date();
+  makeCalendar();
+};
+
+function dateget() {
+    const field1Value = document.getElementById('field1').value;
+    const day = field1Value.split('-');
+    day[1] = day[1].replace(/(^0+)/, "");
+    console.log(day[0]);
+    console.log(day[1]);
+    console.log(day[2]);
+    date.setFullYear(Number(day[0]));
+    date.setMonth(Number(day[1])-1);
+    date.setDate(1);
+    makeCalendar();
+};
+
+
+
+    </script>
+</main>
+{% endblock content %}
+

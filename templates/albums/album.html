@@ -1,24 +1,53 @@
-{% extends 'users/main.html' %} {% block content %}
-<body>
-    <form action="{% url 'albums:album' user.id%}">
-        <input type="search" name="title" placeholder="My 네 컷 앨범 메모검색" />
-        <input type="submit" value="검색" />
-      </form>
-    <a href="/albumcreate">글 작성</a>
-    {% for albuminfo in allalbum %}
-    <p>{{albuminfo.albumdate}}</p>
-    <p>
-        사진
-        {% if albuminfo.albumphoto %}
-        <a href="/albumdetail/{{albuminfo.id}}">
-        <img src="{{ albuminfo.albumphoto.url }}" alt=""></a>
-        {% else %}
-        <a href="/albumdetail/{{albuminfo.id}}"><div>사진이없습니다.</div></a>
-        {% endif %}
-    </p>
-    <p>종류 | {{albuminfo.albumtype.name}}</p>
-    <p>위치 | {{albuminfo.albumlocation}}</p>
-    <p>메모 | {{albuminfo.albummemo}}</p>
-    {% endfor %}
-</body>
+{% extends 'users/main.html' %} {% block content %} {% load static %}
+<main>
+  <div class="album__container">
+    <div class="album__flex-box">
+			<div class="album__left">
+				<div class="album__title">My 네 컷 앨범</div>
+				<a href="{% url 'albums:albumcalendar' user.id %}" class="calendar__section">
+					<button class="calendar__btn">
+						<img src="{% static 'image/calendar.svg' %}">
+					</button>
+				</a>
+			</div>
+			<div class="album__right">
+				<div class="album__sort">
+					<form action="{% url 'albums:album' user.id %}" >
+						<select name="sort" onchange="this.form.submit()">
+							<option selected="selected"  value="none">정렬기준</option>
+							<option value="1">인기순</option>
+							<option value="2">최신순</option>
+						</select>
+					</form>
+				</div>
+				<div class="album__search">
+					<form action="{% url 'albums:album' user.id%}">
+						<input type="search" name="title" placeholder="메모로 검색" />
+						<img src="{% static 'image/glass.svg' %}" class="glass__icon">
+					</form>
+				</div>
+				<a href="/albumcreate"><div class="album__create">글 작성</div></a>-
+			</div>
+		</div>
+
+		<div class="album__box">
+			{% for albuminfo in allalbum %}
+			<div class="album__one-box">
+				<div class="album__photo-date">{{albuminfo.albumdate}}</div>
+				<div class="album__img">
+					{% if albuminfo.albumphoto %}
+					<a href="/albumdetail/{{albuminfo.id}}" class="album__photo__id">
+						<img src="{{ albuminfo.albumphoto.url }}">
+					</a>
+					{% else %}
+					<a href="/albumdetail/{{albuminfo.id}}" class="album__photo__id">
+						<span class="photo__none">사진이 존재하지 않습니다.</span>
+					</a>
+					{% endif %}
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</main>
 {% endblock content %}

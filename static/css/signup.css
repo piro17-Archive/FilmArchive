@@ -1,8 +1,9 @@
 @media screen and (max-width: 480px) {
   .signup-form {
     width: 30rem;
-    margin: 0 auto;
+    margin: 1rem auto;
     text-align: center;
+    padding: 5rem 1rem;
   }
 
   .signup-form .signup__title {
@@ -12,9 +13,9 @@
     margin-bottom: 2rem;
   }
 
-  .signup-form .signup__hr {
+  .signup__hr {
     background-color: var(--main-red);
-    height: 0.1rem;
+    height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
 
@@ -32,7 +33,7 @@
   .signup__info div span {
     display: inline-block;
     text-align: center;
-    line-height: 1.4rem;
+    line-height: 1.5rem;
     width: 6rem;
     margin-right: 1.5rem;
     font-size: 1.3rem;
@@ -54,9 +55,10 @@
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .signup-form {
-    width: 30rem;
-    margin: 0 auto;
+    width: 40rem;
+    margin: 1rem auto;
     text-align: center;
+    padding: 5rem 0;
   }
 
   .signup-form .signup__title {
@@ -66,21 +68,10 @@
     margin-bottom: 2rem;
   }
 
-  .signup-form .signup__hr {
+  .signup__hr {
     background-color: var(--main-red);
-    height: 0.1rem;
+    height: 0.15rem;
     margin: 2rem 0 4rem 0;
-  }
-
-  .signup__info div input {
-    width: 20rem;
-    height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
-    margin-bottom: 1rem;
-    padding: 1rem;
   }
 
   .signup__info div span {
@@ -90,6 +81,17 @@
     width: 6rem;
     margin-right: 1.5rem;
     font-size: 1.3rem;
+  }
+
+  .signup__info div input {
+    width: 24rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
   }
 
   .signup__btn-box {
@@ -108,9 +110,10 @@
 
 @media screen and (min-width: 1024px) {
   .signup-form {
-    width: 40rem;
-    margin: 0 auto;
+    width: 50rem;
+    margin: 1rem auto;
     text-align: center;
+    padding: 5rem 0;
   }
 
   .signup-form .signup__title {
@@ -120,9 +123,9 @@
     margin-bottom: 2rem;
   }
 
-  .signup-form .signup__hr {
+  .signup__hr {
     background-color: var(--main-red);
-    height: 0.1rem;
+    height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
 
