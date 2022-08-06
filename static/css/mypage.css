@@ -64,7 +64,7 @@
     background: var(--main-red);
     border-color: var(--main-red);
     margin: 1.5rem 0 3.5rem 0;
-    height: 1px;
+    height: 0.15rem;
   }
 
   .mypage__right .mypage__storage-box {
@@ -129,7 +129,7 @@
     background: var(--main-red);
     border-color: var(--main-red);
     margin: 1rem 0 3rem 0;
-    height: 1px;
+    height: 0.15rem;
   }
 
   .mypage__right {
@@ -204,7 +204,7 @@
     background: var(--main-red);
     border-color: var(--main-red);
     margin: 1.5rem 0 3.5rem 0;
-    height: 1px;
+    height: 0.15rem;
   }
 
   .mypage__right {

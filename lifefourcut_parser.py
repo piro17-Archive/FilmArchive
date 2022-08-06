@@ -59,9 +59,9 @@ def add_new_items(crawled_items):
         print("new item added!! : " + item['lifecontext'])
 
         Lifefourcut(lifephotourl=item['lifephotourl'],
-                  lifecontext=item['lifecontext'],
-                  lifeid=item['lifeid'],
-                  lifepagename = item['lifepagename']).save()
+            lifecontext=item['lifecontext'],
+            lifeid=item['lifeid'],
+            lifepagename = item['lifepagename']).save()
 
     return items_to_insert_into_db
 
