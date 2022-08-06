@@ -46,7 +46,7 @@
             <li>
               <a href="{% url 'recommends:recommend_list' %}">포즈/컨셉 추천</a>
             </li>
-            <li><a href="">한정판 프레임</a></li>
+            <li><a href="{% url 'limitedframes:limited'%}">한정판 프레임</a></li>
             <li>
               {% if user.is_authenticated %}
               <a href="{% url 'users:log_out' %}" class="main__user"

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'recommends',
     'albums',
     'framesharings',
+    'limitedframes',
 
     #allauth
     'allauth',

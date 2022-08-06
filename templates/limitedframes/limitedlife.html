@@ -1,0 +1,14 @@
+{% extends 'users/main.html' %} {% block content %}
+<main>
+    {% for lifeframeinfo in lifeframeinfo %}
+    <a href="{% url 'limitedframes:limitedlifedetail' lifeframeinfo.id %}">
+        <img src="{{ lifeframeinfo.lifephotourl }}" style="width: 100px;" alt=""></a>
+
+    <span>{{lifeframeinfo.lifecontext}}</span>
+    
+    </div>
+    {% endfor %}
+</main>
+
+
+{% endblock content %}

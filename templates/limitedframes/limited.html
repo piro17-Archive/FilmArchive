@@ -1,0 +1,17 @@
+{% extends 'users/main.html' %} {% block content %}
+    <main>
+        <h1>한정판 프레임</h1>
+        <h2>인생네컷</h2>
+        <div>
+        <a href="{%url 'limitedframes:limitedlife' %}">더보기</a>
+        {% for lifeframeinfo in lifeframeinfo %}
+        
+        <a href="{% url 'limitedframes:limitedlifedetail' lifeframeinfo.id %}">
+            <img src="{{ lifeframeinfo.lifephotourl }}" style="height: 300px;" alt=""></a>
+        
+        {% endfor %}
+        </div>
+        <h2>2</h2>
+        <h2>3</h2>
+    </main>
+{% endblock content %}
