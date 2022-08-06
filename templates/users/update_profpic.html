@@ -1,0 +1,29 @@
+{% extends 'users/main.html' %} {% block content %} {% load static %}
+<main>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1>프로필 이미지 수정 </h1>
+        <h3>현재사진</h3>
+        {% if user.profile.image %}
+          <p>
+            <img
+              src="{{ user.profile.image.url }}"
+              style="width: 300px; height: 300px"
+              alt="프로필사진"
+            />
+          </p>
+        {% else %}
+        <p>
+            <img
+              src="{% static 'image/profile.svg' %}"
+              style="width: 300px; height: 300px"
+              alt="프로필사진"
+            />
+          </p>
+        {% endif %}
+        {{ p_form.as_p }}
+        <button type="submit">수정</button>
+    </form>
+    <br>
+</main>
+{% endblock content %}

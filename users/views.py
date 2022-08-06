@@ -1,14 +1,11 @@
 from django.shortcuts import render, redirect
 from django.views import View
-
-from users.models import User
+from users.models import User, Profile
 from . import forms
-from users.forms import MyUpdateForm
+from users.forms import MyUpdateForm, ProfileUpdateForm
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
-from django.contrib.auth import update_session_auth_hash
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
-from .models import User
 
 #여기추가
 from ctypes import wintypes
@@ -110,3 +107,31 @@ def change_pw(request):
         form = PasswordChangeForm(user=request.user)
         args = {'form':form}
         return render(request, 'users/change_pw.html', args)
+
+
+
+@login_required(login_url='login')
+def profile_update(request):
+    try:
+        profile = request.user.profile
+    except Profile.DoesNotExist:
+        profile = Profile(user=request.user)
+        
+    if request.method == "POST":
+        p_form = ProfileUpdateForm(request.POST, 
+                                   request.FILES, 
+                                   instance=profile)
+        if p_form.is_valid():
+            prof = p_form.save()
+            prof.save()
+            return redirect('users:mypage')
+
+    else:
+        p_form = ProfileUpdateForm(instance=profile)
+    
+    context = {
+        'p_form': p_form,
+    }
+
+    return render(request, 'users/update_profpic.html', context)
+

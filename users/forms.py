@@ -1,5 +1,7 @@
+from cProfile import Profile
 from django import forms
 from .models import User
+from .models import Profile
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 
@@ -38,4 +40,11 @@ class MyUpdateForm(UserChangeForm):
             'email',
             'nickname',
             'password',
+        }
+
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = {
+            'image',
         }
