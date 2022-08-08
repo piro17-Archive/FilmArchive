@@ -4,17 +4,29 @@
     margin: 3rem 7%;
   }
 
-  .frame__title {
-    font-size: 1.8rem;
-    font-weight: 800;
-    margin-bottom: 2.5rem;
-  }
-
   .frame__flex-box {
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin: 1rem 0 3rem 0;
+  }
+
+  .frame__left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+
+  .frame__left .frame__title {
+    font-size: 1.8rem;
+    font-weight: 800;
+  }
+
+  .frame__left .frame__create {
+    color: var(--main-red);
+    font-size: 3.2rem;
+    margin-left: 1rem;
   }
 
   .frame__right {
@@ -108,10 +120,21 @@
     margin: 1rem 0 3rem 0;
   }
 
-  .frame__title {
+  .frame__left {
+    display: flex;
+  }
+
+  .frame__left .frame__title {
     font-size: 2rem;
     font-weight: 800;
-    width: 30%;
+    width: 90%;
+  }
+
+  .frame__left .frame__create {
+    width: 10%;
+    color: var(--main-red);
+    font-size: 3.2rem;
+    margin-left: 1rem;
   }
 
   .frame__right {
@@ -139,19 +162,6 @@
     border: none;
     padding: 0.7rem;
     border-radius: 1rem;
-  }
-
-  .frame__right .frame__create {
-    margin-bottom: 0;
-  }
-
-  .frame__create {
-    background: var(--main-red);
-    color: white;
-    border-radius: 1rem;
-    padding: 0.7rem 1rem;
-    font-size: 1.2rem;
-    font-weight: 800;
   }
 
   .frame__img img {
@@ -187,17 +197,28 @@
     margin: 1rem 0 3rem 0;
   }
 
-  .frame__title {
+  .frame__left {
+    display: flex;
+    align-items: center;
+    width: 30%;
+  }
+
+  .frame__left .frame__title {
     font-size: 2rem;
     font-weight: 800;
-    width: 70%;
+  }
+
+  .frame__left .frame__create {
+    color: var(--main-red);
+    font-size: 3.2rem;
+    margin-left: 1rem;
   }
 
   .frame__right {
     display: flex;
     align-items: center;
     justify-content: right;
-    width: 60%;
+    width: 70%;
   }
 
   .frame__right .frame__sort {
@@ -218,19 +239,6 @@
     border: none;
     padding: 0.7rem;
     border-radius: 1rem;
-  }
-
-  .frame__right .frame__create {
-    margin-bottom: 0;
-  }
-
-  .frame__create {
-    background: var(--main-red);
-    color: white;
-    border-radius: 1rem;
-    padding: 0.7rem 1rem;
-    font-size: 1.2rem;
-    font-weight: 800;
   }
 
   .frame__img img {
