@@ -1,14 +1,33 @@
-{% extends 'users/main.html' %} {% block content %}
+
+{% extends 'users/main.html' %} {% block content %} {% load static %}
 <main>
-    {% for lifeframeinfo in lifeframeinfo %}
-    <a href="{% url 'limitedframes:limitedlifedetail' lifeframeinfo.id %}">
-        <img src="{{ lifeframeinfo.lifephotourl }}" style="width: 100px;" alt=""></a>
-
-    <span>{{lifeframeinfo.lifecontext}}</span>
-    
+  <div class="morepage--container">
+    <div class="morepage--title">인생네컷</div>
+    <div class="line"></div>
+    <div class="lifedetail--grid--section">
+      {% for lifeframeinfo in posts %}
+      <div class="per--lifedetail">
+        <a href="{% url 'limitedframes:limitedlifedetail' lifeframeinfo.id %}">
+          <img src="{{ lifeframeinfo.lifephotourl }}" class="lifedetail--img">
+        </a>
+        <!-- <div class="lifedetail--text">{{lifeframeinfo.lifecontext}}</div> -->
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
+
+    <div class="pagination--section">
+      {% if posts.has_previous %}
+      <a href="?page={{posts.previous_page_number}}" class="previous--btn">이전</a>
+      {% endif %}
+
+      {% for p in posts.paginator.page_range %}
+      <a href="?page={{p}}" class="pagenum">{{p}}</a>
+      {% endfor %}
+                
+      {% if posts.has_next %}
+      <a href="?page={{posts.next_page_number}}" class="next--btn">다음</a>
+      {% endif %}
+    </div>
+  </div>
 </main>
-
-
 {% endblock content %}
