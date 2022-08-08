@@ -14,7 +14,8 @@
         <div class="limited-frame--section">
           {% for lifeframeinfo in lifeframeinfo %} 
           <a href="{% url 'limitedframes:limitedlifedetail' lifeframeinfo.id %}">
-            <img src="{{ lifeframeinfo.lifephotourl }}" alt=""></a>
+            <img src="{{ lifeframeinfo.lifephotourl }}">
+          </a>
             {% endfor %}
         </div>
       </div>
