@@ -2,7 +2,13 @@
 {% extends 'users/main.html' %} {% block content %} {% load static %}
 <main>
   <div class="morepage--container">
-    <div class="morepage--title">인생네컷</div>
+    <div class="morepage--header">
+      <div class="morepage--title">인생네컷</div>
+      <a href="{% url 'limitedframes:limited' %}" class="goto--home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </div>
+    
     <div class="line"></div>
     <div class="lifedetail--grid--section">
       {% for lifeframeinfo in posts %}
