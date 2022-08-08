@@ -1,35 +1,61 @@
 {% extends 'users/main.html' %} {% block content %}
 <main>
 	<div class="albumdetail">
-		<div class="albumdetail__title">My 네 컷 앨범</div>
-    <div class="albumdetail__hr"></div>
-		<div class="albumdetail__date">{{ albuminfo.albumdate}}</div>
-		<div class="albumdetail__img">
-			{% if albuminfo.albumphoto %}
-			<img src="{{ albuminfo.albumphoto.url }}" alt="">
-			{% else %}
-			<div>사진이 없습니다.</div>
-			{% endif %}
-		</div>
-		<div>
-			{% if albuminfo.albumvideo %}
-			<video autoplay loop controls> <source src="{{ albuminfo.albumvideo.url }}"></video>
-			{% else %}
-			<div>동영상이 없습니다.</div>
-			{% endif %}
-		</div>
-		<div class="albumdetail__kind">종류 | {{albuminfo.albumtype.name}}</div>
-		<div class="albumdetail__position">위치 | {{albuminfo.albumlocation}}</div>
-		<div class="albumdetail__memo">메모 | {{albuminfo.albummemo}}</div>
-
-		<div class="albumdetail__btn-box">
-			<a href="/albumupdate/{{albuminfo.id}}"><div class="albumdetail__update">수정</div></a>
-			<div class="albumdetail__delete">
+		<div class="albumdetail__header">
+			<div class="albumdetail__header-left">
+				My 네 컷 앨범
+			</div>
+			<div class="albumdetail__header-right">
+				<a href="/albumupdate/{{albuminfo.id}}"><i class="fa-solid fa-pen-to-square"></i></a>
 				<form action="/albumdelete/{{albuminfo.id}}" method="post">
-					{% csrf_token %}삭제
+					{% csrf_token %}<i class="fa-solid fa-trash-can"></i>
 				</form>
 			</div>
 		</div>
+
+		<div class="albumdetail__date">
+			<i class="fa-solid fa-angle-left"></i>
+			<span>{{ albuminfo.albumdate}}</span>
+			<i class="fa-solid fa-angle-right"></i>
+		</div>
+
+		<div class="albumdetail__flex-box">
+			<div class="albumdetail__bg">
+				<div class="swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="albumdetail__img">
+								{% if albuminfo.albumphoto %}
+								<img src="{{ albuminfo.albumphoto.url }}" alt="">
+								{% else %}
+								<div>사진이 없습니다.</div>
+								{% endif %}
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="albumdetail__video">
+								{% if albuminfo.albumvideo %}
+								<video autoplay loop controls> <source src="{{ albuminfo.albumvideo.url }}"></video>
+								{% else %}
+								<div>동영상이 없습니다.</div>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+			</div>
+
+			<div class="albumdetail__memo">
+				<div class="albumdetail__kind">종류 | {{albuminfo.albumtype.name}}</div>
+				<div class="albumdetail__position">위치 | {{albuminfo.albumlocation}}</div>
+				<div class="albumdetail__memos">메모 | {{albuminfo.albummemo}}</div>
+			</div>
+		</div>
+
+
 	</div>
 </main>
 {% endblock content %}
