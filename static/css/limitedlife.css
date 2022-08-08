@@ -22,6 +22,10 @@
   .lifedetail--text{
     font-size: 1.2rem;
   }
+
+  .goto--home{
+    font-size: 1.6rem;
+  }
   
 }
 
@@ -48,6 +52,10 @@
 
   .lifedetail--text{
     font-size: 1.4rem;
+  }
+
+  .goto--home{
+    font-size: 2rem;
   }
 }
 
@@ -76,6 +84,10 @@
   .lifedetail--text{
     font-size: 1.4rem;
   }
+
+  .goto--home{
+    font-size: 2rem;
+  }
 }
 
 .morepage--container{
@@ -84,16 +96,25 @@
   align-items: center;
 }
 
+.morepage--header{
+  display: flex;
+  width: 100%;
+  justify-content : space-between;
+  align-items: center;
+  margin-bottom: 1.3rem;
+}
+
+.goto--home:hover{
+  color: var(--main-red);
+}
+
 .morepage--title {
   font-weight: 600;
-  margin-bottom: 1.5rem;
   width: 100%;  
   text-align: center;
 }
 
 .per--lifedetail{
-  /* width: 100%;
-  */
   background-color:rgb(247, 247, 247); 
   display: flex;
   flex-direction: column;

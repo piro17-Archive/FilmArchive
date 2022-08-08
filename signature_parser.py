@@ -29,7 +29,7 @@ def parse_signature():
 
   baseUrl = 'https://www.instagram.com/photosignature_official/'
 
-  driver = webdriver.Chrome()
+  driver = webdriver.Chrome(executable_path='/Users/idoyun/dev/FilmArchive/chromedriver')
   driver.get('https://www.instagram.com/accounts/login/')
   # driver.get(baseUrl)
   time.sleep(2)
