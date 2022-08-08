@@ -51,10 +51,10 @@
         <div>
           <form action="{% url 'framesharings:frame' %}">
             <div onclick="onClickLike({{ frameinfo.id }})">
-              {% if frameinfo.like == False %}
-              <button name="like" value="{{frameinfo.id}}"><i class="fa-regular fa-thumbs-up"></i>추천하기</button>
-              {% else %}
+              {% if frameinfo in like %}
               <button name="like" value="{{frameinfo.id}}"><i class="fa-regular fa-thumbs-up"></i>추천완료</button>
+              {% else %}
+              <button name="like" value="{{frameinfo.id}}"><i class="fa-regular fa-thumbs-up"></i>추천하기</button>
               {% endif %}
             </div>
           </form>
