@@ -50,7 +50,7 @@ def parse_photoism():
 
   time.sleep(3)
 
-  save_late_button1 = driver.find_element(By.XPATH,'//*[@id="react-root"]/div/div/section/main/div/div/div/div/button')
+  save_late_button1 = driver.find_element(By.XPATH,'//*[@id="react-root"]/section/main/div/div/div/div/button')
   save_late_button1.click()
 
   driver.implicitly_wait(3)
