@@ -37,6 +37,16 @@
   .limited-frame--section a:nth-last-child(1){
     display:none;
   }
+
+  .photoism img{
+    height: 100%;
+    width: 100%;
+  }
+
+  .photosignature img{
+    width: 100%;
+    overflow: hidden;
+  }
 }
 
 
@@ -74,6 +84,15 @@
     width: 100%;
     height: 100%;
   }
+
+  .photoism img{
+    height: 100%;
+    width: 100%;
+  }
+
+  .photosignature img{
+    width: 100%;
+  }
   
 }
 
@@ -110,6 +129,15 @@
   .limited-frame--section img{
     width: 100%;
     height: 100%;
+  }
+
+  .photoism img{
+    height: 100%;
+    width: 100%;
+  }
+
+  .photosignature img{
+    width: 100%;
   }
 }
 
@@ -155,7 +183,8 @@
 
 .limited-frame--section a{
   text-align: center;
-
+  background-color: rgb(247, 247, 247);
+  overflow: hidden;
 }
 
 /* limited frame more page */

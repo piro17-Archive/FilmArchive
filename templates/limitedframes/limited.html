@@ -11,7 +11,7 @@
           </a>
         </div>
         <div class="line"></div>
-        <div class="limited-frame--section">
+        <div class="limited-frame--section lifefour">
           {% for lifeframeinfo in lifeframeinfo %} 
           <a href="{% url 'limitedframes:limitedlifedetail' lifeframeinfo.id %}">
             <img src="{{ lifeframeinfo.lifephotourl }}">
@@ -29,7 +29,7 @@
           </a>
         </div>
         <div class="line"></div>
-        <div class="limited-frame--section">
+        <div class="limited-frame--section photoism">
           {% for photoisminfo in photoisminfo %} 
           <a href="{{ photoisminfo.photoismurl }}">
             <img src="{% static '' %}{{photoisminfo.photoismphotourl}}" alt=""></a>
@@ -47,7 +47,7 @@
           </a>
         </div>
         <div class="line"></div> 
-        <div class="limited-frame--section">
+        <div class="limited-frame--section photosignature">
           {% for signatureinfo in signatureinfo %} 
           <a href="{{ signatureinfo.signatureurl }}">
             <img src="{% static '' %}{{signatureinfo.signaturephotourl}}" alt=""></a>
