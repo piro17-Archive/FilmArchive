@@ -1,0 +1,14 @@
+{% extends 'users/main.html' %} {% block content %}{% load static%}
+<main>
+    {% for photoisminfo in photoisminfo %}
+    <a href="{{ photoisminfo.photoismurl }}">
+        <img src="{% static '' %}{{photoisminfo.photoismphotourl}}" style="width: 100px;" alt=""></a>
+
+    <span>{{photoisminfo.photoismphotoinfo|cut:"Photo"|cut:"by"|cut:"shared"|truncatewords_html:5}}</span>
+    
+    </div>
+    {% endfor %}
+</main>
+
+
+{% endblock content %}

@@ -1,18 +1,23 @@
 from django.shortcuts import render
-
-from limitedframes.models import Lifefourcut
+import re
+from limitedframes.models import Lifefourcut,Signature,Photoism
 
 # Create your views here.
 
 def limited(request):
     lifeframeinfo = Lifefourcut.objects.all().order_by('-id')[:4]
+    signatureinfo = Signature.objects.all().order_by('-id')[:4]
+    photoisminfo = Photoism.objects.all().order_by('-id')[:4]
     context = {
         "lifeframeinfo": lifeframeinfo,
+        "signatureinfo": signatureinfo,
+        "photoisminfo": photoisminfo,
     }
     return render(request, template_name='limitedframes/limited.html',context=context)
 
 def limitedlife(request):
     lifeframeinfo = Lifefourcut.objects.all().order_by('-id')
+    # lifeframeinfo = lifeframeinfo.annotate(framedate= re.search(r'\d{4}.\d{2}.\d{2}~\d{4}.\d{2}.\d{2}|\d{1}월',lifeframeinfo.lifecontext)).order_by('framedate')
     context = {
         "lifeframeinfo": lifeframeinfo,
     }
@@ -24,3 +29,17 @@ def limitedlifedetail(request,id):
         "lifeframeinfo": lifeframeinfo,
     }
     return render(request, template_name="limitedframes/limitedlifedetail.html",context=context)
+
+def limitedsignature(request):
+    signatureinfo = Signature.objects.all().order_by('-id')
+    context = {
+        "signatureinfo": signatureinfo,
+    }
+    return render(request, template_name='limitedframes/limitedsignature.html',context=context)
+
+def limitedphotoism(request):
+    photoisminfo = Photoism.objects.all().order_by('-id')
+    context = {
+        "photoisminfo": photoisminfo,
+    }
+    return render(request, template_name='limitedframes/limitedphotoism.html',context=context)
