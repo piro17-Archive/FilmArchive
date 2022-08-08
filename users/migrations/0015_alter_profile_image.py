@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-=======
 
-
->>>>>>> Stashed changes
 from django.db import migrations, models
 
 
