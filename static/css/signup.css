@@ -19,6 +19,15 @@
     margin: 2rem 0 4rem 0;
   }
 
+  .signup__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.5rem;
+    width: 6rem;
+    margin-right: 1.5rem;
+    font-size: 1.3rem;
+  }
+
   .signup__info div input {
     width: 20rem;
     height: 3.2rem;
@@ -28,15 +37,6 @@
     background-color: var(--main-background);
     margin-bottom: 1rem;
     padding: 1rem;
-  }
-
-  .signup__info div span {
-    display: inline-block;
-    text-align: center;
-    line-height: 1.5rem;
-    width: 6rem;
-    margin-right: 1.5rem;
-    font-size: 1.3rem;
   }
 
   .signup__btn-box {

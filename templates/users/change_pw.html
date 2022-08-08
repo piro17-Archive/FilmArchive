@@ -1,12 +1,15 @@
 {% extends 'users/main.html' %} {% block content %} {% load static %}
 <main>
-        <form method="post">
-            <h1>비밀번호 변경</h1>
-            <hr/>
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">제출</button>
-        </form>
-        <br>
+	<form method="post">
+		<div class="changepw-form">
+			<div class="changepw__title">비밀번호 변경</div>
+			<div class="changepw__hr"></div>
+			{% csrf_token %}
+			{{ form.as_p }}
+			<div class="changepw__btn-box">
+				<button type="submit" class="changepw__btn">제출</button>
+			</div>
+		</div>
+	</form>
 </main>
 {% endblock content %}

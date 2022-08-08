@@ -636,3 +636,173 @@
 }
 
 /* 비밀번호 변경 */
+@media screen and (max-width: 480px) {
+  .changepw-form {
+    width: 30rem;
+    margin: 1rem auto;
+    padding: 5rem 1rem;
+  }
+
+  .changepw-form .changepw__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .changepw__hr {
+    background-color: var(--main-red);
+    height: 0.15rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .changepw-form p label {
+    display: inline-block;
+    line-height: 1.5rem;
+    width: 9rem;
+    margin-right: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .changepw-form p input {
+    width: 17rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .changepw-form ul {
+    display: none;
+  }
+
+  .changepw__btn-box {
+    text-align: center;
+    margin-top: 5rem;
+  }
+
+  .changepw__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .changepw-form {
+    width: 40rem;
+    margin: 1rem auto;
+    padding: 5rem 1rem;
+  }
+
+  .changepw-form .changepw__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .changepw__hr {
+    background-color: var(--main-red);
+    height: 0.15rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .changepw-form p label {
+    display: inline-block;
+    line-height: 1.5rem;
+    width: 9rem;
+    margin-right: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .changepw-form p input {
+    width: 25rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .changepw-form ul {
+    display: none;
+  }
+
+  .changepw__btn-box {
+    text-align: center;
+    margin-top: 5rem;
+  }
+
+  .changepw__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .changepw-form {
+    width: 45rem;
+    margin: 1rem auto;
+    padding: 5rem 1rem;
+  }
+
+  .changepw-form .changepw__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .changepw__hr {
+    background-color: var(--main-red);
+    height: 0.15rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .changepw-form p label {
+    display: inline-block;
+    line-height: 1.5rem;
+    width: 9rem;
+    margin-right: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .changepw-form p input {
+    width: 30rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .changepw-form ul {
+    display: none;
+  }
+
+  .changepw__btn-box {
+    text-align: center;
+    margin-top: 5rem;
+  }
+
+  .changepw__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+}
