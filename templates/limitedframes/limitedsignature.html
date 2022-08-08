@@ -1,0 +1,14 @@
+{% extends 'users/main.html' %} {% block content %}{% load static%}
+<main>
+    {% for signatureinfo in signatureinfo %}
+    <a href="{{ signatureinfo.signatureurl }}">
+        <img src="{% static '' %}{{signatureinfo.signaturephotourl}}" style="width: 100px;" alt=""></a>
+
+    <span>{{signatureinfo.signaturephotoinfo|cut:"Photo"|cut:"by"|cut:"shared"|truncatewords_html:7}}</span>
+    
+    </div>
+    {% endfor %}
+</main>
+
+
+{% endblock content %}

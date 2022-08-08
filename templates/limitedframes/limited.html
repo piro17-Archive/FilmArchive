@@ -22,23 +22,36 @@
       <div class="photoism--section per-company">
         <div class="company--header">
           <span class="company--name">포토이즘</span> 
-          <a href="{%url 'limitedframes:limitedlife' %}" class="more--link">
+          <a href="{%url 'limitedframes:limitedphotoism' %}" class="more--link">
             <span class="more--text">더보기</span>
             <img src="{% static 'image/chevron-right.svg' %}" class="arrow-icon">
           </a>
         </div>
         <div class="line"></div>
+        <div class="limited-frame--section">
+          {% for photoisminfo in photoisminfo %} 
+          <a href="{{ photoisminfo.photoismurl }}">
+            <img src="{% static '' %}{{photoisminfo.photoismphotourl}}" alt=""></a>
+            {% endfor %}
+        </div> 
       </div>
+
 
       <div class="phogosignature--section per-company">
         <div class="company--header">
           <span class="company--name">포토시그니처</span> 
-          <a href="{%url 'limitedframes:limitedlife' %}" class="more--link">
+          <a href="{%url 'limitedframes:limitedsignature' %}" class="more--link">
             <span class="more--text">더보기</span>
             <img src="{% static 'image/chevron-right.svg' %}" class="arrow-icon">
           </a>
         </div>
-        <div class="line"></div>  
+        <div class="line"></div> 
+        <div class="limited-frame--section">
+          {% for signatureinfo in signatureinfo %} 
+          <a href="{{ signatureinfo.signatureurl }}">
+            <img src="{% static '' %}{{signatureinfo.signaturephotourl}}" alt=""></a>
+            {% endfor %}
+        </div> 
       </div>
     </div>
   </main>
