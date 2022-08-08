@@ -3,12 +3,17 @@
   <div class="album__container">
     <div class="album__flex-box">
 			<div class="album__left">
-				<div class="album__title">My 네 컷 앨범</div>
-				<a href="{% url 'albums:albumcalendar' user.id %}" class="calendar__section">
-					<button class="calendar__btn">
-						<img src="{% static 'image/calendar.svg' %}">
-					</button>
-				</a>
+				<div class="album__left-left">
+					<div class="album__title">My 네 컷 앨범</div>
+					<a href="{% url 'albums:albumcalendar' user.id %}" class="calendar__section">
+						<button class="calendar__btn">
+							<img src="{% static 'image/calendar.svg' %}">
+						</button>
+					</a>
+				</div>
+				<div class="album__left-right">
+					<a href="/albumcreate"><div class="album__create"><i class="fa-solid fa-circle-plus"></i></div></a>
+				</div>
 			</div>
 			<div class="album__right">
 				<div class="album__sort">
@@ -26,7 +31,6 @@
 						<img src="{% static 'image/glass.svg' %}" class="glass__icon">
 					</form>
 				</div>
-				<a href="/albumcreate"><div class="album__create">글 작성</div></a>-
 			</div>
 		</div>
 
