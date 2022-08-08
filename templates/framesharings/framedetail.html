@@ -41,11 +41,12 @@
 
     <div class="framedetail__memo">{{ frameinfo.framememo }}</div>
     <div class="framedetail__btn-box">
-      <a href="/frameupdate/{{frameinfo.id}}"><div class="framedetail__update">수정</div></a>
+      <a href="/frameupdate/{{frameinfo.id}}">
+        <div class="framedetail__update"><i class="fa-solid fa-pen-to-square"></i></div>
+      </a>
       <div class="framedetail__delete">
         <form action="/framedelete/{{frameinfo.id}}" method="post">
-          {% csrf_token %}
-          삭제
+          {% csrf_token %}<i class="fa-solid fa-trash-can"></i>
         </form>
       </div>
     </div>

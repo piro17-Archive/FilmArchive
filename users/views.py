@@ -134,4 +134,3 @@ def profile_update(request):
     }
 
     return render(request, 'users/update_profpic.html', context)
-

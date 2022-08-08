@@ -26,6 +26,13 @@
           <button class="signup--btn">회원가입</button>
         </a>
       </div>
+      <!--비밀번호 리셋하기 기능-->
+      <div>
+        <p>비밀번호를 까먹으셨나요?</p>
+        <a href="{% url 'users:reset_password' %}">
+          <button>지금 비밀번호 재설정하기</button>
+        </a>
+      </div>
     </div>
     <div class="line"></div>
     <div class="social--login--section">

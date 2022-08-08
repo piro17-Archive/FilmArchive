@@ -2,7 +2,10 @@
 <main>
   <div class="frame__container">
     <div class="frame__flex-box">
-      <div class="frame__title">인생네컷 프레임 공유</div>
+      <div class="frame__left">
+        <div class="frame__title">인생네컷 프레임 공유</div>
+        <a href="/framecreate"><div class="frame__create"><i class="fa-solid fa-circle-plus"></i></div></a>
+      </div>
       <div class="frame__right">
         <div class="frame__sort">
           <form action="{% url 'framesharings:frame' %}" >
@@ -15,10 +18,9 @@
           </div>
         <div class="frame__search">
           <form action="{% url 'framesharings:frame' %}">
-            <input type="search" name="title" />
+            <input type="search" name="title" placeholder="프레임 검색" />
           </form>
         </div>
-        <a href="/framecreate"><div class="frame__create">글 작성</div></a>
       </div>
     </div>
 
@@ -26,7 +28,7 @@
       <form action="{% url 'framesharings:frame' %}">
         <button name="sortkeyword" value="None">#HOME</button>
         {% for keywordinfo in keywordinfo  %}
-        {% if  querykeyword == keywordinfo.id %}
+        {% if querykeyword == keywordinfo.id %}
         <button name="sortkeyword" value="{{keywordinfo.id}}" style="background-color: black;">#{{keywordinfo.name}}</button>
         {% else %}
         <button name="sortkeyword" value="{{keywordinfo.id}}">#{{keywordinfo.name}}</button>
@@ -48,11 +50,13 @@
         {% for keyword in frameinfo.framekeyword.all %} {% endfor%}
         <div>
           <form action="{% url 'framesharings:frame' %}">
-            {% if frameinfo in like %}
-            <button name="like" value="{{frameinfo.id}}">추천완료</button>
-            {% else %}
-            <button name="like" value="{{frameinfo.id}}">추천하기</button>
-            {% endif %}
+            <div onclick="onClickLike({{ frameinfo.id }})">
+              {% if frameinfo.like == False %}
+              <button name="like" value="{{frameinfo.id}}"><i class="fa-regular fa-thumbs-up"></i>추천하기</button>
+              {% else %}
+              <button name="like" value="{{frameinfo.id}}"><i class="fa-regular fa-thumbs-up"></i>추천완료</button>
+              {% endif %}
+            </div>
           </form>
           <form action="{% url 'framesharings:frame' %}">
             {% if frameinfo in save %}
@@ -68,3 +72,17 @@
   </div>
 </main>
 {% endblock content %}
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  const onClickLike = async (id) => {
+    const url = "/like_ajax/";
+    const { data } = await axios.post(url, { id });
+    likeResponse(data.id);
+    console.log("dfaf");
+  };
+
+  const likeResponse = (id) => {
+    const likeBtn = document.querySelector(".frame__like button");
+  }
+</script>
