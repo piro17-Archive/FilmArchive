@@ -4,23 +4,22 @@
     <h1 class="mypage__title">마이페이지</h1>
     <div class="mypage__flexbox">
       <div class="mypage__left">
-        {% if user.profile.image %}
-          <p>
-            <img
-              src="{{ user.profile.image.url }}"
-              style="width: 300px; height: 300px"
-              alt="프로필사진"
-            />
-          </p>
-        {% else %}
-          <p>
-            <img
-              src="{% static 'image/profile.svg' %}"
-              style="width: 300px; height: 300px"
-              alt="프로필 기본"
-            />
-          </p>
-        {% endif %}
+        <div class="mypage__profile">
+          {% if user.profile.image %}
+          <img
+            src="{{ user.profile.image.url }}"
+            alt="프로필사진"
+          />
+          {% else %}
+          <img
+            src="{% static 'image/profile.svg' %}"
+            alt="프로필기본"
+          />
+          {% endif %}
+          <a href="{% url 'users:update_profpic' %}">
+            <div class="mypage__profile-update"><i class="fa-solid fa-plus"></i></div>
+          </a>
+        </div>
         <div class="mypage__btn-box">
           <a href="{% url 'users:user_update' %}"><div class="mypage__btn">회원정보 수정</div></a>
           <div class="mypage__btn">회원 탈퇴</div>

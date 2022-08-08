@@ -1,29 +1,28 @@
 {% extends 'users/main.html' %} {% block content %} {% load static %}
 <main>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <h1>프로필 이미지 수정 </h1>
-        <h3>현재사진</h3>
-        {% if user.profile.image %}
-          <p>
-            <img
-              src="{{ user.profile.image.url }}"
-              style="width: 300px; height: 300px"
-              alt="프로필사진"
-            />
-          </p>
-        {% else %}
-        <p>
-            <img
-              src="{% static 'image/profile.svg' %}"
-              style="width: 300px; height: 300px"
-              alt="프로필사진"
-            />
-          </p>
-        {% endif %}
-        {{ p_form.as_p }}
-        <button type="submit">수정</button>
-    </form>
-    <br>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="profileupdate-form">
+      <div class="profileupdate__title">프로필 이미지 수정 </div>
+      <div class="profileupdate__hr"></div>
+      <div class="profileupdate__subtitle">현재사진</div>
+      {% if user.profile.image %}
+      <img
+        src="{{ user.profile.image.url }}"
+        alt="프로필사진"
+      />
+      {% else %}
+      <img
+        src="{% static 'image/profile.svg' %}"
+        alt="프로필기본"
+      />
+      {% endif %}
+      {{ p_form.as_p }}
+      <div class="profileupdate__btn-box">
+        <button type="submit" class="profileupdate__btn">수정</button>
+      </div>
+      <div class="profileupdate__hr"></div>
+    </div>
+  </form>
 </main>
 {% endblock content %}

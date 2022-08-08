@@ -26,6 +26,30 @@
     margin-bottom: 2rem;
   }
 
+  .mypage__profile {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .mypage__profile img {
+    border-radius: 50%;
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 1em;
+  }
+
+  .mypage__left .mypage__profile-update {
+    position: absolute;
+    right: 0;
+    bottom: 2rem;
+    background: var(--main-red);
+    border-radius: 50%;
+    padding: 1.1rem 1.4rem;
+    color: white;
+    font-size: 1.6rem;
+  }
+  
   .mypage__left .mypage__btn-box {
     display: flex;
     justify-content: center;
@@ -49,11 +73,6 @@
 
   .mypage__left .mypage__btn:last-child {
     margin-right: 0;
-  }
-
-  .mypage__left img {
-    border-radius: 50%;
-    width: 80%;
   }
 
   .mypage__storage-title {
@@ -102,6 +121,30 @@
     flex-direction: column;
     align-items: center;
   }
+  
+  .mypage__profile {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .mypage__profile img {
+    border-radius: 50%;
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 1em;
+  }
+
+  .mypage__left .mypage__profile-update {
+    position: absolute;
+    right: 0;
+    bottom: 2rem;
+    background: var(--main-red);
+    border-radius: 50%;
+    padding: 1.1rem 1.4rem;
+    color: white;
+    font-size: 1.6rem;
+  }
 
   .mypage__left .mypage__btn {
     font-size: 1.4rem;
@@ -113,12 +156,6 @@
     text-align: center;
     cursor: pointer;
     width: 15rem;
-  }
-
-  .mypage__left img {
-    border-radius: 50%;
-    width: 100%;
-    margin-bottom: 2em;
   }
 
   .mypage__storage-title {
@@ -178,6 +215,30 @@
     align-items: center;
   }
 
+  .mypage__profile {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .mypage__profile img {
+    border-radius: 50%;
+    width: 25rem;
+    height: 25rem;
+    margin-bottom: 1em;
+  }
+
+  .mypage__left .mypage__profile-update {
+    position: absolute;
+    right: 1rem;
+    bottom: 3rem;
+    background: var(--main-red);
+    border-radius: 50%;
+    padding: 1.3rem 1.7rem;
+    color: white;
+    font-size: 1.8rem;
+  }
+
   .mypage__left .mypage__btn {
     font-size: 1.4rem;
     margin-bottom: 1rem;
@@ -188,12 +249,6 @@
     text-align: center;
     cursor: pointer;
     width: 15rem;
-  }
-
-  .mypage__left img {
-    border-radius: 50%;
-    width: 60%;
-    margin-bottom: 2em;
   }
 
   .mypage__storage-title {
@@ -438,5 +493,144 @@
   .userupdate__pw-udpate {
     text-align: center;
     font-size: 1.2rem;
+  }
+}
+
+/* 프로필 사진 수정 */
+@media screen and (max-width: 480px) {
+  .profileupdate-form {
+    width: 30rem;
+    margin: 1rem auto;
+    padding: 5rem 0;
+    text-align: center;
+  }
+  
+  .profileupdate__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .profileupdate__hr {
+    background-color: var(--main-red);
+    height: 0.15rem;
+    margin: 2rem 0 2rem 0;
+  }
+
+  .profileupdate__subtitle {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .profileupdate-form img {
+    width: 22rem;
+    height: 22rem;
+  }
+
+  .profileupdate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .profileupdate__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .profileupdate-form {
+    width: 45rem;
+    margin: 1rem auto;
+    padding: 5rem 0;
+    text-align: center;
+  }
+  
+  .profileupdate__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .profileupdate__hr {
+    background-color: var(--main-red);
+    height: 0.15rem;
+    margin: 2rem 0 2rem 0;
+  }
+
+  .profileupdate__subtitle {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .profileupdate-form img {
+    width: 25rem;
+    height: 25rem;
+  }
+
+  .profileupdate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .profileupdate__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .profileupdate-form {
+    width: 50rem;
+    margin: 1rem auto;
+    padding: 5rem 0;
+    text-align: center;
+  }
+  
+  .profileupdate__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .profileupdate__hr {
+    background-color: var(--main-red);
+    height: 0.15rem;
+    margin: 2rem 0 2rem 0;
+  }
+
+  .profileupdate__subtitle {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .profileupdate-form img {
+    width: 28rem;
+    height: 28rem;
+  }
+
+  .profileupdate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .profileupdate__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
   }
 }
