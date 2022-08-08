@@ -24,5 +24,6 @@ urlpatterns = [
     path('', include('albums.urls')),
     path('', include('framesharings.urls')),
     path('', include('limitedframes.urls')),
+    path('', include('django.contrib.auth.urls'))
 ]
 

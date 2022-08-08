@@ -2,7 +2,7 @@ from django.urls import path, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView
+from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 
 app_name = "users"
 
@@ -17,20 +17,8 @@ urlpatterns = [
     path("mypage/myupdate", views.user_update, name="user_update"),
     path("mypage/changepw", views.change_pw, name="change_pw"),
     path("mypage/update-profpic", views.profile_update, name="update_profpic"),
-    # path("password_reset/", PasswordResetView.as_view(
-    #     template_name='users/reset_password.html'
-    # ),
-    # name="password_reset"),
-
-    # path("password_reset/done/", PasswordResetDoneView.as_view(
-    #     template_name='users/password_reset_done.html'
-    # ), 
-    # name="password_reset_done"),
-
-    # path("password_reset_confirm/<uidb64>/<token>/",
-    # PasswordResetConfirmView.as_view(
-    #     template_name='users/password_reset_confirm.html',
-    # ),
-    # name='password_reset_confirm'),
-
+    path('password-reset/', PasswordResetView.as_view(template_name='registration/password_reset_form.html'), name='reset_password'),
+    path('password-reset/done/', PasswordResetDoneView.as_view(template_name='registration/password_reset_done.html'), name='password_reset_done'),
+    path('password-reset-confirm/<uidb64>/<token>/', PasswordResetConfirmView.as_view(template_name='registration/password_reset_confirm.html'), name='password_reset_confirm'),
+    path('password-reset-complete/', PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'), name='password_reset_complete'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
