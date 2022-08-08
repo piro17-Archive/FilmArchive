@@ -162,6 +162,10 @@
   }
 }
 
+.main__navbar-btn {
+  cursor: pointer;
+}
+
 .main__navbar-list ul {
   position: fixed;
   top: 8rem;
