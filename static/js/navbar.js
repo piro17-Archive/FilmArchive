@@ -1,8 +1,8 @@
 const navbarBtn = document.querySelector(".main__navbar-btn img");
 const navbarList = document.querySelector(".main__navbar-list");
-const background = document.querySelector("main");
+const body = document.querySelector("body");
 
 navbarBtn.addEventListener("click", function () {
   navbarList.classList.toggle("hidden");
-  background.classList.toggle("overlay");
+  body.classList.toggle("overlay");
 });
