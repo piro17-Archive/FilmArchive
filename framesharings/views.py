@@ -4,11 +4,37 @@ from requests import delete
 from .models import User, Keyword, Frame
 from .froms import PostFrame
 from django.contrib import messages
-from django.db.models import Count
+from django.db.models import Count, When,Case
+from datetime import date,timedelta
+from datetime import datetime
+import _strptime 
+ 
 # Create your views here.
+def date_range(start, end):
+    start = datetime.strptime(start, "%Y-%m-%d")
+    end = datetime.strptime(end, "%Y-%m-%d")
+    dates = [(start + timedelta(days=i)).strftime("%Y-%m-%d") for i in range((end-start).days+1)]
+    return dates
 
 def frame(request):
+    today = date.today()
+    dates = date_range(str(today-timedelta(weeks=1)+ timedelta(days=1)), str(today))
     frameinfo = Frame.objects.all()
+    for weeklikecount in frameinfo:
+        count = 0
+        if weeklikecount.framelikedate != None:
+            datesplit = weeklikecount.framelikedate.split('/')
+        else:
+            continue
+        for day in dates:
+            for pic in datesplit:
+                if day in pic:
+                    count += 1
+        weeklikecount.frameweeklike = count
+        weeklikecount.save()
+    frameweekinfo = frameinfo.order_by('?').order_by('-frameweeklike','?')[:4]
+    print(frameweekinfo)
+    
     sort = request.GET.get('sort',None)
     if sort == '1':
         frameinfo = frameinfo.annotate(like_count= Count('framelikeuser')).order_by('-like_count')
@@ -35,32 +61,45 @@ def frame(request):
         frameinfo = Frame.objects.filter(framekeyword__id__contains=querykeyword)
         querykeyword = int(querykeyword)
     if likereq != None:
-        sltframe = Frame.objects.filter(id = likereq)
-        if request.user in sltframe[0].framelikeuser.all():
-            sltframe[0].framelikeuser.remove(request.user)
+        sltframe = Frame.objects.get(id = likereq)
+        if request.user in sltframe.framelikeuser.all():
+            sltframe.framelikeuser.remove(request.user)
+            likedates = sltframe.framelikedate.split('/')
+
+            for likedate in likedates:
+                if str(request.user) in likedate:
+                    likedates.remove(likedate)
+                    break
+            sltframe.framelikedate = '/'.join(likedates)
+
         else:
-            sltframe[0].framelikeuser.add(request.user)
-        sltframe[0].save()
+            sltframe.framelikeuser.add(request.user)
+            sltframe.framelikedate = sltframe.framelikedate+str(request.user)+str(today)+'/'
+            sltframe.save()
+        sltframe.save()
 
     if savereq != None:
-        sltframe = Frame.objects.filter(id = savereq)
-        if request.user in sltframe[0].framesaveuser.all():
-            sltframe[0].framesaveuser.remove(request.user)
+        sltframe = Frame.objects.get(id = savereq)
+        if request.user in sltframe.framesaveuser.all():
+            sltframe.framesaveuser.remove(request.user)
         else:
-            sltframe[0].framesaveuser.add(request.user)
-        sltframe[0].save()
+            sltframe.framesaveuser.add(request.user)
+        sltframe.save()
     context = {
         "frameinfo": frameinfo,
         "like": like,
         "save": save,
         "keywordinfo": keywordinfo,
-        "querykeyword": querykeyword
+        "querykeyword": querykeyword,
+        "frameweekinfo": frameweekinfo,
     }
 
     return render(request, template_name='framesharings/frame.html',context=context)
 
 
 def framedetail(request,id):
+    today = date.today()
+    dates = date_range(str(today-timedelta(weeks=1)+ timedelta(days=1)), str(today))
     frameinfo = Frame.objects.get(id =id)
     keywordinfo = Keyword.objects.all()
     like = request.user.likeMany.all()
@@ -68,12 +107,22 @@ def framedetail(request,id):
     likereq = request.GET.get('like',None)
     savereq = request.GET.get('save',None)
     if likereq != None:
-        sltframe = Frame.objects.filter(id = likereq)
-        if request.user in sltframe[0].framelikeuser.all():
-            sltframe[0].framelikeuser.remove(request.user)
+        sltframe = Frame.objects.get(id = likereq)
+        if request.user in sltframe.framelikeuser.all():
+            sltframe.framelikeuser.remove(request.user)
+            likedates = sltframe.framelikedate.split('/')
+
+            for likedate in likedates:
+                if str(request.user) in likedate:
+                    likedates.remove(likedate)
+                    break
+            sltframe.framelikedate = '/'.join(likedates)
+
         else:
-            sltframe[0].framelikeuser.add(request.user)
-        sltframe[0].save()
+            sltframe.framelikeuser.add(request.user)
+            sltframe.framelikedate = sltframe.framelikedate+str(request.user)+str(today)+'/'
+            sltframe.save()
+        sltframe.save()
 
     if savereq != None:
         sltframe = Frame.objects.filter(id = savereq)

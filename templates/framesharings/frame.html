@@ -36,6 +36,42 @@
         {% endfor%}
       </form>
     </div>
+
+    <div class="일주일 인기순4개">
+      <div class="frame__box">
+        {% for frameweekinfo in frameweekinfo %} {% if frameweekinfo.framepublic %} 
+        {% if frameweekinfo.framephoto %}
+        <div class="frame__one-box">
+          <h1>일주일 인기 {{forloop.counter}}등</h1>
+          <div class="frame__img">
+            <a href="{%url 'framesharings:framedetail' frameweekinfo.id %}"
+              ><img src="{{ frameweekinfo.framephoto.url }}" alt="프레임사진"
+            /></a>
+          </div>
+          <div class="frame__frametitle">{{ frameweekinfo.frametitle }}</div>
+          {% for keyword in frameweekinfo.framekeyword.all %} {% endfor%}
+          <div>
+            <form action="{% url 'framesharings:frame' %}">
+              <div>
+                {% if frameweekinfo in like %}
+                <button name="like" value="{{frameweekinfo.id}}"><i class="fa-regular fa-thumbs-up"></i>추천완료</button>
+                {% else %}
+                <button name="like" value="{{frameweekinfo.id}}"><i class="fa-regular fa-thumbs-up"></i>추천하기</button>
+                {% endif %}
+              </div>
+            </form>
+            <form action="{% url 'framesharings:frame' %}">
+              {% if frameweekinfo in save %}
+              <button name="save" value="{{frameweekinfo.id}}">찜완료</button>
+              {% else %}
+              <button name="save" value="{{frameweekinfo.id}}">찜하기</button>
+              {% endif %}
+            </form>
+          </div>
+        </div>
+        {% endif %} {% endif %} {% endfor %}
+      </div>
+    </div>
    
     <div class="frame__box">
       {% for frameinfo in frameinfo %} {% if frameinfo.framepublic %} 
