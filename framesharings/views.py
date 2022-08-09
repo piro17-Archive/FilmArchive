@@ -7,7 +7,8 @@ from django.contrib import messages
 from django.db.models import Count, When,Case
 from datetime import date,timedelta
 from datetime import datetime
-import _strptime
+import _strptime 
+ 
 # Create your views here.
 def date_range(start, end):
     start = datetime.strptime(start, "%Y-%m-%d")
