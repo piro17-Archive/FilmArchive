@@ -1,22 +1,27 @@
 {% extends 'users/main.html' %} {% block content %} {% load static %}
 <main>
   <form action="/create" method="POST" enctype="multipart/form-data">
-    <h2>제목 <input type="text" name="title" /></h2>
     {% csrf_token %}
-    <p>사진 <input type="file" name="recImage" /></p>
-    <p>
-      키워드 {% for keywordinfo in keywordinfo %}
-      <input
-        type="checkbox"
-        name="{{forloop.counter}}"
-        value="{{forloop.counter}}"
-        id="keywordid{{forloop.counter}}"
-      /><label for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
-      {% endfor %}
-    </p>
-    <p>설명<textarea name="content" id="" cols="30" rows="10"></textarea></p>
-    <div>
-      <input type="submit" value="글 작성" />
+    <div class="recommendcreate-form">
+      <div class="recommendcreate__title">포즈/컨셉 추천 글 작성</div>
+      <div class="recommendcreate__hr"></div>
+      <div class="recommendcreate__info">
+        <div><span>제목</span><input type="text" name="title" /></div>
+        <div><span>사진</span><input type="file" name="recImage" /></div>
+        <div><span>키워드</span>{% for keywordinfo in keywordinfo %}
+          <input
+            type="checkbox"
+            name="{{forloop.counter}}"
+            value="{{forloop.counter}}"
+            id="keywordid{{forloop.counter}}"
+          /><label for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
+          {% endfor %}
+        </div>
+        <div><span>설명</span><textarea name="content" id="" cols="30" rows="10"></textarea></ㅇ>
+        <div class="recommendcreate__btn-box">
+          <input type="submit" value="글 작성" class="recommendcreate__btn"/>
+        </div>
+      </div>
     </div>
   </form>
 </main>

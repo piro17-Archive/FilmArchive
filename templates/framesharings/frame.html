@@ -50,11 +50,11 @@
         {% for keyword in frameinfo.framekeyword.all %} {% endfor%}
         <div>
           <form action="{% url 'framesharings:frame' %}">
-            <div onclick="onClickLike({{ frameinfo.id }})">
+            <div>
               {% if frameinfo in like %}
-              <button name="like" value="{{frameinfo.id}}"><i class="fa-regular fa-thumbs-up"></i>추천완료</button>
+              <button name="like" value="{{frameinfo.id}}">추천완료</button>
               {% else %}
-              <button name="like" value="{{frameinfo.id}}"><i class="fa-regular fa-thumbs-up"></i>추천하기</button>
+              <button name="like" value="{{frameinfo.id}}">추천하기</button>
               {% endif %}
             </div>
           </form>
@@ -72,17 +72,3 @@
   </div>
 </main>
 {% endblock content %}
-
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script>
-  const onClickLike = async (id) => {
-    const url = "/like_ajax/";
-    const { data } = await axios.post(url, { id });
-    likeResponse(data.id);
-    console.log("dfaf");
-  };
-
-  const likeResponse = (id) => {
-    const likeBtn = document.querySelector(".frame__like button");
-  }
-</script>
