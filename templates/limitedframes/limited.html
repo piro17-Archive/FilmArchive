@@ -15,6 +15,7 @@
           {% for lifeframeinfo in lifeframeinfo %} 
           <a href="{% url 'limitedframes:limitedlifedetail' lifeframeinfo.id %}">
             <img src="{{ lifeframeinfo.lifephotourl }}">
+            <div class="limited--detail--text">{{lifeframeinfo.lifecontext|cut:"2022."}}</div>
           </a>
             {% endfor %}
         </div>
@@ -32,7 +33,11 @@
         <div class="limited-frame--section photoism">
           {% for photoisminfo in photoisminfo %} 
           <a href="{{ photoisminfo.photoismurl }}">
-            <img src="{% static '' %}{{photoisminfo.photoismphotourl}}" alt=""></a>
+            <img src="{% static '' %}{{photoisminfo.photoismphotourl}}" alt="">
+            <div class="limited--detail--text">@photoism.kr</div>
+          </a>
+            
+            
             {% endfor %}
         </div> 
       </div>
@@ -49,7 +54,8 @@
         <div class="limited-frame--section photosignature">
           {% for signatureinfo in signatureinfo %} 
           <a href="{{ signatureinfo.signatureurl }}">
-            <img src="{% static '' %}{{signatureinfo.signaturephotourl}}" alt=""></a>
+            <img src="{% static '' %}{{signatureinfo.signaturephotourl}}" alt="">
+            <div class="limited--detail--text">@photosignature_official</div></a>
             {% endfor %}
         </div> 
       </div>

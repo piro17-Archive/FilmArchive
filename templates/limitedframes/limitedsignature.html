@@ -1,14 +1,23 @@
-{% extends 'users/main.html' %} {% block content %}{% load static%}
+{% extends 'users/main.html' %} {% block content %}{% load static %}
 <main>
-    {% for signatureinfo in signatureinfo %}
-    <a href="{{ signatureinfo.signatureurl }}">
-        <img src="{% static '' %}{{signatureinfo.signaturephotourl}}" style="width: 100px;" alt=""></a>
-
-    <span>{{signatureinfo.signaturephotoinfo|cut:"Photo"|cut:"by"|cut:"shared"|truncatewords_html:7}}</span>
-    
+  <div class="morepage--container">
+    <div class="morepage--header">
+      <div class="morepage--title">포토시그니처</div>
+      <a href="{% url 'limitedframes:limited' %}" class="goto--home">
+        <i class="fa-solid fa-house"></i>
+      </a>
     </div>
-    {% endfor %}
+    <div class="line"></div>
+    <div class="detail--photo--grid">
+      {% for signatureinfo in signatureinfo %}
+      <div class="per--signature--detail">
+        <a href="{{ signatureinfo.signatureurl }}">
+          <img src="{% static '' %}{{signatureinfo.signaturephotourl}}" alt="">
+          <div class="limited--detail--text">@photosignature_official</div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </main>
-
-
 {% endblock content %}
