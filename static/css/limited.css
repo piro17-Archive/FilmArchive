@@ -23,7 +23,7 @@
   }
 
   .limited-frame--section{
-    width: 85%;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;
@@ -44,10 +44,6 @@
     width: 100%;
   }
 
-  .photosignature img{
-    width: 100%;
-    overflow: hidden;
-  }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px){
@@ -74,7 +70,7 @@
   }
 
   .limited-frame--section{
-    width: 85%;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 2rem;
@@ -88,10 +84,6 @@
 
   .photoism img{
     height: 100%;
-    width: 100%;
-  }
-
-  .photosignature img{
     width: 100%;
   }
   
@@ -121,10 +113,10 @@
   }
 
   .limited-frame--section{
-    width: 80%;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 5rem;
+    column-gap: 3rem;
     margin-top: 2rem;
   }
   
@@ -135,10 +127,6 @@
 
   .photoism img{
     height: 100%;
-    width: 100%;
-  }
-
-  .photosignature img{
     width: 100%;
   }
 }
@@ -189,4 +177,8 @@
   overflow: hidden;
 }
 
-/* limited frame more page */
+.photosignature img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
