@@ -2,23 +2,21 @@
 
 ### 네 컷 아카이브 기능 관련 노션 링크 : https://www.notion.so/4d21d29f14e549d59f407aba37433ffb
 
-### 네 컷 아카이브 현재 진행 상황
-
-
-크롤링실행방법
-
-*인생네컷  
-1.requirements.txt 다운​  
-2.python lifefourcut_parser.py 실행​  
-​  
-*포토이즘,포토시그니처 (윈도우,맥 서로 selector다른오류?)  
-1.chromedriver 다운 https://chromedriver.chromium.org/downloads  
-2.크롬버전맞게 manage.py와 같은 폴더에 exe파일 위치  
-3.static 폴더에 imgphotoism, imgsignature 폴더두개생성​  
-​  
-4.requirements.txt 다운 (python -m pip install selenium)  
-​  
-새 인스타 이메일아이디 사용권장  
+### 네 컷 아카이브 현재 진행 상황    
+#### 현재 사용중인 브랜치 : develop    
+### 백엔드
+1. 로그인, 회원가입, 소셜로그인, 비밀번호 재설정 기능 구현 완료  
+2. 마이페이지 - 회원정보 수정, 프로필 사진 교체 기능 구현 완료  
+3. My 네 컷 앨범 - 글 작성, 글 수정, 글 삭제, 정렬, 검색 기능 구현 완료  
+4. 제작 프레임 공유 - 글 작성, 글 수정, 글 삭제, 정렬, 검색 기능 구현 완료  
+5. 포즈/컨셉 추천 - 글 작성, 글 수정, 글 삭제, 검색 기능 구현 완료  
+6. 한정판 프렝미 안내 - 크롤링 완료
   
-5.python photoism_parser.py 실행 (인스타 아이디,비번입력)  
-python signature_parser.py  
+  
+### 프론트엔드  
+웹 / 모바일 반응형 구현  
+(전체적으로 디자인 수정 필요 ..)  
+
+---------------------------------    
+### 참고
+크롤링실행방법 : https://six-puppy-7ec.notion.site/9a6af805cc0943ac81b09cec416bf472  
