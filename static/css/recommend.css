@@ -254,3 +254,209 @@
     margin: 0.5rem 0;
   }
 }
+
+/* recommendcreate */
+@media screen and (max-width: 480px) {
+  .recommendcreate-form {
+    width: 30rem;
+    margin: 0 auto;
+    padding: 5rem 0;
+  }
+
+  .recommendcreate-form .recommendcreate__title {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .recommendcreate-form .recommendcreate__hr {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .recommendcreate__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.3rem;
+    width: 6rem;
+  }
+  
+  .recommendcreate__info div input {
+    width: 20rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .recommendcreate__info div input[type="checkbox"] {
+    width: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .recommendcreate__info div input[type="text"] {
+    width: 20rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .recommendcreate__info div textarea{
+    background-color: var(--main-background);
+    border: none;
+    border-radius: 1rem;
+    width: 20rem;
+    padding: 1rem;
+  }
+
+  .recommendcreate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .recommendcreate__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 0;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .recommendcreate-form {
+    width: 40rem;
+    margin: 0 auto;
+    padding: 5rem 0;
+  }
+
+  .recommendcreate-form .recommendcreate__title {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .recommendcreate-form .recommendcreate__hr {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .recommendcreate__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    font-size: 1.3rem;
+    margin: 0 1.5rem 1.5rem 0;
+  }
+  
+  .recommendcreate__info div input {
+    margin-bottom: 1.5rem;
+  }
+
+  .recommendcreate__info div input[type="text"] {
+    width: 30rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .recommendcreate__info div textarea{
+    background-color: var(--main-background);
+    border: none;
+    border-radius: 1rem;
+    width: 30rem;
+    padding: 1rem;
+  }
+
+  .recommendcreate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .recommendcreate__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .recommendcreate-form {
+    width: 40rem;
+    margin: 0 auto;
+    padding: 5rem 0;
+  }
+
+  .recommendcreate-form .recommendcreate__title {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .recommendcreate-form .recommendcreate__hr {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .recommendcreate__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.3rem;
+  }
+  
+  .recommendcreate__info div input {
+    margin-bottom: 1.5rem;
+  }
+
+  .recommendcreate__info div input[type="text"] {
+    width: 30rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .recommendcreate__info div textarea{
+    background-color: var(--main-background);
+    border: none;
+    border-radius: 1rem;
+    width: 30rem;
+    padding: 1rem;
+  }
+
+  .recommendcreate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .recommendcreate__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+}
