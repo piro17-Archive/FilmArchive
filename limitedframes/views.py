@@ -3,7 +3,6 @@ from django.shortcuts import render
 import re
 from limitedframes.models import Lifefourcut,Signature,Photoism
 # Create your views here.
-
 def limited(request):
     lifeframeinfo = Lifefourcut.objects.all().order_by('-id')[:4]
     signatureinfo = Signature.objects.all().order_by('-id')[:4]
