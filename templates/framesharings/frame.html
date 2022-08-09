@@ -1,4 +1,5 @@
 {% extends 'users/main.html' %} {% block content %}
+{% load static %}
 <main>
   <div class="frame__container">
     <div class="frame__flex-box">
@@ -19,6 +20,7 @@
         <div class="frame__search">
           <form action="{% url 'framesharings:frame' %}">
             <input type="search" name="title" placeholder="프레임 검색" />
+						<img src="{% static 'image/glass.svg' %}" class="glass__icon">
           </form>
         </div>
       </div>

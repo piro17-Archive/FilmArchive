@@ -74,6 +74,24 @@
     width: 100%;
   }
 
+  .frame__right .frame__search form {
+    display: flex;
+    position: relative;
+    align-items: center;
+  }
+
+  .frame__right .frame__search input {
+    background-color: var(--main-skin);
+    border: none;
+    padding: 0.7rem;
+    border-radius: 1rem;
+  }
+
+  .frame__right .frame__search .glass__icon{
+    position: absolute;
+    right: 1rem;
+  }
+
   .frame__create {
     width: 100%;
     text-align: center;
@@ -163,11 +181,22 @@
     margin-right: 0.5rem;
   }
 
+  .frame__right .frame__search form {
+    display: flex;
+    position: relative;
+    align-items: center;
+  }
+
   .frame__right .frame__search input {
     background-color: var(--main-skin);
     border: none;
     padding: 0.7rem;
     border-radius: 1rem;
+  }
+
+  .frame__right .frame__search .glass__icon{
+    position: absolute;
+    right: 1rem;
   }
 
   .frame__box {
@@ -251,11 +280,22 @@
     margin-right: 0.5rem;
   }
 
+  .frame__right .frame__search form {
+    display: flex;
+    position: relative;
+    align-items: center;
+  }
+
   .frame__right .frame__search input {
     background-color: var(--main-skin);
     border: none;
     padding: 0.7rem;
     border-radius: 1rem;
+  }
+
+  .frame__right .frame__search .glass__icon{
+    position: absolute;
+    right: 1rem;
   }
 
   .frame__img {
