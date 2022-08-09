@@ -1,3 +1,57 @@
+@media screen and (max-width: 480px){
+  .per--lifedetail:hover .limited--detail--text{
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+  }
+
+  .limited-frame--section a:hover div{
+    font-size: 0.5rem;
+    line-height: 1.2rem;
+    font-weight: 400;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 740px){
+  .per--lifedetail:hover .limited--detail--text{
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    font-weight: 600;
+  }
+
+  .limited-frame--section a:hover div{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+  }
+}
+
+@media screen and (min-width: 740px) and (max-width: 1024px){
+  .per--lifedetail:hover .limited--detail--text{
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+  }
+
+  .limited-frame--section a:hover div{
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .per--lifedetail:hover .limited--detail--text{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+  }
+
+  .limited-frame--section a:hover div{
+    font-size: 1.8rem;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+}
 @media screen and (max-width: 740px) {
   .morepage--container{
     margin: 3rem;
@@ -8,25 +62,20 @@
   }
 
   .lifedetail--grid--section{
-    width: 100%;
+    width: 95%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
+    column-gap: 1.5rem;
+    row-gap: 1rem;
   }
-
   .per--lifedetail img{
     width: 100%;
     height: 100%;
   }
 
-  .lifedetail--text{
-    font-size: 1.2rem;
-  }
-
   .goto--home{
     font-size: 1.6rem;
   }
-  
 }
 
 @media screen and (min-width: 740px) and (max-width: 1024px){
@@ -39,19 +88,16 @@
   }
 
   .lifedetail--grid--section{
-    width: 100%;
+    width: 95%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 1rem;
+    column-gap: 2rem;
+    row-gap: 1.5rem;
   }
 
   .per--lifedetail img{
     width: 100%;
     height: 100%;
-  }
-
-  .lifedetail--text{
-    font-size: 1.4rem;
   }
 
   .goto--home{
@@ -69,7 +115,7 @@
   }
 
   .lifedetail--grid--section{
-    width: 100%;
+    width: 95%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 3rem;
@@ -79,10 +125,6 @@
   .per--lifedetail img{
     width: 100%;
     height: 100%;
-  }
-
-  .lifedetail--text{
-    font-size: 1.4rem;
   }
 
   .goto--home{
@@ -117,27 +159,44 @@
 .per--lifedetail{
   background-color:rgb(247, 247, 247); 
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
 }
 
-.lifedetail--text{
-  width: 100%;
-  font-weight: 500;
-  background-color: white;
-  text-align: center;
+.per--lifedetail a,
+.limited-frame--section a{
+  position: relative;
 }
 
 .lifedetail--grid--section{
   margin-bottom: 3rem;
 }
 
-.pagenum,
-.previous--btn,
-.next--btn{
-  font-size: 1.6rem;
-  font-weight: 400;
+.limited--detail--text{
+  display: none;
+}
+
+.per--lifedetail:hover img{
+  filter:brightness(40%);
+  transition: filter, 0.5s;
+}
+
+.limited-frame--section img:hover{
+  filter:brightness(40%);
+  transition: filter, 0.5s;
+}
+
+.per--lifedetail:hover .limited--detail--text,
+.limited-frame--section a:hover div{
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  z-index: 1;
 }
 
