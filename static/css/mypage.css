@@ -37,6 +37,7 @@
     width: 20rem;
     height: 20rem;
     margin-bottom: 1em;
+    object-fit: cover;
   }
 
   .mypage__left .mypage__profile-update {
@@ -133,6 +134,7 @@
     width: 20rem;
     height: 20rem;
     margin-bottom: 1em;
+    object-fit: cover;
   }
 
   .mypage__left .mypage__profile-update {
@@ -226,6 +228,7 @@
     width: 25rem;
     height: 25rem;
     margin-bottom: 1em;
+    object-fit: cover;
   }
 
   .mypage__left .mypage__profile-update {
@@ -527,6 +530,9 @@
   .profileupdate-form img {
     width: 22rem;
     height: 22rem;
+    border-radius: 50%;
+    margin: 1rem 0 2rem 0;
+    object-fit: cover;
   }
 
   .profileupdate__btn-box {
@@ -573,6 +579,9 @@
   .profileupdate-form img {
     width: 25rem;
     height: 25rem;
+    border-radius: 50%;
+    margin: 1rem 0 2rem 0;
+    object-fit: cover;
   }
 
   .profileupdate__btn-box {
@@ -619,6 +628,9 @@
   .profileupdate-form img {
     width: 28rem;
     height: 28rem;
+    border-radius: 50%;
+    margin: 1rem 0 2rem 0;
+    object-fit: cover;
   }
 
   .profileupdate__btn-box {

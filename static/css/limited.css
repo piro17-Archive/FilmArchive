@@ -23,10 +23,11 @@
   }
 
   .limited-frame--section{
-    width: 100%;
+    width: 85%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;
+    margin-top: 1rem;
   }
 
   .limited-frame--section img{
@@ -73,10 +74,11 @@
   }
 
   .limited-frame--section{
-    width: 100%;
+    width: 85%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 2rem;
+    margin-top: 1rem;
   }
   
   .limited-frame--section img{
@@ -119,10 +121,11 @@
   }
 
   .limited-frame--section{
-    width: 100%;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 2rem;
+    column-gap: 5rem;
+    margin-top: 2rem;
   }
   
   .limited-frame--section img{
