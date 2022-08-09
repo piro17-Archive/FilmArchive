@@ -461,6 +461,174 @@
   }
 }
 
+/* recommenddetail */
+@media screen and (max-width: 480px) {
+  .recommenddetail {
+    width: 30rem;
+    margin: 0 auto;
+    padding: 5rem 0;
+  }
+
+  .recommenddetail__title {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .recommenddetail__hr {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0;
+  }
+
+  .recommenddetail__recommendtitle {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .recommenddetail__img img{
+    width: 100%;
+    height: auto;
+  }
+
+  .recommenddetail__memo {
+    font-size: 1.4rem;
+    margin: 2rem 0;
+  }
+
+  .recommenddetail__btn-box {
+    display: flex;
+    justify-content: right;
+  }
+
+  .recommenddetail__btn-box .recommenddetail__home,
+  .recommenddetail__btn-box .recommenddetail__update,
+  .recommenddetail__btn-box .recommenddetail__delete {
+   font-size: 2rem;
+  }
+
+  .recommenddetail__btn-box .recommenddetail__update,
+  .recommenddetail__btn-box .recommenddetail__delete {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .recommenddetail {
+    width: 50rem;
+    margin: 0 auto;
+    padding: 5rem 0;
+  }
+
+  .recommenddetail__title {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .recommenddetail__hr {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0;
+  }
+
+  .recommenddetail__recommendtitle {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .recommenddetail__img img{
+    width: 100%;
+    height: auto;
+  }
+
+  .recommenddetail__memo {
+    font-size: 1.4rem;
+    margin: 2rem 0;
+  }
+
+  .recommenddetail__btn-box {
+    display: flex;
+  }
+
+  .recommenddetail__btn-box {
+    display: flex;
+    justify-content: right;
+  }
+
+  .recommenddetail__btn-box .recommenddetail__home,
+  .recommenddetail__btn-box .recommenddetail__update,
+  .recommenddetail__btn-box .recommenddetail__delete {
+   font-size: 2rem;
+  }
+
+  .recommenddetail__btn-box .recommenddetail__update,
+  .recommenddetail__btn-box .recommenddetail__delete {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .recommenddetail {
+    width: 50rem;
+    margin: 0 auto;
+    padding: 5rem 0;
+  }
+
+  .recommenddetail__title {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .recommenddetail__hr {
+    background-color: var(--main-red);
+    height: 0.1rem;
+    margin: 2rem 0;
+  }
+
+  .recommenddetail__recommendtitle {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .recommenddetail__img img{
+    width: 100%;
+    height: auto;
+  }
+
+  .recommenddetail__memo {
+    font-size: 1.4rem;
+    margin: 2rem 0;
+  }
+
+  .recommenddetail__btn-box {
+    display: flex;
+  }
+
+  .recommenddetail__btn-box {
+    display: flex;
+    justify-content: right;
+  }
+
+  .recommenddetail__btn-box .recommenddetail__home,
+  .recommenddetail__btn-box .recommenddetail__update,
+  .recommenddetail__btn-box .recommenddetail__delete {
+   font-size: 2.5rem;
+  }
+
+  .recommenddetail__btn-box .recommenddetail__update,
+  .recommenddetail__btn-box .recommenddetail__delete {
+    margin-left: 1rem;
+  }
+}
+
 /* recommendupdate */
 @media screen and (max-width: 480px) {
   .recommendupdate-form {
