@@ -1,49 +1,52 @@
 {% extends 'users/main.html' %} {% block content %} {% load static %}
-<hr />
 <main>
-  <h1>포즈/컨셉 추천</h1>
-  <form action="{% url 'recommends:recommend_list' %}">
-    <input type="search" name="title" placeholder="포즈 또는 컨셉 찾기" />
-    <input type="submit" value="검색" />
-  </form>
-  <a href="{% url 'recommends:rec_create' %}"><button>글 작성</button></a>
-  <div>
-    <form action="{% url 'recommends:recommend_list' %}">
-      <button name="sortkeyword" value="None">#HOME</button>
-      {% for keywordinfo in keywordinfo  %}
-      {% if  querykeyword == keywordinfo.id %}
-    <button name="sortkeyword" value="{{keywordinfo.id}}" style="background-color: black;">#{{keywordinfo.name}}</button>
-    {% else %}
-    <button name="sortkeyword" value="{{keywordinfo.id}}">#{{keywordinfo.name}}</button>
-    {% endif%}
-    {% endfor%}
-  </form>
+  <div class="recommend__container">
+    <div class="recommend__flex-box">
+      <div class="recommend__left">
+        <div class="recommend__title">포즈/컨셉 추천</div>
+        <a href="{% url 'recommends:rec_create' %}"><div class="recommend__create"><i class="fa-solid fa-circle-plus"></i></div></a>
+      </div>
+      <div class="recommend__right">
+        <form action="{% url 'recommends:recommend_list' %}">
+          <div class="recommend__search">
+            <input type="search" name="title" placeholder="포즈 또는 컨셉 찾기" />
+            <img src="{% static 'image/glass.svg' %}" class="glass__icon">
+          </div>
+        </form>
+      </div>
+    </div>
     
-  </div>
-  {% for recommend in recommends %}
-  <article>
-    {% if recommend.recImage %}
-    <p>
-      <img
-        src="{{ recommend.recImage.url }}"
-        style="width: 150px; height: 150px"
-      />
-    </p>
-    {% endif %}
-    <h1>
-      <a href="{% url 'recommends:rec_detail' recommend.id %}"
-        >{{recommend.title}}</a
-      >
-    </h1>
-    <p>{{recommend.postUser}}</p>
-    <p>
-      {% for keyword in recommend.recKeyword.all %}
-        #{{keyword.name}} 
+    <div>
+      <form action="{% url 'recommends:recommend_list' %}">
+        <button name="sortkeyword" value="None">#HOME</button>
+        {% for keywordinfo in keywordinfo  %}
+        {% if  querykeyword == keywordinfo.id %}
+      <button name="sortkeyword" value="{{keywordinfo.id}}" style="background-color: black;">#{{keywordinfo.name}}</button>
+      {% else %}
+      <button name="sortkeyword" value="{{keywordinfo.id}}">#{{keywordinfo.name}}</button>
+      {% endif%}
+      {% endfor%}
+    </form>
+      
+    <div class="recommend__box">
+      {% for recommend in recommends %}
+      <div class="recommend__one-box">
+        {% if recommend.recImage %}
+        <div class="recommend__img">
+          <img src="{{ recommend.recImage.url }}" />
+        </div>
+        {% endif %}
+        <div class="recommend__recommendtitle">
+          <a href="{% url 'recommends:rec_detail' recommend.id %}">{{recommend.title}}</a>
+        </div>
+        {{recommend.postUser}}
+        {% for keyword in recommend.recKeyword.all %}
+          #{{keyword.name}} 
+        {% endfor %}
+        {{recommend.content}}
+      </div>
       {% endfor %}
-    </p>
-    <p>{{recommend.content}}</p>
-  </article>
-  {% endfor %}
+    </div>
+  </div>
 </main>
-<hr />
 {% endblock content %}

@@ -1,0 +1,256 @@
+/* recommend */
+@media screen and (max-width: 600px) {
+  .recommend__container {
+    margin: 3rem 7%;
+  }
+
+  .recommend__flex-box {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+
+  .recommend__left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+
+  .recommend__left .recommend__title {
+    font-size: 1.8rem;
+    font-weight: 800;
+  }
+
+  .recommend__left .recommend__create {
+    color: var(--main-red);
+    font-size: 3.2rem;
+    margin-left: 1rem;
+  }
+
+  .recommend__right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .recommend__right .recommend__search {
+    width: 100%;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .recommend__right .recommend__search form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .recommend__right .recommend__search input {
+    background-color: var(--main-skin);
+    border: none;
+    padding: 1rem 0.7rem;
+    border-radius: 1rem;
+    width: 100%;
+  }
+
+  .recommend__right .recommend__search .glass__icon {
+    margin-left: 0.5rem;
+    position: absolute;
+    top: 0.6rem;
+    right: 1rem;
+  }
+
+
+
+  .recommend__img {
+    min-height: 15rem;
+    max-height: 15rem;
+    overflow: hidden;
+  }
+
+  .recommend__img img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .recommend__recommendtitle {
+    font-size: 1.15rem;
+    margin: 0.5rem 0;
+  }
+
+  .recommend__box {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-gap: 1rem;
+    justify-content: center;
+  }
+
+  .recommend__one-box {
+    padding: 0.5rem;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .recommend__container {
+    margin: 4rem 10%;
+  }
+
+  .recommend__flex-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0 3rem 0;
+  }
+
+  .recommend__left {
+    display: flex;
+    align-items: center;
+  }
+
+  .recommend__left .recommend__title {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+  .recommend__left .recommend__create {
+    color: var(--main-red);
+    font-size: 3.2rem;
+    margin-left: 1rem;
+  }
+
+  .recommend__right {
+    display: flex;
+    align-items: center;
+  }
+
+  .recommend__right .recommend__search {
+    margin-right: 0.5rem;
+    display: flex;
+    position: relative;
+  }
+
+  .recommend__right .recommend__search input {
+    background-color: var(--main-skin);
+    border: none;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    width: 20rem;
+  }
+
+  .recommend__right .recommend__search .glass__icon {
+    margin-left: 0.5rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+  }
+
+  .recommend__box {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-gap: 2rem;
+    justify-content: center;
+  }
+
+  .recommend__one-box {
+    padding: 0.5rem;
+  }
+
+  .recommend__img {
+    min-height: 20rem;
+    max-height: 20rem;
+    overflow: hidden;
+  }
+
+  .recommend__img img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .recommend__recommendtitle {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .recommend__container {
+    margin: 4rem 10%;
+  }
+
+  .recommend__flex-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0 3rem 0;
+  }
+
+  .recommend__left {
+    display: flex;
+    align-items: center;
+  }
+
+  .recommend__left .recommend__title {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+  .recommend__left .recommend__create {
+    color: var(--main-red);
+    font-size: 3.2rem;
+    margin-left: 1rem;
+  }
+
+  .recommend__right {
+    display: flex;
+    align-items: center;
+  }
+
+  .recommend__right .recommend__search {
+    margin-right: 0.5rem;
+    display: flex;
+    position: relative;
+  }
+
+  .recommend__right .recommend__search input {
+    background-color: var(--main-skin);
+    border: none;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    width: 22rem;
+  }
+
+  .recommend__right .recommend__search .glass__icon {
+    margin-left: 0.5rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+  }
+
+  .recommend__box {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-gap: 2rem;
+    justify-content: center;
+  }
+
+  .recommend__one-box {
+    padding: 0.5rem;
+  }
+
+  .recommend__img {
+    min-height: 35rem;
+    max-height: 35rem;
+    overflow: hidden;
+  }
+
+  .recommend__img img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .recommend__recommendtitle {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+}
