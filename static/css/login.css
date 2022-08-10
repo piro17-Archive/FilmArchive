@@ -1,6 +1,9 @@
 @media screen and (max-width: 480px) {
   .login--section {
-    padding: 4rem 3rem;
+    width: 30rem;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 5rem 1rem;
   }
 
   .login--btn,
@@ -30,30 +33,29 @@
     cursor: pointer;
   }
 
-  .line {
-    width: 30rem;
-    height: 0.15rem;
-    background-color: var(--main-red);
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-  }
-
   .login--main--text {
     font-size: 1.7rem;
     font-weight: 600;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
   }
 
   .login--main--section {
-    padding: 3rem 2rem 2.5rem 2rem;
+    padding: 2.5rem 0;
+  }
+
+  .login--reset {
+    font-size: 0.8rem;
   }
 }
-/* screen의 width가 480px 이하일 때 적용 */
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .login--section {
-    padding: 6rem 6rem;
+    width: 40rem;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 5rem 0;
   }
+
   .login--btn,
   .signup--btn {
     width: 17rem;
@@ -81,29 +83,27 @@
     cursor: pointer;
   }
 
-  .line {
-    width: 40rem;
-    height: 0.15rem;
-    background-color: var(--main-red);
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-  }
-
   .login--main--text {
     font-size: 2rem;
     font-weight: 600;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
   }
 
   .login--main--section {
-    padding: 4rem 3rem 3rem 3rem;
+    padding: 2.5rem 0;
+  }
+
+  .login--reset {
+    font-size: 1.2rem;
   }
 }
-/* screen의 width가 480px 이상 1024px 이하일 때 적용 */
 
 @media screen and (min-width: 1024px) {
   .login--section {
-    padding: 6rem 35rem;
+    width: 50rem;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 5rem 0;
   }
 
   .login--btn,
@@ -133,23 +133,25 @@
     cursor: pointer;
   }
 
-  .line {
-    width: 60rem;
-    height: 0.15rem;
-    background-color: var(--main-red);
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-  }
-
   .login--main--text {
     font-size: 2rem;
     font-weight: 600;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
   }
 
   .login--main--section {
-    padding: 6rem 2rem 5rem 2rem;
+    padding: 3rem 0;
   }
+
+  .login--reset {
+    font-size: 1.2rem;
+  }
+}
+
+.line {
+  height: 0.2rem;
+  background-color: var(--main-red);
+  margin: 1rem 0;
 }
 
 button {
@@ -166,14 +168,6 @@ button {
   padding: 0.5rem;
 }
 
-.login--section {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .login--btn--section,
 .signup--btn--section {
   display: inline-flex;
@@ -186,6 +180,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2.5rem;
 }
 
 .login--input {
@@ -205,6 +200,7 @@ button {
 
 .login--btn {
   display: inline-block;
+  margin-top: 1.5rem;
 }
 
 .signup--link {

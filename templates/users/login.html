@@ -9,11 +9,11 @@
         {% csrf_token %}
         <div class="text--input--section">
           <div class="login--input">
-            <span class="login--text">아이디: </span>
+            <span class="login--text">아이디 </span>
             {{ form.username }}
           </div>
           <div class="login--input">
-            <span class="login--text">비밀번호: </span>
+            <span class="login--text">비밀번호 </span>
             {{ form.password }}
           </div>
         </div>
@@ -27,11 +27,9 @@
         </a>
       </div>
       <!--비밀번호 리셋하기 기능-->
-      <div>
-        <p>비밀번호를 까먹으셨나요?</p>
-        <a href="{% url 'users:reset_password' %}">
-          <button>지금 비밀번호 재설정하기</button>
-        </a>
+      <div class="login--reset">
+        <div>비밀번호를 까먹으셨나요?</div>
+        <div><a href="{% url 'users:reset_password' %}">비밀번호 찾기</a></div>
       </div>
     </div>
     <div class="line"></div>
