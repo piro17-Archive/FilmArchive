@@ -1,0 +1,11 @@
+{% extends 'users/main.html' %} {% block content %} {% load static %}
+<main>
+    <h1> 회원 탈퇴 </h1>
+    <p>회원님의 계정이 삭제됩니다.</p>
+    <p>탈퇴시 개인정보 및 이용정보가 삭제되며, 복구할 수 없습니다.</p>
+    <form action="{% url 'users:delete_user' user.username %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="회원 탈퇴">
+    </form>
+</main>
+{% endblock content %}
