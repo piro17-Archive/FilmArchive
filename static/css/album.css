@@ -555,7 +555,7 @@
 /* albumdetail */
 @media screen and (max-width: 480px) {
   .albumdetail {
-    padding: 2rem 0;
+    padding: 3rem 0;
   }
 
   .albumdetail__header {
@@ -642,16 +642,28 @@
   }
 
   .albumdetail__memo {
+    position: relative;
+    display: flex;
     width: 100%;
-    background: #ffcfcf;
-    padding: 4rem 3rem;
-    margin: 4rem 0 2rem 0;
+    height: 30rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .albumdetail__memo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30rem;
+    height: 30rem;
   }
 
   .albumdetail__memo div {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 800;
     margin-bottom: 1rem;
+    z-index: 1;
   }
 }
 
@@ -700,6 +712,7 @@
   .albumdetail__flex-box {
     display: flex;
     flex-direction: column;
+    align-items: center;
     background: var(--main-background);
     padding: 2rem 5rem;
   }
@@ -722,7 +735,7 @@
 
   .albumdetail__bg {
     background: white;
-    width: 100%;
+    width: 60%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -748,16 +761,28 @@
   }
 
   .albumdetail__memo {
+    position: relative;
+    display: flex;
     width: 100%;
-    background: #ffcfcf;
-    padding: 4rem 3rem;
-    margin: 4rem 0 2rem 0;
+    height: 55rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .albumdetail__memo img {
+    position: absolute;
+    top: -1;
+    left: -1;
+    width: 100%;
+    height: 100%;
   }
 
   .albumdetail__memo div {
     font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 1rem;
+    z-index: 1;
   }
 }
 
@@ -806,12 +831,9 @@
   .albumdetail__flex-box {
     display: flex;
     justify-content: center;
+    align-items: center;
     background: var(--main-background);
-    padding: 2rem 5rem;
-  }
-
-  .swiper {
-    width: 100%;
+    padding: 2rem 15%;
   }
 
   .swiper-slide {
@@ -828,8 +850,7 @@
 
   .albumdetail__bg {
     background: white;
-    width: 35%;
-    height: auto;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -846,23 +867,32 @@
   .albumdetail__video video {
     width: 100%;
     height: 100%;
-    max-height: 60rem;
+    max-height: 50rem;
   }
 
   .albumdetail__memo {
-    width: 32%;
-    background: #ffcfcf;
+    position: relative;
     display: flex;
-    flex-direction: column;
+    width: 60%;
+    height: 60rem;
     justify-content: center;
-    padding: 0 5rem;
-    margin: 4rem 0 4rem 5rem;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .albumdetail__memo img {
+    position: absolute;
+    top: -1;
+    left: -1;
+    width: 100%;
+    height: 100%;
   }
 
   .albumdetail__memo div {
     font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 1rem;
+    z-index: 1;
   }
 }
 
