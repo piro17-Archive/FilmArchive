@@ -32,23 +32,25 @@
 			</div>
 		</div>
 
-		<div class="album__box">
-			{% for albuminfo in allalbum %}
-			<div class="album__one-box">
-				<div class="album__photo-date">{{albuminfo.albumdate}}</div>
-				<div class="album__img">
-					{% if albuminfo.albumphoto %}
-					<a href="/albumdetail/{{albuminfo.id}}" class="album__photo__id">
-						<img src="{{ albuminfo.albumphoto.url }}">
-					</a>
-					{% else %}
-					<a href="/albumdetail/{{albuminfo.id}}" class="album__photo__id">
-						<span class="photo__none">사진이 존재하지 않습니다.</span>
-					</a>
-					{% endif %}
+		<div class="album--grid--section">
+			<div class="album__box">
+				{% for albuminfo in allalbum %}
+				<div class="album__one-box">
+					<div class="album__photo-date">{{albuminfo.albumdate}}</div>
+					<div class="album__img">
+						{% if albuminfo.albumphoto %}
+						<a href="/albumdetail/{{albuminfo.id}}" class="album__photo__id">
+							<img src="{{ albuminfo.albumphoto.url }}">
+						</a>
+						{% else %}
+						<a href="/albumdetail/{{albuminfo.id}}" class="album__photo__id">
+							<span class="photo__none">사진이 존재하지 않습니다.</span>
+						</a>
+						{% endif %}
+					</div>
 				</div>
+				{% endfor %}
 			</div>
-			{% endfor %}
 		</div>
 	</div>
 </main>
