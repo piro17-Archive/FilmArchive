@@ -173,6 +173,8 @@
     color: var(--main-red);
     font-size: 3.2rem;
     margin-left: 1rem;
+    display: flex;
+    align-items: center;
   }
 
   .album__right {
@@ -304,6 +306,8 @@
     font-size: 3rem;
     color: var(--main-red);
     margin-left: 1rem;
+    display: flex;
+    align-items: center;
   }
 
   .album__img {
