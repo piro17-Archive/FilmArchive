@@ -1,4 +1,5 @@
 {% extends 'users/main.html' %} {% block content %}
+{% load static %}
 <main>
 	<div class="albumdetail">
 		<div class="albumdetail__header">
@@ -47,9 +48,12 @@
 			</div>
 
 			<div class="albumdetail__memo">
-				<div class="albumdetail__kind">종류 | {{albuminfo.albumtype.name}}</div>
-				<div class="albumdetail__position">위치 | {{albuminfo.albumlocation}}</div>
-				<div class="albumdetail__memos">메모 | {{albuminfo.albummemo}}</div>
+				<img src="{% static 'image/memo.png' %}" alt="">
+				<div>
+					<div class="albumdetail__kind">종류 | {{albuminfo.albumtype.name}}</div>
+					<div class="albumdetail__position">위치 | {{albuminfo.albumlocation}}</div>
+					<div class="albumdetail__memos">메모 | {{albuminfo.albummemo}}</div>
+				</div>
 			</div>
 		</div>
 
