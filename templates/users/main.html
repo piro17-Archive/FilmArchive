@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="{% static 'css/limitedlife.css' %}" />
     <link rel="stylesheet" href="{% static 'css/moredetail.css' %}" />
     <link rel="stylesheet" href="{% static 'css/recommend.css' %}" />
-
+    <link rel="stylesheet" href="{% static 'css/mainswiper.css' %}" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <title>네 컷 Archive</title>
   </head>
@@ -101,6 +101,55 @@
       </div>
     </header>
     {% block content %}
+    <main>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" id="slide1">
+            <div class="swiper-left">
+              <div class="slide-title">My 네 컷 앨범</div>
+              <div class="slide-subtitle">세상에 없는 나만의 네 컷 앨범을 만들어보세요.</div>
+              <div class="slide-button">My 네 컷 앨범 만들기</div>
+            </div>
+            <div class="swiper-right">
+              <img src="{% static 'image/frame.svg' %}" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide" id="slide2">
+            <div class="swiper-left">
+              <img src="{% static 'image/frame.svg' %}" alt="">
+            </div>
+            <div class="swiper-right">
+              <div class="slide-title">인생네컷 프레임 공유</div>
+              <div class="slide-subtitle">절대 망하지 않는 포즈와 컨셉을 추천드릴게요 :)</div>
+              <div class="slide-button">자세히 보기</div>
+            </div>
+          </div>
+          <div class="swiper-slide" id="slide3">
+            <div class="swiper-left">
+              <div class="slide-title">한정판 프레임</div>
+              <div class="slide-subtitle">매일 새로워지는 한정판 프레임을 만나보세요!</div>
+              <div class="slide-button">자세히 보기</div>
+            </div>
+            <div class="swiper-right">
+              <img src="{% static 'image/frame.svg' %}" alt="">
+            </div>
+          </div>
+          <div class="swiper-slide" id="slide4">
+            <div class="swiper-left">
+              <div class="slide-title">My 네 컷 앨범</div>
+              <div class="slide-subtitle">세상에 없는 나만의 네 컷 앨범을 만들어보세요.</div>
+              <div class="slide-button">My 네 컷 앨범 만들기</div>
+            </div>
+            <div class="swiper-right">
+              <img src="{% static 'image/frame.svg' %}" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </main>
     {% endblock content %}
     <footer>
       <h6>@ 네 컷 Archive</h6>
@@ -112,7 +161,8 @@
       <p>서비스 소개 내용 쓰기</p>
     </footer>
     <script src="{% static 'js/navbar.js' %}"></script>
-    <script src="{% static 'js/swiper.js' %}"></script>
+    <script src="{% static 'js/albumswiper.js' %}"></script>
+    <script src="{% static 'js/mainswiper.js' %}"></script>
     <script src="https://kit.fontawesome.com/a8a24f1fa9.js" crossorigin="anonymous"></script>
   </body>
 </html>
