@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.views import View
 from users.models import User, Profile
@@ -6,6 +7,7 @@ from users.forms import MyUpdateForm, ProfileUpdateForm
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 
 #여기추가
 from ctypes import wintypes
@@ -134,3 +136,31 @@ def profile_update(request):
     }
 
     return render(request, 'users/update_profpic.html', context)
+
+
+def check_username(request):
+    username = request.GET.get("username")
+    data = {
+       'username_exists':
+       User.objects.filter(username__iexact=username).exists()
+    }
+    return JsonResponse(data)
+
+
+def delete_user_view(request):
+    if request.method == "GET":
+        user = User.objects.all()
+        return render(request, 'users/delete_user.html', {'user': user})
+
+
+def delete_user(request, username):
+    try:
+        u = User.objects.get(username=username)
+        u.delete()
+        context['msg'] = '회원 탈퇴가 성공적으로 완료되었습니다.'       
+    except User.DoesNotExist: 
+        context['msg'] = '존재하지 않는 회원입니다.'
+    except Exception as e: 
+        context['msg'] = e.message
+
+    return render(request, 'users/main.html', context=context) 

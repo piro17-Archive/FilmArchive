@@ -22,7 +22,8 @@
         </div>
         <div class="mypage__btn-box">
           <a href="{% url 'users:user_update' %}"><div class="mypage__btn">회원정보 수정</div></a>
-          <div class="mypage__btn">회원 탈퇴</div></a>
+          {% csrf_token %}
+          <a href="{% url 'users:delete_user_view'%}"><div class="mypage__btn">회원 탈퇴</div></a>
         </div>
       </div>
       <div class="mypage__right">
