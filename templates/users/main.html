@@ -150,6 +150,22 @@
         <div class="swiper-button-next"></div>
       </div>
     </main>
+    <main class="idea-container">
+      <div class="idea">
+        <div class="idea-title">네 컷 아카이브란?</div>
+        <div class="idea-subtitle">"내 사진들을 온라인으로 모아볼 순 없을까?"</div>
+        <div class="idea-infos">
+          <div class="idea-info">사진 찍는 걸 좋아하는 당신!</div>
+          <div class="idea-info">추억 남기기를 좋아하는 당신!</div>
+          <div class="idea-info">지금 네 컷 아카이브로</div>
+        </div>
+        <div class="idea-box idea-box-left"></div>
+        <div class="idea-box idea-box-right"></div>
+        <div class="idea-box idea-box-left"></div>
+        {% csrf_token %}
+        <img src="{% static 'image/girl.svg' %}" alt="">
+      </div>
+    </main>
     {% endblock content %}
     <footer>
       <h6>@ 네 컷 Archive</h6>
