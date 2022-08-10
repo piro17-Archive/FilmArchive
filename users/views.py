@@ -147,20 +147,28 @@ def check_username(request):
     return JsonResponse(data)
 
 
-def delete_user_view(request):
-    if request.method == "GET":
-        user = User.objects.all()
-        return render(request, 'users/delete_user.html', {'user': user})
+# def delete_user_view(request):
+#     if request.method == "GET":
+#         user = User.objects.all()
+#         return render(request, 'users/delete_user.html', {'user': user})
 
 
 def delete_user(request, username):
-    try:
-        u = User.objects.get(username=username)
-        u.delete()
-        context['msg'] = '회원 탈퇴가 성공적으로 완료되었습니다.'       
-    except User.DoesNotExist: 
-        context['msg'] = '존재하지 않는 회원입니다.'
-    except Exception as e: 
-        context['msg'] = e.message
+    context = {
+    
+    }
 
-    return render(request, 'users/main.html', context=context) 
+    if request.method == "POST":
+        try:
+            u = User.objects.get(username=username)
+            u.delete()
+            context['msg'] = '회원 탈퇴가 성공적으로 완료되었습니다.'     
+            return redirect('users:main')
+
+        except User.DoesNotExist: 
+            context['msg'] = '존재하지 않는 회원입니다.'
+
+        except Exception as e: 
+            context['msg'] = e.message
+
+    return render(request, 'users/delete_user.html', context=context) 

@@ -23,6 +23,6 @@ urlpatterns = [
     re_path(r'^password-reset/done/$', PasswordResetDoneView.as_view(template_name='registration/password_reset_done.html'), name='password_reset_done'),
     re_path(r'^password-reset-confirm/<uidb64>/<token>/$', PasswordResetConfirmView.as_view(template_name='registration/password_reset_confirm.html'), name='password_reset_confirm'),
     re_path(r'^password-reset-complete/$', PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'), name='password_reset_complete'),
-    re_path(r'^delete_account/confirm/$', views.delete_user_view, name='delete_user_view'),
+    # re_path(r'^delete_account/confirm/$', views.delete_user_view, name='delete_user_view'),
     re_path(r'^delete/(?P<username>[\w|\W.-]+)/$', views.delete_user, name='delete_user')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
