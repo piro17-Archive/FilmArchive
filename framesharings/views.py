@@ -7,8 +7,8 @@ from django.contrib import messages
 from django.db.models import Count, When,Case
 from datetime import date,timedelta
 from datetime import datetime
-import _strptime 
- 
+import _strptime
+
 # Create your views here.
 def date_range(start, end):
     start = datetime.strptime(start, "%Y-%m-%d")
@@ -34,14 +34,18 @@ def frame(request):
         weeklikecount.save()
     frameweekinfo = frameinfo.order_by('?').order_by('-frameweeklike','?')[:4]
     print(frameweekinfo)
-    
+
     sort = request.GET.get('sort',None)
+    # 정렬 기준이 album과 숫자는 동일한데, 의미가 다릅니다.
+    # 새로 정렬 기준이 추가될 때 혼란이 발생할 여지가 있습니다.
+    # sort 값이 1,2가 아닌 새로운 값이 들어오는 경우 frameinfo가 정의되지 않습니다.
+    # 예외 처리가 필요해보입니다.
     if sort == '1':
         frameinfo = frameinfo.annotate(like_count= Count('framelikeuser')).order_by('-like_count')
         print(frameinfo)
     elif sort == '2':
         frameinfo = Frame.objects.all().order_by('-id')
-        
+
     if request.user.is_authenticated:
         like = request.user.likeMany.all()
         save = request.user.saveMany.all()
@@ -53,7 +57,7 @@ def frame(request):
     query = request.GET.get('title', None)
     if query:
         frameinfo = Frame.objects.filter(frametitle__contains=query)
-        
+
     likereq = request.GET.get('like',None)
     savereq = request.GET.get('save',None)
     querykeyword = request.GET.get('sortkeyword',"None")
@@ -141,16 +145,18 @@ def framedetail(request,id):
     return render(request, template_name="framesharings/framedetail.html", context=context)
 
 def framecreate(request):
+    # keywordinfo는 GET 요청에만 필요하기에, 호출 위치 수정이 필요합니다.
+    # 지금은 POST 요청에도 호출하고 있습니다.
     keywordinfo = Keyword.objects.all()
     # form = PostFrame()
 
     if request.method == "POST":
-        
+
         framephoto = request.FILES.get("framephoto")
         if framephoto == None:
             messages.warning(request, '사진은 필수입니다.')
             return redirect("framesharings:framecreate")
-        
+
         frametitle = request.POST["frametitle"]
         frameexample = request.FILES.get("frameexamle")
         framememo = request.POST["framememo"]
@@ -167,10 +173,10 @@ def framecreate(request):
             if keywordap:
                 keywordoj.framekeyword.add(Keyword.objects.filter(id = i)[0])
         keywordoj.save()
-            
-        
+
+
         return redirect(f"/framedetail/{a.last().id}")
-        
+
     context = {
         "keywordinfo": keywordinfo,
         # "form": form
@@ -236,7 +242,7 @@ def frameupdate(request,id):
             Frame.objects.create(userid = userid, framephoto = framephoto,frametitle=frametitle,frameexample=frameexample,framememo=framememo,framepublic=decision,)
 
 
-        
+
 
 
 
@@ -249,8 +255,8 @@ def frameupdate(request,id):
             if keywordap:
                 keywordoj.framekeyword.add(Keyword.objects.filter(id = i)[0])
         keywordoj.save()
-            
-        
+
+
         return redirect(f"/framedetail/{a.last().id}")
 
     frameinfo = Frame.objects.get(id = id)
