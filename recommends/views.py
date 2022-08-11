@@ -8,7 +8,10 @@ def recommends(request):
         recommends = Recommend.objects.filter(title__contains=query)
     else:
         recommends = Recommend.objects.all()
-    
+
+    # recommends 정의가 비효율적입니다.
+    # 위에서 recommend가 정의되는데, 아래 코드에서 다시 DB 호출해서 recommend를 수정합니다.
+    # 수정이 필요해보입니다.
     querykeyword = request.GET.get('sortkeyword',"None")
     if querykeyword != "None":
         recommends = Recommend.objects.filter(recKeyword__id__contains=querykeyword)
@@ -33,7 +36,7 @@ def rec_create(request):
         recImage = request.FILES["recImage"]
         postUser = User.objects.get(id=request.user.id)
         Recommend.objects.create(title= title, content=content, recImage=recImage, postUser=postUser)
-       
+
         # now get keywords
 
         a = Recommend.objects.all()
@@ -67,20 +70,22 @@ def rec_detail(request, id):
 def rec_update(request, id):
     keywordinfo = Keyword.objects.all()
     if request.method == "POST":
+        # title, content가 null인 경우 업데이트 문제 발생
+        # form으로 validation 필요해보임
         title = request.POST["title"]
         content = request.POST["content"]
         Recommend.objects.filter(id=id).update(title=title, content=content)
-        
+
         keywordoj = Recommend.objects.filter(id=id)[0]
         for i in range(1,len(keywordinfo)+1):
             keywordap = request.POST.get(str(i))
             if keywordap:
                 keywordoj.recKeyword.add(Keyword.objects.filter(id = i)[0])
         keywordoj.save()
-        
+
         return redirect(f"/recommends/{id}")
 
-            
+
     elif request.method == "GET":
             recommend = Recommend.objects.get(id=id)
             context = {
