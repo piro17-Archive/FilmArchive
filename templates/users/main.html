@@ -196,7 +196,11 @@
         <div class="page4-title">제작 프레임 공유</div>
         <div class="page4-info">인기별, 태그별 새로운 프레임을 이용해보세요</div>
         <div class="page4-image">
-          <img src="" alt="">
+          {% for frameweekinfo in frameweekinfo %}
+          <a href="{%url 'framesharings:framedetail' frameweekinfo.id %}">
+            <img src="{{ frameweekinfo.framephoto.url }}" alt="프레임사진"/>
+          </a>
+          {% endfor%}
         </div>
       </div>
     </main>

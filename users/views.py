@@ -16,8 +16,17 @@ from django.utils.decorators import method_decorator
 #여기추가
 from ctypes import wintypes
 from django.contrib.auth.decorators import login_required
+from datetime import date,timedelta
+from datetime import datetime
+from framesharings.models import Frame
 
 # Create your views here.
+
+def date_range(start, end):
+    start = datetime.strptime(start, "%Y-%m-%d")
+    end = datetime.strptime(end, "%Y-%m-%d")
+    dates = [(start + timedelta(days=i)).strftime("%Y-%m-%d") for i in range((end-start).days+1)]
+    return dates
 def start(request):
     # return render(request, "main.html")
     #새로추가
@@ -31,9 +40,26 @@ def start(request):
 def main(request):
     # return render(request, "main.html")
     #새로추가
+    today = date.today()
+    dates = date_range(str(today-timedelta(weeks=1)+ timedelta(days=1)), str(today))
+    frameinfo = Frame.objects.all()
+    for weeklikecount in frameinfo:
+        count = 0
+        if weeklikecount.framelikedate != None:
+            datesplit = weeklikecount.framelikedate.split('/')
+        else:
+            continue
+        for day in dates:
+            for pic in datesplit:
+                if day in pic:
+                    count += 1
+        weeklikecount.frameweeklike = count
+        weeklikecount.save()
+    frameweekinfo = frameinfo.order_by('?').order_by('-frameweeklike','?')[:3]
     users=User.objects.all()
     context={
         "users": users,
+        "frameweekinfo": frameweekinfo,
     }
     
     return render(request, "users/main.html", context=context)
