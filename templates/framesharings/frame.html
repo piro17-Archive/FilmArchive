@@ -62,7 +62,7 @@
             {% for keyword in frameweekinfo.framekeyword.all %} {% endfor%}
             <div>
               {% if frameweekinfo in like %}
-              <button class="recommendBtn" id="butweeklike{{frameweekinfo.id}}" onclick="onClickLike( {{frameweekinfo.id}},'like' )" name="like" value="{{frameweekinfo.id}}"><i class="fa-regular fa-thumbs-up"></i> 추천</button>
+              <button class="recommendBtn recommendactive" id="butweeklike{{frameweekinfo.id}}" onclick="onClickLike( {{frameweekinfo.id}},'like' )" name="like" value="{{frameweekinfo.id}}"><i class="fa-regular fa-thumbs-up"></i> 추천</button>
               {% else %}
               <button class="recommendBtn" id="butweeklike{{frameweekinfo.id}}" onclick="onClickLike( {{frameweekinfo.id}},'dislike' )" name="like" value="{{frameweekinfo.id}}"><i class="fa-regular fa-thumbs-up"></i> 추천</button>
               {% endif %}
@@ -98,7 +98,7 @@
             <div>
               <div>
                 {% if frameinfo in like %}
-                <button class="recommendBtn" id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'like' )" name="like" value="{{frameinfo.id}}"><i class="fa-regular fa-thumbs-up"></i> 추천</button>
+                <button class="recommendBtn recommendactive" id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'like' )" name="like" value="{{frameinfo.id}}"><i class="fa-regular fa-thumbs-up"></i> 추천</button>
                 {% else %}
                 <button class="recommendBtn" id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'dislike' )" name="like" value="{{frameinfo.id}}"><i class="fa-regular fa-thumbs-up"></i> 추천</button>
                 {% endif %}
