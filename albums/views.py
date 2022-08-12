@@ -22,7 +22,6 @@ def album(request,id):
     elif sort == '2':
         allalbum = userinfo.userFor.all().order_by('-id')
 
-
     query = request.GET.get('title', None)
     if query:
         allalbum = userinfo.userFor.filter(albummemo__contains=query)

@@ -270,3 +270,4 @@ def framedelete(request,id):
     if request.method == "POST":
         Frame.objects.filter(id=id).delete()
         return redirect("/frame")
+
