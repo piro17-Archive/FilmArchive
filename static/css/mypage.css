@@ -822,10 +822,10 @@
 /* 회원 탈퇴 */
 @media screen and (max-width: 480px) {
   .deleteuser-form {
-    width: 30rem;
+    width: 32rem;
     margin: 1rem auto;
     text-align: center;
-    padding: 5rem 1rem;
+    padding: 10rem 0;
   }
 
   .deleteuser-form .deleteuser__title {
@@ -837,23 +837,32 @@
 
   .deleteuser__hr {
     background-color: var(--main-red);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
   }
 
-  .deleteuser__info div span {
-    display: inline-block;
-    text-align: center;
-    line-height: 1.5rem;
-    width: 6rem;
-    margin-right: 1.5rem;
-    font-size: 1.3rem;
+  .deleteuser__info {
+    padding: 2rem 0;
   }
 
-  .deleteuser__info div input {
-    width: 20rem;
+  .deleteuser__info div {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .deleteuser__info .label_password {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.8rem;
+    width: 5rem;
+    margin-right: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .deleteuser__info #id_password {
+    width: 22rem;
     height: 3.2rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     border-radius: 1rem;
     border: none;
     background-color: var(--main-background);
@@ -872,12 +881,13 @@
     border-radius: 1rem;
     color: white;
     padding: 0.6rem 1.7rem;
+    font-size: 1.2rem;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .deleteuser-form {
-    width: 40rem;
+    width: 50rem;
     margin: 1rem auto;
     text-align: center;
     padding: 10rem 0;
@@ -892,7 +902,7 @@
 
   .deleteuser__hr {
     background-color: var(--main-red);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
   }
 
@@ -901,10 +911,11 @@
   }
 
   .deleteuser__info div {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 
-  .deleteuser__info div span {
+  .deleteuser__info .label_password {
     display: inline-block;
     text-align: center;
     line-height: 1.8rem;
@@ -913,7 +924,7 @@
     font-size: 1.5rem;
   }
 
-  .deleteuser__info div input {
+  .deleteuser__info #id_password {
     width: 25rem;
     height: 3.2rem;
     font-size: 1.5rem;
@@ -956,7 +967,7 @@
 
   .deleteuser__hr {
     background-color: var(--main-red);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
   }
 
@@ -965,10 +976,11 @@
   }
 
   .deleteuser__info div {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 
-  .deleteuser__info div span {
+  .deleteuser__info .label_password {
     display: inline-block;
     text-align: center;
     line-height: 1.8rem;
@@ -977,7 +989,7 @@
     font-size: 1.5rem;
   }
 
-  .deleteuser__info div input {
+  .deleteuser__info #id_password {
     width: 25rem;
     height: 3.2rem;
     font-size: 1.5rem;
