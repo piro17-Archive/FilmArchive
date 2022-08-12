@@ -33,16 +33,28 @@
       </div>
     </div>
     <div class="line"></div>
-    <div class="social--login--section">
-      <a href="{% provider_login_url 'google' %}">
+    <div class="social-login">
+      <div class="social-title">간편 로그인</div>
+      <div class="social-login__box">
+        <form action="{% provider_login_url 'google' %}" method="post">
+        {% csrf_token %}
+      <button type="submit">
         <img src="{% static 'image/google.png' %}" alt="" class="social-login--btn">
-      </a>
-      <a href="{% provider_login_url 'naver' %}">
+      </button>
+      </form>
+      <form action="{% provider_login_url 'naver' %}" method="post">
+        {% csrf_token %}
+      <button type="submit">
         <img src="{% static 'image/naver.png' %}" alt="" class="social-login--btn">
-      </a>
-      <a href="{% provider_login_url 'kakao' %}">
+      </button>
+      </form>
+      <form action="{% provider_login_url 'kakao' %}" method="post">
+        {% csrf_token %}
+      <button type="submit">
         <img src="{% static 'image/kakao.png' %}" alt="" class="social-login--btn">
-      </a>
+      </button>
+      </form>
+      </div>
     </div>
   </div>
 </main>

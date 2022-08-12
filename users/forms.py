@@ -30,7 +30,7 @@ class SignupForm(UserCreationForm):
         fields = ["username", "email", "password1", "password2", "name", "nickname"]
 
 
-class MyUpdateForm(UserChangeForm):
+class MyUpdateForm(forms.ModelForm):
     class Meta:
         model = User
         # if you're excluding only a few fields, 
@@ -39,7 +39,6 @@ class MyUpdateForm(UserChangeForm):
             'name',
             'email',
             'nickname',
-            'password',
         }
 
 class ProfileUpdateForm(forms.ModelForm):
