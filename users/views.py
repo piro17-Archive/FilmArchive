@@ -3,17 +3,30 @@ from django.shortcuts import render, redirect
 from django.views import View
 from users.models import User, Profile
 from . import forms
-from users.forms import MyUpdateForm, ProfileUpdateForm
-from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
+from users.forms import MyUpdateForm, ProfileUpdateForm, CheckPasswordForm
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+import json
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 
 #여기추가
 from ctypes import wintypes
 from django.contrib.auth.decorators import login_required
+from datetime import date,timedelta
+from datetime import datetime
+from framesharings.models import Frame
 
 # Create your views here.
+
+def date_range(start, end):
+    start = datetime.strptime(start, "%Y-%m-%d")
+    end = datetime.strptime(end, "%Y-%m-%d")
+    dates = [(start + timedelta(days=i)).strftime("%Y-%m-%d") for i in range((end-start).days+1)]
+    return dates
 def start(request):
     # return render(request, "main.html")
     #새로추가
@@ -27,9 +40,26 @@ def start(request):
 def main(request):
     # return render(request, "main.html")
     #새로추가
+    today = date.today()
+    dates = date_range(str(today-timedelta(weeks=1)+ timedelta(days=1)), str(today))
+    frameinfo = Frame.objects.all()
+    for weeklikecount in frameinfo:
+        count = 0
+        if weeklikecount.framelikedate != None:
+            datesplit = weeklikecount.framelikedate.split('/')
+        else:
+            continue
+        for day in dates:
+            for pic in datesplit:
+                if day in pic:
+                    count += 1
+        weeklikecount.frameweeklike = count
+        weeklikecount.save()
+    frameweekinfo = frameinfo.order_by('?').order_by('-frameweeklike','?')[:3]
     users=User.objects.all()
     context={
         "users": users,
+        "frameweekinfo": frameweekinfo,
     }
     
     return render(request, "users/main.html", context=context)
@@ -55,10 +85,13 @@ class LoginView(View):
         }
         return render(request, "users/login.html", context=context)
 
+
+@method_decorator(csrf_exempt)
 @login_required(login_url='login')
 def Log_out(request):
     logout(request)
     return redirect("users:main")
+
 
 def sign_up(request):
     if request.method == "POST":
@@ -66,6 +99,7 @@ def sign_up(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
+            logout(request)
             return render(request, "users/main.html")
         return redirect("users:sign_up")
     else:
@@ -134,41 +168,69 @@ def profile_update(request):
     context = {
         'p_form': p_form,
     }
-
     return render(request, 'users/update_profpic.html', context)
 
 
-def check_username(request):
-    username = request.GET.get("username")
-    data = {
-       'username_exists':
-       User.objects.filter(username__iexact=username).exists()
-    }
-    return JsonResponse(data)
+# @csrf_exempt
+# def check_username(request):
+#     username=request.POST.get("username")
+#     user_obj=User.objects.filter(username=username).exists()
+#     if user_obj:
+#         return JsonResponse(True)
+#     else:
+#         return JsonResponse(False)
+
+# @csrf_exempt
+# def like_ajax(request):
+#     req = json.loads(request.body) #json 형식에서 python 객체로! {'id': 1, 'type': 'like'} 형식으로 저장되어 있음
+#     post_id = req['id'] #각각 추출
+#     button_type = req['type']
+
+#     post = Post.objects.get(id=post_id)
+
+#     if button_type =='like':
+#         post.like += 1
+#     else:
+#         post.dislike += 1
+
+#     post.save()
+
+#     return JsonResponse({'id': post_id, 'type': button_type})
 
 
-# def delete_user_view(request):
-#     if request.method == "GET":
-#         user = User.objects.all()
-#         return render(request, 'users/delete_user.html', {'user': user})
+
+# def delete_user(request, username):
+#     context = {}
+
+#     if request.method == "POST":
+#         try:
+#             u = User.objects.get(username=username)
+#             u.delete()
+#             context['msg'] = '회원 탈퇴가 성공적으로 완료되었습니다.'     
+#             return redirect('users:main')
+
+#         except User.DoesNotExist: 
+#             context['msg'] = '존재하지 않는 회원입니다.'
+
+#         except Exception as e: 
+#             context['msg'] = e.message
+
+#     return render(request, 'users/delete_user.html', context=context) 
 
 
+@login_required(login_url='login')
 def delete_user(request, username):
-    context = {
-    
-    }
-
-    if request.method == "POST":
-        try:
+    context={}
+    if request.method == 'POST':
+        password_form = CheckPasswordForm(request.user, request.POST)
+        
+        if password_form.is_valid():
             u = User.objects.get(username=username)
             u.delete()
+            logout(request)
             context['msg'] = '회원 탈퇴가 성공적으로 완료되었습니다.'     
             return redirect('users:main')
+    else:
+        password_form = CheckPasswordForm(request.user)
 
-        except User.DoesNotExist: 
-            context['msg'] = '존재하지 않는 회원입니다.'
-
-        except Exception as e: 
-            context['msg'] = e.message
-
-    return render(request, 'users/delete_user.html', context=context) 
+    return render(request, 'users/delete_user.html', {'password_form':password_form})
