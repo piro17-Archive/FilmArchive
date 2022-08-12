@@ -26,11 +26,32 @@
     padding-right: 1rem;
   }
 
-  .social-login--btn {
-    width: 20rem;
-    height: 4.5rem;
-    margin: 0.1rem;
-    cursor: pointer;
+  .social-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem 0;
+    color: #666;
+  }
+
+  .social-login__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social-login__box a {
+    display: inline-block;
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .social-login__box a img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .naver-btn {
+    margin: 0 1.8rem;
   }
 
   .login--main--text {
@@ -76,11 +97,32 @@
     padding-right: 1rem;
   }
 
-  .social-login--btn {
-    width: 20rem;
-    height: 4.5rem;
-    margin: 0.2rem;
-    cursor: pointer;
+  .social-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem 0;
+    color: #666;
+  }
+
+  .social-login__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social-login__box a {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .social-login__box a img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .naver-btn {
+    margin: 0 3rem;
   }
 
   .login--main--text {
@@ -126,13 +168,6 @@
     padding-right: 1rem;
   }
 
-  .social-login--btn {
-    width: 20rem;
-    height: 4.5rem;
-    margin: 0.2rem;
-    cursor: pointer;
-  }
-
   .login--main--text {
     font-size: 2rem;
     font-weight: 600;
@@ -145,6 +180,34 @@
 
   .login--reset {
     font-size: 1.2rem;
+  }
+
+  .social-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem 0;
+    color: #666;
+  }
+
+  .social-login__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social-login__box a {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .social-login__box a img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .naver-btn {
+    margin: 0 3rem;
   }
 }
 
@@ -177,13 +240,6 @@
   padding: 0.5rem;
 }
 
-.social--login--section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2.5rem;
-}
-
 .login--input {
   padding: 1rem;
   display: flex;
@@ -197,6 +253,10 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  background-color: var(--main-red);
+  color: white;
+  border: none;
+  border-radius: 1rem;
 }
 
 .login--btn {
@@ -226,4 +286,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+
+.login--reset a {
+  text-underline-position: under;
+  text-decoration: underline;
 }

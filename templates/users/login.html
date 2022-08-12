@@ -33,8 +33,10 @@
       </div>
     </div>
     <div class="line"></div>
-    <div class="social--login--section">
-      <form action="{% provider_login_url 'google' %}" method="post">
+    <div class="social-login">
+      <div class="social-title">간편 로그인</div>
+      <div class="social-login__box">
+        <form action="{% provider_login_url 'google' %}" method="post">
         {% csrf_token %}
       <button type="submit">
         <img src="{% static 'image/google.png' %}" alt="" class="social-login--btn">
@@ -52,6 +54,7 @@
         <img src="{% static 'image/kakao.png' %}" alt="" class="social-login--btn">
       </button>
       </form>
+      </div>
     </div>
   </div>
 </main>
