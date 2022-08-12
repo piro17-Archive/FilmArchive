@@ -667,6 +667,67 @@
     margin-bottom: 1rem;
     z-index: 1;
   }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+  }
+  
+  .modal .bg {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .modalBox {
+    position: absolute;
+    background: #fff;
+    width: 30rem;
+    height: 20rem;
+    padding: 5rem;
+    border-radius: 1rem;
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+  }
+  
+  .modal-btn {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .modal-btn button {
+    padding: 1rem 1.8rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    border-radius: 1rem;
+    border: 1px solid var(--main-red);
+    background: none;
+  }
+  
+  .modal-btn button:hover {
+    color: white;
+    background: var(--main-red);
+  }
+  
+  #btn-cancle {
+    margin-right: 3rem;
+  }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
@@ -791,6 +852,67 @@
     margin-bottom: 1rem;
     z-index: 1;
   }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+  }
+  
+  .modal .bg {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .modalBox {
+    position: absolute;
+    background: #fff;
+    width: 38rem;
+    height: 23rem;
+    padding: 7rem;
+    border-radius: 1rem;
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .modal-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+  }
+  
+  .modal-btn {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .modal-btn button {
+    padding: 1.2rem 2rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    border-radius: 1rem;
+    border: 1px solid var(--main-red);
+    background: none;
+  }
+  
+  .modal-btn button:hover {
+    color: white;
+    background: var(--main-red);
+  }
+  
+  #btn-cancle {
+    margin-right: 5rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -905,6 +1027,67 @@
     font-weight: 800;
     margin-bottom: 1rem;
     z-index: 1;
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+  }
+  
+  .modal .bg {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .modalBox {
+    position: absolute;
+    background: #fff;
+    width: 45rem;
+    height: 25rem;
+    padding: 7rem;
+    border-radius: 1rem;
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .modal-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 5rem;
+  }
+  
+  .modal-btn {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .modal-btn button {
+    padding: 1rem 3rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+    border-radius: 1rem;
+    border: 1px solid var(--main-red);
+    background: none;
+  }
+  
+  .modal-btn button:hover {
+    color: white;
+    background: var(--main-red);
+  }
+  
+  #btn-cancle {
+    margin-right: 5rem;
   }
 }
 
@@ -1114,5 +1297,3 @@
     padding: 0.6rem 1.7rem;
   }
 }
-
-
