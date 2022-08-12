@@ -8,7 +8,6 @@
             본인인증을 위해 비밀번호를 입력해주세요.
         </small>
         <div class="login--input">
-            <span class="login--text">비밀번호 </span>
             {{ form.password }}
           </div>
           <label name="label_password" for="{{ password_form.password.id_for_label }}">{{ password_form.password.label }}</label>
@@ -27,17 +26,7 @@
             <input type="checkbox" name="ck" onClick="checkDisable(this.form)">
             <span>유의사항 동의</span>
         </label>
-
-  <form action="{% url 'users:delete_user' user.username %}" method="post">
-    <div class="deleteuser-form">
-      <div class="deleteuser__title">회원 탈퇴</div>
-      <div class="deleteuser__hr"></div>
-      <div class="deleteuser__info">
-
-        {% csrf_token %}
-        <div><span>비밀번호</span><input type="password"></div>
-        <div><span>비밀번호 확인</span><input type="password"></div>
-        <div>본인 인증을 위해 비밀번호를 입력해주세요</div>
+        
       </div>
       <div class="deleteuser__btn-box">
         <button type="submit" class="deleteuser__btn">회원 탈퇴</button> 
