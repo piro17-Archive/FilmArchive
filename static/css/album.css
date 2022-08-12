@@ -723,6 +723,7 @@
   .modal-btn button:hover {
     color: white;
     background: var(--main-red);
+    transition: 0.3s;
   }
   
   #btn-cancle {
@@ -908,6 +909,7 @@
   .modal-btn button:hover {
     color: white;
     background: var(--main-red);
+    transition: 0.3s;
   }
   
   #btn-cancle {
@@ -1084,6 +1086,7 @@
   .modal-btn button:hover {
     color: white;
     background: var(--main-red);
+    transition: 0.3s;
   }
   
   #btn-cancle {
