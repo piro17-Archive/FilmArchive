@@ -1,47 +1,43 @@
 {% extends 'users/main.html' %} {% block content %} {% load static %}
 <main>
-    <form action="{% url 'users:delete_user' user.username %}" method="post">
-        <h1> 회원 탈퇴 </h1>
-        <p>{{ user.username }} 회원님의 계정이 삭제됩니다.</p>
-        <p>탈퇴시 개인정보 및 이용정보가 삭제되며, 복구할 수 없습니다.</p>
-        <small>
-            본인인증을 위해 비밀번호를 입력해주세요.
-        </small>
-        <div class="login--input">
-            {{ form.password }}
-          </div>
-          <label name="label_password" for="{{ password_form.password.id_for_label }}">{{ password_form.password.label }}</label>
-        {{ password_form.password }}
-        {% if password_form.password.errors %}
-        <script type="text/javascript">
-            document.getElementsByName('password')[0].setAttribute('class', 'form-control is-invalid')
-        </script>
-        {% for error in password_form.password.errors %}
-        <div class="invalid-feedback">
-            {{ error }}
-        </div>
-        {% endfor %}
-        {% endif %}
-        <label>
-            <input type="checkbox" name="ck" onClick="checkDisable(this.form)">
-            <span>유의사항 동의</span>
-        </label>
-        
-      </div>
-      <div class="deleteuser__btn-box">
-        <button type="submit" class="deleteuser__btn">회원 탈퇴</button> 
-      </div>
+	<form action="{% url 'users:delete_user' user.username %}" method="post">
+		{% csrf_token %}
+    <div class="deleteuser-form">
+			<div class="deleteuser__title">회원 탈퇴</div>
       <div class="deleteuser__hr"></div>
-    </div>
-  </form>
+      <div class="deleteuser__info">
+				<div>{{ user.username }} 회원님의 계정이 삭제됩니다.</div>
+				<div>탈퇴시 개인정보 및 이용정보가 삭제되며, 복구할 수 없습니다.</div>
+				<div>본인인증을 위해 비밀번호를 입력해주세요.</div>
+				<div class="login--input">{{ form.password }}</div>
+				<label name="label_password" for="{{ password_form.password.id_for_label }}" class="label_password">{{ password_form.password.label }}</label>
+				{{ password_form.password }}
+				{% if password_form.password.errors %}
+				{% for error in password_form.password.errors %}
+				<div class="invalid-feedback">{{ error }}</div>
+				{% endfor %}
+				{% endif %}
+				<div>
+					<input type="checkbox" name="ck" onClick="checkDisable(this.form)">
+					<span>유의사항 동의</span>
+				</div>
+				<div class="deleteuser__btn-box">
+					<button type="submit" class="deleteuser__btn">확인</button> 
+				</div>
+			</div>
+			<div class="deleteuser__hr"></div>
+		</div>
+	</form>
 </main>
+
 <script type="text/javascript">
-    function checkDisable(form) {
-        if (form.ck.checked == true) {
-            form.bt.disabled = false;
-        } else {
-            form.bt.disabled = true;
-        }
-    }
+	document.getElementsByName('password')[0].setAttribute('class', 'form-control is-invalid')
+	function checkDisable(form) {
+		if (form.ck.checked == true) {
+				form.bt.disabled = false;
+		} else {
+				form.bt.disabled = true;
+		}
+	}
 </script>
 {% endblock content %}
