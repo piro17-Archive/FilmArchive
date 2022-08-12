@@ -121,6 +121,21 @@
     background-color:rgb(247, 247, 247); 
     overflow: hidden;
   }
+
+  .img-box {
+    position: relative;
+    width: 95%;
+  }
+  
+  .starBtn {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #ffc30f;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.2rem;
+  }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1024px) {
@@ -214,6 +229,21 @@
     border: 1px solid var(--main-red);
     color: black;
   }
+
+  .img-box {
+    position: relative;
+    width: 95%;
+  }
+  
+  .starBtn {
+    background: transparent;
+    border: none;
+    font-size: 2.5rem;
+    color: #ffc30f;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -282,7 +312,7 @@
   }
 
   .grid__box{
-    width: 95%;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 25%);
     row-gap: 1.5rem;
@@ -297,6 +327,48 @@
     background-color:rgb(247, 247, 247); 
     overflow: hidden;
   }
+
+  .img-box {
+    position: relative;
+    width: 95%;
+  }
+  
+  .starBtn {
+    background: transparent;
+    border: none;
+    font-size: 2.5rem;
+    color: #ffc30f;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+.frame__info-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0 2rem;
+}
+
+.frame__frametitle {
+  font-size: 1.5rem;
+}
+
+.recommendBtn {
+  background: transparent;
+  border: 1px solid var(--main-red);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: 0.2s;
+}
+
+.recommendactive {
+  background: var(--main-red);
+  color: white;
+  transition: 0.2s;
 }
 
 .grid__one-box{
