@@ -156,7 +156,7 @@
     border: 1px solid var(--main-red);
     border-radius: 0.5rem;
     padding: 0.4rem;
-    transition: 0.2s;
+    transition: 0.1s;
     width: 5.5rem;
     font-size: 0.8rem;
   }
@@ -164,7 +164,7 @@
   .recommendactive {
     background: var(--main-red);
     color: white;
-    transition: 0.2s;
+    transition: 0.1s;
   }
 }
 
@@ -280,14 +280,14 @@
     border: 1px solid var(--main-red);
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
-    transition: 0.2s;
+    transition: 0.1s;
     width: 7rem;
   }
   
   .recommendactive {
     background: var(--main-red);
     color: white;
-    transition: 0.2s;
+    transition: 0.1s;
   }
 }
 
@@ -393,13 +393,14 @@
     border: 1px solid var(--main-red);
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
-    transition: 0.2s;
+    transition: 0.1s;
+    width: 7rem;
   }
   
   .recommendactive {
     background: var(--main-red);
     color: white;
-    transition: 0.2s;
+    transition: 0.1s;
   }
   
 }
