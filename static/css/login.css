@@ -217,6 +217,14 @@
   margin: 1rem 0;
 }
 
+.login--btn,
+.signup--btn {
+  background-color: var(--main-red);
+  color: white;
+  border: none;
+  border-radius: 1rem;
+}
+
 .login--input input {
   background-color: var(--main-background);
   border: none;
