@@ -2,7 +2,8 @@ from cProfile import Profile
 from django import forms
 from .models import User
 from .models import Profile
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.hashers import check_password
 
 
 class LoginForm(forms.Form):
@@ -30,7 +31,7 @@ class SignupForm(UserCreationForm):
         fields = ["username", "email", "password1", "password2", "name", "nickname"]
 
 
-class MyUpdateForm(UserChangeForm):
+class MyUpdateForm(forms.ModelForm):
     class Meta:
         model = User
         # if you're excluding only a few fields, 
@@ -39,8 +40,8 @@ class MyUpdateForm(UserChangeForm):
             'name',
             'email',
             'nickname',
-            'password',
         }
+
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
@@ -48,3 +49,22 @@ class ProfileUpdateForm(forms.ModelForm):
         fields = {
             'image',
         }
+
+
+class CheckPasswordForm(forms.Form):
+    password = forms.CharField(label='비밀번호', widget=forms.PasswordInput(
+        attrs={'class': 'form-control',}), 
+    )
+    def __init__(self, user, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.user = user
+
+    def clean(self):
+        cleaned_data = super().clean()
+        password = cleaned_data.get('password')
+        confirm_password = self.user.password
+        
+        if password:
+            if not check_password(password, confirm_password):
+                self.add_error('password', '비밀번호가 일치하지 않습니다.')
+
