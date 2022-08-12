@@ -8,6 +8,9 @@ from django.db.models import Count, When,Case
 from datetime import date,timedelta
 from datetime import datetime
 import _strptime
+import json
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def date_range(start, end):
@@ -271,3 +274,49 @@ def framedelete(request,id):
         Frame.objects.filter(id=id).delete()
         return redirect("/frame")
 
+@csrf_exempt
+def like_ajax(request):
+    print(1)
+    today = date.today()
+    req = json.loads(request.body)
+    comment_id = req['id']
+    button_type = req['type']
+
+    sltframe = Frame.objects.get(id = comment_id)
+    if button_type == 'like':
+        button_type = 'dislike'
+        sltframe.framelikeuser.remove(request.user)
+        likedates = sltframe.framelikedate.split('/')
+
+        for likedate in likedates:
+            if str(request.user) in likedate:
+                likedates.remove(likedate)
+                break
+        sltframe.framelikedate = '/'.join(likedates)
+
+    else:
+        button_type = 'like'
+        sltframe.framelikeuser.add(request.user)
+        sltframe.framelikedate = sltframe.framelikedate+str(request.user)+str(today)+'/'
+        sltframe.save()
+    sltframe.save()
+
+    return JsonResponse({'id': comment_id, 'type': button_type})
+
+
+@csrf_exempt
+def save_ajax(request):
+    req = json.loads(request.body)
+    comment_id = req['id']
+    button_type = req['type']
+
+    sltframe = Frame.objects.get(id = comment_id)
+    if button_type == 'save':
+        button_type = 'notsave'
+        sltframe.framesaveuser.remove(request.user)
+
+    else:
+        button_type = 'save'
+        sltframe.framesaveuser.add(request.user)
+    sltframe.save()
+    return JsonResponse({'id': comment_id, 'type': button_type})
