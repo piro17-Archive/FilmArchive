@@ -33,16 +33,13 @@
       </div>
     </div>
     <div class="line"></div>
-    <div class="social--login--section">
-      <a href="{% provider_login_url 'google' %}">
-        <img src="{% static 'image/google.png' %}" alt="" class="social-login--btn">
-      </a>
-      <a href="{% provider_login_url 'naver' %}">
-        <img src="{% static 'image/naver.png' %}" alt="" class="social-login--btn">
-      </a>
-      <a href="{% provider_login_url 'kakao' %}">
-        <img src="{% static 'image/kakao.png' %}" alt="" class="social-login--btn">
-      </a>
+    <div class="social-login">
+      <div class="social-title">간편 로그인</div>
+      <div class="social-login__box">
+        <a href="{% provider_login_url 'google' %}" class="google-btn"><img src="{% static 'image/google-logo.png' %}" alt=""></a>
+        <a href="{% provider_login_url 'naver' %}" class="naver-btn"><img src="{% static 'image/naver-logo1.png' %}" alt=""></a>
+        <a href="{% provider_login_url 'kakao' %}" class="kakao-btn"><img src="{% static 'image/kakao-logo.png' %}" alt=""></a>
+      </div>
     </div>
   </div>
 </main>
