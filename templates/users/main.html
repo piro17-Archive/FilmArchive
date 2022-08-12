@@ -149,6 +149,23 @@
         <div class="swiper-button-next"></div>
       </div>
     </main>
+
+    <!-- ranking section -->
+    <main class="main-ranking--container">
+      <div class="main--ranking--title">주간 BEST</div>
+      <div class="frame-ranking--grid">
+        {% for frameweekinfo in frameweekinfo %}
+        <div class="per--frame--ranking">
+          <!-- <h1>{{forloop.counter}}st</h1> -->
+          <div class="ranking--grid--img">
+            <a href="{%url 'framesharings:framedetail' frameweekinfo.id %}">
+              <img src="{{ frameweekinfo.framephoto.url }}" alt="프레임사진"/>
+            </a>
+          </div>
+        </div>
+        {% endfor%}
+      </div>
+    </main>
     <!-- main page1 -->
     <main class="page1-container">
       <div class="page1">
@@ -195,13 +212,7 @@
       <div class="page4__flex-box">
         <div class="page4-title">제작 프레임 공유</div>
         <div class="page4-info">인기별, 태그별 새로운 프레임을 이용해보세요</div>
-        <div class="page4-image">
-          {% for frameweekinfo in frameweekinfo %}
-          <a href="{%url 'framesharings:framedetail' frameweekinfo.id %}">
-            <img src="{{ frameweekinfo.framephoto.url }}" alt="프레임사진"/>
-          </a>
-          {% endfor%}
-        </div>
+        <div class="page4-image"></div>
       </div>
     </main>
     <!-- main page5 -->
