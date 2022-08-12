@@ -161,7 +161,8 @@ def framecreate(request):
             return redirect("framesharings:framecreate")
 
         frametitle = request.POST["frametitle"]
-        frameexample = request.FILES.get("frameexamle")
+        frameexample = request.FILES.get("frameexample")
+        print(frameexample)
         framememo = request.POST["framememo"]
         framepublic = request.POST.get("framepublic")
         userid = User.objects.get(id = request.user.id)
