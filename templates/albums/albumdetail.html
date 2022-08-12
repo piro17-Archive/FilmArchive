@@ -1,6 +1,37 @@
 {% extends 'users/main.html' %} {% block content %}
 {% load static %}
+<style>
+	.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+		z-index: 1;
+        }
+	.hidden {
+		display: none;
+	}
+
+
+</style>
 <main>
+	<div class="modal-container hidden">
+		<div class="modal-window">
+			<div class="title">
+				<h2>정말 삭제하시겠습니까?</h2>
+			</div>
+			<button class="closeBtn">뒤로가기</button>
+			<form action="/albumdelete/{{albuminfo.id}}" method="post">
+				{% csrf_token %}<button type="submit">삭제</button>
+			</form>
+		</div>
+	</div>
+
+
 	<div class="albumdetail">
 		<div class="albumdetail__header">
 			<div class="albumdetail__header-left">
@@ -8,9 +39,10 @@
 			</div>
 			<div class="albumdetail__header-right">
 				<a href="/albumupdate/{{albuminfo.id}}"><i class="fa-solid fa-pen-to-square"></i></a>
-				<form action="/albumdelete/{{albuminfo.id}}" method="post">
+				<button class="openBtn"><i class="fa-solid fa-trash-can"></i></button>
+				<!-- <form action="/albumdelete/{{albuminfo.id}}" method="post">
 					{% csrf_token %}<button type="submit"><i class="fa-solid fa-trash-can"></i></button>
-				</form>
+				</form> -->
 			</div>
 		</div>
 
@@ -59,4 +91,18 @@
 
 	</div>
 </main>
+
+<script>
+	const open = () => {
+    document.querySelector(".modal-container").classList.remove("hidden");
+  }
+
+	const close = () => {
+    document.querySelector(".modal-container").classList.add("hidden");
+  }
+
+	document.querySelector(".openBtn").addEventListener("click", open);
+  document.querySelector(".closeBtn").addEventListener("click", close);
+  document.querySelector(".bg").addEventListener("click", close);
+</script>
 {% endblock content %}

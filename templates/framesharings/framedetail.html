@@ -46,7 +46,7 @@
       </a>
       <div class="framedetail__delete">
         <form action="/framedelete/{{frameinfo.id}}" method="post">
-          {% csrf_token %}<i class="fa-solid fa-trash-can"></i>
+          {% csrf_token %} <button type="submit" style="all: none;"> <i class="fa-solid fa-trash-can"></i></button>
         </form>
       </div>
     </div>
