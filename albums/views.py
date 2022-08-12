@@ -14,7 +14,7 @@ def album(request,id):
     if sort == '1':
         allalbum = userinfo.userFor.all().order_by('albumdate')
     elif sort == '2':
-        allalbum = userinfo.userFor.all().order_by('-id')
+        allalbum = userinfo.userFor.all().order_by('id')
     
 
     query = request.GET.get('title', None)
