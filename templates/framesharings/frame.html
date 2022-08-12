@@ -63,9 +63,9 @@
             <!-- </form> -->
             <!-- <form action="{% url 'framesharings:frame' %}"> -->
               {% if frameweekinfo in save %}
-              <button id="butweeksave{{frameweekinfo.id}}" onclick="onClickSave( {{frameweekinfo.id}},'save' )" name="save" value="{{frameweekinfo.id}}">찜완료</button>
+              <button id="butweeksave{{frameweekinfo.id}}" onclick="onClickSave( {{frameweekinfo.id}},'save' )" name="save" value="{{frameweekinfo.id}}"><i class="fa-solid fa-star"></i></button>
               {% else %}
-              <button id="butweeksave{{frameweekinfo.id}}" onclick="onClickSave( {{frameweekinfo.id}},'notsave' )" name="save" value="{{frameweekinfo.id}}">찜하기</button>
+              <button id="butweeksave{{frameweekinfo.id}}" onclick="onClickSave( {{frameweekinfo.id}},'notsave' )" name="save" value="{{frameweekinfo.id}}"><i class="fa-regular fa-star"></i></button>
               {% endif %}
             <!-- </form> -->
           </div>
@@ -89,18 +89,18 @@
             <!-- <form action="{% url 'framesharings:frame' %}"> -->
               <div>
                 {% if frameinfo in like %}
-                <button id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'like' )" name="like" value="{{frameinfo.id}}">추천완료</button>
+                <button id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'like' )" name="like" value="{{frameinfo.id}}"><i class="fa-regular fa-thumbs-up"></i>추천완료</button>
                 {% else %}
-                <button id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'dislike' )" name="like" value="{{frameinfo.id}}">추천하기</button>
+                <button id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'dislike' )" name="like" value="{{frameinfo.id}}"><i class="fa-regular fa-thumbs-up"></i>추천하기</button>
                 {% endif %}
               </div>
             <!-- </form> -->
             <!-- <form action="{% url 'framesharings:frame' %}"> -->
               <div>
               {% if frameinfo in save %}
-              <button id="butsave{{frameinfo.id}}" onclick="onClickSave( {{frameinfo.id}},'save' )" name="save" value="{{frameinfo.id}}">찜완료</button>
+              <button id="butsave{{frameinfo.id}}" onclick="onClickSave( {{frameinfo.id}},'save' )" name="save" value="{{frameinfo.id}}"><i class="fa-solid fa-star"></i></button>
               {% else %}
-              <button id="butsave{{frameinfo.id}}" onclick="onClickSave( {{frameinfo.id}},'notsave' )" name="save" value="{{frameinfo.id}}">찜하기</button>
+              <button id="butsave{{frameinfo.id}}" onclick="onClickSave( {{frameinfo.id}},'notsave' )" name="save" value="{{frameinfo.id}}"><i class="fa-regular fa-star"></i></button>
               {% endif %}
               </div>
             <!-- </form> -->
@@ -136,23 +136,23 @@
                   if (weekelement != null) {
                     weekelement.removeEventListener('onclick',onClickLike)
                     weekelement.onclick = function(){onClickLike( id, 'like')};
-                    weekelement.innerHTML = '추천완료'
+                    weekelement.innerHTML = `<i class="fa-regular fa-thumbs-up"></i>추천완료`
                   }
                     element.removeEventListener('onclick',onClickLike)
 
                     element.onclick = function(){onClickLike( id, 'like')};
-                    element.innerHTML = '추천완료'
+                    element.innerHTML = `<i class="fa-regular fa-thumbs-up"></i>추천완료`
 
                 }
                 else{
                   if (weekelement != null) {
                     weekelement.removeEventListener('onclick',onClickLike)
                     weekelement.onclick = function(){onClickLike( id, 'dislike')};
-                    weekelement.innerHTML = '추천하기'
+                    weekelement.innerHTML = `<i class="fa-regular fa-thumbs-up"></i>추천하기`
                   }
                     element.removeEventListener('onclick',onClickLike)
                     element.onclick = function(){onClickLike( id, 'dislike')}
-                    element.innerHTML = '추천하기'
+                    element.innerHTML = `<i class="fa-regular fa-thumbs-up"></i>추천하기`
                 }
                 
             }
@@ -184,11 +184,11 @@
                   if (weekelement2 != null) {
                     weekelement2.removeEventListener('onclick',onClickSave)
                     weekelement2.onclick = function(){onClickSave( id, 'save')};
-                    weekelement2.innerHTML = '찜완료'
+                    weekelement2.innerHTML = `<i class="fa-solid fa-star"></i>`
                   }
                     element2.removeEventListener('onclick',onClickSave)
                     element2.onclick = function(){onClickSave( id, 'save')};
-                    element2.innerHTML = '찜완료'
+                    element2.innerHTML = `<i class="fa-solid fa-star"></i>`
                     
 
                 }
@@ -196,11 +196,11 @@
                   if (weekelement2 != null) {
                     weekelement2.removeEventListener('onclick',onClickSave)
                     weekelement2.onclick = function(){onClickSave( id, 'notsave')};
-                    weekelement2.innerHTML = '찜하기'
+                    weekelement2.innerHTML = `<i class="fa-regular fa-star"></i>`
                   }
                     element2.removeEventListener('onclick',onClickSave)
                     element2.onclick = function(){onClickSave( id, 'notsave')}
-                    element2.innerHTML = '찜하기'
+                    element2.innerHTML = `<i class="fa-regular fa-star"></i>`
                 }
                 
             }
