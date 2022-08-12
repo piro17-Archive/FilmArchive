@@ -154,7 +154,8 @@
   margin: 1rem 0;
 }
 
-button {
+.login--btn,
+.signup--btn {
   background-color: var(--main-red);
   color: white;
   border: none;

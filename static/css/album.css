@@ -581,6 +581,11 @@
     margin-left: 1rem;
   }
 
+  .albumdetail__header .albumdetail__header-right button {
+    background: transparent;
+    border: none;
+  }
+
   .albumdetail__date {
     font-size: 1.8rem;
     font-weight: 800;
@@ -693,6 +698,11 @@
   .albumdetail__header .albumdetail__header-right form {
     display: inline-block;
     margin-left: 1rem;
+  }
+
+  .albumdetail__header .albumdetail__header-right button {
+    background: transparent;
+    border: none;
   }
 
   .albumdetail__date {
@@ -812,6 +822,11 @@
   .albumdetail__header .albumdetail__header-right form {
     display: inline-block;
     margin-left: 1rem;
+  }
+
+  .albumdetail__header .albumdetail__header-right button {
+    background: transparent;
+    border: none;
   }
 
   .albumdetail__date {
