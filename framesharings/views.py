@@ -8,6 +8,9 @@ from django.db.models import Count, When,Case
 from datetime import date,timedelta
 from datetime import datetime
 import _strptime
+import json
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def date_range(start, end):
