@@ -36,24 +36,9 @@
     <div class="social-login">
       <div class="social-title">간편 로그인</div>
       <div class="social-login__box">
-        <form action="{% provider_login_url 'google' %}" method="post">
-        {% csrf_token %}
-      <button type="submit">
-        <img src="{% static 'image/google.png' %}" alt="" class="social-login--btn">
-      </button>
-      </form>
-      <form action="{% provider_login_url 'naver' %}" method="post">
-        {% csrf_token %}
-      <button type="submit">
-        <img src="{% static 'image/naver.png' %}" alt="" class="social-login--btn">
-      </button>
-      </form>
-      <form action="{% provider_login_url 'kakao' %}" method="post">
-        {% csrf_token %}
-      <button type="submit">
-        <img src="{% static 'image/kakao.png' %}" alt="" class="social-login--btn">
-      </button>
-      </form>
+        <a href="{% provider_login_url 'google' %}" class="google-btn"><img src="{% static 'image/google-logo.png' %}" alt=""></a>
+        <a href="{% provider_login_url 'naver' %}" class="naver-btn"><img src="{% static 'image/naver-logo1.png' %}" alt=""></a>
+        <a href="{% provider_login_url 'kakao' %}" class="kakao-btn"><img src="{% static 'image/kakao-logo.png' %}" alt=""></a>
       </div>
     </div>
   </div>

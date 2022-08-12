@@ -1,5 +1,5 @@
 {% extends 'users/main.html' %}
-{% block javascript %}   
+<!-- {% block javascript %}   
 <script>     
    $("#id_username").change(function () {       
       var username = $(this).val();        
@@ -18,7 +18,7 @@
       });      
    });   
 </script> 
-{% endblock %}
+{% endblock %} -->
 {% block content %}
 <main>
   <form method="POST" action="">
@@ -27,8 +27,10 @@
       <div class="signup__title">회원가입</div>
       <div class="signup__hr"></div>
       <div class="signup__info">
+
         <div><span>아이디</span>{{ form.username }}</div>
         <div><span>비밀번호</span>{{ form.password1 }}</div>
+        
         <div><span>비밀번호<br/>확인</span>{{ form.password2 }}</div>
         <div><span>이름</span>{{ form.name }}</div>
         <div><span>이메일</span>{{ form.email }}</div>
@@ -41,4 +43,28 @@
     </div>
   </form>
 </main>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  const strip = (string) => {
+    return string.replace(/^\s+|\s+$/g, "");
+  };
+  const onClickCheck = async (id, username) => {
+    const url = "/check_username/";
+    const { data } = await axios.post(url, {
+      id,
+      username,
+    });
+    likeHandleResponse(data.id, data.type);
+  };
+
+  const likeHandleResponse = (id, username) => {
+    const element = document.querySelector(`.post-id-${id} .post__${username}`);
+    const originHTML = element.innerHTML;
+    const [buttonType, num] = strip(originHTML).split(" ");
+    const count = Number(num) + 1;
+
+    element.innerHTML = `${buttonType} ${count}`;
+  };
+</script> -->
 {% endblock content %}
