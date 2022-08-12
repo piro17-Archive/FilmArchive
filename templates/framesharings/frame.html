@@ -28,27 +28,26 @@
 
     <div>
       <form action="{% url 'framesharings:frame' %}">
-        <button name="sortkeyword" value="None">#HOME</button>
         {% for keywordinfo in keywordinfo  %}
         {% if querykeyword == keywordinfo.id %}
         <button name="sortkeyword" value="{{keywordinfo.id}}" style="background-color: black;">#{{keywordinfo.name}}</button>
         {% else %}
-        <button name="sortkeyword" value="{{keywordinfo.id}}">#{{keywordinfo.name}}</button>
+        <button name="sortkeyword" value="{{keywordinfo.id}}">{{keywordinfo.name}}</button>
         {% endif%}
         {% endfor%}
       </form>
     </div>
 
-    <div class="일주일 인기순4개">
-      <div class="frame__box">
+    <div class="ranking__grid__section">
+      <div class="ranking__box grid__box">
         {% for frameweekinfo in frameweekinfo %} {% if frameweekinfo.framepublic %} 
         {% if frameweekinfo.framephoto %}
-        <div class="frame__one-box">
-          <h1>일주일 인기 {{forloop.counter}}등</h1>
-          <div class="frame__img">
-            <a href="{%url 'framesharings:framedetail' frameweekinfo.id %}"
-              ><img src="{{ frameweekinfo.framephoto.url }}" alt="프레임사진"
-            /></a>
+        <div class="ranking__one-box grid__one-box">
+          <h1>{{forloop.counter}}등</h1>
+          <div class="grid__img">
+            <a href="{%url 'framesharings:framedetail' frameweekinfo.id %}">
+              <img src="{{ frameweekinfo.framephoto.url }}" alt="프레임사진"/>
+            </a>
           </div>
           <div class="frame__frametitle">{{ frameweekinfo.frametitle }}</div>
           {% for keyword in frameweekinfo.framekeyword.all %} {% endfor%}
@@ -74,39 +73,41 @@
         {% endif %} {% endif %} {% endfor %}
       </div>
     </div>
-   
-    <div class="frame__box">
-      {% for frameinfo in frameinfo %} {% if frameinfo.framepublic %} 
-      {% if frameinfo.framephoto %}
-      <div class="frame__one-box">
-        <div class="frame__img">
-          <a href="{%url 'framesharings:framedetail' frameinfo.id %}"
-            ><img src="{{ frameinfo.framephoto.url }}" alt="프레임사진"
-          /></a>
-        </div>
-        <div class="frame__frametitle">{{ frameinfo.frametitle }}</div>
-        {% for keyword in frameinfo.framekeyword.all %} {% endfor%}
-        <div>
-          <!-- <form action="{% url 'framesharings:frame' %}"> -->
-            <div>
-              {% if frameinfo in like %}
-              <button id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'like' )" name="like" value="{{frameinfo.id}}">추천완료</button>
+    <div class="frame__grid__section">
+      <div class="frame__box grid__box">
+        {% for frameinfo in frameinfo %} {% if frameinfo.framepublic %} 
+        {% if frameinfo.framephoto %}
+        <div class="frame__one-box grid__one-box">
+          <div class="grid__img">
+            <a href="{%url 'framesharings:framedetail' frameinfo.id %}">
+              <img src="{{ frameinfo.framephoto.url }}" alt="프레임사진"/>
+            </a>
+          </div>
+          <div class="frame__frametitle">{{ frameinfo.frametitle }}</div>
+          {% for keyword in frameinfo.framekeyword.all %} {% endfor%}
+          <div>
+            <!-- <form action="{% url 'framesharings:frame' %}"> -->
+              <div>
+                {% if frameinfo in like %}
+                <button id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'like' )" name="like" value="{{frameinfo.id}}">추천완료</button>
+                {% else %}
+                <button id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'dislike' )" name="like" value="{{frameinfo.id}}">추천하기</button>
+                {% endif %}
+              </div>
+            <!-- </form> -->
+            <!-- <form action="{% url 'framesharings:frame' %}"> -->
+              <div>
+              {% if frameinfo in save %}
+              <button id="butsave{{frameinfo.id}}" onclick="onClickSave( {{frameinfo.id}},'save' )" name="save" value="{{frameinfo.id}}">찜완료</button>
               {% else %}
-              <button id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'dislike' )" name="like" value="{{frameinfo.id}}">추천하기</button>
+              <button id="butsave{{frameinfo.id}}" onclick="onClickSave( {{frameinfo.id}},'notsave' )" name="save" value="{{frameinfo.id}}">찜하기</button>
               {% endif %}
-            </div>
-          <!-- </form> -->
-          <!-- <form action="{% url 'framesharings:frame' %}"> -->
-            <div>
-            {% if frameinfo in save %}
-            <button id="butsave{{frameinfo.id}}" onclick="onClickSave( {{frameinfo.id}},'save' )" name="save" value="{{frameinfo.id}}">찜완료</button>
-            {% else %}
-            <button id="butsave{{frameinfo.id}}" onclick="onClickSave( {{frameinfo.id}},'notsave' )" name="save" value="{{frameinfo.id}}">찜하기</button>
-            {% endif %}</div>
-          <!-- </form> -->
+              </div>
+            <!-- </form> -->
+          </div>
         </div>
+        {% endif %} {% endif %} {% endfor %}
       </div>
-      {% endif %} {% endif %} {% endfor %}
     </div>
   </div>
 </main>
