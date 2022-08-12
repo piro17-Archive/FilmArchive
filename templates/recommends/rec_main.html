@@ -27,25 +27,27 @@
       {% endif%}
       {% endfor%}
     </form>
-      
-    <div class="recommend__box">
-      {% for recommend in recommends %}
-      <div class="recommend__one-box">
-        {% if recommend.recImage %}
-        <div class="recommend__img">
-          <img src="{{ recommend.recImage.url }}" />
+    
+    <div class="recommend__grid__section">
+      <div class="recommend__box grid__box">
+        {% for recommend in recommends %}
+        <div class="recommend__one-box grid__one-box">
+          {% if recommend.recImage %}
+          <div class="recommend__img grid__img">
+            <img src="{{ recommend.recImage.url }}" />
+          </div>
+          {% endif %}
+          <div class="recommend__recommendtitle">
+            <a href="{% url 'recommends:rec_detail' recommend.id %}">{{recommend.title}}</a>
+          </div>
+          {{recommend.postUser}}
+          {% for keyword in recommend.recKeyword.all %}
+            #{{keyword.name}} 
+          {% endfor %}
+          {{recommend.content}}
         </div>
-        {% endif %}
-        <div class="recommend__recommendtitle">
-          <a href="{% url 'recommends:rec_detail' recommend.id %}">{{recommend.title}}</a>
-        </div>
-        {{recommend.postUser}}
-        {% for keyword in recommend.recKeyword.all %}
-          #{{keyword.name}} 
         {% endfor %}
-        {{recommend.content}}
       </div>
-      {% endfor %}
     </div>
   </div>
 </main>

@@ -28,85 +28,183 @@
 
     <div>
       <form action="{% url 'framesharings:frame' %}">
-        <button name="sortkeyword" value="None">#HOME</button>
         {% for keywordinfo in keywordinfo  %}
         {% if querykeyword == keywordinfo.id %}
         <button name="sortkeyword" value="{{keywordinfo.id}}" style="background-color: black;">#{{keywordinfo.name}}</button>
         {% else %}
-        <button name="sortkeyword" value="{{keywordinfo.id}}">#{{keywordinfo.name}}</button>
+        <button name="sortkeyword" value="{{keywordinfo.id}}">{{keywordinfo.name}}</button>
         {% endif%}
         {% endfor%}
       </form>
     </div>
 
-    <div class="일주일 인기순4개">
-      <div class="frame__box">
+    <div class="ranking__grid__section">
+      <div class="ranking__box grid__box">
         {% for frameweekinfo in frameweekinfo %} {% if frameweekinfo.framepublic %} 
         {% if frameweekinfo.framephoto %}
-        <div class="frame__one-box">
-          <h1>일주일 인기 {{forloop.counter}}등</h1>
-          <div class="frame__img">
-            <a href="{%url 'framesharings:framedetail' frameweekinfo.id %}"
-              ><img src="{{ frameweekinfo.framephoto.url }}" alt="프레임사진"
-            /></a>
+        <div class="ranking__one-box grid__one-box">
+          <h1>{{forloop.counter}}등</h1>
+          <div class="grid__img">
+            <a href="{%url 'framesharings:framedetail' frameweekinfo.id %}">
+              <img src="{{ frameweekinfo.framephoto.url }}" alt="프레임사진"/>
+            </a>
           </div>
           <div class="frame__frametitle">{{ frameweekinfo.frametitle }}</div>
           {% for keyword in frameweekinfo.framekeyword.all %} {% endfor%}
           <div>
-            <form action="{% url 'framesharings:frame' %}">
+            <!-- <form action="{% url 'framesharings:frame' %}"> -->
               <div>
                 {% if frameweekinfo in like %}
-                <button name="like" value="{{frameweekinfo.id}}"><i class="fa-regular fa-thumbs-up"></i>추천완료</button>
+                <button id="butweeklike{{frameweekinfo.id}}" onclick="onClickLike( {{frameweekinfo.id}},'like' )" name="like" value="{{frameweekinfo.id}}"><i class="fa-regular fa-thumbs-up"></i>추천완료</button>
                 {% else %}
-                <button name="like" value="{{frameweekinfo.id}}"><i class="fa-regular fa-thumbs-up"></i>추천하기</button>
+                <button id="butweeklike{{frameweekinfo.id}}" onclick="onClickLike( {{frameweekinfo.id}},'dislike' )" name="like" value="{{frameweekinfo.id}}"><i class="fa-regular fa-thumbs-up"></i>추천하기</button>
                 {% endif %}
               </div>
-            </form>
-            <form action="{% url 'framesharings:frame' %}">
+            <!-- </form> -->
+            <!-- <form action="{% url 'framesharings:frame' %}"> -->
               {% if frameweekinfo in save %}
-              <button name="save" value="{{frameweekinfo.id}}">찜완료</button>
+              <button id="butweeksave{{frameweekinfo.id}}" onclick="onClickSave( {{frameweekinfo.id}},'save' )" name="save" value="{{frameweekinfo.id}}">찜완료</button>
               {% else %}
-              <button name="save" value="{{frameweekinfo.id}}">찜하기</button>
+              <button id="butweeksave{{frameweekinfo.id}}" onclick="onClickSave( {{frameweekinfo.id}},'notsave' )" name="save" value="{{frameweekinfo.id}}">찜하기</button>
               {% endif %}
-            </form>
+            <!-- </form> -->
           </div>
         </div>
         {% endif %} {% endif %} {% endfor %}
       </div>
     </div>
-   
-    <div class="frame__box">
-      {% for frameinfo in frameinfo %} {% if frameinfo.framepublic %} 
-      {% if frameinfo.framephoto %}
-      <div class="frame__one-box">
-        <div class="frame__img">
-          <a href="{%url 'framesharings:framedetail' frameinfo.id %}"
-            ><img src="{{ frameinfo.framephoto.url }}" alt="프레임사진"
-          /></a>
-        </div>
-        <div class="frame__frametitle">{{ frameinfo.frametitle }}</div>
-        {% for keyword in frameinfo.framekeyword.all %} {% endfor%}
-        <div>
-          <form action="{% url 'framesharings:frame' %}">
-            <div>
-              {% if frameinfo in like %}
-              <button name="like" value="{{frameinfo.id}}">추천완료</button>
+    <div class="frame__grid__section">
+      <div class="frame__box grid__box">
+        {% for frameinfo in frameinfo %} {% if frameinfo.framepublic %} 
+        {% if frameinfo.framephoto %}
+        <div class="frame__one-box grid__one-box">
+          <div class="grid__img">
+            <a href="{%url 'framesharings:framedetail' frameinfo.id %}">
+              <img src="{{ frameinfo.framephoto.url }}" alt="프레임사진"/>
+            </a>
+          </div>
+          <div class="frame__frametitle">{{ frameinfo.frametitle }}</div>
+          {% for keyword in frameinfo.framekeyword.all %} {% endfor%}
+          <div>
+            <!-- <form action="{% url 'framesharings:frame' %}"> -->
+              <div>
+                {% if frameinfo in like %}
+                <button id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'like' )" name="like" value="{{frameinfo.id}}">추천완료</button>
+                {% else %}
+                <button id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'dislike' )" name="like" value="{{frameinfo.id}}">추천하기</button>
+                {% endif %}
+              </div>
+            <!-- </form> -->
+            <!-- <form action="{% url 'framesharings:frame' %}"> -->
+              <div>
+              {% if frameinfo in save %}
+              <button id="butsave{{frameinfo.id}}" onclick="onClickSave( {{frameinfo.id}},'save' )" name="save" value="{{frameinfo.id}}">찜완료</button>
               {% else %}
-              <button name="like" value="{{frameinfo.id}}">추천하기</button>
+              <button id="butsave{{frameinfo.id}}" onclick="onClickSave( {{frameinfo.id}},'notsave' )" name="save" value="{{frameinfo.id}}">찜하기</button>
               {% endif %}
-            </div>
-          </form>
-          <form action="{% url 'framesharings:frame' %}">
-            {% if frameinfo in save %}
-            <button name="save" value="{{frameinfo.id}}">찜완료</button>
-            {% else %}
-            <button name="save" value="{{frameinfo.id}}">찜하기</button>
-            {% endif %}
-          </form>
+              </div>
+            <!-- </form> -->
+          </div>
         </div>
+        {% endif %} {% endif %} {% endfor %}
       </div>
-      {% endif %} {% endif %} {% endfor %}
     </div>
   </div>
 </main>
+
+<script>
+  const requestLike = new XMLHttpRequest();
+
+  const onClickLike = (id,type) => {
+    
+            const url = "/like_ajax/";
+            requestLike.open("POST",url,true);
+            requestLike.setRequestHeader(
+                "Content-Type",
+                "application/x-www-form-unlencoded"
+            );
+            requestLike.send(JSON.stringify({id: id, type:type}));
+        }
+  requestLike.onreadystatechange = () => {
+        if (requestLike.readyState === XMLHttpRequest.DONE){
+            if(requestLike.status < 400){
+                const {id, type} = JSON.parse(requestLike.response);
+                let element = document.getElementById(`butlike${id}`);
+                let weekelement = document.getElementById(`butweeklike${id}`);
+                console.log(element)
+                if(type == 'like'){
+                  if (weekelement != null) {
+                    weekelement.removeEventListener('onclick',onClickLike)
+                    weekelement.onclick = function(){onClickLike( id, 'like')};
+                    weekelement.innerHTML = '추천완료'
+                  }
+                    element.removeEventListener('onclick',onClickLike)
+
+                    element.onclick = function(){onClickLike( id, 'like')};
+                    element.innerHTML = '추천완료'
+
+                }
+                else{
+                  if (weekelement != null) {
+                    weekelement.removeEventListener('onclick',onClickLike)
+                    weekelement.onclick = function(){onClickLike( id, 'dislike')};
+                    weekelement.innerHTML = '추천하기'
+                  }
+                    element.removeEventListener('onclick',onClickLike)
+                    element.onclick = function(){onClickLike( id, 'dislike')}
+                    element.innerHTML = '추천하기'
+                }
+                
+            }
+        }
+    }
+
+    const requestSave = new XMLHttpRequest();
+
+  const onClickSave = (id,type) => {
+    
+            const url = "/save_ajax/";
+            requestSave.open("POST",url,true);
+            requestSave.setRequestHeader(
+                "Content-Type",
+                "application/x-www-form-unlencoded"
+            );
+            requestSave.send(JSON.stringify({id: id, type:type}));
+        }
+  requestSave.onreadystatechange = () => {
+        if (requestSave.readyState === XMLHttpRequest.DONE){
+            if(requestSave.status < 400){
+              
+                const {id, type} = JSON.parse(requestSave.response);
+                let element2 = document.getElementById(`butsave${id}`);
+                let weekelement2 = document.getElementById(`butweeksave${id}`);
+                console.log(element2)
+                
+                if(type == 'save') {
+                  if (weekelement2 != null) {
+                    weekelement2.removeEventListener('onclick',onClickSave)
+                    weekelement2.onclick = function(){onClickSave( id, 'save')};
+                    weekelement2.innerHTML = '찜완료'
+                  }
+                    element2.removeEventListener('onclick',onClickSave)
+                    element2.onclick = function(){onClickSave( id, 'save')};
+                    element2.innerHTML = '찜완료'
+                    
+
+                }
+                else{
+                  if (weekelement2 != null) {
+                    weekelement2.removeEventListener('onclick',onClickSave)
+                    weekelement2.onclick = function(){onClickSave( id, 'notsave')};
+                    weekelement2.innerHTML = '찜하기'
+                  }
+                    element2.removeEventListener('onclick',onClickSave)
+                    element2.onclick = function(){onClickSave( id, 'notsave')}
+                    element2.innerHTML = '찜하기'
+                }
+                
+            }
+        }
+    }
+</script>
 {% endblock content %}

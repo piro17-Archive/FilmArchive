@@ -818,3 +818,187 @@
     padding: 0.6rem 1.7rem;
   }
 }
+
+/* 회원 탈퇴 */
+@media screen and (max-width: 480px) {
+  .deleteuser-form {
+    width: 30rem;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 5rem 1rem;
+  }
+
+  .deleteuser-form .deleteuser__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .deleteuser__hr {
+    background-color: var(--main-red);
+    height: 0.15rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .deleteuser__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.5rem;
+    width: 6rem;
+    margin-right: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .deleteuser__info div input {
+    width: 20rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .deleteuser__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .deleteuser__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .deleteuser-form {
+    width: 40rem;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 10rem 0;
+  }
+
+  .deleteuser-form .deleteuser__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .deleteuser__hr {
+    background-color: var(--main-red);
+    height: 0.15rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .deleteuser__info {
+    padding: 3rem 0;
+  }
+
+  .deleteuser__info div {
+    font-size: 1.4rem;
+  }
+
+  .deleteuser__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.8rem;
+    width: 6rem;
+    margin-right: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .deleteuser__info div input {
+    width: 25rem;
+    height: 3.2rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .deleteuser__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .deleteuser__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .deleteuser-form {
+    width: 50rem;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 10rem 0;
+  }
+
+  .deleteuser-form .deleteuser__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .deleteuser__hr {
+    background-color: var(--main-red);
+    height: 0.15rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .deleteuser__info {
+    padding: 3rem 0;
+  }
+
+  .deleteuser__info div {
+    font-size: 1.4rem;
+  }
+
+  .deleteuser__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.8rem;
+    width: 6rem;
+    margin-right: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .deleteuser__info div input {
+    width: 25rem;
+    height: 3.2rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--main-background);
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .deleteuser__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .deleteuser__btn {
+    background: var(--main-red);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    padding: 0.6rem 1.7rem;
+    font-size: 1.5rem;
+  }
+}

@@ -30,7 +30,6 @@
     <link rel="stylesheet" href="{% static 'css/limitedlife.css' %}" />
     <link rel="stylesheet" href="{% static 'css/moredetail.css' %}" />
     <link rel="stylesheet" href="{% static 'css/recommend.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/mainswiper.css' %}" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <title>네 컷 Archive</title>
   </head>
@@ -150,20 +149,79 @@
         <div class="swiper-button-next"></div>
       </div>
     </main>
-    <main class="idea-container">
-      <div class="idea">
-        <div class="idea-title">네 컷 아카이브란?</div>
-        <div class="idea-subtitle">"내 사진들을 온라인으로 모아볼 순 없을까?"</div>
-        <div class="idea-infos">
-          <div class="idea-info">사진 찍는 걸 좋아하는 당신!</div>
-          <div class="idea-info">추억 남기기를 좋아하는 당신!</div>
-          <div class="idea-info">지금 네 컷 아카이브로</div>
+    <!-- main page1 -->
+    <main class="page1-container">
+      <div class="page1">
+        <div class="page1-title">네 컷 아카이브란?</div>
+        <div class="page1-subtitle">"내 사진들을 온라인으로 모아볼 순 없을까?"</div>
+        <div class="page1-infos">
+          <div class="page1-info">사진 찍는 걸 좋아하는 당신!</div>
+          <div class="page1-info">추억 남기기를 좋아하는 당신!</div>
+          <div class="page1-info">지금 네 컷 아카이브로</div>
         </div>
-        <div class="idea-box idea-box-left"></div>
-        <div class="idea-box idea-box-right"></div>
-        <div class="idea-box idea-box-left"></div>
+        <div class="page1-box page1-box-left"></div>
+        <div class="page1-box page1-box-right"></div>
+        <div class="page1-box page1-box-left"></div>
         {% csrf_token %}
         <img src="{% static 'image/girl.svg' %}" alt="">
+      </div>
+    </main>
+    <!-- main page2 -->
+    <main class="page2-container">
+        <div class="page2__flex-box">
+          <div class="page2-left">
+            <div class="page2-title">My 네 컷 앨범</div>
+            <div class="page2-info">동영상 저장과 날짜, 위치까지 등록해보세요</div> 
+          </div>
+          <div class="page2-right">
+            <img src="{% static 'image/frame.svg' %}" alt="">
+          </div>
+        </div>
+    </main>
+    <!-- main page3 -->
+    <main class="page3-container">
+      <div class="page3__flex-box">
+        <div class="page3-left">
+          <img src="{% static 'image/frame.svg' %}" alt="">
+        </div>
+        <div class="page3-right">
+          <div class="page3-title">캘린더 보기</div>
+          <div class="page3-info">동영상 저장과 날짜, 위치까지 등록해보세요</div> 
+        </div>
+      </div>
+    </main>
+    <!-- main page4 -->
+    <main class="page4-container">
+      <div class="page4__flex-box">
+        <div class="page4-title">제작 프레임 공유</div>
+        <div class="page4-info">인기별, 태그별 새로운 프레임을 이용해보세요</div>
+        <div class="page4-image">
+          <img src="" alt="">
+        </div>
+      </div>
+    </main>
+    <!-- main page5 -->
+    <main class="page5-container">
+      <div class="page5__flex-box">
+        <div class="page5-left">
+          <div class="page5-title">My 네 컷 앨범</div>
+          <div class="page5-info">동영상 저장과 날짜, 위치까지 등록해보세요</div> 
+        </div>
+        <div class="page5-right">
+          <img src="{% static 'image/frame.svg' %}" alt="">
+        </div>
+      </div>
+    </main>
+    <!-- main page6 -->
+    <main class="page6-container">
+      <div class="page6__flex-box">
+        <div class="page6-left">
+          <img src="{% static 'image/frame.svg' %}" alt="">
+        </div>
+        <div class="page6-right">
+          <div class="page6-title">캘린더 보기</div>
+          <div class="page6-info">동영상 저장과 날짜, 위치까지 등록해보세요</div> 
+        </div>
       </div>
     </main>
     {% endblock content %}
@@ -179,6 +237,7 @@
     <script src="{% static 'js/navbar.js' %}"></script>
     <script src="{% static 'js/albumswiper.js' %}"></script>
     <script src="{% static 'js/mainswiper.js' %}"></script>
+    <script src="{% static 'js/albummodal.js' %}"></script>
     <script src="https://kit.fontawesome.com/a8a24f1fa9.js" crossorigin="anonymous"></script>
   </body>
 </html>
