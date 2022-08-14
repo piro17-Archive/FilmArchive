@@ -647,6 +647,10 @@
   }
 }
 
+.framecreate__btn {
+  cursor: pointer;
+}
+
 /* framedetail */
 @media screen and (max-width: 480px) {
   .framedetail {
