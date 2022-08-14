@@ -23,13 +23,6 @@ def limitedlife(request):
     }
     return render(request, template_name='limitedframes/limitedlife.html',context=context)
 
-def limitedlifedetail(request,id):
-    lifeframeinfo = Lifefourcut.objects.get(id=id)
-    context = {
-        "lifeframeinfo": lifeframeinfo,
-    }
-    return render(request, template_name="limitedframes/limitedlifedetail.html",context=context)
-
 def limitedsignature(request):
     signatureinfo = Signature.objects.all().order_by('-id')
     context = {
