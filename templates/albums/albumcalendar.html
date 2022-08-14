@@ -1,5 +1,11 @@
 {% extends 'users/main.html' %} {% block content %}
 <main>
+  <style>
+  .photoday {
+    position: relative;
+    color: white
+  }
+  </style>
   <div class="calendar-container">
     <div class="calendar__flex-box">
       <div class="calendar__left">
@@ -84,14 +90,30 @@
     let albumdate = 0
 
     dates.forEach((date, i) => {
-      const condition = i >= firstDateIndex && i < lastDateIndex + 1 ? "this" : "other";
+      var condition = i >= firstDateIndex && i < lastDateIndex + 1 ? "this" : "other";
+      var testnow = new Date();	// 현재 날짜 및 시간
+      var testmonth = testnow.getMonth();
+      var testday = testnow.getDate();
+      var testyear = testnow.getFullYear()
+      console.log(testyear,viewYear)
+      
+      if (testyear < viewYear){
+        condition = "other";
+      }
+      
+      if (testmonth < viewMonth && testyear === viewYear){
+        condition = "other";
+      }
+      if (testday < i && testmonth === viewMonth && testyear === viewYear){
+        condition = "other";
+      }
       for(var j=0;j<1;j++){
       var k = 0;
       "{% for albuminfo in allalbum %}";
       albumdate = "{{albuminfo.albumdate}}";
       if (condition == "this" && albumdate == (viewYear).toString()+'년 '+(viewMonth+1).toString()+'월 '+(date).toString()+'일') {
           if (k == 0){
-          dates[i] = `<div class="date" ><span class="${condition}">${date}</span><a href="/albumdetail/{{albuminfo.id}}" ><img src="/media/{{ albuminfo.albumphoto }}" style="overflow: hidden;" " alt=""></a>`;
+          dates[i] = `<div class="date" ><span class="photoday">${date}</span><a href="/albumdetail/{{albuminfo.id}}" ><img src="/media/{{ albuminfo.albumphoto }}" style="overflow: hidden;" " alt=""></a>`;
           } if (k > 0) {
               dates[i] = dates[i] + '<a href="/albumdetail/{{albuminfo.id}}"><img src="/media/{{ albuminfo.albumphoto }}" style="overflow: hidden;" alt=""></a>'
           }
@@ -111,7 +133,7 @@
     if (viewMonth === today.getMonth() && viewYear === today.getFullYear()) {
       for (let date of document.querySelectorAll(".this")) {
         if (+date.innerText === today.getDate()) {
-          date.classList.add("today");
+          date.classList.add("todaynot"); //오늘이면 빨간색 today
           break;
         }
       }
