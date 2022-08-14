@@ -65,6 +65,43 @@
 				<div>
 					<div class="albumdetail__kind">종류 | {{albuminfo.albumtype.name}}</div>
 					<div class="albumdetail__position">위치 | {{albuminfo.albumlocation}}</div>
+
+
+
+
+
+					<div id="staticMap" style="width:300px;height:200px;"></div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b27755c9b07fa474fe64aeb0b2e452df"></script>
+<script>
+var a = "{{albuminfo.albumlocation}}"
+a = a.replace('(',"")
+a = a.replace(')',"")
+console.log(a)
+b = a.split(',')
+var markerPosition  = new kakao.maps.LatLng(Number(b[0]),Number(b[1])); 
+
+var marker = {
+    position: markerPosition
+};
+
+
+var staticMapContainer  = document.getElementById('staticMap'), // 이미지 지도를 표시할 div  
+    staticMapOption = { 
+        center: new kakao.maps.LatLng(Number(b[0]),Number(b[1])), // 이미지 지도의 중심좌표
+        level: 5, // 이미지 지도의 확대 레벨
+				marker: marker
+    };
+
+// 이미지 지도를 표시할 div와 옵션으로 이미지 지도를 생성합니다
+var staticMap = new kakao.maps.StaticMap(staticMapContainer, staticMapOption);
+</script>
+
+
+
+
+
+
 					<div class="albumdetail__memos">메모 | {{albuminfo.albummemo}}</div>
 				</div>
 			</div>
