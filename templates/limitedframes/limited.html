@@ -13,11 +13,11 @@
         <div class="line"></div>
         <div class="limited-frame--section lifefour">
           {% for lifeframeinfo in lifeframeinfo %} 
-          <a href="{% url 'limitedframes:limitedlifedetail' lifeframeinfo.id %}">
+          <a>
             <img src="{{ lifeframeinfo.lifephotourl }}">
             <div class="limited--detail--text">{{lifeframeinfo.lifecontext|cut:"2022."}}</div>
           </a>
-            {% endfor %}
+          {% endfor %}
         </div>
       </div>
 
@@ -36,8 +36,6 @@
             <img src="{% static '' %}{{photoisminfo.photoismphotourl}}" alt="">
             <div class="limited--detail--text">@photoism.kr</div>
           </a>
-            
-            
             {% endfor %}
         </div> 
       </div>

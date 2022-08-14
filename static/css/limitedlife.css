@@ -11,6 +11,7 @@
     font-weight: 400;
   }
 }
+
 @media screen and (min-width: 480px) and (max-width: 740px){
   .per--lifedetail:hover .limited--detail--text{
     font-size: 1.5rem;
@@ -52,6 +53,7 @@
     font-weight: 500;
   }
 }
+
 @media screen and (max-width: 740px) {
   .morepage--container{
     margin: 3rem;
