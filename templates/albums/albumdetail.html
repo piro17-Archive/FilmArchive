@@ -19,7 +19,10 @@
 	<div class="albumdetail">
 		<div class="albumdetail__header">
 			<div class="albumdetail__header-left">
-				My 네 컷 앨범
+				<div class="albumdetail__header-title">My 네 컷 앨범</div>
+				<a href="{% url 'albums:albumcalendar' user.id %}" class="calendar__section">
+					<i class="fa-solid fa-calendar-days"></i>
+				</a>
 			</div>
 			<div class="albumdetail__header-right">
 				<a href="/albumupdate/{{albuminfo.id}}"><i class="fa-solid fa-pen-to-square"></i></a>

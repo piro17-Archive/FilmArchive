@@ -552,7 +552,7 @@
 /* albumdetail */
 @media screen and (max-width: 480px) {
   .albumdetail {
-    padding: 3rem 0;
+    padding: 2rem 0;
   }
 
   .albumdetail__header {
@@ -562,13 +562,23 @@
   }
 
   .albumdetail__header .albumdetail__header-left {
-    width: 50%;
-    font-size: 2.2rem;
+    width: 70%;
+    display: flex;
+    align-items: center;
+  }
+
+  .albumdetail__header .albumdetail__header-left .albumdetail__header-title {
+    font-size: 1.8rem;
     font-weight: 800;
+    margin-right: 1rem;
+  }
+
+  .albumdetail__header .albumdetail__header-left  i {
+    font-size: 2rem;
   }
   
   .albumdetail__header .albumdetail__header-right {
-    width: 50%;
+    width: 30%;
     text-align: right;
   }
 
@@ -587,7 +597,7 @@
   }
 
   .albumdetail__date {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 800;
     margin: 4rem 0 2rem 0;
     text-align: center;
@@ -744,8 +754,15 @@
 
   .albumdetail__header .albumdetail__header-left {
     width: 50%;
+    display: flex;
+    align-items: center;
+    font-size: 2.2rem;
+  }
+
+  .albumdetail__header .albumdetail__header-left .albumdetail__header-title {
     font-size: 2.2rem;
     font-weight: 800;
+    margin-right: 1rem;
   }
   
   .albumdetail__header .albumdetail__header-right {
@@ -754,7 +771,8 @@
   }
 
   .albumdetail__header .albumdetail__header-right i {
-    font-size: 2rem;
+    font-size: 2.4rem;
+    margin-right: 0.5rem;
   }
 
   .albumdetail__header .albumdetail__header-right form {
@@ -768,7 +786,7 @@
   }
 
   .albumdetail__date {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 800;
     margin: 4rem 0 2rem 0;
     text-align: center;
@@ -930,8 +948,14 @@
 
   .albumdetail__header .albumdetail__header-left {
     width: 50%;
-    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .albumdetail__header .albumdetail__header-left .albumdetail__header-title {
+    font-size: 2.5rem;
     font-weight: 800;
+    margin-right: 1rem;
   }
   
   .albumdetail__header .albumdetail__header-right {
@@ -940,7 +964,8 @@
   }
 
   .albumdetail__header .albumdetail__header-right i {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-right: 1rem;
   }
 
   .albumdetail__header .albumdetail__header-right form {
@@ -954,7 +979,7 @@
   }
 
   .albumdetail__date {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: 800;
     margin-bottom: 2rem;
     text-align: center;
