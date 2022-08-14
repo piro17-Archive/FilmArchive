@@ -693,13 +693,18 @@
     justify-content: right;
   }
 
-  .framedetail__btn-box .framedetail__update,
-  .framedetail__btn-box .framedetail__delete {
-   font-size: 2rem;
+  .framedetail__btn-box .framedetail__update i,
+  .framedetail__btn-box .framedetail__delete i{
+   font-size: 2.2rem;
   }
 
   .framedetail__btn-box .framedetail__delete {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
+  }
+
+  .framedetail__delete button{
+    border: none;
+    background-color: transparent;
   }
 }
 
@@ -748,13 +753,18 @@
     justify-content: right;
   }
 
-  .framedetail__btn-box .framedetail__update,
-  .framedetail__btn-box .framedetail__delete {
-   font-size: 2rem;
+  .framedetail__btn-box .framedetail__update i,
+  .framedetail__btn-box .framedetail__delete i {
+   font-size: 2.2rem;
   }
 
   .framedetail__btn-box .framedetail__delete {
     margin-left: 1rem;
+  }
+
+  .framedetail__delete button{
+    border: none;
+    background-color: transparent;
   }
 }
 
@@ -803,13 +813,18 @@
     justify-content: right;
   }
 
-  .framedetail__btn-box .framedetail__update,
-  .framedetail__btn-box .framedetail__delete {
+  .framedetail__btn-box .framedetail__update i,
+  .framedetail__btn-box .framedetail__delete i {
    font-size: 2.5rem;
   }
 
   .framedetail__btn-box .framedetail__delete {
     margin-left: 1rem;
+  }
+
+  .framedetail__delete button{
+    border: none;
+    background-color: transparent;
   }
 }
 
