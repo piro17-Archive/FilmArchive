@@ -30,225 +30,231 @@
     <link rel="stylesheet" href="{% static 'css/limitedlife.css' %}" />
     <link rel="stylesheet" href="{% static 'css/moredetail.css' %}" />
     <link rel="stylesheet" href="{% static 'css/recommend.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <title>네 컷 Archive</title>
   </head>
   <body>
-    <header>
-      <div class="main__navbar">
-        <div class="main__left">
-          <a href="{% url 'users:main' %}" class="main__logo">네 컷 Archive </a>
+    <div id="wrap">
+      <header>
+        <div class="main__navbar">
+          <div class="main__left">
+            <a href="{% url 'users:main' %}" class="main__logo">FourCut Archive </a>
+          </div>
+          <div class="main__right">
+            <ul>
+              {%if user.is_authenticated %}
+                <li><a href="{% url 'albums:album' user.id %}">My 네 컷 앨범</a></li>
+              {% else %}
+                <li><a href="{% url 'users:login' %}">My 네 컷 앨범</a></li>
+              {% endif %}
+              
+              {%if user.is_authenticated %}
+              <li><a href="{% url 'framesharings:frame' %}">제작프레임 공유</a></li>
+              {% else %}
+              <li><a href="{% url 'users:login' %}">제작프레임 공유</a></li>
+              {% endif %}
+
+              <li>
+                <a href="{% url 'recommends:recommend_list' %}">포즈/컨셉 추천</a>
+              </li>
+              <li><a href="{% url 'limitedframes:limited'%}">한정판 프레임</a></li>
+              <li>
+                {% if user.is_authenticated %}
+                <a href="{% url 'users:log_out' %}" class="main__user"
+                  >로그아웃</a
+                > <span> | </span>
+                <a href="{% url 'users:mypage' %}" class="main__user"
+                  >마이페이지</a
+                >
+                {% else %}
+                <a href="{% url 'users:login' %}" class="main__user">로그인</a> <span> | </span>
+                <a href="{% url 'users:sign_up' %}" class="main__user"
+                  >회원가입</a
+                >
+                {% endif %}
+                <li class="main__navbar-btn">
+                  <img src="{% static 'image/navbar.svg' %}" alt="네브바">
+                </li>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="main__right">
+        <!-- navbar-btn click 했을 때 -->
+        <div class="main__navbar-list hidden">
           <ul>
             {%if user.is_authenticated %}
-              <li><a href="{% url 'albums:album' user.id %}">My 네 컷 앨범</a></li>
+            <a href="{% url 'albums:album' user.id %}"><li>My 네 컷 앨범</li></a>
             {% else %}
-              <li><a href="{% url 'users:login' %}">My 네 컷 앨범</a></li>
+            <a href="{% url 'users:login' %}"><li>My 네 컷 앨범</li></a>
             {% endif %}
-            
-            {%if user.is_authenticated %}
-            <li><a href="{% url 'framesharings:frame' %}">제작프레임 공유</a></li>
+            <a href="{% url 'framesharings:frame' %}"><li>제작프레임 공유</li></a>
+            <a href="{% url 'recommends:recommend_list' %}"><li>포즈/컨셉 추천</li></a>
+            <a href="{% url 'limitedframes:limited'%}"><li>한정판 프레임</li></a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'users:log_out' %}" class="main__user"><li>로그아웃</li></a> 
+            <a href="{% url 'users:mypage' %}" class="main__user"><li>마이페이지</li></a>
             {% else %}
-            <li><a href="{% url 'users:login' %}">제작프레임 공유</a></li>
+            <a href="{% url 'users:login' %}" class="main__user"><li>로그인</li></a>
+            <a href="{% url 'users:sign_up' %}" class="main__user"><li>회원가입</li></a>
             {% endif %}
-
-            <li>
-              <a href="{% url 'recommends:recommend_list' %}">포즈/컨셉 추천</a>
-            </li>
-            <li><a href="{% url 'limitedframes:limited'%}">한정판 프레임</a></li>
-            <li>
-              {% if user.is_authenticated %}
-              <a href="{% url 'users:log_out' %}" class="main__user"
-                >로그아웃</a
-              > <span> | </span>
-              <a href="{% url 'users:mypage' %}" class="main__user"
-                >마이페이지</a
-              >
-              {% else %}
-              <a href="{% url 'users:login' %}" class="main__user">로그인</a> <span> | </span>
-              <a href="{% url 'users:sign_up' %}" class="main__user"
-                >회원가입</a
-              >
-              {% endif %}
-              <li class="main__navbar-btn">
-                <img src="{% static 'image/navbar.svg' %}" alt="네브바">
-              </li>
-            </li>
           </ul>
         </div>
-      </div>
-      <!-- navbar-btn click 했을 때 -->
-      <div class="main__navbar-list hidden">
-        <ul>
-          {%if user.is_authenticated %}
-          <a href="{% url 'albums:album' user.id %}"><li>My 네 컷 앨범</li></a>
-          {% else %}
-          <a href="{% url 'users:login' %}"><li>My 네 컷 앨범</li></a>
-          {% endif %}
-          <a href="{% url 'framesharings:frame' %}"><li>제작프레임 공유</li></a>
-          <a href="{% url 'recommends:recommend_list' %}"><li>포즈/컨셉 추천</li></a>
-          <a href="{% url 'limitedframes:limited'%}"><li>한정판 프레임</li></a>
-          {% if user.is_authenticated %}
-          <a href="{% url 'users:log_out' %}" class="main__user"><li>로그아웃</li></a> 
-          <a href="{% url 'users:mypage' %}" class="main__user"><li>마이페이지</li></a>
-          {% else %}
-          <a href="{% url 'users:login' %}" class="main__user"><li>로그인</li></a>
-          <a href="{% url 'users:sign_up' %}" class="main__user"><li>회원가입</li></a>
-          {% endif %}
-        </ul>
-      </div>
-    </header>
-    {% block content %}
-    <main>
-      <div class="swiper" style="z-index: -1">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" id="slide1">
-            <div class="swiper-left">
-              <div class="slide-title">My 네 컷 앨범</div>
-              <div class="slide-subtitle">세상에 없는 나만의 네 컷 앨범을 만들어보세요.</div>
-              <div class="slide-button">My 네 컷 앨범 만들기</div>
+      </header>
+      {% block content %}
+      <main>
+        <div class="swiper" style="z-index: -1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" id="slide1">
+              <div class="swiper-left">
+                <div class="slide-title">My 네 컷 앨범</div>
+                <div class="slide-subtitle">세상에 없는 나만의 네 컷 앨범을 만들어보세요.</div>
+                <div class="slide-button">My 네 컷 앨범 만들기</div>
+              </div>
+              <div class="swiper-right">
+                <img src="{% static 'image/frame.svg' %}" alt="">
+              </div>
             </div>
-            <div class="swiper-right">
-              <img src="{% static 'image/frame.svg' %}" alt="">
+            <div class="swiper-slide" id="slide2">
+              <div class="swiper-left">
+                <img src="{% static 'image/frame.svg' %}" alt="">
+              </div>
+              <div class="swiper-right">
+                <div class="slide-title">제작프레임 공유</div>
+                <div class="slide-subtitle">절대 망하지 않는 포즈와 컨셉을 추천드릴게요 :)</div>
+                <div class="slide-button">자세히 보기</div>
+              </div>
             </div>
-          </div>
-          <div class="swiper-slide" id="slide2">
-            <div class="swiper-left">
-              <img src="{% static 'image/frame.svg' %}" alt="">
+            <div class="swiper-slide" id="slide3">
+              <div class="swiper-left">
+                <div class="slide-title">한정판 프레임</div>
+                <div class="slide-subtitle">매일 새로워지는 한정판 프레임을 만나보세요!</div>
+                <div class="slide-button">자세히 보기</div>
+              </div>
+              <div class="swiper-right">
+                <img src="{% static 'image/frame.svg' %}" alt="">
+              </div>
             </div>
-            <div class="swiper-right">
-              <div class="slide-title">제작프레임 공유</div>
-              <div class="slide-subtitle">절대 망하지 않는 포즈와 컨셉을 추천드릴게요 :)</div>
-              <div class="slide-button">자세히 보기</div>
-            </div>
-          </div>
-          <div class="swiper-slide" id="slide3">
-            <div class="swiper-left">
-              <div class="slide-title">한정판 프레임</div>
-              <div class="slide-subtitle">매일 새로워지는 한정판 프레임을 만나보세요!</div>
-              <div class="slide-button">자세히 보기</div>
-            </div>
-            <div class="swiper-right">
-              <img src="{% static 'image/frame.svg' %}" alt="">
+            <div class="swiper-slide" id="slide4">
+              <div class="swiper-left">
+                <div class="slide-title">My 네 컷 앨범</div>
+                <div class="slide-subtitle">세상에 없는 나만의 네 컷 앨범을 만들어보세요.</div>
+                <div class="slide-button">My 네 컷 앨범 만들기</div>
+              </div>
+              <div class="swiper-right">
+                <img src="{% static 'image/frame.svg' %}" alt="">
+              </div>
             </div>
           </div>
-          <div class="swiper-slide" id="slide4">
-            <div class="swiper-left">
-              <div class="slide-title">My 네 컷 앨범</div>
-              <div class="slide-subtitle">세상에 없는 나만의 네 컷 앨범을 만들어보세요.</div>
-              <div class="slide-button">My 네 컷 앨범 만들기</div>
-            </div>
-            <div class="swiper-right">
-              <img src="{% static 'image/frame.svg' %}" alt="">
-            </div>
-          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-    </main>
+      </main>
 
-    <!-- ranking section -->
-    <main class="main-ranking--container">
-      <div class="main--ranking--title">주간 BEST</div>
-      <div class="frame-ranking--grid">
-        {% for frameweekinfo in frameweekinfo %}
-        <div class="per--frame--ranking">
-          <!-- <h1>{{forloop.counter}}st</h1> -->
-          <div class="ranking--grid--img">
-            <a href="{%url 'framesharings:framedetail' frameweekinfo.id %}">
-              <img src="{{ frameweekinfo.framephoto.url }}" alt="프레임사진"/>
-            </a>
+      <!-- ranking section -->
+      <main class="main-ranking--container">
+        <div class="main--ranking--title">주간 BEST</div>
+        <div class="frame-ranking--grid">
+          {% for frameweekinfo in frameweekinfo %}
+          <div class="per--frame--ranking">
+            <!-- <h1>{{forloop.counter}}st</h1> -->
+            <div class="ranking--grid--img">
+              <a href="{%url 'framesharings:framedetail' frameweekinfo.id %}">
+                <img src="{{ frameweekinfo.framephoto.url }}" alt="프레임사진"/>
+              </a>
+            </div>
+          </div>
+          {% endfor%}
+        </div>
+      </main>
+      <!-- main page1 -->
+      <main class="page1-container">
+        <div class="page1">
+          <div class="page1-title">네 컷 아카이브란?</div>
+          <div class="page1-subtitle">"내 사진들을 온라인으로 모아볼 순 없을까?"</div>
+          <div class="page1-infos">
+            <div class="page1-info">사진 찍는 걸 좋아하는 당신!</div>
+            <div class="page1-info">추억 남기기를 좋아하는 당신!</div>
+            <div class="page1-info">지금 네 컷 아카이브로</div>
+          </div>
+          <div class="page1-box page1-box-left"></div>
+          <div class="page1-box page1-box-right"></div>
+          <div class="page1-box page1-box-left"></div>
+          {% csrf_token %}
+          <img src="{% static 'image/girl.svg' %}" alt="">
+        </div>
+      </main>
+      <!-- main page2 -->
+      <main class="page2-container">
+          <div class="page2__flex-box">
+            <div class="page2-left">
+              <div class="page2-title">My 네 컷 앨범</div>
+              <div class="page2-info">동영상 저장과 날짜, 위치까지 등록해보세요</div> 
+            </div>
+            <div class="page2-right">
+              <img src="{% static 'image/frame.svg' %}" alt="">
+            </div>
+          </div>
+      </main>
+      <!-- main page3 -->
+      <main class="page3-container">
+        <div class="page3__flex-box">
+          <div class="page3-left">
+            <img src="{% static 'image/frame.svg' %}" alt="">
+          </div>
+          <div class="page3-right">
+            <div class="page3-title">캘린더 보기</div>
+            <div class="page3-info">동영상 저장과 날짜, 위치까지 등록해보세요</div> 
           </div>
         </div>
-        {% endfor%}
-      </div>
-    </main>
-    <!-- main page1 -->
-    <main class="page1-container">
-      <div class="page1">
-        <div class="page1-title">네 컷 아카이브란?</div>
-        <div class="page1-subtitle">"내 사진들을 온라인으로 모아볼 순 없을까?"</div>
-        <div class="page1-infos">
-          <div class="page1-info">사진 찍는 걸 좋아하는 당신!</div>
-          <div class="page1-info">추억 남기기를 좋아하는 당신!</div>
-          <div class="page1-info">지금 네 컷 아카이브로</div>
+      </main>
+      <!-- main page4 -->
+      <main class="page4-container">
+        <div class="page4__flex-box">
+          <div class="page4-title">제작 프레임 공유</div>
+          <div class="page4-info">인기별, 태그별 새로운 프레임을 이용해보세요</div>
+          <div class="page4-image"></div>
         </div>
-        <div class="page1-box page1-box-left"></div>
-        <div class="page1-box page1-box-right"></div>
-        <div class="page1-box page1-box-left"></div>
-        {% csrf_token %}
-        <img src="{% static 'image/girl.svg' %}" alt="">
-      </div>
-    </main>
-    <!-- main page2 -->
-    <main class="page2-container">
-        <div class="page2__flex-box">
-          <div class="page2-left">
-            <div class="page2-title">My 네 컷 앨범</div>
-            <div class="page2-info">동영상 저장과 날짜, 위치까지 등록해보세요</div> 
+      </main>
+      <!-- main page5 -->
+      <main class="page5-container">
+        <div class="page5__flex-box">
+          <div class="page5-left">
+            <div class="page5-title">My 네 컷 앨범</div>
+            <div class="page5-info">동영상 저장과 날짜, 위치까지 등록해보세요</div> 
           </div>
-          <div class="page2-right">
+          <div class="page5-right">
             <img src="{% static 'image/frame.svg' %}" alt="">
           </div>
         </div>
-    </main>
-    <!-- main page3 -->
-    <main class="page3-container">
-      <div class="page3__flex-box">
-        <div class="page3-left">
-          <img src="{% static 'image/frame.svg' %}" alt="">
+      </main>
+      <!-- main page6 -->
+      <main class="page6-container">
+        <div class="page6__flex-box">
+          <div class="page6-left">
+            <img src="{% static 'image/frame.svg' %}" alt="">
+          </div>
+          <div class="page6-right">
+            <div class="page6-title">캘린더 보기</div>
+            <div class="page6-info">동영상 저장과 날짜, 위치까지 등록해보세요</div> 
+          </div>
         </div>
-        <div class="page3-right">
-          <div class="page3-title">캘린더 보기</div>
-          <div class="page3-info">동영상 저장과 날짜, 위치까지 등록해보세요</div> 
+      </main>
+      {% endblock content %}
+      <footer>
+        <h6>@ 네 컷 Archive</h6>
+        <div>
+          <a href="">서비스 소개</a>
+          <a href="">커뮤니티</a>
+          <a href="">About us</a>
         </div>
-      </div>
-    </main>
-    <!-- main page4 -->
-    <main class="page4-container">
-      <div class="page4__flex-box">
-        <div class="page4-title">제작 프레임 공유</div>
-        <div class="page4-info">인기별, 태그별 새로운 프레임을 이용해보세요</div>
-        <div class="page4-image"></div>
-      </div>
-    </main>
-    <!-- main page5 -->
-    <main class="page5-container">
-      <div class="page5__flex-box">
-        <div class="page5-left">
-          <div class="page5-title">My 네 컷 앨범</div>
-          <div class="page5-info">동영상 저장과 날짜, 위치까지 등록해보세요</div> 
-        </div>
-        <div class="page5-right">
-          <img src="{% static 'image/frame.svg' %}" alt="">
-        </div>
-      </div>
-    </main>
-    <!-- main page6 -->
-    <main class="page6-container">
-      <div class="page6__flex-box">
-        <div class="page6-left">
-          <img src="{% static 'image/frame.svg' %}" alt="">
-        </div>
-        <div class="page6-right">
-          <div class="page6-title">캘린더 보기</div>
-          <div class="page6-info">동영상 저장과 날짜, 위치까지 등록해보세요</div> 
-        </div>
-      </div>
-    </main>
-    {% endblock content %}
-    <footer>
-      <h6>@ 네 컷 Archive</h6>
-      <div>
-        <a href="">서비스 소개</a>
-        <a href="">커뮤니티</a>
-        <a href="">About us</a>
-      </div>
-      <p>서비스 소개 내용 쓰기</p>
-    </footer>
+        <p>서비스 소개 내용 쓰기</p>
+      </footer>
+    </div>
     <script src="{% static 'js/navbar.js' %}"></script>
     <script src="{% static 'js/albumswiper.js' %}"></script>
     <script src="{% static 'js/mainswiper.js' %}"></script>

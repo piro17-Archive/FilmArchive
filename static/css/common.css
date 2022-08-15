@@ -48,3 +48,17 @@ button {
 main {
   padding-top: 8rem;
 }
+
+html, body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 60px;
+}
+
+footer {
+  bottom: 0;
+}
