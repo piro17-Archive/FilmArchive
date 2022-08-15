@@ -392,6 +392,10 @@
   }
 }
 
+.recommendcreate__btn {
+  cursor: pointer;
+}
+
 /* recommenddetail */
 @media screen and (max-width: 480px) {
   .recommenddetail {
