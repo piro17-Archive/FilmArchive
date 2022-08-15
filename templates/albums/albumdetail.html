@@ -64,7 +64,7 @@
 				<img src="{% static 'image/memo.png' %}" alt="">
 				<div>
 					<div class="albumdetail__kind">종류 | {{albuminfo.albumtype.name}}</div>
-					<div class="albumdetail__position">위치 | {{albuminfo.albumlocation}}</div>
+					<div class="albumdetail__position" id="locationel">위치 | {{albuminfo.albumlocation}}</div>
 
 
 
@@ -72,13 +72,21 @@
 
 					<div id="staticMap" style="width:300px;height:200px;"></div>
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b27755c9b07fa474fe64aeb0b2e452df"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b27755c9b07fa474fe64aeb0b2e452df&libraries=services"></script>
 <script>
 var a = "{{albuminfo.albumlocation}}"
 a = a.replace('(',"")
 a = a.replace(')',"")
 console.log(a)
 b = a.split(',')
+if (b[2] !== undefined){ //어이가없는데 마커클릭하면 x,y좌표가 순서 반대로 들어옴
+	var c = b[0]
+	b[0] = b[1]
+	b[1] = c
+}
+console.log(b[0],b[1],b[2])
+console.log(Number(b[0]),Number(b[1]))
+
 var markerPosition  = new kakao.maps.LatLng(Number(b[0]),Number(b[1])); 
 
 var marker = {
@@ -89,12 +97,41 @@ var marker = {
 var staticMapContainer  = document.getElementById('staticMap'), // 이미지 지도를 표시할 div  
     staticMapOption = { 
         center: new kakao.maps.LatLng(Number(b[0]),Number(b[1])), // 이미지 지도의 중심좌표
-        level: 5, // 이미지 지도의 확대 레벨
+        level: 6, // 이미지 지도의 확대 레벨
 				marker: marker
     };
 
 // 이미지 지도를 표시할 div와 옵션으로 이미지 지도를 생성합니다
 var staticMap = new kakao.maps.StaticMap(staticMapContainer, staticMapOption);
+
+if (b[2] !== undefined){
+	kakaotext = b[2];
+	let locationel = document.getElementById('locationel');
+						locationel.innerHTML = '위치 | '+kakaotext
+} else{
+var kakaotext;
+function getAddr(lat,lng){
+    let geocoder = new kakao.maps.services.Geocoder();
+
+    let coord = new kakao.maps.LatLng(lat, lng);
+    let callback = function(result, status) {
+        if (status === kakao.maps.services.Status.OK) {
+						if (result[0].road_address !== null){
+						kakaotext = '위치 | <br>지번 : '+result[0].address.address_name +'<br>도로명 : '+result[0].road_address.address_name;
+						let locationel = document.getElementById('locationel');
+						locationel.innerHTML = kakaotext}
+						else{
+							kakaotext = '위치 | <br>지번 : '+result[0].address.address_name;
+						let locationel = document.getElementById('locationel');
+						locationel.innerHTML = kakaotext
+						}
+        }
+    };
+
+    geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+}
+getAddr(Number(b[0]),Number(b[1]));
+}
 </script>
 
 
