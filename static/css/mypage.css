@@ -65,7 +65,7 @@
     border-radius: 0.5rem;
     background: white;
     color: var(--main-color);
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--main-gray600);
     text-align: center;
     cursor: pointer;
     width: 12rem;
@@ -162,7 +162,7 @@
     border-radius: 0.5rem;
     background: white;
     color: var(--main-color);
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--main-gray600);
     text-align: center;
     cursor: pointer;
     width: 15rem;
@@ -265,7 +265,7 @@
     border-radius: 0.5rem;
     background: white;
     color: var(--main-color);
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--main-gray600);
     text-align: center;
     cursor: pointer;
     width: 17rem;
@@ -587,7 +587,7 @@
 @media screen and (max-width: 480px) {
   .profileupdate-form {
     width: 30rem;
-    margin: 1rem auto;
+    margin: 5rem auto;
     padding: 5rem 0;
     text-align: center;
   }
@@ -601,14 +601,8 @@
 
   .profileupdate__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
-    margin: 2rem 0 2rem 0;
-  }
-
-  .profileupdate__subtitle {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
+    height: 0.2rem;
+    margin: 2rem 0;
   }
 
   .profileupdate-form img {
@@ -619,30 +613,41 @@
     object-fit: cover;
   }
 
+  .profileupdate-form p {
+    font-size: 1.2rem;
+  }
+
   .profileupdate__btn-box {
     text-align: center;
-    margin: 2rem 0;
+    margin: 3rem 0;
   }
 
   .profileupdate__btn {
+    background: white;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
+    width: 12rem;
+    height: 3.4rem;
+    font-size: 1.2rem;
+  }
+
+  .profileupdate__btn:hover {
     background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
     color: white;
-    padding: 0.6rem 1.7rem;
+    transition: 0.2s;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .profileupdate-form {
-    width: 45rem;
-    margin: 1rem auto;
+    width: 40rem;
+    margin: 5rem auto;
     padding: 5rem 0;
     text-align: center;
   }
   
   .profileupdate__title {
-    font-size: 2rem;
+    font-size: 2.4rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -650,48 +655,53 @@
 
   .profileupdate__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
-    margin: 2rem 0 2rem 0;
-  }
-
-  .profileupdate__subtitle {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 1rem;
+    height: 0.2rem;
+    margin: 2rem 0;
   }
 
   .profileupdate-form img {
-    width: 25rem;
-    height: 25rem;
+    width: 26rem;
+    height: 26rem;
     border-radius: 50%;
     margin: 1rem 0 2rem 0;
     object-fit: cover;
   }
 
+  .profileupdate-form p {
+    font-size: 1.4rem;
+  }
+
   .profileupdate__btn-box {
     text-align: center;
-    margin: 2rem 0;
+    margin: 3rem 0;
   }
 
   .profileupdate__btn {
+    background: white;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
+    width: 12rem;
+    height: 3.4rem;
+    font-size: 1.4rem;
+  }
+
+  .profileupdate__btn:hover {
     background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
     color: white;
-    padding: 0.6rem 1.7rem;
+    transition: 0.2s;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .profileupdate-form {
     width: 50rem;
-    margin: 1rem auto;
+    margin: 5rem auto;
     padding: 5rem 0;
     text-align: center;
   }
   
   .profileupdate__title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -699,14 +709,8 @@
 
   .profileupdate__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
-    margin: 2rem 0 2rem 0;
-  }
-
-  .profileupdate__subtitle {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 1rem;
+    height: 0.2rem;
+    margin: 2rem 0;
   }
 
   .profileupdate-form img {
@@ -717,26 +721,38 @@
     object-fit: cover;
   }
 
+  .profileupdate-form p {
+    font-size: 1.6rem;
+  }
+
   .profileupdate__btn-box {
     text-align: center;
-    margin: 2rem 0;
+    margin: 3rem 0;
   }
 
   .profileupdate__btn {
+    background: white;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
+    width: 14rem;
+    height: 3.5rem;
+    font-size: 1.6rem;
+  }
+
+  .profileupdate__btn:hover {
     background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
     color: white;
-    padding: 0.6rem 1.7rem;
+    transition: 0.2s;
   }
 }
 
 /* 비밀번호 변경 */
 @media screen and (max-width: 480px) {
   .changepw-form {
-    width: 30rem;
-    margin: 1rem auto;
+    width: 33rem;
+    margin: 5rem auto;
     padding: 5rem 1rem;
+    text-align: center;
   }
 
   .changepw-form .changepw__title {
@@ -748,26 +764,26 @@
 
   .changepw__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
   }
 
   .changepw-form p label {
     display: inline-block;
-    line-height: 1.5rem;
-    width: 9rem;
-    margin-right: 1.5rem;
-    font-size: 1.3rem;
+    width: 11.5rem;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    text-align: right;
   }
 
   .changepw-form p input {
     width: 17rem;
-    height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
-    margin-bottom: 1rem;
+    height: 3.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin-bottom: 1.4rem;
     padding: 1rem;
   }
 
@@ -777,27 +793,35 @@
 
   .changepw__btn-box {
     text-align: center;
-    margin-top: 5rem;
+    margin: 4rem 0;
   }
 
   .changepw__btn {
+    background: white;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    width: 10rem;
+    height: 3.2rem;
+  }
+
+  .changepw__btn:hover {
     background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
     color: white;
-    padding: 0.6rem 1.7rem;
+    transition: 0.2s;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .changepw-form {
     width: 40rem;
-    margin: 1rem auto;
+    margin: 5rem auto;
     padding: 5rem 1rem;
+    text-align: center;
   }
 
   .changepw-form .changepw__title {
-    font-size: 2rem;
+    font-size: 2.4rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -805,26 +829,26 @@
 
   .changepw__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
   }
 
   .changepw-form p label {
     display: inline-block;
-    line-height: 1.5rem;
-    width: 9rem;
-    margin-right: 1.5rem;
-    font-size: 1.3rem;
+    width: 13rem;
+    margin-right: 1rem;
+    font-size: 1.4rem;
+    text-align: right;
   }
 
   .changepw-form p input {
-    width: 25rem;
-    height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
-    margin-bottom: 1rem;
+    width: 23rem;
+    height: 4rem;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin-bottom: 1.4rem;
     padding: 1rem;
   }
 
@@ -834,27 +858,35 @@
 
   .changepw__btn-box {
     text-align: center;
-    margin-top: 5rem;
+    margin: 4rem 0;
   }
 
   .changepw__btn {
+    background: white;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
+    font-size: 1.4rem;
+    width: 12rem;
+    height: 3.5rem;
+  }
+
+  .changepw__btn:hover {
     background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
     color: white;
-    padding: 0.6rem 1.7rem;
+    transition: 0.2s;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .changepw-form {
-    width: 45rem;
-    margin: 1rem auto;
+    width: 50rem;
+    margin: 5rem auto;
     padding: 5rem 1rem;
+    text-align: center;
   }
 
   .changepw-form .changepw__title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -862,26 +894,26 @@
 
   .changepw__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
   }
 
   .changepw-form p label {
     display: inline-block;
-    line-height: 1.5rem;
-    width: 9rem;
-    margin-right: 1.5rem;
-    font-size: 1.3rem;
+    width: 14rem;
+    margin-right: 1rem;
+    font-size: 1.6rem;
+    text-align: right;
   }
 
   .changepw-form p input {
-    width: 30rem;
-    height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
-    margin-bottom: 1rem;
+    width: 27rem;
+    height: 4rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin-bottom: 1.4rem;
     padding: 1rem;
   }
 
@@ -891,22 +923,29 @@
 
   .changepw__btn-box {
     text-align: center;
-    margin-top: 5rem;
+    margin: 5rem 0 4rem 0;
   }
 
   .changepw__btn {
+    background: white;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    width: 12rem;
+    height: 3.5rem;
+  }
+
+  .changepw__btn:hover {
     background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
     color: white;
-    padding: 0.6rem 1.7rem;
+    transition: 0.2s;
   }
 }
 
 /* 회원 탈퇴 */
 @media screen and (max-width: 480px) {
   .deleteuser-form {
-    width: 32rem;
+    width: 30rem;
     margin: 1rem auto;
     text-align: center;
     padding: 10rem 0;
@@ -926,59 +965,69 @@
   }
 
   .deleteuser__info {
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
 
   .deleteuser__info div {
-    font-size: 1.1rem;
-    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .deleteuser__info .label_password {
     display: inline-block;
-    text-align: center;
+    text-align: right;
     line-height: 1.8rem;
     width: 5rem;
-    margin-right: 1.5rem;
-    font-size: 1.2rem;
+    margin-right: 1rem;
+    font-size: 1.1rem;
   }
 
   .deleteuser__info #id_password {
     width: 22rem;
-    height: 3.2rem;
-    font-size: 1.5rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
+    height: 3.6rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     margin-bottom: 1rem;
-    padding: 1rem;
+    padding: 0 1rem;
+  }
+
+  .login--input {
+    margin-top: 2.5rem;
   }
 
   .deleteuser__btn-box {
     text-align: center;
-    margin: 2rem 0;
+    margin: 3rem 0 1rem 0;
   }
 
   .deleteuser__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
-    color: white;
-    padding: 0.6rem 1.7rem;
+    background: white;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
+    padding: 0.6rem 0;
     font-size: 1.2rem;
+    width: 10rem;
+  }
+
+  .deleteuser__btn:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .deleteuser-form {
-    width: 50rem;
+    width: 40rem;
     margin: 1rem auto;
     text-align: center;
     padding: 10rem 0;
   }
 
   .deleteuser-form .deleteuser__title {
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -995,42 +1044,52 @@
   }
 
   .deleteuser__info div {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 0.5rem;
   }
 
   .deleteuser__info .label_password {
     display: inline-block;
-    text-align: center;
+    text-align: right;
     line-height: 1.8rem;
     width: 6rem;
-    margin-right: 1.5rem;
-    font-size: 1.5rem;
+    margin-right: 1rem;
+    font-size: 1.4rem;
   }
 
   .deleteuser__info #id_password {
     width: 25rem;
-    height: 3.2rem;
-    font-size: 1.5rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
+    height: 3.6rem;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     margin-bottom: 1rem;
-    padding: 1rem;
+    padding: 0 1rem;
+  }
+
+  .login--input {
+    margin-top: 2.5rem;
   }
 
   .deleteuser__btn-box {
     text-align: center;
-    margin: 2rem 0;
+    margin: 4rem 0 1rem 0;
   }
 
   .deleteuser__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
-    color: white;
+    background: white;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
     padding: 0.6rem 1.7rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    width: 12rem;
+  }
+
+  .deleteuser__btn:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
   }
 }
 
@@ -1043,7 +1102,7 @@
   }
 
   .deleteuser-form .deleteuser__title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -1060,13 +1119,13 @@
   }
 
   .deleteuser__info div {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 0.5rem;
   }
 
   .deleteuser__info .label_password {
     display: inline-block;
-    text-align: center;
+    text-align: right;
     line-height: 1.8rem;
     width: 6rem;
     margin-right: 1.5rem;
@@ -1075,26 +1134,36 @@
 
   .deleteuser__info #id_password {
     width: 25rem;
-    height: 3.2rem;
+    height: 3.8rem;
     font-size: 1.5rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     margin-bottom: 1rem;
-    padding: 1rem;
+    padding: 0 1rem;
+  }
+
+  .login--input {
+    margin-top: 2.5rem;
   }
 
   .deleteuser__btn-box {
     text-align: center;
-    margin: 2rem 0;
+    margin: 4rem 0 1rem 0;
   }
 
   .deleteuser__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
-    color: white;
+    background: white;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
     padding: 0.6rem 1.7rem;
     font-size: 1.5rem;
+    width: 14rem;
+  }
+
+  .deleteuser__btn:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
   }
 }
