@@ -201,7 +201,7 @@
   }
 
   .mypage__title {
-    font-size: 2rem;
+    font-size: 2.6rem;
     font-weight: 800;
     margin: 2rem 0 5rem 0;
   }
@@ -227,7 +227,7 @@
     border-radius: 50%;
     width: 25rem;
     height: 25rem;
-    margin-bottom: 1em;
+    margin-bottom: 3rem;
     object-fit: cover;
   }
 
@@ -243,15 +243,24 @@
   }
 
   .mypage__left .mypage__btn {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    border-radius: 1.2rem;
-    padding: 0.8rem 1.2rem;
-    background: var(--main-color);
-    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-top: 1.5rem;
+    border-radius: 0.5rem;
+    background: white;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
     text-align: center;
     cursor: pointer;
-    width: 15rem;
+    width: 17rem;
+    height: 4rem;
+    line-height: 4rem;
+  }
+
+  .mypage__left .mypage__btn:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
   }
 
   .mypage__storage-title {
