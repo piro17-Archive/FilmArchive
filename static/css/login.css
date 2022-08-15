@@ -2,37 +2,111 @@
 @media screen and (max-width: 480px) {
   .login--section {
     width: 30rem;
-    margin: 1rem auto;
+    margin: 5rem auto;
     text-align: center;
-    padding: 5rem 1rem;
+    padding: 5rem 0;
   }
 
-  .login--btn,
-  .signup--btn {
-    width: 15rem;
-    height: 3rem;
+  .login--main--text {
+    font-size: 2rem;
+    font-weight: 800;
+    padding-bottom: 2rem;
+  }
+
+  .login-line {
+    width: 100%;
+    background: var(--main-color);
+    height: 0.2rem;
+    margin: 1rem 0;
+  }
+
+  .login--form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0 4rem 0;
+  }
+
+  .login--input {
+    margin-bottom: 2rem;
+  }
+
+  .login--input span {
     font-size: 1.2rem;
     font-weight: 500;
-  }
-
-  .signup--btn {
-    margin-bottom: 1rem;
+    color: var(--main-color);
+    display: inline-block;
+    width: 5rem;
+    text-align: right;
+    margin-right: 1rem;
   }
 
   .login--input input {
-    width: 15rem;
-    height: 3rem;
-    font-size: 1.3rem;
+    width: 20rem;
+    height: 3.8rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background: white;
+    padding: 0 1rem;
   }
 
-  .login--text {
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding-right: 1rem;
+  .login--input input:-webkit-autofill {
+    font-size: 1.5rem;
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+  }
+
+  .login--btn {
+    border: 1px solid var(--main-gray600);
+    background: white;
+    color: var(--main-color);
+    width: 12rem;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    margin-top: 1.2rem;
+  }
+
+  .login--btn:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
+  }
+
+  .login__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+
+  .login--reset {
+    font-size: 1.1rem;
+    color: var(--main-gray600);
+  }
+
+  .login--reset a {
+    color: var(--main-gray600);
+    text-decoration: underline;
+    text-underline-position: under;
+  }
+
+  .login__bar {
+    width: 7%;
+  }
+
+  .signup--btn {
+    font-size: 1.1rem;
+    background: transparent;
+    color: var(--main-gray600);
+    border: none;
+    text-decoration: underline;
+    text-underline-position: under;
   }
 
   .social-title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
     margin: 2rem 0 1rem 0;
     color: #666;
@@ -55,59 +129,120 @@
     width: 100%;
     height: 100%;
   }
-
+  
   .naver-btn {
-    margin: 0 1.5rem;
-  }
-
-  .login--main--text {
-    font-size: 1.7rem;
-    font-weight: 600;
-    padding-bottom: 2rem;
-  }
-
-  .login--main--section {
-    padding: 2.5rem 0;
-  }
-
-  .login--reset {
-    font-size: 0.8rem;
+    margin: 0 2rem;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .login--section {
     width: 40rem;
-    margin: 1rem auto;
+    margin: 5rem auto;
     text-align: center;
     padding: 5rem 0;
   }
 
-  .login--btn,
-  .signup--btn {
-    width: 18rem;
-    height: 3rem;
-    font-size: 1.5rem;
-    font-weight: 500;
+  .login--main--text {
+    font-size: 2.3rem;
+    font-weight: 800;
+    padding-bottom: 2rem;
   }
 
-  .signup--btn {
-    margin-bottom: 1rem;
+  .login-line {
+    width: 100%;
+    background: var(--main-color);
+    height: 0.2rem;
+    margin: 1rem 0;
   }
+
+  .login--form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0 4rem 0;
+  }
+
+  .login--input {
+    margin-bottom: 2rem;
+  }
+
+  .login--input span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--main-color);
+    display: inline-block;
+    width: 8rem;
+    text-align: right;
+    margin-right: 1rem;
+  }
+
   .login--input input {
-    width: 20rem;
-    height: 3rem;
+    width: 22rem;
+    height: 3.8rem;
     font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background: white;
+    padding: 0 1rem;
   }
 
-  .login--text {
+  .login--input input:-webkit-autofill {
     font-size: 1.5rem;
-    font-weight: 500;
-    padding-right: 1rem;
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+  }
+
+  .login--btn {
+    border: 1px solid var(--main-gray600);
+    background: white;
+    color: var(--main-color);
+    width: 12rem;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .login--btn:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
+  }
+
+  .login__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+
+  .login--reset {
+    font-size: 1.1rem;
+    color: var(--main-gray600);
+  }
+
+  .login--reset a {
+    color: var(--main-gray600);
+    text-decoration: underline;
+    text-underline-position: under;
+  }
+
+  .login__bar {
+    width: 7%;
+  }
+
+  .signup--btn {
+    font-size: 1.1rem;
+    background: transparent;
+    color: var(--main-gray600);
+    border: none;
+    text-decoration: underline;
+    text-underline-position: under;
   }
 
   .social-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 600;
     margin: 2rem 0 1rem 0;
     color: #666;
@@ -120,8 +255,8 @@
   }
 
   .social-login__box button {
-    width: 6rem;
-    height: 5rem;
+    width: 5rem;
+    height: 4rem;
     background: transparent;
     border: none;
   }
@@ -130,70 +265,116 @@
     width: 100%;
     height: 100%;
   }
-
+  
   .naver-btn {
     margin: 0 3rem;
-  }
-
-  .login--main--text {
-    font-size: 2rem;
-    font-weight: 600;
-    padding-bottom: 2rem;
-  }
-
-  .login--main--section {
-    padding: 2.5rem 0;
-  }
-
-  .login--reset {
-    font-size: 1.2rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .login--section {
-    width: 50rem;
-    margin: 1rem auto;
+    width: 45rem;
+    margin: 5rem auto;
     text-align: center;
     padding: 5rem 0;
   }
 
-  .login--btn,
-  .signup--btn {
-    width: 18rem;
-    height: 3rem;
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
-
-  .signup--btn {
-    margin-bottom: 1rem;
-  }
-
-  .login--input input {
-    width: 20rem;
-    height: 3rem;
-    font-size: 1.5rem;
-  }
-
-  .login--text {
-    font-size: 1.5rem;
-    font-weight: 500;
-    padding-right: 1rem;
-  }
-
   .login--main--text {
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 2.5rem;
+    font-weight: 800;
     padding-bottom: 2rem;
   }
 
-  .login--main--section {
-    padding: 3rem 0;
+  .login-line {
+    width: 100%;
+    background: var(--main-color);
+    height: 0.2rem;
+    margin: 1rem 0;
+  }
+
+  .login--form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0 4rem 0;
+  }
+
+  .login--input {
+    margin-bottom: 2rem;
+  }
+
+  .login--input span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--main-color);
+    display: inline-block;
+    width: 8rem;
+    text-align: right;
+    margin-right: 1rem;
+  }
+
+  .login--input input {
+    width: 25rem;
+    height: 3.8rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background: white;
+    padding: 0 1rem;
+  }
+
+  .login--input input:-webkit-autofill {
+    font-size: 1.5rem;
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+  }
+
+  .login--btn {
+    border: 1px solid var(--main-gray600);
+    background: white;
+    color: var(--main-color);
+    width: 14rem;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .login--btn:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
+  }
+
+  .login__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
   }
 
   .login--reset {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    color: var(--main-gray600);
+  }
+
+  .login--reset a {
+    color: var(--main-gray600);
+    text-decoration: underline;
+    text-underline-position: under;
+  }
+
+  .login__bar {
+    width: 10%;
+  }
+
+  .signup--btn {
+    font-size: 1.3rem;
+    background: transparent;
+    color: var(--main-gray600);
+    border: none;
+    text-decoration: underline;
+    text-underline-position: under;
   }
 
   .social-title {
@@ -220,80 +401,10 @@
     width: 100%;
     height: 100%;
   }
-
+  
   .naver-btn {
     margin: 0 3rem;
   }
-}
-
-.line {
-  height: 0.15rem;
-  background-color: var(--main-color);
-  margin: 1rem 0;
-}
-
-.login--btn{
-  margin: 1.5rem 0 3rem 0;
-  color: var(--main-color);
-  border: 1px solid var(--main-color);
-  background: white;
-  border-radius: 0.5rem;
-}
-
-.login__bottom {
-  display: flex;
-  justify-content: center;
-}
-
-.signup--btn {
-  background: transparent;
-  border: none;
-}
-
-.login--input input {
-  background-color: white;
-  border: 1px solid var(--main-gray400);
-  border-radius: 0.5rem;
-  padding: 2rem 0;
-}
-
-.login--btn--section {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem;
-}
-
-.login--input {
-  padding: 1rem;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-}
-
-.login--main--section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.login--form--section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.text--input--section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.login--reset a {
-  text-underline-position: under;
-  text-decoration: underline;
 }
 
 /* 비밀번호 찾기 */
@@ -302,7 +413,7 @@
     width: 30rem;
     margin: 1rem auto;
     text-align: center;
-    padding: 5rem 1rem;
+    padding: 8rem 0;
   }
 
   .password-reset-form .password-reset__title {
@@ -312,65 +423,35 @@
     margin-bottom: 2rem;
   }
 
+  .password-reset__subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 5rem 0 2rem 0;
+  }
+
   .password-reset__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
   }
 
-  .password-reset__info div span {
-    display: inline-block;
-    text-align: center;
-    line-height: 1.5rem;
-    width: 6rem;
-    margin-right: 1.5rem;
-    font-size: 1.3rem;
+  .password-reset__info div {
+    font-size: 1.2rem;
   }
 
   .password-reset__info div input {
     width: 20rem;
     height: 3.2rem;
     font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
-    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin: 0 0 1rem 0.5rem;
     padding: 1rem;
   }
 
-  .password-reset__btn-box {
-    text-align: center;
-    margin: 2rem 0;
-  }
-
-  .password-reset__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
-    color: white;
-    padding: 0.6rem 1.7rem;
-  }
-}
-
-@media screen and (min-width: 480px) and (max-width: 1024px) {
-  .password-reset-form {
-    width: 40rem;
-    margin: 1rem auto;
-    text-align: center;
-    padding: 5rem 0;
-  }
-
-  .password-reset-form .password-reset__title {
-    font-size: 2rem;
-    text-align: center;
-    font-weight: 800;
-    margin-bottom: 2rem;
-  }
-
-  .password-reset__hr {
-    background-color: var(--main-color);
-    height: 0.15rem;
-    margin: 2rem 0 4rem 0;
+  .password-reset__info div input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
   }
 
   .password-reset__info div span {
@@ -382,28 +463,104 @@
     font-size: 1.3rem;
   }
 
+  .password-reset__btn-box {
+    text-align: center;
+    margin: 4rem 0 5rem 0;
+  }
+
+  .password-reset__btn {
+    background: white;
+    border: 1px solid var(--main-color);
+    border-radius: 0.5rem;
+    color: var(--main-color);
+    padding: 0.6rem 1.7rem;
+    font-size: 1.2rem;
+    width: 8rem;
+    height: 3rem;
+  }
+  
+  .password-reset__btn:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .password-reset-form {
+    width: 40rem;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 8rem 0;
+  }
+
+  .password-reset-form .password-reset__title {
+    font-size: 2.2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .password-reset__subtitle {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 5rem 0 2rem 0;
+  }
+
+  .password-reset__hr {
+    background-color: var(--main-color);
+    height: 0.2rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .password-reset__info div {
+    font-size: 1.4rem;
+  }
+
   .password-reset__info div input {
-    width: 24rem;
+    width: 22rem;
     height: 3.2rem;
     font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
-    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin: 0 0 1rem 0.5rem;
     padding: 1rem;
+  }
+
+  .password-reset__info div input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+  }
+
+  .password-reset__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    width: 6rem;
+    margin-right: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .password-reset__btn-box {
     text-align: center;
-    margin: 2rem 0;
+    margin: 4rem 0 5rem 0;
   }
 
   .password-reset__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
-    color: white;
+    background: white;
+    border: 1px solid var(--main-color);
+    border-radius: 0.5rem;
+    color: var(--main-color);
     padding: 0.6rem 1.7rem;
+    font-size: 1.5rem;
+    width: 10rem;
+    height: 3.5rem;
+  }
+  
+  .password-reset__btn:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
   }
 }
 
@@ -434,15 +591,23 @@
     margin: 2rem 0 4rem 0;
   }
 
+  .password-reset__info div {
+    font-size: 1.4rem;
+  }
+
   .password-reset__info div input {
     width: 25rem;
     height: 3.2rem;
     font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
-    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin: 0 0 1rem 0.5rem;
     padding: 1rem;
+  }
+
+  .password-reset__info div input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
   }
 
   .password-reset__info div span {
@@ -460,11 +625,19 @@
   }
 
   .password-reset__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
-    color: white;
+    background: white;
+    border: 1px solid var(--main-color);
+    border-radius: 0.5rem;
+    color: var(--main-color);
     padding: 0.6rem 1.7rem;
     font-size: 1.5rem;
+    width: 12rem;
+    height: 3.5rem;
+  }
+  
+  .password-reset__btn:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
   }
 }

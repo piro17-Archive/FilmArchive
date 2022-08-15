@@ -156,6 +156,10 @@
   }
 }
 
+.main__navbar {
+  background: var(--main);
+}
+
 .main__navbar-btn {
   cursor: pointer;
 }
@@ -191,7 +195,8 @@
 footer {
   width: 100%;
   height: 100%;
-  background: #eaeaea;
+  background: var(--main-color);
+  color: white;
   font-size: 0.8rem;
   line-height: 1.5rem;
 }

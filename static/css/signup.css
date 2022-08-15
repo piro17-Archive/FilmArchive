@@ -3,7 +3,7 @@
     width: 30rem;
     margin: 1rem auto;
     text-align: center;
-    padding: 5rem 1rem;
+    padding: 5rem 0;
   }
 
   .signup-form .signup__title {
@@ -15,28 +15,32 @@
 
   .signup__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
   }
 
   .signup__info div span {
     display: inline-block;
     text-align: center;
-    line-height: 1.5rem;
-    width: 6rem;
-    margin-right: 1.5rem;
-    font-size: 1.3rem;
+    width: 8rem;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    text-align: right;
   }
 
   .signup__info div input {
-    width: 20rem;
-    height: 3.2rem;
+    width: 18rem;
+    height: 3.8rem;
     font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
-    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin-bottom: 1.4rem;
     padding: 1rem;
+  }
+
+  .signup__info div input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
   }
 
   .signup__btn-box {
@@ -45,11 +49,19 @@
   }
 
   .signup__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
-    color: white;
+    background: white;
+    width: 10rem;
+    height: 3.5rem;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
     padding: 0.6rem 1.7rem;
+    cursor: pointer;
+  }
+
+  .signup__btn:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
   }
 }
 
@@ -62,7 +74,7 @@
   }
 
   .signup-form .signup__title {
-    font-size: 2rem;
+    font-size: 2.1rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -70,7 +82,7 @@
 
   .signup__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
   }
 
@@ -78,20 +90,25 @@
     display: inline-block;
     text-align: center;
     line-height: 1.4rem;
-    width: 6rem;
-    margin-right: 1.5rem;
-    font-size: 1.3rem;
+    width: 9rem;
+    margin-right: 1rem;
+    font-size: 1.4rem;
+    text-align: right;
   }
 
   .signup__info div input {
-    width: 24rem;
-    height: 3.2rem;
+    width: 20rem;
+    height: 3.8rem;
     font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
-    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin-bottom: 1.4rem;
     padding: 1rem;
+  }
+
+  .signup__info div input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
   }
 
   .signup__btn-box {
@@ -100,11 +117,19 @@
   }
 
   .signup__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
-    color: white;
+    background: white;
+    width: 12rem;
+    height: 3.5rem;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
     padding: 0.6rem 1.7rem;
+    cursor: pointer;
+  }
+
+  .signup__btn:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
   }
 }
 
@@ -117,7 +142,7 @@
   }
 
   .signup-form .signup__title {
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -125,28 +150,33 @@
 
   .signup__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
-  }
-
-  .signup__info div input {
-    width: 25rem;
-    height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
-    margin-bottom: 1rem;
-    padding: 1rem;
   }
 
   .signup__info div span {
     display: inline-block;
     text-align: center;
     line-height: 1.4rem;
-    width: 6rem;
-    margin-right: 1.5rem;
+    width: 9rem;
+    margin-right: 1rem;
+    font-size: 1.4rem;
+    text-align: right;
+  }
+
+  .signup__info div input {
+    width: 25rem;
+    height: 3.8rem;
     font-size: 1.3rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin-bottom: 1.4rem;
+    padding: 1rem;
+  }
+
+  .signup__info div input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
   }
 
   .signup__btn-box {
@@ -155,10 +185,18 @@
   }
 
   .signup__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
-    color: white;
+    background: white;
+    width: 12rem;
+    height: 3.5rem;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
     padding: 0.6rem 1.7rem;
+    cursor: pointer;
+  }
+
+  .signup__btn:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
   }
 }

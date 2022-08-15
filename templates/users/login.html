@@ -2,12 +2,12 @@
 {% providers_media_js %}
 <main>
   <div class="login--section">
-    <h1 class="login--main--text">로그인</h1>
-    <div class="line"></div>
+    <div class="login--main--text">로그인</div>
+    <div class="login-line"></div>
     <div class="login--main--section">
-      <form action="{% url 'users:login' %}" method="POST" class="login--form--section">
-        {% csrf_token %}
-        <div class="text--input--section">
+      <form action="{% url 'users:login' %}" method="POST">
+        <div class="login--form">
+          {% csrf_token %}
           <div class="login--input">
             <span class="login--text">아이디 </span>
             {{ form.username }}
@@ -16,31 +16,28 @@
             <span class="login--text">비밀번호 </span>
             {{ form.password }}
           </div>
-        </div>
-        <div class="login--btn--section">
-          <button class="login--btn">로그인</button>
+          <div class="login--btn--section">
+            <button class="login--btn">로그인</button>
+          </div>
         </div>
       </form>
-      <div class="line"></div>
+      <div class="login-line"></div>
       <!--비밀번호 리셋하기 기능-->
       <div class="login__bottom">
-        <div class="login--reset">
-          <div>비밀번호를 까먹으셨나요? <a href="{% url 'users:reset_password' %}">비밀번호 찾기</a></div>
-        </div>
-
+        <div class="login--reset">비밀번호를 까먹으셨나요? <a href="{% url 'users:reset_password' %}">비밀번호 찾기</a></div>
+        <div class="login__bar">|</div>
         <div class="signup--btn--section">
-          <a href="{% url 'users:sign_up' %}" class="signup--link">
-            <button class="signup--btn">회원가입</button>
-          </a>
+          <a href="{% url 'users:sign_up' %}" class="signup--link"><button class="signup--btn">회원가입</button></a>
         </div>
       </div>
     </div>
+
     <div class="social-login">
       <div class="social-title">간편 로그인</div>
       <div class="social-login__box">
         <form action="{% provider_login_url 'google' %}" method="post">
           {% csrf_token %}
-          <button type="submit">
+          <button type="submit" class="google-btn">
             <img src="{% static 'image/google-logo.png' %}" alt="">
           </button>
           </form>
