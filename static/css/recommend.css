@@ -603,9 +603,9 @@
 /* recommendupdate */
 @media screen and (max-width: 480px) {
   .recommendupdate-form {
-    width: 30rem;
-    margin: 0 auto;
-    padding: 5rem 0;
+    width: 32rem;
+    margin: 5rem auto;
+    padding: 3rem 0;
   }
 
   .recommendupdate-form .recommendupdate__title {
@@ -616,44 +616,47 @@
     margin-bottom: 2rem;
   }
 
-  .recommendupdate-form .recommendupdate__hr {
+  .recommendupdate__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
+  }
+
+  .recommendupdate__info {
+    padding: 0 1rem;
   }
 
   .recommendupdate__info div span {
     display: inline-block;
-    text-align: center;
-    line-height: 1.4rem;
+    text-align: right;
     margin: 0 1.5rem 1.5rem 0;
-    font-size: 1.3rem;
-    width: 4rem;
+    font-size: 1.2rem;
+    width: 7rem;
   }
-
-  .recommendupdate__info div input[type="checkbox"] {
-    width: 1.5rem;
-    margin-bottom: 0;
+  
+  .recommendupdate__info div input {
+    margin-bottom: 1.5rem;
   }
 
   .recommendupdate__info div input[type="text"] {
     width: 20rem;
     height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     margin-bottom: 1rem;
     padding: 1rem;
   }
 
   .recommendupdate__info div textarea{
-    background-color: var(--main-background);
-    border: none;
-    border-radius: 1rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     width: 20rem;
+    height: 12rem;
     padding: 1rem;
-
   }
 
   .recommendupdate__btn-box {
@@ -662,41 +665,53 @@
   }
 
   .recommendupdate__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray600);
+    background-color: white;
+    width: 12rem;
+    height: 3.2rem;
+    cursor: pointer;
+  }
+
+  .recommendupdate__btn:hover {
+    background-color: var(--main-color);
     color: white;
-    padding: 0.6rem 2rem;
+    transition: 0.2s;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .recommendupdate-form {
     width: 40rem;
-    margin: 0 auto;
+    margin: 5rem auto;
     padding: 5rem 0;
   }
 
   .recommendupdate-form .recommendupdate__title {
     width: 100%;
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
   }
 
-  .recommendupdate-form .recommendupdate__hr {
+  .recommendupdate__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
+  }
+
+  .recommendupdate__info {
+    padding: 0 2rem;
   }
 
   .recommendupdate__info div span {
     display: inline-block;
-    text-align: center;
-    line-height: 1.4rem;
-    font-size: 1.3rem;
+    text-align: right;
     margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.4rem;
+    width: 7rem;
   }
   
   .recommendupdate__info div input {
@@ -704,21 +719,23 @@
   }
 
   .recommendupdate__info div input[type="text"] {
-    width: 30rem;
+    width: 25rem;
     height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     margin-bottom: 1rem;
     padding: 1rem;
   }
 
   .recommendupdate__info div textarea{
-    background-color: var(--main-background);
-    border: none;
-    border-radius: 1rem;
-    width: 30rem;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 25rem;
+    height: 15rem;
     padding: 1rem;
   }
 
@@ -728,41 +745,53 @@
   }
 
   .recommendupdate__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray600);
+    background-color: white;
+    width: 12rem;
+    height: 3.2rem;
+    cursor: pointer;
+  }
+
+  .recommendupdate__btn:hover {
+    background-color: var(--main-color);
     color: white;
-    padding: 0.6rem 1.7rem;
+    transition: 0.2s;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .recommendupdate-form {
-    width: 45rem;
-    margin: 0 auto;
+    width: 50rem;
+    margin: 5rem auto;
     padding: 5rem 0;
   }
 
   .recommendupdate-form .recommendupdate__title {
     width: 100%;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
   }
 
-  .recommendupdate-form .recommendupdate__hr {
+  .recommendupdate__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
+  }
+
+  .recommendupdate__info {
+    padding: 0 5rem;
   }
 
   .recommendupdate__info div span {
     display: inline-block;
-    text-align: center;
-    line-height: 1.4rem;
+    text-align: right;
     margin: 0 1.5rem 1.5rem 0;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+    width: 7rem;
   }
   
   .recommendupdate__info div input {
@@ -770,21 +799,22 @@
   }
 
   .recommendupdate__info div input[type="text"] {
-    width: 35rem;
+    width: 30rem;
     height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     margin-bottom: 1rem;
     padding: 1rem;
   }
 
   .recommendupdate__info div textarea{
-    background-color: var(--main-background);
-    border: none;
-    border-radius: 1rem;
-    width: 35rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 30rem;
     padding: 1rem;
   }
 
@@ -794,10 +824,18 @@
   }
 
   .recommendupdate__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray600);
+    background-color: white;
+    width: 12rem;
+    height: 3.2rem;
+    cursor: pointer;
+  }
+
+  .recommendupdate__btn:hover {
+    background-color: var(--main-color);
     color: white;
-    padding: 0.6rem 1.7rem;
+    transition: 0.2s;
   }
 }
