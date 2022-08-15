@@ -13,10 +13,9 @@
     <div class="lifedetail--grid--section">
       {% for lifeframeinfo in lifeframeinfo %}
       <div class="per--lifedetail">
-        <a href="{% url 'limitedframes:limitedlifedetail' lifeframeinfo.id %}">
           <img src="{{ lifeframeinfo.lifephotourl }}">
           <div class="limited--detail--text">{{lifeframeinfo.lifecontext}}</div>
-        </a>
+        
         
       </div>
       {% endfor %}
