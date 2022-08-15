@@ -34,7 +34,7 @@
         <div class="recommend__one-box grid__one-box">
           {% if recommend.recImage %}
           <div class="recommend__img grid__img">
-            <img src="{{ recommend.recImage.url }}" />
+            <a href="{% url 'recommends:rec_detail' recommend.id %}"><img src="{{ recommend.recImage.url }}" /></a>
           </div>
           {% endif %}
           <div class="recommend__recommendtitle">
