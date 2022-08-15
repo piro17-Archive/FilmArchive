@@ -44,7 +44,7 @@
     position: absolute;
     right: 0;
     bottom: 2rem;
-    background: var(--main-red);
+    background: var(--main-color);
     border-radius: 50%;
     padding: 1.1rem 1.4rem;
     color: white;
@@ -65,7 +65,7 @@
     margin-bottom: 1rem;
     border-radius: 1.5rem;
     padding: 1rem 1.2rem;
-    background: var(--main-red);
+    background: var(--main-color);
     color: white;
     text-align: center;
     cursor: pointer;
@@ -81,8 +81,8 @@
   }
 
   .mypage__hr {
-    background: var(--main-red);
-    border-color: var(--main-red);
+    background: var(--main-color);
+    border-color: var(--main-color);
     margin: 1.5rem 0 3.5rem 0;
     height: 0.15rem;
   }
@@ -141,7 +141,7 @@
     position: absolute;
     right: 0;
     bottom: 2rem;
-    background: var(--main-red);
+    background: var(--main-color);
     border-radius: 50%;
     padding: 1.1rem 1.4rem;
     color: white;
@@ -153,7 +153,7 @@
     margin-bottom: 1rem;
     border-radius: 1.2rem;
     padding: 0.8rem 1.2rem;
-    background: var(--main-red);
+    background: var(--main-color);
     color: white;
     text-align: center;
     cursor: pointer;
@@ -165,8 +165,8 @@
   }
 
   .mypage__hr {
-    background: var(--main-red);
-    border-color: var(--main-red);
+    background: var(--main-color);
+    border-color: var(--main-color);
     margin: 1rem 0 3rem 0;
     height: 0.15rem;
   }
@@ -235,7 +235,7 @@
     position: absolute;
     right: 1rem;
     bottom: 3rem;
-    background: var(--main-red);
+    background: var(--main-color);
     border-radius: 50%;
     padding: 1.3rem 1.7rem;
     color: white;
@@ -247,7 +247,7 @@
     margin-bottom: 1rem;
     border-radius: 1.2rem;
     padding: 0.8rem 1.2rem;
-    background: var(--main-red);
+    background: var(--main-color);
     color: white;
     text-align: center;
     cursor: pointer;
@@ -259,8 +259,8 @@
   }
 
   .mypage__hr {
-    background: var(--main-red);
-    border-color: var(--main-red);
+    background: var(--main-color);
+    border-color: var(--main-color);
     margin: 1.5rem 0 3.5rem 0;
     height: 0.15rem;
   }
@@ -303,13 +303,13 @@
   }
 
   .userupdate-form .userupdate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
 
   .userupdate-form .userupdate__hr-bottom {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0;
   }
@@ -345,7 +345,7 @@
   }
 
   .userupdate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -373,13 +373,13 @@
   }
 
   .userupdate-form .userupdate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
 
   .userupdate-form .userupdate__hr-bottom {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0;
   }
@@ -416,7 +416,7 @@
   }
 
   .userupdate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -444,13 +444,13 @@
   }
 
   .userupdate-form .userupdate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
 
   .userupdate-form .userupdate__hr-bottom {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0;
   }
@@ -486,7 +486,7 @@
   }
 
   .userupdate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -516,7 +516,7 @@
   }
 
   .profileupdate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 2rem 0;
   }
@@ -541,7 +541,7 @@
   }
 
   .profileupdate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -565,7 +565,7 @@
   }
 
   .profileupdate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 2rem 0;
   }
@@ -590,7 +590,7 @@
   }
 
   .profileupdate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -614,7 +614,7 @@
   }
 
   .profileupdate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 2rem 0;
   }
@@ -639,7 +639,7 @@
   }
 
   .profileupdate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -663,7 +663,7 @@
   }
 
   .changepw__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -697,7 +697,7 @@
   }
 
   .changepw__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -720,7 +720,7 @@
   }
 
   .changepw__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -754,7 +754,7 @@
   }
 
   .changepw__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -777,7 +777,7 @@
   }
 
   .changepw__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -811,7 +811,7 @@
   }
 
   .changepw__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -836,7 +836,7 @@
   }
 
   .deleteuser__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.2rem;
     margin: 2rem 0 4rem 0;
   }
@@ -876,7 +876,7 @@
   }
 
   .deleteuser__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -901,7 +901,7 @@
   }
 
   .deleteuser__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.2rem;
     margin: 2rem 0 4rem 0;
   }
@@ -941,7 +941,7 @@
   }
 
   .deleteuser__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -966,7 +966,7 @@
   }
 
   .deleteuser__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.2rem;
     margin: 2rem 0 4rem 0;
   }
@@ -1006,7 +1006,7 @@
   }
 
   .deleteuser__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;

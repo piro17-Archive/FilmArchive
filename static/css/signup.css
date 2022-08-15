@@ -14,7 +14,7 @@
   }
 
   .signup__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -45,7 +45,7 @@
   }
 
   .signup__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -69,7 +69,7 @@
   }
 
   .signup__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -100,7 +100,7 @@
   }
 
   .signup__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -124,7 +124,7 @@
   }
 
   .signup__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -155,7 +155,7 @@
   }
 
   .signup__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;

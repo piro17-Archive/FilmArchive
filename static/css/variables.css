@@ -1,6 +1,9 @@
 :root {
-  --main-red: #f94c3b;
+  --main-color: #302615; /* #f94c3b; */
   --main-skin: #ffe7c9;
   --main-background: #fff2e1;
   --main-star: #fdf300;
+  --main: #FAF8F5;
+  --main-gray400: #bdbdbd;
+  --main-gray600: #757575;
 }

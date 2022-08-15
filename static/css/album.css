@@ -95,12 +95,12 @@
 
   .album__create {
     font-size: 3rem;
-    color: var(--main-red);
+    color: var(--main-color);
     margin-left: 1rem;
   }
 
   .album__right a {
-    background: var(--main-red);
+    background: var(--main-color);
     color: white;
     border-radius: 1rem;
     padding: 0.7rem 1rem;
@@ -159,7 +159,7 @@
   }
 
   .album__left .album__create {
-    color: var(--main-red);
+    color: var(--main-color);
     font-size: 3.2rem;
     margin-left: 1rem;
     display: flex;
@@ -287,7 +287,7 @@
 
   .album__create {
     font-size: 3rem;
-    color: var(--main-red);
+    color: var(--main-color);
     margin-left: 1rem;
     display: flex;
     align-items: center;
@@ -339,7 +339,7 @@
 }
 
 .calendar__section i {
-  color: var(--main-red);
+  color: var(--main-color);
   font-size: 2.8rem;
 }
 
@@ -360,7 +360,7 @@
   }
 
   .albumcreate-form .albumcreate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.1rem;
     margin: 2rem 0 4rem 0;
   }
@@ -409,7 +409,7 @@
   }
 
   .albumcreate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -433,7 +433,7 @@
   }
 
   .albumcreate-form .albumcreate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.1rem;
     margin: 2rem 0 4rem 0;
   }
@@ -475,7 +475,7 @@
   }
 
   .albumcreate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -499,7 +499,7 @@
   }
 
   .albumcreate-form .albumcreate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.1rem;
     margin: 2rem 0 4rem 0;
   }
@@ -541,7 +541,7 @@
   }
 
   .albumcreate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -726,13 +726,13 @@
     font-size: 1.4rem;
     font-weight: 800;
     border-radius: 1rem;
-    border: 1px solid var(--main-red);
+    border: 1px solid var(--main-color);
     background: none;
   }
   
   .modal-btn button:hover {
     color: white;
-    background: var(--main-red);
+    background: var(--main-color);
     transition: 0.3s;
   }
   
@@ -920,13 +920,13 @@
     font-size: 1.4rem;
     font-weight: 800;
     border-radius: 1rem;
-    border: 1px solid var(--main-red);
+    border: 1px solid var(--main-color);
     background: none;
   }
   
   .modal-btn button:hover {
     color: white;
-    background: var(--main-red);
+    background: var(--main-color);
     transition: 0.3s;
   }
   
@@ -1104,13 +1104,13 @@
     font-size: 1.6rem;
     font-weight: 800;
     border-radius: 1rem;
-    border: 1px solid var(--main-red);
+    border: 1px solid var(--main-color);
     background: none;
   }
   
   .modal-btn button:hover {
     color: white;
-    background: var(--main-red);
+    background: var(--main-color);
     transition: 0.3s;
   }
   
@@ -1136,7 +1136,7 @@
   }
 
   .albumupdate-form .albumupdate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -1186,7 +1186,7 @@
   }
 
   .albumupdate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -1210,7 +1210,7 @@
   }
 
   .albumupdate-form .albumupdate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -1252,7 +1252,7 @@
   }
 
   .albumupdate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -1276,7 +1276,7 @@
   }
 
   .albumupdate-form .albumupdate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -1318,7 +1318,7 @@
   }
 
   .albumupdate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -1369,7 +1369,7 @@
 
   .calendar__right .calendar__createBtn a i {
     cursor: pointer;
-    color: var(--main-red);
+    color: var(--main-color);
     font-size: 3rem;
   }
 
@@ -1470,12 +1470,12 @@
 
   .today {
     position: relative;
-    color: var(--main-red);
+    color: var(--main-color);
   }
 
   .calendar__hr {
     height: 0.1rem;
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     margin-top: 1rem;
   }
 }
@@ -1522,7 +1522,7 @@
 
   .calendar__right .calendar__createBtn a i {
     cursor: pointer;
-    color: var(--main-red);
+    color: var(--main-color);
     font-size: 3.5rem;
   }
 
@@ -1624,12 +1624,12 @@
 
   .today {
     position: relative;
-    color: var(--main-red);
+    color: var(--main-color);
   }
 
   .calendar__hr {
     height: 0.1rem;
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     margin-top: 1rem;
   }
 }
@@ -1676,7 +1676,7 @@
 
   .calendar__right .calendar__createBtn a i {
     cursor: pointer;
-    color: var(--main-red);
+    color: var(--main-color);
     font-size: 4rem;
   }
 
@@ -1778,12 +1778,12 @@
 
   .today {
     position: relative;
-    color: var(--main-red);
+    color: var(--main-color);
   }
 
   .calendar__hr {
     height: 0.1rem;
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     margin-top: 1rem;
   }
 }

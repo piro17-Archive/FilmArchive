@@ -227,32 +227,34 @@
 }
 
 .line {
-  height: 0.2rem;
-  background-color: var(--main-red);
+  height: 0.15rem;
+  background-color: var(--main-color);
   margin: 1rem 0;
 }
 
 .login--btn{
-  margin-top: 1.5rem;
-  background-color: var(--main-red);
-  color: white;
-  border: none;
-  border-radius: 1rem;
+  margin: 1.5rem 0 3rem 0;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  background: white;
+  border-radius: 0.5rem;
 }
 
-.login--btn,
+.login__bottom {
+  display: flex;
+  justify-content: center;
+}
+
 .signup--btn {
-  background-color: var(--main-red);
-  color: white;
+  background: transparent;
   border: none;
-  border-radius: 1rem;
 }
 
 .login--input input {
-  background-color: var(--main-background);
-  border: none;
-  border-radius: 1rem;
-  padding: 0.5rem;
+  background-color: white;
+  border: 1px solid var(--main-gray400);
+  border-radius: 0.5rem;
+  padding: 2rem 0;
 }
 
 .login--btn--section {
@@ -311,7 +313,7 @@
   }
 
   .password-reset__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -342,7 +344,7 @@
   }
 
   .password-reset__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -366,7 +368,7 @@
   }
 
   .password-reset__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -397,7 +399,7 @@
   }
 
   .password-reset__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -427,7 +429,7 @@
   }
 
   .password-reset__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.2rem;
     margin: 2rem 0 4rem 0;
   }
@@ -458,7 +460,7 @@
   }
 
   .password-reset__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;

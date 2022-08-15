@@ -24,7 +24,7 @@
   }
 
   .frame__left .frame__create {
-    color: var(--main-red);
+    color: var(--main-color);
     font-size: 3.2rem;
     margin-left: 1rem;
   }
@@ -98,7 +98,7 @@
   }
 
   .frame__right a {
-    background: var(--main-red);
+    background: var(--main-color);
     color: white;
     border-radius: 1rem;
     padding: 0.7rem 1rem;
@@ -153,7 +153,7 @@
 
   .recommendBtn {
     background: transparent;
-    border: 1px solid var(--main-red);
+    border: 1px solid var(--main-color);
     border-radius: 0.5rem;
     padding: 0.4rem;
     transition: 0.1s;
@@ -162,7 +162,7 @@
   }
   
   .recommendactive {
-    background: var(--main-red);
+    background: var(--main-color);
     color: white;
     transition: 0.1s;
   }
@@ -190,7 +190,7 @@
 
   .frame__left .frame__create {
     width: 10%;
-    color: var(--main-red);
+    color: var(--main-color);
     font-size: 3.2rem;
     margin-left: 1rem;
   }
@@ -256,7 +256,7 @@
 
   .frame__thumbs-up button{
     background: white;
-    border: 1px solid var(--main-red);
+    border: 1px solid var(--main-color);
     color: black;
   }
 
@@ -277,7 +277,7 @@
 
   .recommendBtn {
     background: transparent;
-    border: 1px solid var(--main-red);
+    border: 1px solid var(--main-color);
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     transition: 0.1s;
@@ -285,7 +285,7 @@
   }
   
   .recommendactive {
-    background: var(--main-red);
+    background: var(--main-color);
     color: white;
     transition: 0.1s;
   }
@@ -313,7 +313,7 @@
   }
 
   .frame__left .frame__create {
-    color: var(--main-red);
+    color: var(--main-color);
     font-size: 3.2rem;
     margin-left: 1rem;
   }
@@ -390,7 +390,7 @@
 
   .recommendBtn {
     background: transparent;
-    border: 1px solid var(--main-red);
+    border: 1px solid var(--main-color);
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     transition: 0.1s;
@@ -398,7 +398,7 @@
   }
   
   .recommendactive {
-    background: var(--main-red);
+    background: var(--main-color);
     color: white;
     transition: 0.1s;
   }
@@ -458,7 +458,7 @@
   }
 
   .framecreate-form .framecreate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.1rem;
     margin: 2rem 0 4rem 0;
   }
@@ -507,7 +507,7 @@
   }
 
   .framecreate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -531,7 +531,7 @@
   }
 
   .framecreate-form .framecreate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.1rem;
     margin: 2rem 0 4rem 0;
   }
@@ -573,7 +573,7 @@
   }
 
   .framecreate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -597,7 +597,7 @@
   }
 
   .framecreate-form .framecreate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.1rem;
     margin: 2rem 0 4rem 0;
   }
@@ -639,7 +639,7 @@
   }
 
   .framecreate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -668,7 +668,7 @@
   }
 
   .framedetail__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.1rem;
     margin: 2rem 0;
   }
@@ -724,7 +724,7 @@
   }
 
   .framedetail__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.1rem;
     margin: 2rem 0;
   }
@@ -784,7 +784,7 @@
   }
 
   .framedetail__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.1rem;
     margin: 2rem 0;
   }
@@ -845,7 +845,7 @@
   }
 
   .frameupdate-form .frameupdate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -895,7 +895,7 @@
   }
 
   .frameupdate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -919,7 +919,7 @@
   }
 
   .frameupdate-form .frameupdate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -961,7 +961,7 @@
   }
 
   .frameupdate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -985,7 +985,7 @@
   }
 
   .frameupdate-form .frameupdate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -1027,7 +1027,7 @@
   }
 
   .frameupdate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;

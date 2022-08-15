@@ -48,9 +48,9 @@
             {% endif %}
             
             {%if user.is_authenticated %}
-            <li><a href="{% url 'framesharings:frame' %}">인생네컷<br/> 프레임 공유</a></li>
+            <li><a href="{% url 'framesharings:frame' %}">제작프레임 공유</a></li>
             {% else %}
-            <li><a href="{% url 'users:login' %}">인생네컷<br/> 프레임 공유</a></li>
+            <li><a href="{% url 'users:login' %}">제작프레임 공유</a></li>
             {% endif %}
 
             <li>
@@ -86,7 +86,7 @@
           {% else %}
           <a href="{% url 'users:login' %}"><li>My 네 컷 앨범</li></a>
           {% endif %}
-          <a href="{% url 'framesharings:frame' %}"><li>인생네컷 프레임 공유</li></a>
+          <a href="{% url 'framesharings:frame' %}"><li>제작프레임 공유</li></a>
           <a href="{% url 'recommends:recommend_list' %}"><li>포즈/컨셉 추천</li></a>
           <a href="{% url 'limitedframes:limited'%}"><li>한정판 프레임</li></a>
           {% if user.is_authenticated %}
@@ -118,7 +118,7 @@
               <img src="{% static 'image/frame.svg' %}" alt="">
             </div>
             <div class="swiper-right">
-              <div class="slide-title">인생네컷 프레임 공유</div>
+              <div class="slide-title">제작프레임 공유</div>
               <div class="slide-subtitle">절대 망하지 않는 포즈와 컨셉을 추천드릴게요 :)</div>
               <div class="slide-button">자세히 보기</div>
             </div>

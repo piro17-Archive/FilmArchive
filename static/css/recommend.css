@@ -24,7 +24,7 @@
   }
 
   .recommend__left .recommend__create {
-    color: var(--main-red);
+    color: var(--main-color);
     font-size: 3.2rem;
     margin-left: 1rem;
   }
@@ -90,7 +90,7 @@
   }
 
   .recommend__left .recommend__create {
-    color: var(--main-red);
+    color: var(--main-color);
     font-size: 3.2rem;
     margin-left: 1rem;
   }
@@ -149,7 +149,7 @@
   }
 
   .recommend__left .recommend__create {
-    color: var(--main-red);
+    color: var(--main-color);
     font-size: 3.2rem;
     margin-left: 1rem;
   }
@@ -203,7 +203,7 @@
   }
 
   .recommendcreate-form .recommendcreate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.1rem;
     margin: 2rem 0 4rem 0;
   }
@@ -252,7 +252,7 @@
   }
 
   .recommendcreate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -276,7 +276,7 @@
   }
 
   .recommendcreate-form .recommendcreate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.1rem;
     margin: 2rem 0 4rem 0;
   }
@@ -318,7 +318,7 @@
   }
 
   .recommendcreate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -342,7 +342,7 @@
   }
 
   .recommendcreate-form .recommendcreate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.1rem;
     margin: 2rem 0 4rem 0;
   }
@@ -384,7 +384,7 @@
   }
 
   .recommendcreate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -413,7 +413,7 @@
   }
 
   .recommenddetail__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.1rem;
     margin: 2rem 0;
   }
@@ -466,7 +466,7 @@
   }
 
   .recommenddetail__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.1rem;
     margin: 2rem 0;
   }
@@ -523,7 +523,7 @@
   }
 
   .recommenddetail__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.1rem;
     margin: 2rem 0;
   }
@@ -581,7 +581,7 @@
   }
 
   .recommendupdate-form .recommendupdate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -626,7 +626,7 @@
   }
 
   .recommendupdate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -650,7 +650,7 @@
   }
 
   .recommendupdate-form .recommendupdate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -692,7 +692,7 @@
   }
 
   .recommendupdate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;
@@ -716,7 +716,7 @@
   }
 
   .recommendupdate-form .recommendupdate__hr {
-    background-color: var(--main-red);
+    background-color: var(--main-color);
     height: 0.15rem;
     margin: 2rem 0 4rem 0;
   }
@@ -758,7 +758,7 @@
   }
 
   .recommendupdate__btn {
-    background: var(--main-red);
+    background: var(--main-color);
     border: none;
     border-radius: 1rem;
     color: white;

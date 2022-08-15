@@ -4,6 +4,7 @@
 
 html {
   font-size: 62.5%;
+  background: var(--main);
   /* 1rem = 10px */
 }
 
