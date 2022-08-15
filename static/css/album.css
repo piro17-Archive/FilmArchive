@@ -1203,9 +1203,9 @@
 /* albumupdate */
 @media screen and (max-width: 480px) {
   .albumupdate-form {
-    width: 30rem;
-    margin: 0 auto;
-    padding: 5rem 0;
+    width: 32rem;
+    margin: 3rem auto;
+    padding: 3rem 0;
   }
 
   .albumupdate-form .albumupdate__title {
@@ -1216,49 +1216,63 @@
     margin-bottom: 2rem;
   }
 
-  .albumupdate-form .albumupdate__hr {
+  .albumupdate__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
-    margin: 2rem 0 4rem 0;
+    height: 0.2rem;
+    margin: 2rem 0;
+  }
+
+  .albumupdate__info {
+    padding: 0 1rem;
+  }
+
+  .albumupdate__info div {
+    font-size: 1.2rem;
   }
 
   .albumupdate__info div span {
     display: inline-block;
-    text-align: center;
-    line-height: 1.4rem;
+    text-align: right;
+    width: 5rem;
     margin: 0 1.5rem 1.5rem 0;
-    font-size: 1.3rem;
-    width: 6rem;
+    font-size: 1.2rem;
   }
   
   .albumupdate__info div input {
-    width: 25rem;
     margin-bottom: 1.5rem;
   }
 
-  .albumupdate__info div input[type="checkbox"] {
-    width: 1.5rem;
-    margin-bottom: 0;
+  .albumupdate__info div input[type="file"] {
+    width: 20rem;
+  }
+
+  .albumupdate__info select,
+  .albumupdate__info div input[type="date"] {
+    height: 2.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: 1px solid var(--main-gray400);
   }
 
   .albumupdate__info div input[type="text"] {
-    width: 25rem;
+    width: 22rem;
     height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     margin-bottom: 1rem;
     padding: 1rem;
   }
 
   .albumupdate__info div textarea{
-    background-color: var(--main-background);
-    border: none;
-    border-radius: 1rem;
-    width: 20rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 22rem;
+    height: 17rem;
     padding: 1rem;
-
+    font-size: 1.2rem;
   }
 
   .albumupdate__btn-box {
@@ -1267,64 +1281,94 @@
   }
 
   .albumupdate__btn {
+    background: white;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
+    width: 12rem;
+    height: 3.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .albumupdate__btn:hover {
     background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
     color: white;
-    padding: 0.6rem 0;
+    transition: 0.2s;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .albumupdate-form {
     width: 40rem;
-    margin: 0 auto;
-    padding: 5rem 0;
+    margin: 4rem auto;
+    padding: 4rem 0;
   }
 
   .albumupdate-form .albumupdate__title {
     width: 100%;
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
   }
 
-  .albumupdate-form .albumupdate__hr {
+  .albumupdate__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
+  }
+
+  .albumupdate__info {
+    padding: 0 4rem;
+  }
+
+  .albumupdate__info div {
+    font-size: 1.3rem;
   }
 
   .albumupdate__info div span {
     display: inline-block;
-    text-align: center;
-    line-height: 1.4rem;
-    font-size: 1.3rem;
+    text-align: right;
+    width: 5rem;
     margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.4rem;
   }
   
   .albumupdate__info div input {
     margin-bottom: 1.5rem;
   }
 
+  .albumupdate__info div input[type="file"] {
+    width: 25rem;
+  }
+
+  .albumupdate__info select,
+  .albumupdate__info div input[type="date"] {
+    height: 2.5rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border: 1px solid var(--main-gray400);
+  }
+
   .albumupdate__info div input[type="text"] {
-    width: 30rem;
+    width: 25rem;
     height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     margin-bottom: 1rem;
     padding: 1rem;
   }
 
   .albumupdate__info div textarea{
-    background-color: var(--main-background);
-    border: none;
-    border-radius: 1rem;
-    width: 30rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 25rem;
+    height: 17rem;
     padding: 1rem;
+    font-size: 1.4rem;
   }
 
   .albumupdate__btn-box {
@@ -1333,64 +1377,90 @@
   }
 
   .albumupdate__btn {
+    background: white;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
+    width: 12rem;
+    height: 3.5rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+
+  .albumupdate__btn:hover {
     background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
     color: white;
-    padding: 0.6rem 1.7rem;
+    transition: 0.2s;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .albumupdate-form {
-    width: 40rem;
-    margin: 0 auto;
-    padding: 5rem 0;
+    width: 50rem;
+    margin: 5rem auto;
+    padding: 4rem 0;
   }
 
   .albumupdate-form .albumupdate__title {
     width: 100%;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
   }
 
-  .albumupdate-form .albumupdate__hr {
+  .albumupdate__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
+  }
+
+  .albumupdate__info {
+    padding: 0 5rem;
+  }
+
+  .albumupdate__info div {
+    font-size: 1.3rem;
   }
 
   .albumupdate__info div span {
     display: inline-block;
-    text-align: center;
-    line-height: 1.4rem;
+    text-align: right;
+    width: 5rem;
     margin: 0 1.5rem 1.5rem 0;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
   
   .albumupdate__info div input {
     margin-bottom: 1.5rem;
   }
 
+  .albumupdate__info select,
+  .albumupdate__info div input[type="date"] {
+    height: 2.5rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border: 1px solid var(--main-gray400);
+  }
+
   .albumupdate__info div input[type="text"] {
     width: 30rem;
     height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     margin-bottom: 1rem;
     padding: 1rem;
   }
 
   .albumupdate__info div textarea{
-    background-color: var(--main-background);
-    border: none;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     width: 30rem;
+    height: 17rem;
     padding: 1rem;
+    font-size: 1.6rem;
   }
 
   .albumupdate__btn-box {
@@ -1399,11 +1469,19 @@
   }
 
   .albumupdate__btn {
+    background: white;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
+    width: 12rem;
+    height: 3.5rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+
+  .albumupdate__btn:hover {
     background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
     color: white;
-    padding: 0.6rem 1.7rem;
+    transition: 0.2s;
   }
 }
 
