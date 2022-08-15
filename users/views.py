@@ -19,7 +19,7 @@ from django.contrib.auth.decorators import login_required
 from datetime import date,timedelta
 from datetime import datetime
 from framesharings.models import Frame
-
+from django.http import HttpResponse
 # Create your views here.
 
 def date_range(start, end):
@@ -68,7 +68,7 @@ def main(request):
 class LoginView(View):
     def get(self, request):
         form = forms.LoginForm()
-        ctx = {"form": form}
+        ctx = {"forms": form}
         return render(request, "users/login.html", ctx)
 
     def post(self, request):
@@ -80,6 +80,8 @@ class LoginView(View):
             if user is not None:
                 login(request, user)
                 return render(request, "users/main.html")
+            else:
+                return HttpResponse('로그인 실패. 다시 시도 해보세요.')
         context = {
             "forms":form,
         }

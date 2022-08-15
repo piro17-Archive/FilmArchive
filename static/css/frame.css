@@ -1,7 +1,7 @@
 /* frame */
 @media screen and (max-width: 600px) {
   .frame__container {
-    margin: 3rem 7%;
+    margin: 3rem;
   }
 
   .frame__flex-box {
@@ -25,7 +25,7 @@
 
   .frame__left .frame__create {
     color: var(--main-color);
-    font-size: 3.2rem;
+    font-size: 3rem;
     margin-left: 1rem;
   }
 
@@ -48,14 +48,14 @@
 
   .frame__sort select{
     align-items: flex-end;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     padding: 0.5rem 0.5rem;
     font-size: 1.2rem;
     width: 100%;
     text-align: center;
   }
 
-  .frame__search {
+  .frame__search{
     width: 100%;
     margin-bottom: 1rem;
   }
@@ -67,10 +67,10 @@
   }
 
   .frame__search form input {
-    background-color: var(--main-skin);
-    border: none;
+    background-color: white;
     padding: 0.7rem;
-    border-radius: 1rem;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
     width: 100%;
   }
 
@@ -78,13 +78,6 @@
     display: flex;
     position: relative;
     align-items: center;
-  }
-
-  .frame__right .frame__search input {
-    background-color: var(--main-skin);
-    border: none;
-    padding: 0.7rem;
-    border-radius: 1rem;
   }
 
   .frame__right .frame__search .glass__icon{
@@ -97,19 +90,29 @@
     text-align: center;
   }
 
-  .frame__right a {
-    background: var(--main-color);
-    color: white;
-    border-radius: 1rem;
-    padding: 0.7rem 1rem;
-    font-size: 1.2rem;
+  .frame__main__keyword{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .keyword__section{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .frame__ranking__title{
+    font-size: 1.8rem;
+    font-weight: 800;
+    padding: 1rem;
   }
 
   .grid__box{
     width: 95%;
     display: grid;
     grid-template-columns: repeat(2, 50%);
-    row-gap: 1.5rem;
+    row-gap: 1rem;
     column-gap: 0.5rem;
   }
 
@@ -118,7 +121,7 @@
     justify-content: center;
     width: 100%;
     height: 23rem;
-    background-color:rgb(247, 247, 247); 
+    background-color: rgb(241, 241, 241); 
     overflow: hidden;
   }
 
@@ -126,72 +129,60 @@
     position: relative;
     width: 95%;
   }
-  
-  .starBtn {
-    background: transparent;
-    border: none;
-    font-size: 2rem;
-    color: #ffc30f;
-    position: absolute;
-    top: 0.5rem;
-    right: 0.2rem;
-  }
 
   .frame__info-box {
+    width: 95%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 
   .frame__frametitle {
-    font-size: 0.8rem;
-    margin-right: 0.5rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
   }
 
-  .recommendBtn {
+  .recommendBtn,
+  .bookmarkBtn {
     background: transparent;
-    border: 1px solid var(--main-color);
-    border-radius: 0.5rem;
+    border: none;
+    outline:none;
     padding: 0.4rem;
     transition: 0.1s;
-    width: 5.5rem;
-    font-size: 0.8rem;
+    font-size: 1.7rem;
+    color: var(--main-color);
   }
-  
-  .recommendactive {
-    background: var(--main-color);
-    color: white;
-    transition: 0.1s;
-  }
+
+
 }
 
 @media screen and (min-width: 600px) and (max-width: 1024px) {
   .frame__container {
-    margin: 4rem 10%;
+    margin: 4rem;
   }
 
   .frame__flex-box {
     display: flex;
+    justify-content: space-between;
     margin: 1rem 0 3rem 0;
+    padding: 0 2rem;
   }
 
   .frame__left {
     display: flex;
+    align-items: center;
   }
 
   .frame__left .frame__title {
     font-size: 2rem;
-    font-weight: 800;
-    width: 90%;
+    font-weight: 700;
+    width: 100%;
   }
 
   .frame__left .frame__create {
     width: 10%;
     color: var(--main-color);
-    font-size: 3.2rem;
+    font-size: 3rem;
     margin-left: 1rem;
   }
 
@@ -207,7 +198,7 @@
   }
 
   .frame__right .frame__sort select{
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     padding: 0.5rem;
   }
 
@@ -220,12 +211,12 @@
     position: relative;
     align-items: center;
   }
-
-  .frame__right .frame__search input {
-    background-color: var(--main-skin);
-    border: none;
+  .frame__search form input {
+    background-color: white;
     padding: 0.7rem;
-    border-radius: 1rem;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
+    width: 100%;
   }
 
   .frame__right .frame__search .glass__icon{
@@ -233,88 +224,120 @@
     right: 1rem;
   }
 
+  .frame__main__keyword{
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    padding: 1rem;
+  }
+
+  .keyword__section{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .frame__ranking__title{
+    font-size: 1.8rem;
+    font-weight: 800;
+    padding: 1rem;
+  }
+
+  .frame__main__hr{
+    margin: 2rem 0 3rem 0;
+    
+  }
   .grid__box{
     width: 95%;
     display: grid;
     grid-template-columns: repeat(3, 33%);
-    row-gap: 1.5rem;
-    column-gap: 1rem;
-  }
-
-  .grid__img{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 23rem;
-    background-color:rgb(247, 247, 247); 
-    overflow: hidden;
+    row-gap: 1.3rem;
+    column-gap: 0.5rem;
   }
 
   .ranking__one-box:nth-last-child(1){
     display:none;
   }
 
-  .frame__thumbs-up button{
-    background: white;
-    border: 1px solid var(--main-color);
-    color: black;
+  .grid__img{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 26rem;
+    background-color: rgb(241, 241, 241); 
+    overflow: hidden;
   }
 
   .img-box {
     position: relative;
     width: 95%;
   }
-  
-  .starBtn {
-    background: transparent;
-    border: none;
-    font-size: 2.5rem;
-    color: #ffc30f;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+
+  .frame__info-box {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
   }
 
-  .recommendBtn {
+  .frame__frametitle {
+    width: 90%;
+    font-size: 1.6rem;
+    margin 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+  }
+
+  .frame__btn__section{
+    width: 90%;
+  }
+
+  .frame__info-box{
+    width: 95%;
+
+  }
+  .recommendBtn,
+  .bookmarkBtn {
     background: transparent;
-    border: 1px solid var(--main-color);
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
+    border: none;
+    outline:none;
+    padding: 0.4rem;
     transition: 0.1s;
-    width: 7rem;
+    font-size: 2rem;
+    color: var(--main-color);
   }
   
-  .recommendactive {
-    background: var(--main-color);
-    color: white;
-    transition: 0.1s;
-  }
 }
 
 @media screen and (min-width: 1024px) {
   .frame__container {
-    margin: 4rem 10%;
+    margin: 5rem;
   }
-
+  
   .frame__flex-box {
     display: flex;
+    justify-content: space-between;
     margin: 1rem 0 3rem 0;
+    padding: 0 2rem;
   }
 
   .frame__left {
     display: flex;
     align-items: center;
-    width: 30%;
   }
 
   .frame__left .frame__title {
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 700;
+    width: 100%;
   }
 
   .frame__left .frame__create {
+    width: 10%;
     color: var(--main-color);
-    font-size: 3.2rem;
+    font-size: 3rem;
     margin-left: 1rem;
   }
 
@@ -322,7 +345,7 @@
     display: flex;
     align-items: center;
     justify-content: right;
-    width: 70%;
+    width: 80%;
   }
 
   .frame__right .frame__sort {
@@ -330,7 +353,7 @@
   }
 
   .frame__right .frame__sort select{
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     padding: 0.5rem;
   }
 
@@ -343,12 +366,12 @@
     position: relative;
     align-items: center;
   }
-
-  .frame__right .frame__search input {
-    background-color: var(--main-skin);
-    border: none;
+  .frame__search form input {
+    background-color: white;
     padding: 0.7rem;
-    border-radius: 1rem;
+    border: 1px solid var(--main-gray600);
+    border-radius: 0.5rem;
+    width: 100%;
   }
 
   .frame__right .frame__search .glass__icon{
@@ -356,12 +379,34 @@
     right: 1rem;
   }
 
-  .grid__box{
+  .frame__main__keyword{
     width: 100%;
+    display: flex;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .keyword__section{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .frame__ranking__title{
+    font-size: 2.2rem;
+    font-weight: 800;
+    padding: 1rem;
+  }
+
+  .frame__main__hr{
+    margin: 3rem 0 4rem 0;
+    
+  }
+  .grid__box{
+    width: 95%;
     display: grid;
     grid-template-columns: repeat(4, 25%);
-    row-gap: 1.5rem;
-    column-gap: 1rem;
+    row-gap: 1.3rem;
+    column-gap: 0.5rem;
   }
 
   .grid__img{
@@ -369,7 +414,7 @@
     justify-content: center;
     width: 100%;
     height: 28rem;
-    background-color:rgb(247, 247, 247); 
+    background-color: rgb(241, 241, 241); 
     overflow: hidden;
   }
 
@@ -377,52 +422,49 @@
     position: relative;
     width: 95%;
   }
-  
-  .starBtn {
+
+  .frame__info-box {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+  }
+
+  .frame__frametitle {
+    width: 90%;
+    font-size: 1.8rem;
+    margin 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+  }
+
+  .frame__btn__section{
+    width: 90%;
+  }
+
+  .frame__info-box{
+    width: 95%;
+
+  }
+  .recommendBtn,
+  .bookmarkBtn {
     background: transparent;
     border: none;
-    font-size: 2.5rem;
-    color: #ffc30f;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-  }
-
-  .recommendBtn {
-    background: transparent;
-    border: 1px solid var(--main-color);
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
+    outline:none;
+    padding: 0.4rem;
     transition: 0.1s;
-    width: 7rem;
+    font-size: 2.2rem;
+    color: var(--main-color);
   }
-  
-  .recommendactive {
-    background: var(--main-color);
-    color: white;
-    transition: 0.1s;
-  }
-  
-}
-
-.frame__info-box {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-  padding: 0 2rem;
-}
-
-.frame__frametitle {
-  font-size: 1.5rem;
 }
 
 .grid__one-box{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 0.5rem;
 }
 
@@ -439,6 +481,17 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.recommendactive {
+  background: transparent;
+  color: red;
+  transition: 0.1s;
+}
+.bookmarkactive {
+  background: transparent;
+  color: rgb(255, 213, 0);
+  transition: 0.1s;
 }
 
 /* framecreate */
@@ -706,177 +759,409 @@
 /* framedetail */
 @media screen and (max-width: 480px) {
   .framedetail {
-    width: 30rem;
+    width: 80%;
     margin: 0 auto;
-    padding: 5rem 0;
+    padding: 4rem 0;
+  }
+
+  .framedetail__head{
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--main-color);
+  }
+
+  .framedetail__head i{
+    margin-right: 1rem;
   }
 
   .framedetail__title {
-    width: 100%;
-    font-size: 2rem;
-    text-align: center;
-    font-weight: 800;
-    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    font-weight: 700;
   }
 
   .framedetail__hr {
-    background-color: var(--main-color);
+    background-color: var(--main-gray600);
     height: 0.1rem;
-    margin: 2rem 0;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
   }
 
-  .framedetail__frametitle {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  .framedetail__img img{
+  .frame__post{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .frame__post__top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .framedetail__frametitle {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--main-color);
+    margin-right: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .like__cnt{
+    font-size: 1.2rem;
+    color: var(--main-color);
+  }
+
+  .frame__keyword{
+    height: 100%;
+    margin: 1rem 0;
+  }
+
+  .frame__per-keyword{
+    font-size: 1.3rem;
+    color: var(--main-color);
+    background-color: rgb(255, 212, 212);
+    border-radius: 0.3rem;
+    padding: 0.5rem 0.7rem;
+    margin-right: 0.3rem;
+  }
+
+  .framedetail__img,
+  .frame__example{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* background-color: white; */
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .framedetail__img img,
+  .frame__example img{
+    width: 25rem;
     height: auto;
   }
 
   .framedetail__memo {
-    font-size: 1.4rem;
-    margin: 2rem 0;
+    font-size: 1.5rem;
+    padding: 1rem; 
   }
 
   .framedetail__btn-box {
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    font-size: 1.7rem;
   }
 
-  .framedetail__btn-box .framedetail__update i,
-  .framedetail__btn-box .framedetail__delete i{
-   font-size: 2.2rem;
+  .btn--left,
+  .btn--right {
+    display: flex;
   }
 
-  .framedetail__btn-box .framedetail__delete {
-    margin-left: 0.5rem;
-  }
-
-  .framedetail__delete button{
-    border: none;
+  .btn--left button{
     background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2.3rem;
+  }
+
+  .like__selected{
+    color: red;
+  }
+
+  .bookmark__selected{
+    color: rgb(255, 213, 0);
+  }
+
+  .btn--right button{
+    color: var(--main-color);
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    border-radius: 0.5rem;
+    padding:0.5rem 1rem;
+    font-size: 1.4rem;
+  }
+
+  .framedetail__update{
+    margin-right: 0.5rem;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .framedetail {
-    width: 50rem;
+    width: 80%;
     margin: 0 auto;
     padding: 5rem 0;
   }
 
+  .framedetail__head{
+    font-size: 1.7rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--main-color);
+  }
+
+  .framedetail__head i{
+    margin-right: 1rem;
+  }
+
   .framedetail__title {
-    width: 100%;
-    font-size: 2rem;
-    text-align: center;
-    font-weight: 800;
-    margin-bottom: 2rem;
+    font-size: 1.7rem;
+    font-weight: 700;
   }
 
   .framedetail__hr {
-    background-color: var(--main-color);
+    background-color: var(--main-gray600);
     height: 0.1rem;
-    margin: 2rem 0;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
   }
 
-  .framedetail__frametitle {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  .framedetail__img img{
+  .frame__post{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+  }
+
+  .frame__post__top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .framedetail__frametitle {
+    font-size: 2.3em;
+    font-weight: 800;
+    color: var(--main-color);
+    margin-right: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .like__cnt{
+    font-size: 1.5rem;
+    color: var(--main-color);
+  }
+
+  .frame__keyword{
+    height: 100%;
+    margin: 1.5rem 0;
+  }
+
+  .frame__per-keyword{
+    font-size: 1.5rem;
+    color: var(--main-color);
+    background-color: rgb(255, 212, 212);
+    border-radius: 0.3rem;
+    padding: 0.5rem 0.7rem;
+    margin-right: 0.3rem;
+  }
+
+  .framedetail__img,
+  .frame__example{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* background-color: white; */
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .framedetail__img img,
+  .frame__example img{
+    width: 32rem;
     height: auto;
   }
 
   .framedetail__memo {
-    font-size: 1.4rem;
-    margin: 2rem 0;
+    font-size: 1.8rem;
+    padding: 1rem; 
   }
 
   .framedetail__btn-box {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    font-size: 1.7rem;
   }
 
-  .framedetail__btn-box {
+  .btn--left,
+  .btn--right {
     display: flex;
-    justify-content: right;
   }
 
-  .framedetail__btn-box .framedetail__update i,
-  .framedetail__btn-box .framedetail__delete i {
-   font-size: 2.2rem;
-  }
-
-  .framedetail__btn-box .framedetail__delete {
-    margin-left: 1rem;
-  }
-
-  .framedetail__delete button{
-    border: none;
+  .btn--left button{
     background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2.3rem;
+  }
+
+  .like__selected{
+    color: red;
+  }
+
+  .bookmark__selected{
+    color: rgb(255, 213, 0);
+  }
+
+  .btn--right button{
+    color: var(--main-color);
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    border-radius: 0.5rem;
+    padding:0.5rem 1rem;
+    font-size: 1.5rem;
+  }
+
+  .framedetail__update{
+    margin-right: 0.5rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .framedetail {
-    width: 50rem;
+    width: 80%;
     margin: 0 auto;
     padding: 5rem 0;
   }
 
+  .framedetail__head{
+    font-size: 1.9rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--main-color);
+  }
+
+  .framedetail__head i{
+    margin-right: 1rem;
+  }
+
   .framedetail__title {
-    width: 100%;
-    font-size: 2rem;
-    text-align: center;
-    font-weight: 800;
-    margin-bottom: 2rem;
+    font-size: 1.9rem;
+    font-weight: 700;
   }
 
   .framedetail__hr {
-    background-color: var(--main-color);
+    background-color: var(--main-gray600);
     height: 0.1rem;
-    margin: 2rem 0;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
   }
 
-  .framedetail__frametitle {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  .framedetail__img img{
+  .frame__post{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+  }
+
+  .frame__post__top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .framedetail__frametitle {
+    font-size: 2.5em;
+    font-weight: 800;
+    color: var(--main-color);
+    margin-right: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .like__cnt{
+    font-size: 1.6rem;
+    color: var(--main-color);
+  }
+
+  .frame__keyword{
+    height: 100%;
+    margin: 1.5rem 0;
+  }
+
+  .frame__per-keyword{
+    font-size: 1.5rem;
+    color: var(--main-color);
+    background-color: rgb(255, 212, 212);
+    border-radius: 0.3rem;
+    padding: 0.5rem 0.7rem;
+    margin-right: 0.3rem;
+  }
+
+  .framedetail__img,
+  .frame__example{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* background-color: white; */
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .framedetail__img img,
+  .frame__example img{
+    width: 37rem;
     height: auto;
   }
 
   .framedetail__memo {
-    font-size: 1.4rem;
-    margin: 2rem 0;
+    font-size: 1.8rem;
+    padding: 1rem; 
   }
 
   .framedetail__btn-box {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    font-size: 1.6rem;
   }
 
-  .framedetail__btn-box {
+  .btn--left,
+  .btn--right {
     display: flex;
-    justify-content: right;
   }
 
-  .framedetail__btn-box .framedetail__update i,
-  .framedetail__btn-box .framedetail__delete i {
-   font-size: 2.5rem;
-  }
-
-  .framedetail__btn-box .framedetail__delete {
-    margin-left: 1rem;
-  }
-
-  .framedetail__delete button{
-    border: none;
+  .btn--left button{
     background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 2.7rem;
+  }
+
+  .like__selected{
+    color: red;
+  }
+
+  .bookmark__selected{
+    color: rgb(255, 213, 0);
+  }
+
+  .btn--right button{
+    color: var(--main-color);
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    border-radius: 0.5rem;
+    padding:0.5rem 1rem;
+    font-size: 1.5rem;
+  }
+
+  .framedetail__update{
+    margin-right: 0.5rem;
   }
 }
 

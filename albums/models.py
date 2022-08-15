@@ -11,7 +11,7 @@ class Album(models.Model):
     albumvideo = models.FileField(upload_to='albumvideo/', null=True, verbose_name="앨범동영상",blank=True)
     albummemo = models.TextField(verbose_name="앨범메모")
     albumtype = models.ForeignKey(Type,on_delete=models.CASCADE,related_name="typeFor",null=True,blank=True)
-    albumlocation = models.CharField(max_length=50,verbose_name="앨범위치", null=True,blank=True,)
+    albumlocation = models.CharField(max_length=50,verbose_name="앨범위치", default= "126.97063477079135, 37.554357189598775,저장된 장소가 없습니다.") # 서울역 default= '(37.554357189598775, 126.97063477079135)'
     albumdate = models.DateField(verbose_name='앨범날짜', null =True)
 
     # albumdate = models.DateTimeField()

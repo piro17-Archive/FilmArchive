@@ -1,53 +1,69 @@
 {% extends 'users/main.html' %} {% block content %}
 <main>
   <div class="framedetail">
-    <div class="framedetail__title">인셍네컷 프레임공유</div>
-    <div class="framedetail__hr"></div>
-    <div class="framedetail__frametitle">{{ frameinfo.frametitle }}</div>
-
-    <form action="{% url 'framesharings:framedetail' frameinfo.id%}">
-    {% if frameinfo in save %}
-    <button name="save" value="{{frameinfo.id}}">찜완료</button>
-    {% else %}
-    <button name="save" value="{{frameinfo.id}}">찜하기</button>
-    {% endif %}
-    </form>
-
-    <form action="{% url 'framesharings:framedetail' frameinfo.id%}">
-    {% if frameinfo in like %}
-    <button name="like" value="{{frameinfo.id}}">추천완료</button>
-    {% else %}
-    <button name="like" value="{{frameinfo.id}}">추천하기</button>
-    {% endif %}
-    </form>
-
-    {% for keyword in frameinfo.framekeyword.all %}
-    #{{keyword.name}}
-    {% endfor%}
-
-    <div> 추천수 {{frameinfo.framelikeuser.count}}</div>
-
-    {% if frameinfo.framephoto %}
-    <div class="framedetail__img">
-      <img src="{{ frameinfo.framephoto.url }}" alt="프레임공유">
-    </div>
-    {% endif %}
-
-    {% if frameinfo.frameexample %}
-    <img src="{{ frameinfo.frameexample.url }}" alt="">
-    {% else %}
-    <div>예시사진이없습니다.</div>
-    {% endif %}
-
-    <div class="framedetail__memo">{{ frameinfo.framememo }}</div>
-    <div class="framedetail__btn-box">
-      <a href="/frameupdate/{{frameinfo.id}}">
-        <div class="framedetail__update"><i class="fa-solid fa-pen-to-square"></i></div>
+    <div class="framedetail__head">
+      <a href="{% url 'framesharings:frame'%}">
+        <i class="fa-solid fa-angle-left"></i>
       </a>
-      <div class="framedetail__delete">
-        <form action="/framedelete/{{frameinfo.id}}" method="post">
-          {% csrf_token %} <button type="submit" style="all: none;"> <i class="fa-solid fa-trash-can"></i></button>
-        </form>
+
+      <div class="framedetail__title">제작프레임 공유</div>
+    </div>
+    <div class="frame__post">
+      <div class="frame__post__top">
+        <div class="framedetail__frametitle">{{ frameinfo.frametitle }}</div>
+        <div class="like__cnt"> 추천수 {{frameinfo.framelikeuser.count}}</div>
+      </div>
+      <div class="framedetail__hr"></div>
+      
+  
+      {% if frameinfo.framephoto %}
+      <div class="framedetail__img">
+        <img src="{{ frameinfo.framephoto.url }}" alt="프레임공유">
+      </div>
+      {% endif %}
+  
+      {% if frameinfo.frameexample %}
+      <div class="frame__example">
+        <img src="{{ frameinfo.frameexample.url }}" alt="예시사진">
+      </div>
+      {% endif %}
+      <div class="framedetail__memo">{{ frameinfo.framememo }}</div>
+
+      <div class="frame__keyword">
+        {% for keyword in frameinfo.framekeyword.all %}
+        <span class="frame__per-keyword">{{keyword.name}}</span>
+        {% endfor%}
+        </div>
+    </div>
+
+    <div class="framedetail__hr"></div>
+    <div class="framedetail__btn-box">
+      <div class="btn--left">      
+          <form action="{% url 'framesharings:framedetail' frameinfo.id%}">
+          {% if frameinfo in like %}
+          <button name="like" value="{{frameinfo.id}}" class="like__selected"><i class="fa-solid fa-heart"></i></button>
+          {% else %}
+          <button name="like" value="{{frameinfo.id}}"><i class="fa-regular fa-heart"></i></button>
+          {% endif %}
+          </form>
+
+          <form action="{% url 'framesharings:framedetail' frameinfo.id%}">
+            {% if frameinfo in save %}
+            <button name="save" value="{{frameinfo.id}}" class="bookmark__selected"><i class="fa-solid fa-bookmark"></i></button>
+            {% else %}
+            <button name="save" value="{{frameinfo.id}}"><i class="fa-regular fa-bookmark"></i></button>
+            {% endif %}
+            </form>
+      </div>
+      <div class="btn--right">
+        <a href="/frameupdate/{{frameinfo.id}}">
+          <button class="framedetail__update">수정</button>
+        </a>
+        <div class="framedetail__delete">
+          <form action="/framedelete/{{frameinfo.id}}" method="post">
+            {% csrf_token %} <button type="submit" style="all: none;">삭제</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
