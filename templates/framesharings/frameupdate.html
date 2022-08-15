@@ -12,7 +12,9 @@
         <input type="file" name="framephoto">
 
         <div><span>제목</span> <input type="text" name="frametitle" placeholder="프레임제목" value="{{ frameinfo.frametitle}}"/></div>
-        <div><span>키워드</span>
+        <div>
+          <span>키워드</span>
+          <input type="file" name="frameexample">
           {%  for keywordinfo in keywordinfo %}
           {% if keywordinfo in frameinfo.framekeyword.all %}
           <input type="checkbox" name="{{forloop.counter}}" value="{{forloop.counter}}" id="keywordid{{forloop.counter}}" checked="checked"><label for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
@@ -25,7 +27,6 @@
           {%if frameinfo.frameexample %}
           <span>이전 적용 예시</span> {{frameinfo.frameexample.url}} <input type="checkbox" name="clearexample" value="clearexample" id="clearexample"><label for="clearexample">clear</label>
           {% endif %}
-          <input type="file" name="frameexample">
         </div>
         <div>
           {% if frameinfo.framepublic %}
@@ -41,6 +42,7 @@
           <input type="submit" value="글 수정" class="frameupdate__btn"/>
         </div>
       </div>
+      <div class="frameupdate__hr"></div>
     </div>
   </form>
 </main>

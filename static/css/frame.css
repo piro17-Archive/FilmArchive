@@ -444,9 +444,9 @@
 /* framecreate */
 @media screen and (max-width: 480px) {
   .framecreate-form {
-    width: 30rem;
-    margin: 0 auto;
-    padding: 5rem 0;
+    width: 32rem;
+    margin: 3rem auto;
+    padding: 3rem 0;
   }
 
   .framecreate-form .framecreate__title {
@@ -459,45 +459,53 @@
 
   .framecreate-form .framecreate__hr {
     background-color: var(--main-color);
-    height: 0.1rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
+  }
+
+  .framecreate__info {
+    padding: 0 1rem;
   }
 
   .framecreate__info div span {
     display: inline-block;
-    text-align: center;
-    line-height: 1.4rem;
+    text-align: right;
     margin: 0 1.5rem 1.5rem 0;
-    font-size: 1.3rem;
-    width: 6rem;
+    font-size: 1.2rem;
+    width: 7rem;
   }
   
   .framecreate__info div input {
-    width: 20rem;
     margin-bottom: 1.5rem;
   }
 
-  .framecreate__info div input[type="checkbox"] {
-    width: 1.5rem;
-    margin-bottom: 0;
+  .framecreate__info div label{
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+  }
+
+  .framecreate__info div input[type="file"] {
+    width: 20rem;
   }
 
   .framecreate__info div input[type="text"] {
     width: 20rem;
     height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     margin-bottom: 1rem;
     padding: 1rem;
   }
 
   .framecreate__info div textarea{
-    background-color: var(--main-background);
-    border: none;
-    border-radius: 1rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     width: 20rem;
+    height: 12rem;
     padding: 1rem;
   }
 
@@ -507,24 +515,31 @@
   }
 
   .framecreate__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 10rem;
+    height: 3.2rem;
+  }
+
+  .framecreate__btn:hover {
+    background-color: var(--main-color);
     color: white;
-    padding: 0.6rem 0;
+    transition: 0.2s;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .framecreate-form {
     width: 40rem;
-    margin: 0 auto;
+    margin: 5rem auto;
     padding: 5rem 0;
   }
 
   .framecreate-form .framecreate__title {
     width: 100%;
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -532,38 +547,49 @@
 
   .framecreate-form .framecreate__hr {
     background-color: var(--main-color);
-    height: 0.1rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
+  }
+
+  .framecreate__info {
+    padding: 0 2rem;
   }
 
   .framecreate__info div span {
     display: inline-block;
-    text-align: center;
-    line-height: 1.4rem;
-    font-size: 1.3rem;
+    text-align: right;
     margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.4rem;
+    width: 8rem;
   }
   
   .framecreate__info div input {
     margin-bottom: 1.5rem;
   }
 
+  .framecreate__info div label{
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+  }
+
   .framecreate__info div input[type="text"] {
-    width: 30rem;
+    width: 25rem;
     height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     margin-bottom: 1rem;
     padding: 1rem;
   }
 
   .framecreate__info div textarea{
-    background-color: var(--main-background);
-    border: none;
-    border-radius: 1rem;
-    width: 30rem;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 25rem;
+    height: 17rem;
     padding: 1rem;
   }
 
@@ -573,24 +599,31 @@
   }
 
   .framecreate__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 12rem;
+    height: 3.2rem;
+  }
+
+  .framecreate__btn:hover {
+    background-color: var(--main-color);
     color: white;
-    padding: 0.6rem 1.7rem;
+    transition: 0.2s;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .framecreate-form {
-    width: 40rem;
-    margin: 0 auto;
+    width: 50rem;
+    margin: 5rem auto;
     padding: 5rem 0;
   }
 
   .framecreate-form .framecreate__title {
     width: 100%;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -598,38 +631,50 @@
 
   .framecreate-form .framecreate__hr {
     background-color: var(--main-color);
-    height: 0.1rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
+  }
+
+  .framecreate__info {
+    padding: 0 5rem;
   }
 
   .framecreate__info div span {
     display: inline-block;
-    text-align: center;
+    text-align: right;
     line-height: 1.4rem;
     margin: 0 1.5rem 1.5rem 0;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+    width: 8rem;
   }
   
   .framecreate__info div input {
     margin-bottom: 1.5rem;
   }
 
+  .framecreate__info div label{
+    font-size: 1.4rem;
+    margin-left: 0.5rem;
+  }
+
   .framecreate__info div input[type="text"] {
     width: 30rem;
     height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     margin-bottom: 1rem;
     padding: 1rem;
   }
 
   .framecreate__info div textarea{
-    background-color: var(--main-background);
-    border: none;
-    border-radius: 1rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     width: 30rem;
+    height: 17rem;
     padding: 1rem;
   }
 
@@ -639,11 +684,18 @@
   }
 
   .framecreate__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 12rem;
+    height: 3.2rem;
+  }
+
+  .framecreate__btn:hover {
+    background-color: var(--main-color);
     color: white;
-    padding: 0.6rem 1.7rem;
+    transition: 0.2s;
   }
 }
 
@@ -831,9 +883,9 @@
 /* frameupdate */
 @media screen and (max-width: 480px) {
   .frameupdate-form {
-    width: 30rem;
-    margin: 0 auto;
-    padding: 5rem 0;
+    width: 32rem;
+    margin: 3rem auto;
+    padding: 3rem 0;
   }
 
   .frameupdate-form .frameupdate__title {
@@ -846,47 +898,49 @@
 
   .frameupdate-form .frameupdate__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
+  }
+
+  .frameupdate__info {
+    padding: 0 1rem;
   }
 
   .frameupdate__info div span {
     display: inline-block;
-    text-align: center;
-    line-height: 1.4rem;
+    text-align: right;
     margin: 0 1.5rem 1.5rem 0;
-    font-size: 1.3rem;
-    width: 6rem;
+    font-size: 1.2rem;
+    width: 7rem;
   }
   
   .frameupdate__info div input {
-    width: 25rem;
     margin-bottom: 1.5rem;
   }
 
-  .frameupdate__info div input[type="checkbox"] {
-    width: 1.5rem;
-    margin-bottom: 0;
+  .frameupdate__info div input[type="file"] {
+    width: 20rem;
   }
 
   .frameupdate__info div input[type="text"] {
-    width: 25rem;
+    width: 20rem;
     height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     margin-bottom: 1rem;
     padding: 1rem;
   }
 
   .frameupdate__info div textarea{
-    background-color: var(--main-background);
-    border: none;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    font-size: 1.2rem;
     width: 20rem;
+    height: 13rem;
     padding: 1rem;
-
   }
 
   .frameupdate__btn-box {
@@ -895,24 +949,32 @@
   }
 
   .frameupdate__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 12rem;
+    height: 3.2rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+  .frameupdate__btn:hover {
+    background-color: var(--main-color);
     color: white;
-    padding: 0.6rem 0;
+    transition: 0.2s;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .frameupdate-form {
     width: 40rem;
-    margin: 0 auto;
-    padding: 5rem 0;
+    margin: 3rem auto;
+    padding: 3rem 0;
   }
 
   .frameupdate-form .frameupdate__title {
     width: 100%;
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -920,38 +982,48 @@
 
   .frameupdate-form .frameupdate__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
+  }
+
+  .frameupdate__info {
+    padding: 0 2rem;
   }
 
   .frameupdate__info div span {
     display: inline-block;
-    text-align: center;
-    line-height: 1.4rem;
-    font-size: 1.3rem;
+    text-align: right;
     margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.4rem;
+    width: 7rem;
   }
   
   .frameupdate__info div input {
     margin-bottom: 1.5rem;
   }
 
+  .frameupdate__info div input[type="file"] {
+    width: 25rem;
+  }
+
   .frameupdate__info div input[type="text"] {
-    width: 30rem;
+    width: 25rem;
     height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     margin-bottom: 1rem;
     padding: 1rem;
   }
 
   .frameupdate__info div textarea{
-    background-color: var(--main-background);
-    border: none;
-    border-radius: 1rem;
-    width: 30rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    font-size: 1.4rem;
+    width: 25rem;
+    height: 17rem;
     padding: 1rem;
   }
 
@@ -961,24 +1033,32 @@
   }
 
   .frameupdate__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 12rem;
+    height: 3.2rem;
+    cursor: pointer;
+    font-size: 1.4rem;
+  }
+
+  .frameupdate__btn:hover {
+    background-color: var(--main-color);
     color: white;
-    padding: 0.6rem 1.7rem;
+    transition: 0.2s;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .frameupdate-form {
-    width: 40rem;
-    margin: 0 auto;
-    padding: 5rem 0;
+    width: 50rem;
+    margin: 3rem auto;
+    padding: 3rem 0;
   }
 
   .frameupdate-form .frameupdate__title {
     width: 100%;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -986,38 +1066,48 @@
 
   .frameupdate-form .frameupdate__hr {
     background-color: var(--main-color);
-    height: 0.15rem;
+    height: 0.2rem;
     margin: 2rem 0 4rem 0;
+  }
+
+  .frameupdate__info {
+    padding: 0 5rem;
   }
 
   .frameupdate__info div span {
     display: inline-block;
-    text-align: center;
-    line-height: 1.4rem;
+    text-align: right;
     margin: 0 1.5rem 1.5rem 0;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+    width: 7rem;
   }
   
   .frameupdate__info div input {
     margin-bottom: 1.5rem;
   }
 
+  .frameupdate__info div input[type="file"] {
+    width: 30rem;
+  }
+
   .frameupdate__info div input[type="text"] {
     width: 30rem;
     height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-background);
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
     margin-bottom: 1rem;
     padding: 1rem;
   }
 
   .frameupdate__info div textarea{
-    background-color: var(--main-background);
-    border: none;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    font-size: 1.6rem;
     width: 30rem;
+    height: 17rem;
     padding: 1rem;
   }
 
@@ -1027,10 +1117,18 @@
   }
 
   .frameupdate__btn {
-    background: var(--main-color);
-    border: none;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 12rem;
+    height: 3.2rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+  }
+
+  .frameupdate__btn:hover {
+    background-color: var(--main-color);
     color: white;
-    padding: 0.6rem 1.7rem;
+    transition: 0.2s;
   }
 }
