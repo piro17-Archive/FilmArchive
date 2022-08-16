@@ -3,7 +3,7 @@
   <form action="/update/{{recommend.id}}" method="post">
     {% csrf_token %}
     <div class="recommendupdate-form">
-      <div class="recommendupdate__title">포즈/컨셉 글 수정</div>
+      <div class="recommendupdate__title">포즈/컨셉 추천 글 수정</div>
       <div class="recommendupdate__hr"></div>
       <div class="recommendupdate__info">
         <div>
@@ -38,6 +38,7 @@
           <input type="submit" value="글 수정" class="recommendupdate__btn"/>
         </div>
       </div>
+      <div class="recommendupdate__hr"></div>
     </div>
   </form>
 </main>
