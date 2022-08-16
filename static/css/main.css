@@ -240,7 +240,7 @@
 }
 
 .main__navbar {
-  background: var(--main);
+  background: transparent;
 }
 
 .main__navbar-btn {
@@ -278,7 +278,7 @@ footer {
 
 /* main swiper */
 #slide1 {
-  background: var(--main-background);
+  background: var(--main);
 }
 
 #slide2 {
@@ -312,7 +312,8 @@ footer {
 @media screen and (max-width: 600px) {
   .swiper {
     width: 100%;
-    height: 25rem;
+    height: 30rem;
+    padding: 0;
   }
   
   .swiper-left {
@@ -353,7 +354,7 @@ footer {
 @media screen and (min-width: 600px) and (max-width: 800px) {
   .swiper {
     width: 100%;
-    height: 40rem;
+    height: 45rem;
   }
   
   .swiper-left {
@@ -394,7 +395,7 @@ footer {
 @media screen and (min-width: 800px) {
   .swiper {
     width: 100%;
-    height: 50rem;
+    height: 55rem;
   }
   
   .swiper-left {
@@ -460,6 +461,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: white;
 }
 
 @media screen and (max-width: 600px) {
@@ -583,13 +585,10 @@ footer {
 }
 
 
-
-
 /* main page1 */
 @media screen and (max-width: 600px) {
   .page1-container {
-    padding: 0 15%;
-    margin: 4rem 0;
+    padding: 4rem 15%;
   }
 
   .page1 {
@@ -648,8 +647,7 @@ footer {
 
 @media screen and (min-width: 600px) and (max-width: 1024px) {
   .page1-container {
-    padding: 0 15%;
-    margin: 8rem 0;
+    padding: 8rem 15%;
   }
 
   .page1 {
@@ -709,8 +707,7 @@ footer {
 
 @media screen and (min-width: 1024px) {
   .page1-container {
-    padding: 0 15%;
-    margin: 8rem 0;
+    padding: 8rem 15%;
   }
 
   .page1 {
@@ -766,6 +763,10 @@ footer {
     width: 28rem;
     width: 28rem;
   }
+}
+
+.page1-container {
+  background: white;
 }
 
 /* main page2 */
