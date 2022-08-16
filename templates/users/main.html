@@ -41,46 +41,50 @@
     <div id="wrap">
       <header>
         <div class="main__navbar">
-          <div class="main__left">
-            <a href="{% url 'users:main' %}" class="main__logo">FourCut Archive </a>
-          </div>
-          <div class="main__right">
-            <ul>
-              {%if user.is_authenticated %}
-                <li><a href="{% url 'albums:album' user.id %}">My 네 컷 앨범</a></li>
+          <div class="main__navbar-flexbox">
+            <div class="main__login-signup">
+              {% if user.is_authenticated %}
+              <a href="{% url 'users:log_out' %}" class="main__user"
+                >로그아웃</a
+              > <span> | </span>
+              <a href="{% url 'users:mypage' %}" class="main__user"
+                >마이페이지</a
+              >
               {% else %}
-                <li><a href="{% url 'users:login' %}">My 네 컷 앨범</a></li>
+              <a href="{% url 'users:login' %}" class="main__user">로그인</a> <span> | </span>
+              <a href="{% url 'users:sign_up' %}" class="main__user"
+                >회원가입</a
+              >
               {% endif %}
-              
-              {%if user.is_authenticated %}
-              <li><a href="{% url 'framesharings:frame' %}">제작프레임 공유</a></li>
-              {% else %}
-              <li><a href="{% url 'users:login' %}">제작프레임 공유</a></li>
-              {% endif %}
+            </div>
+            <div class="main-bottom">
+              <div class="main__left">
+                <a href="{% url 'users:main' %}" class="main__logo">FourCut Archive </a>
+              </div>
+              <div class="main__right">
+                <ul>
+                  {%if user.is_authenticated %}
+                    <li><a href="{% url 'albums:album' user.id %}">My 네 컷 앨범</a></li>
+                  {% else %}
+                    <li><a href="{% url 'users:login' %}">My 네 컷 앨범</a></li>
+                  {% endif %}
+                  
+                  {%if user.is_authenticated %}
+                  <li><a href="{% url 'framesharings:frame' %}">제작프레임 공유</a></li>
+                  {% else %}
+                  <li><a href="{% url 'users:login' %}">제작프레임 공유</a></li>
+                  {% endif %}
 
-              <li>
-                <a href="{% url 'recommends:recommend_list' %}">포즈/컨셉 추천</a>
-              </li>
-              <li><a href="{% url 'limitedframes:limited'%}">한정판 프레임</a></li>
-              <li>
-                {% if user.is_authenticated %}
-                <a href="{% url 'users:log_out' %}" class="main__user"
-                  >로그아웃</a
-                > <span> | </span>
-                <a href="{% url 'users:mypage' %}" class="main__user"
-                  >마이페이지</a
-                >
-                {% else %}
-                <a href="{% url 'users:login' %}" class="main__user">로그인</a> <span> | </span>
-                <a href="{% url 'users:sign_up' %}" class="main__user"
-                  >회원가입</a
-                >
-                {% endif %}
-                <li class="main__navbar-btn">
-                  <img src="{% static 'image/navbar.svg' %}" alt="네브바">
-                </li>
-              </li>
-            </ul>
+                  <li>
+                    <a href="{% url 'recommends:recommend_list' %}">포즈/컨셉 추천</a>
+                  </li>
+                  <li><a href="{% url 'limitedframes:limited'%}">한정판 프레임</a></li>
+                  <li class="main__navbar-btn">
+                    <img src="{% static 'image/navbar.svg' %}" alt="네브바">
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
         <!-- navbar-btn click 했을 때 -->

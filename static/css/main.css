@@ -130,8 +130,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3rem 5% 0 5%;
+    padding: 0 12%;
     z-index: 888;
+  }
+
+  .main__navbar-flexbox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .main__login-signup {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+
+  .main__login-signup span {
+    width: 1%;
+    text-align: center;
   }
 
   .main__navbar a {
@@ -140,43 +158,49 @@
   }
 
   .main__navbar a:hover {
-    color: var(--main-color);
-    transition: 0.2s;
+    color: var(--main-red);
+    transition: 0.4s;
   }
 
-  .main__navbar .main__left {
-    width: 40%;
+  .main__left {
+    width: 50%;
   }
 
-  .main__navbar .main__left .main__logo {
+  .main__left .main__logo {
     font-weight: 800;
-    font-size: 2.7rem;
+    font-size: 3.5rem;
     color: var(--main-color);
     font-family: 'Galada', cursive;
   }
 
-  .main__navbar .main__right {
-    width: 60%;
-    font-size: 1.5rem;
-  }
-
-  .main__navbar .main__right ul {
+  .main-bottom {
     display: flex;
     align-items: center;
   }
 
-  .main__navbar .main__right ul li {
+  .main__right {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+
+  .main__right ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .main__right ul li {
     text-align: center;
     line-height: 1.4rem;
     width: 100%;
   }
 
-  .main__navbar .main__right .main__user {
-    color: #3c3c3c;
+  .main__user {
+    color: var(--main-gray600);
     font-weight: 800;
   }
 
-  .main__navbar .main__right .main__navbar-btn {
+ .main__navbar-btn {
     display: none;
   }
 
