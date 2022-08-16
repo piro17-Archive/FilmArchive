@@ -181,7 +181,7 @@
   }
 
   .main__navbar a {
-    font-weight: 800;
+    font-weight: 500;
     line-height: 1.3em;
   }
 
@@ -191,12 +191,12 @@
   }
 
   .main__left {
-    width: 40%;
+    width: 45%;
   }
 
   .main__left .main__logo {
     font-weight: 800;
-    font-size: 3.5rem;
+    font-size: 3.4rem;
     color: var(--main-color);
     font-family: 'Galada', cursive;
   }
@@ -207,7 +207,7 @@
   }
 
   .main__right {
-    width: 60%;
+    width: 55%;
     font-size: 1.5rem;
   }
 
@@ -221,6 +221,8 @@
     text-align: center;
     line-height: 1.4rem;
     width: 100%;
+    font-weight: 500;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   .main__user {
@@ -250,7 +252,7 @@
   text-align: center;
   background: white;
   font-size: 1.4rem;
-  font-weight: 800;
+  font-weight: 400;
   cursor: pointer;
   border-bottom: 0.1rem solid lightgray;
 }
