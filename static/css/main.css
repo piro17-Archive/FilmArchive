@@ -1,15 +1,23 @@
 /* nav */
 @media screen and (max-width: 475px) {
+  .loginhidden {
+    display: none;
+  }
+
   .main__navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 5rem;
+    height: 6rem;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 0 5%;
+    justify-content: center;
     z-index: 888;
+    padding: 0 5%;
+  }
+
+  .main__navbar-flexbox {
+    width: 100%;
   }
 
   main {
@@ -28,49 +36,63 @@
     font-weight: 800;
   }
 
-  .main__navbar .main__left {
+  .main-bottom {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .main__left {
     text-align: left;
     width: 50%;
   }
 
-  .main__navbar .main__left .main__logo {
+  .main__logo {
     font-weight: 800;
     font-size: 2rem;
     color: var(--main-color);
     font-family: 'Galada', cursive;
   }
 
-  .main__navbar .main__right {
+  .main__right {
     width: 50%;
     text-align: right;
     visibility: hidden;
   }
 
-  .main__navbar .main__right ul {
+  .main__right ul {
     display: flex;
     align-items: center;
   }
 
-  .main__navbar .main__right ul li {
+  .main__right ul li {
     width: 100%;
   }
 
-  .main__navbar .main__right .main__navbar-btn {
+  .main__right .main__navbar-btn {
     visibility: visible;
   }
 }
 
 @media screen and (min-width: 475px) and (max-width: 1024px) { 
+  .loginhidden {
+    display: none;
+  }
+
   .main__navbar {
     position: fixed;
     top: 0;
     width: 100%;
     height: 6rem;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 0 5%;
+    justify-content: center;
     z-index: 888;
+    padding: 0 5%;
+  }
+
+  .main__navbar-flexbox {
+    width: 100%;
   }
 
   main {
@@ -89,34 +111,40 @@
     font-weight: 800;
   }
 
-  .main__navbar .main__left {
+  .main-bottom {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .main__left {
     text-align: left;
     width: 50%;
   }
 
-  .main__navbar .main__left .main__logo {
+  .main__left .main__logo {
     font-weight: 800;
     font-size: 2.3rem;
     color: var(--main-color);
     font-family: 'Galada', cursive;
   }
 
-  .main__navbar .main__right {
+  .main__right {
     width: 50%;
     text-align: right;
     visibility: hidden;
   }
 
-  .main__navbar .main__right ul {
+  .main__right ul {
     display: flex;
     align-items: center;
   }
 
-  .main__navbar .main__right ul li {
+  .main__right ul li {
     width: 100%;
   }
 
-  .main__navbar .main__right .main__navbar-btn {
+  .main__navbar-btn {
     visibility: visible;
   }
 }
@@ -130,53 +158,79 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3rem 5% 0 5%;
+    padding: 0 12%;
     z-index: 888;
   }
 
+  .main__navbar-flexbox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .main__login-signup {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+
+  .main__login-signup span {
+    width: 1%;
+    text-align: center;
+  }
+
   .main__navbar a {
-    font-weight: 800;
+    font-weight: 500;
     line-height: 1.3em;
   }
 
   .main__navbar a:hover {
-    color: var(--main-color);
-    transition: 0.2s;
+    color: var(--main-red);
+    transition: 0.4s;
   }
 
-  .main__navbar .main__left {
-    width: 40%;
+  .main__left {
+    width: 45%;
   }
 
-  .main__navbar .main__left .main__logo {
+  .main__left .main__logo {
     font-weight: 800;
-    font-size: 2.7rem;
+    font-size: 3.4rem;
     color: var(--main-color);
     font-family: 'Galada', cursive;
   }
 
-  .main__navbar .main__right {
-    width: 60%;
-    font-size: 1.5rem;
-  }
-
-  .main__navbar .main__right ul {
+  .main-bottom {
     display: flex;
     align-items: center;
   }
 
-  .main__navbar .main__right ul li {
+  .main__right {
+    width: 55%;
+    font-size: 1.5rem;
+  }
+
+  .main__right ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .main__right ul li {
     text-align: center;
     line-height: 1.4rem;
     width: 100%;
+    font-weight: 500;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
-  .main__navbar .main__right .main__user {
-    color: #3c3c3c;
+  .main__user {
+    color: var(--main-gray600);
     font-weight: 800;
   }
 
-  .main__navbar .main__right .main__navbar-btn {
+ .main__navbar-btn {
     display: none;
   }
 
@@ -198,7 +252,7 @@
   text-align: center;
   background: white;
   font-size: 1.4rem;
-  font-weight: 800;
+  font-weight: 400;
   cursor: pointer;
   border-bottom: 0.1rem solid lightgray;
 }
