@@ -1,10 +1,12 @@
 const navbarBtn = document.querySelector(".main__navbar-btn img");
 const navbarList = document.querySelector(".main__navbar-list");
-const body = document.querySelector("body");
+const main = document.querySelectorAll("main");
 
 navbarBtn.addEventListener("click", function () {
   navbarList.classList.toggle("hidden");
-  body.classList.toggle("overlay");
+  main.forEach((item) => {
+    item.classList.toggle("overlay");
+  });
 });
 
 const navbar = document.querySelector(".main__navbar");
