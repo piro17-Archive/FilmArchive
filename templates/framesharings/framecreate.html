@@ -1,4 +1,8 @@
 {% extends 'users/main.html' %} {% block content %}
+<script src="https://unpkg.com/@yaireo/tagify"></script>
+<!--<script src="https://unpkg.com/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>-->
+<link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+
 <main>
     {% if messages %}
     <ul class="messages">
@@ -17,8 +21,11 @@
         <div><span>제목</span><input type="text" name="frametitle"/></div>
         <div>
           <span>키워드</span>
+          <input name='tags' class='some_class_name' placeholder='write some tags' value='' type="hidden">
+                    
+          
           {%  for keywordinfo in keywordinfo %}
-          <input type="checkbox" name="{{forloop.counter}}" value="{{forloop.counter}}" id="keywordid{{forloop.counter}}"><label for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
+          <input hidden type="checkbox" name="{{forloop.counter}}" value="{{forloop.counter}}" id="keywordid{{forloop.counter}}"><label hidden for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
           {% endfor %}
         </div>
         <div><span>적용예시</span><input type="file" name="frameexample"></div>
@@ -32,4 +39,22 @@
     </div>
   </form>
 </main>
+<script>
+  var input = document.querySelector('input[name="tags"]');
+  var whitelist = []
+  '{%  for keywordinfo in keywordinfo %}';
+  whitelist['{{forloop.counter}}']  = '{{keywordinfo.name}}';
+  '{% endfor %}'
+  console.log(whitelist)
+  var tagify = new Tagify(input, {
+      whitelist:whitelist,
+      maxTags: 10,
+      dropdown: {
+        maxItems: 20,          
+        classname: "tags-look", 
+        enabled: 0,            
+        closeOnSelect: false   
+      }
+    })
+</script>
 {% endblock content %}
