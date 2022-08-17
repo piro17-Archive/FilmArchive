@@ -68,7 +68,7 @@ def main(request):
 class LoginView(View):
     def get(self, request):
         form = forms.LoginForm()
-        ctx = {"forms": form}
+        ctx = {"forms": form} #스펠링 아래와 똑같이 
         return render(request, "users/login.html", ctx)
 
     def post(self, request):
