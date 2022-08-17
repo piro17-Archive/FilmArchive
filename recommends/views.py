@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Recommend, Keyword, User
 
+def map(request):
+    return render(request, template_name="maps/map.html")
 def recommends(request):
     keywordinfo = Keyword.objects.all()
     query = request.GET.get('title', None)
