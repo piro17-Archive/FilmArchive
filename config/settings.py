@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://d573-59-16-45-98.jp.ngrok.io']
 
 
+
 # Application definition
 
 INSTALLED_APPS = [

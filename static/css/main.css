@@ -184,6 +184,7 @@
   .main__navbar a {
     font-weight: 500;
     line-height: 1.3em;
+    color: var(--main-color);
   }
 
   .main__navbar a:hover {
@@ -230,6 +231,7 @@
     color: var(--main-gray600);
     font-size: 1.2rem;
     font-weight: 800;
+    font-size: 1.2rem;
   }
 
  .main__navbar-btn {
