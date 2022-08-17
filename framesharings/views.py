@@ -165,6 +165,13 @@ def framecreate(request):
         print(frameexample)
         framememo = request.POST["framememo"]
         framepublic = request.POST.get("framepublic")
+        frametags = request.POST["tags"]
+        print(frametags)
+        print(type(frametags))
+        print(len(frametags))
+        sf = frametags.split('"')
+        
+            
         userid = User.objects.get(id = request.user.id)
         if framepublic == "False":
             Frame.objects.create(framememo=framememo,framephoto=framephoto, frametitle=frametitle,frameexample=frameexample,userid=userid,framepublic=False)
@@ -172,11 +179,20 @@ def framecreate(request):
             Frame.objects.create(framememo=framememo,framephoto=framephoto, frametitle=frametitle,frameexample=frameexample,userid=userid,framepublic=True)
         a = Frame.objects.all()
         keywordoj = a.last()
-        for i in range(1,len(keywordinfo)+1):
-            keywordap = request.POST.get(str(i))
-            if keywordap:
-                keywordoj.framekeyword.add(Keyword.objects.filter(id = i)[0])
+        for i in range (1,len(sf)//4 +1):
+            print(sf[i*4-1])
+            if Keyword.objects.filter(name = sf[i*4-1]):
+                keywordoj.framekeyword.add(Keyword.objects.filter(name = sf[i*4-1])[0])
+            else:
+                Keyword.objects.create(name = sf[i*4-1])
+                keywordoj.framekeyword.add(Keyword.objects.filter(name = sf[i*4-1])[0])
         keywordoj.save()
+
+        # for i in range(1,len(keywordinfo)+1):
+        #     keywordap = request.POST.get(str(i))
+        #     if keywordap:
+        #         keywordoj.framekeyword.add(Keyword.objects.filter(id = i)[0])
+        # keywordoj.save()
 
 
         return redirect(f"/framedetail/{a.last().id}")

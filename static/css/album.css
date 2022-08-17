@@ -1507,7 +1507,7 @@
 /* albumcalendar */
 @media screen and (max-width: 480px) { 
   .calendar-container {
-    padding: 3rem 5%;
+    padding: 2rem 5% 4rem 5%;
   }
 
   .calendar__flex-box {
@@ -1553,19 +1553,20 @@
 
   .calendar {
     width: 100%;
+    margin: 0 auto;
   }
 
   .header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   .year-month {
     font-size: 1.8rem;
     font-weight: 800;
-    margin: 0 4rem;
+    margin: 0 3rem;
   }
 
   .nav {
@@ -1590,6 +1591,13 @@
     border-left: 1px solid #2e2e2e;
     border-right: 1px solid #2e2e2e;
   }
+  
+  .main {
+    background: white;
+    padding: 1rem 2rem;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+  }
 
   .days {
     display: flex;
@@ -1599,24 +1607,25 @@
   .day {
     width: calc(100% / 7);
     text-align: center;
-    font-size: 1.2rem;
-    font-weight: 800;
+    font-size: 1.4rem;
+    font-weight: 600;
   }
 
   .dates {
     display: flex;
     flex-flow: row wrap;
-    height: 4rem;
+    height: 35rem;
   }
 
   .date {
     width: calc(100% / 7);
+    padding: 1.1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
     position: relative;
     color: #666;
   }
@@ -1634,12 +1643,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 5rem;
-    height: 5rem;
+    width: 4.4rem;
+    height: 4.4rem;
     border-radius: 50%;
     content: "";
     object-fit: cover;
-    opacity: 0.7;
+    filter: brightness(70%); 
   }
 
   .other {
@@ -1665,13 +1674,11 @@
 
   .calendar__flex-box {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-bottom: 3.5rem;
+    margin-bottom: 4rem;
   }
 
   .calendar__left {
-    width: 70%;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -1683,16 +1690,16 @@
   }
 
   .calendar__left .calendar__back a i {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 
   .calendar__left .calendar__title {
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: 800;
+    margin-right: 1rem;
   }
 
   .calendar__right {
-    width: 30%;
     display: flex;
     justify-content: right;
     align-items: center;
@@ -1701,22 +1708,23 @@
   .calendar__right .calendar__createBtn a i {
     cursor: pointer;
     color: var(--main-color);
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 
   .calendar {
-    width: 100%;
+    width: 50rem;
+    margin: 0 auto;
   }
 
   .header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2rem;
   }
 
   .year-month {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 800;
     margin: 0 4rem;
   }
@@ -1743,6 +1751,13 @@
     border-left: 1px solid #2e2e2e;
     border-right: 1px solid #2e2e2e;
   }
+  
+  .main {
+    background: white;
+    padding: 2rem 4rem;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+  }
 
   .days {
     display: flex;
@@ -1752,25 +1767,25 @@
   .day {
     width: calc(100% / 7);
     text-align: center;
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-size: 1.7rem;
+    font-weight: 600;
   }
 
   .dates {
     display: flex;
     flex-flow: row wrap;
-    height: 50rem;
+    height: 45rem;
   }
 
   .date {
     width: calc(100% / 7);
-    padding: 1.5rem;
+    padding: 1.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
     position: relative;
     color: #666;
   }
@@ -1788,12 +1803,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 7rem;
-    height: 7rem;
+    width: 5.8rem;
+    height: 5.8rem;
     border-radius: 50%;
     content: "";
     object-fit: cover;
-    opacity: 0.7;
+    filter: brightness(70%); 
   }
 
   .other {
@@ -1808,7 +1823,7 @@
   .calendar__hr {
     height: 0.1rem;
     background-color: var(--main-color);
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
 }
 
@@ -1819,13 +1834,11 @@
 
   .calendar__flex-box {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   .calendar__left {
-    width: 70%;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -1843,10 +1856,10 @@
   .calendar__left .calendar__title {
     font-size: 2.5rem;
     font-weight: 800;
+    margin-right: 1rem;
   }
 
   .calendar__right {
-    width: 30%;
     display: flex;
     justify-content: right;
     align-items: center;
@@ -1855,18 +1868,19 @@
   .calendar__right .calendar__createBtn a i {
     cursor: pointer;
     color: var(--main-color);
-    font-size: 4rem;
+    font-size: 3.2rem;
   }
 
   .calendar {
-    width: 100%;
+    width: 70rem;
+    margin: 0 auto;
   }
 
   .header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   .year-month {
@@ -1897,6 +1911,13 @@
     border-left: 1px solid #2e2e2e;
     border-right: 1px solid #2e2e2e;
   }
+  
+  .main {
+    background: white;
+    padding: 4rem 7rem;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+  }
 
   .days {
     display: flex;
@@ -1906,8 +1927,8 @@
   .day {
     width: calc(100% / 7);
     text-align: center;
-    font-size: 2rem;
-    font-weight: 800;
+    font-size: 1.7rem;
+    font-weight: 600;
   }
 
   .dates {
@@ -1918,13 +1939,13 @@
 
   .date {
     width: calc(100% / 7);
-    padding: 1.5rem;
+    padding: 1.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-weight: 800;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
     position: relative;
     color: #666;
   }
@@ -1942,12 +1963,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 8rem;
-    height: 8rem;
+    width: 6.5rem;
+    height: 6.5rem;
     border-radius: 50%;
     content: "";
     object-fit: cover;
-    opacity: 0.7;
+    filter: brightness(70%); 
   }
 
   .other {
@@ -1962,6 +1983,11 @@
   .calendar__hr {
     height: 0.1rem;
     background-color: var(--main-color);
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
+}
+
+.photoday {
+  position: relative;
+  color: white
 }
