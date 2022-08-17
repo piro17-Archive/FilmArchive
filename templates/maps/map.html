@@ -3,7 +3,7 @@
   <style>
     .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
     .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
-    .map_wrap {position:relative;width:100%;height:500px;}
+    .map_wrap {position:relative;width:100%;height:700px;}
     #menu_wrap {position:absolute;top:0;left:0;bottom:0;width:250px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.7);z-index: 1;font-size:12px;border-radius: 10px;}
     .bg_white {background:#fff;}
     #menu_wrap hr {display: block; height: 1px;border: 0; border-top: 2px solid #5F5F5F;margin:3px 0;}
@@ -38,7 +38,7 @@
     #pagination a {display:inline-block;margin-right:10px;}
     #pagination .on {font-weight: bold; cursor: default;color:#777;}
     </style>
-    <p id="result"></p>
+    <p id="result" hidden></p>
 
     <div><button onclick="getCurrentPosBtn()" >내위치</button></div>
 <div><button onclick="getCurrentPosBtnlife()" >내주변 인생네컷</button></div>
@@ -52,7 +52,7 @@
 
   <div id="menu_wrap" class="bg_white">
       <div class="option">
-          <div >
+          <div hidden >
               
                   키워드 : <input type="text" value="" id="keyword" size="15"> 
                   <button onclick="searchPlaces(); return false;">검색하기</button> 
@@ -507,14 +507,15 @@ function removeAllChildNods(el) {
 
 
 kakao.maps.event.addListener(map, 'center_changed', function() {
-// 지도의  레벨을 얻어옵니다
-var level = map.getLevel();
+
+    setTimeout(function(){
+        var level = map.getLevel();
 
 // 지도의 중심좌표를 얻어옵니다 
 var latlng = map.getCenter(); 
 
 
-console.log('반복?')
+// console.log('반복?')
 
 searchPlaces(latlng);
 
@@ -523,6 +524,9 @@ message += '<p>중심 좌표는 위도 ' + latlng.getLat() + ', 경도 ' + latln
 
 var resultDiv = document.getElementById('result');
 resultDiv.innerHTML = message;
+    }, 1000);
+// 지도의  레벨을 얻어옵니다
+
 
 })
 
