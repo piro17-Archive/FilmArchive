@@ -1655,13 +1655,11 @@
 
   .calendar__flex-box {
     display: flex;
-    justify-content: center;
     align-items: center;
     margin-bottom: 4rem;
   }
 
   .calendar__left {
-    width: 70%;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -1673,16 +1671,16 @@
   }
 
   .calendar__left .calendar__back a i {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 
   .calendar__left .calendar__title {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     font-weight: 800;
+    margin-right: 1rem;
   }
 
   .calendar__right {
-    width: 30%;
     display: flex;
     justify-content: right;
     align-items: center;
@@ -1691,7 +1689,7 @@
   .calendar__right .calendar__createBtn a i {
     cursor: pointer;
     color: var(--main-color);
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   .calendar {
@@ -1817,13 +1815,11 @@
 
   .calendar__flex-box {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   .calendar__left {
-    width: 70%;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -1841,10 +1837,10 @@
   .calendar__left .calendar__title {
     font-size: 2.5rem;
     font-weight: 800;
+    margin-right: 1rem;
   }
 
   .calendar__right {
-    width: 30%;
     display: flex;
     justify-content: right;
     align-items: center;
@@ -1853,7 +1849,7 @@
   .calendar__right .calendar__createBtn a i {
     cursor: pointer;
     color: var(--main-color);
-    font-size: 4rem;
+    font-size: 3.2rem;
   }
 
   .calendar {
