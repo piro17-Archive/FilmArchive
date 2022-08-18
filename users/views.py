@@ -1,4 +1,3 @@
-from django.urls import reverse
 from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.views import View
@@ -231,7 +230,6 @@ def delete_user(request, username):
 
 
 def find_username(request):
-    # found_user = None
     if request.method == "POST":
         form = forms.FindUsernameForm(request.POST)
         if form.is_valid():
@@ -239,17 +237,12 @@ def find_username(request):
             email = form.cleaned_data['email']
             try:
                 found_user = User.objects.get(email=email, name=name)
+                context = {'found_user' : found_user}
+                return render(request, 'users/find_username_complete.html', context=context)
             except User.DoesNotExist:
-                messages.warning(request, '다음과 같은 이름 및 아이디를 가진 회원이 존재하지 않습니다.')
-                return redirect(reverse(request, 'users/find_username.html'))
-            context = {
-                'form': form,
-                'found_user':found_user,
-            }
-            return render(request, 'users/find_username_complete.html', context=context)
+                messages.error(request, '다음과 같은 이름 및 아이디를 가진 회원이 존재하지 않습니다.')
+                return redirect('users:find_username')
     # if get
     else:
         form = forms.FindUsernameForm()
         return render(request, "users/find_username.html", {"form": form})
-
-    
