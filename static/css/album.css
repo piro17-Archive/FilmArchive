@@ -383,7 +383,7 @@
 /* albumcreate */
 @media screen and (max-width: 480px) {
   .albumcreate-form {
-    width: 32rem;
+    width: 34rem;
     margin: 3rem auto;
     padding: 3rem 0;
   }
@@ -428,7 +428,7 @@
   }
 
   .albumcreate__info div input[type="text"] {
-    width: 20rem;
+    width: 23rem;
     height: 3.2rem;
     font-size: 1.2rem;
     border-radius: 0.5rem;
@@ -451,7 +451,7 @@
     background-color: white;
     border: 1px solid var(--main-gray400);
     border-radius: 0.5rem;
-    width: 20rem;
+    width: 23rem;
     height: 15rem;
     padding: 1rem;
     font-size: 1.2rem;
@@ -1240,7 +1240,7 @@
 /* albumupdate */
 @media screen and (max-width: 480px) {
   .albumupdate-form {
-    width: 32rem;
+    width: 34rem;
     margin: 3rem auto;
     padding: 3rem 0;
   }
@@ -1280,7 +1280,7 @@
   }
 
   .albumupdate__info div input[type="file"] {
-    width: 20rem;
+    width: 23rem;
   }
 
   .albumupdate__info select,
@@ -1292,7 +1292,7 @@
   }
 
   .albumupdate__info div input[type="text"] {
-    width: 22rem;
+    width: 23.3rem;
     height: 3.2rem;
     font-size: 1.2rem;
     border-radius: 0.5rem;
@@ -1306,7 +1306,7 @@
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     background-color: white;
-    width: 22rem;
+    width: 23rem;
     height: 17rem;
     padding: 1rem;
     font-size: 1.2rem;
