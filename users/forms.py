@@ -68,3 +68,25 @@ class CheckPasswordForm(forms.Form):
             if not check_password(password, confirm_password):
                 self.add_error('password', '비밀번호가 일치하지 않습니다.')
 
+
+
+class FindUsernameForm(forms.Form):
+    name = forms.CharField(label='name', widget=forms.TextInput(attrs={'class': 'form-control',}))
+    email = forms.EmailField(label='email', widget=forms.EmailInput(attrs={'class': 'form-control',}))
+
+    class Meta:
+        model = User
+        fields = ['name', 'email']
+
+    def __init__(self, *args, **kwargs):
+        super(FindUsernameForm, self).__init__(*args, **kwargs)
+        self.fields['name'].label = 'name'
+        self.fields['name'].widget.attrs.update({
+            'class': 'form-control',
+            'id': 'form_name',
+        })
+        self.fields['email'].label = 'email'
+        self.fields['email'].widget.attrs.update({
+            'class': 'form-control',
+            'id': 'form_email' 
+        })
