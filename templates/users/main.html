@@ -100,7 +100,7 @@
             {% else %}
             <a href="{% url 'users:login' %}"><li>My 네 컷 앨범</li></a>
             {% endif %}
-            <a href="{% url 'recommends:recommend_list' %}"><li>포토부스 위치</li></a>
+            <a href="{% url 'recommends:map' %}"><li>포토부스 위치</li></a>
             <a href="{% url 'framesharings:frame' %}"><li>제작프레임 공유</li></a>
             <a href="{% url 'limitedframes:limited'%}"><li>한정판 프레임</li></a>
             {% if user.is_authenticated %}
