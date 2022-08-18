@@ -3,6 +3,7 @@ from requests import delete
 from .models import User, Album,Type
 from datetime import datetime
 from django.utils.dateformat import DateFormat
+from django.contrib import messages
 
 # Create your views here.
 
@@ -40,6 +41,9 @@ def albumcreate(request):
         # 인자가 비는 경우가 있어, 에러 발생 가능성이 있습니다.
         # form 활용을 권장드립니다.
         albumphoto = request.FILES.get("albumphoto")
+        if albumphoto == None:
+            messages.warning(request, '사진은 필수입니다.')
+            return redirect("albums:albumcreate")
         albumvideo = request.FILES.get("albumvideo")
         albummemo = request.POST["albummemo"]
         albumtypename = request.POST["albumtypename"]

@@ -6,7 +6,15 @@
 		<div class="albumcreate__title">My 네 컷 앨범 글 작성</div>
 		<div class="albumcreate__hr"></div>
 		<div class="albumcreate__info">
-			<div><span>사진</span><input type="file" name="albumphoto"></div>
+			<div><span>사진</span><input type="file" name="albumphoto">
+				{% if messages %}
+				<ul class="messages">
+				{% for message in messages %}
+				<li {% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }}</li>
+				{% endfor %}
+				</ul>
+				{% endif %}
+			</div>
 			<div><span>동영상</span><input type="file" name="albumvideo"></div>
 			<div><span>날짜</span><input type="date" name="albumdate" placeholder="앨범날짜" value="{{today}}" min="2022-01-01" max="2023-01-01" /></div>
 			<div>
