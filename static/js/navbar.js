@@ -13,6 +13,8 @@ const navbarHeight = navbar.getBoundingClientRect().height;
 
 window.addEventListener("scroll", () => {
   if(window.scrollY > navbarHeight) {
-    navbar.setAttribute("style", "background: var(--main); transition: 0.2s;");
-  } 
+    navbar.classList.add("navbar-background-list");
+  }else {
+    navbar.classList.remove("navbar-background-list");
+  }
 })
