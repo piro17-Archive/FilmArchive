@@ -23,6 +23,7 @@ ul {
 
 .hidden {
   display: none;
+  transition: 0.2s;
 }
 
 .overlay {
@@ -58,13 +59,17 @@ footer {
   bottom: 0;
 }
 
+.navbar-background {
+  background-color: var(--main);
+}
+
 @media screen and (max-width: 475px) {
   .nav-padding {
-    height: 5rem;
+    height: 6rem;
   }
 
   .nav-nopadding {
-    transform:translate(0, -5rem);
+    transform:translate(0, -6rem);
   }
 }
 
