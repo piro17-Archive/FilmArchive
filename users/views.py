@@ -236,3 +236,26 @@ def delete_user(request, username):
         password_form = CheckPasswordForm(request.user)
 
     return render(request, 'users/delete_user.html', {'password_form':password_form})
+
+
+
+def find_username(request):
+    if request.method == "POST":
+        form = forms.FindUsernameForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            found_user = User.objects.get(email=email, name=name)
+            print(found_user)
+            if found_user is not None:
+                    return render(request, 'users/find_username_complete.html')
+        else:
+            return redirect('users:main')
+    # if get
+    else:
+        form = forms.FindUsernameForm()
+        return render(request, "users/find_username.html", {"form": form})
+
+
+    
+

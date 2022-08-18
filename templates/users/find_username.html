@@ -1,0 +1,21 @@
+{% extends 'users/main.html' %} {% block content %} {% load static %}
+<main>
+  <form method="POST" action="{% url 'users:find_username' %}">
+    {% csrf_token %}
+    <div>
+      <h1>아이디 찾기</h1>
+      <div>
+        <span>이름: </span>
+        {{ form.name }}
+      </div>
+      <div>
+        <span>이메일: </span>
+        {{ form.email }}
+      </div>
+      <div>
+        <button id="find_username" name="find_username">아이디찾기</button>
+      </div>
+    </div>
+  </form>
+</main>
+{% endblock content %}
