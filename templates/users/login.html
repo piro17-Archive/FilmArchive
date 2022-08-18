@@ -24,9 +24,10 @@
       <div class="login-line"></div>
       <div class="login__bottom">
         <!--아이디 찾기 기능-->
-        <div><a href="{% url 'users:find_username' %}">아이디 찾기</a></div>
+        <div class="login--reset"><a href="{% url 'users:find_username' %}">아이디 찾기</a></div>
+        <div class="login__bar">|</div>
         <!--비밀번호 리셋하기 기능-->
-        <div class="login--reset">비밀번호를 까먹으셨나요? <a href="{% url 'users:reset_password' %}">비밀번호 찾기</a></div>
+        <div class="login--reset"><a href="{% url 'users:reset_password' %}">비밀번호 찾기</a></div>
         <div class="login__bar">|</div>
         <div class="signup--btn--section">
           <a href="{% url 'users:sign_up' %}" class="signup--link"><button class="signup--btn">회원가입</button></a>

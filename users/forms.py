@@ -71,7 +71,7 @@ class CheckPasswordForm(forms.Form):
 
 
 class FindUsernameForm(forms.Form):
-    name = forms.CharField(label='name', widget=forms.TextInput(attrs={'class': 'form-control',})),
+    name = forms.CharField(label='name', widget=forms.TextInput(attrs={'class': 'form-control',}))
     email = forms.EmailField(label='email', widget=forms.EmailInput(attrs={'class': 'form-control',}))
 
     class Meta:

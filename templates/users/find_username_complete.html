@@ -1,5 +1,16 @@
 {% extends 'users/main.html' %} {% block content %} {% load static %}
 <main>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                {{ message }}
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h1>아이디찾기</h1>
     회원님의 아이디는 {{ found_user.username }} 입니다
+    {% endif %}
 </main>
 {% endblock content %}

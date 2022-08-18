@@ -2,19 +2,24 @@
 <main>
   <form method="POST" action="{% url 'users:find_username' %}">
     {% csrf_token %}
-    <div>
+    <div class="password-reset-form">
       <h1>아이디 찾기</h1>
+      <div class="password-reset__hr"></div>
       <div>
+        <h3>이름을 입력해주세요</h3>
         <span>이름: </span>
         {{ form.name }}
       </div>
       <div>
+        <h3>이메일을 입력해주세요</h3>
         <span>이메일: </span>
         {{ form.email }}
       </div>
+
       <div>
-        <button id="find_username" name="find_username">아이디찾기</button>
+        <button id="find_username" name="find_username">찾기</button>
       </div>
+      <div class="password-reset__hr"></div>
     </div>
   </form>
 </main>

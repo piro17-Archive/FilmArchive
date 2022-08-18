@@ -1,3 +1,4 @@
+from django.urls import reverse
 from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.views import View
@@ -12,6 +13,7 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
+from django.contrib import messages
 
 #여기추가
 from ctypes import wintypes
@@ -147,7 +149,6 @@ def change_pw(request):
         return render(request, 'users/change_pw.html', args)
 
 
-
 @login_required(login_url='login')
 def profile_update(request):
     try:
@@ -172,15 +173,6 @@ def profile_update(request):
     }
     return render(request, 'users/update_profpic.html', context)
 
-
-# @csrf_exempt
-# def check_username(request):
-#     username=request.POST.get("username")
-#     user_obj=User.objects.filter(username=username).exists()
-#     if user_obj:
-#         return JsonResponse(True)
-#     else:
-#         return JsonResponse(False)
 
 # @csrf_exempt
 # def like_ajax(request):
@@ -238,24 +230,26 @@ def delete_user(request, username):
     return render(request, 'users/delete_user.html', {'password_form':password_form})
 
 
-
 def find_username(request):
+    # found_user = None
     if request.method == "POST":
         form = forms.FindUsernameForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
-            found_user = User.objects.get(email=email, name=name)
-            print(found_user)
-            if found_user is not None:
-                    return render(request, 'users/find_username_complete.html')
-        else:
-            return redirect('users:main')
+            try:
+                found_user = User.objects.get(email=email, name=name)
+            except User.DoesNotExist:
+                messages.warning(request, '다음과 같은 이름 및 아이디를 가진 회원이 존재하지 않습니다.')
+                return redirect(reverse(request, 'users/find_username.html'))
+            context = {
+                'form': form,
+                'found_user':found_user,
+            }
+            return render(request, 'users/find_username_complete.html', context=context)
     # if get
     else:
         form = forms.FindUsernameForm()
         return render(request, "users/find_username.html", {"form": form})
 
-
     
-
