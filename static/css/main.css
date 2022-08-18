@@ -298,14 +298,20 @@
 }
 
 /* footer */
-footer {
-  /* footer를 aside위에 올리기 위해 사용(부유객체) */
+/* footer {
   position: absolute;
   height: 6rem;
   width: 100%;
   padding: 2rem 5rem;
   background-color: var(--main-color);
+  bottom: 0;
 }
+
+.wrap {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 60px;
+} */
 
 /* main swiper */
 .slide-button {
@@ -706,7 +712,7 @@ footer {
   .info__title {
     font-size: 1.2rem;
     font-weight: 800;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.3rem;
   }
 
   .main__info .info__list {
@@ -721,9 +727,10 @@ footer {
     align-items: center;
     background: white;
     width: 20%;
-    height: 5rem;
+    height: 0;
+    padding: 9% 0;
     border-radius: 50%;
-    margin: 0 0.5rem;
+    margin: 0 0.2rem;
   }
 
   .info__flex-box {
@@ -738,7 +745,7 @@ footer {
   .info__flex-box img {
     width: 2rem;
     height: 2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
   }
 }
 
@@ -766,7 +773,8 @@ footer {
     align-items: center;
     background: white;
     width: 20%;
-    height: 12rem;
+    height: 0;
+    padding: 9% 0;
     border-radius: 50%;
     margin: 0 0.5rem;
   }
@@ -776,13 +784,13 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 800;
   }
 
   .info__flex-box img {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     margin-bottom: 0.5rem;
   }
 }
@@ -811,9 +819,10 @@ footer {
     align-items: center;
     background: white;
     width: 20%;
-    height: 19rem;
+    height: 0;
+    padding: 9% 0;
     border-radius: 50%;
-    margin: 0 0.5rem;
+    margin: 0 1rem;
   }
 
   .info__flex-box {
@@ -826,8 +835,8 @@ footer {
   }
 
   .info__flex-box img {
-    width: 5rem;
-    height: 5rem;
+    width: 4.5rem;
+    height: 4.5rem;
     margin-bottom: 0.5rem;
   }
 }

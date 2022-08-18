@@ -100,7 +100,7 @@
             {% else %}
             <a href="{% url 'users:login' %}"><li>My 네 컷 앨범</li></a>
             {% endif %}
-            <a href="{% url 'recommends:recommend_list' %}"><li>포토부스 위치</li></a>
+            <a href="{% url 'recommends:map' %}"><li>포토부스 위치</li></a>
             <a href="{% url 'framesharings:frame' %}"><li>제작프레임 공유</li></a>
             <a href="{% url 'limitedframes:limited'%}"><li>한정판 프레임</li></a>
             {% if user.is_authenticated %}
@@ -125,7 +125,7 @@
                     <div class="swiper-left">
                       <div class="slide-title">My 네 컷 앨범</div>
                       <div class="slide-subtitle">세상에 없는 나만의 네 컷 앨범을<br />만들어보세요.</div>
-                      <div class="slide-button">자세히 보기</div>
+                      <a href="#page1"><div class="slide-button">자세히 보기</div></a>
                     </div>
                     <div class="swiper-right">
                       <img src="{% static 'image/maincalendar.svg' %}" alt="">
@@ -135,7 +135,7 @@
                     <div class="swiper-left">
                       <div class="slide-title">포토부스 위치</div>
                       <div class="slide-subtitle">근처에 있는 포토부스를 찾아보세요! :)</div>
-                      <div class="slide-button">자세히 보기</div>
+                      <a href="#page3"><div class="slide-button">자세히 보기</div></a>
                     </div>
                     <div class="swiper-right">
                       <img src="{% static 'image/photobooth1.svg' %}" alt="">
@@ -148,7 +148,7 @@
                     <div class="swiper-right">
                       <div class="slide-title">제작프레임 공유</div>
                       <div class="slide-subtitle">다양한 제작 프레임을 공유하고<br />사용해보세요!</div>
-                      <div class="slide-button">자세히 보기</div>
+                      <a href="#page4"><div class="slide-button">자세히 보기</div></a>
                     </div>
                   </div>
                   <div class="swiper-slide" id="slide4">
@@ -158,7 +158,7 @@
                     <div class="swiper-right">
                       <div class="slide-title">한정판 프레임</div>
                       <div class="slide-subtitle">매일 새로워지는 한정판 프레임을<br /> 만나보세요!</div>
-                      <div class="slide-button">자세히 보기</div>
+                      <a href="#page5"><div class="slide-button">자세히 보기</div></a>
                     </div>
                   </div>
                 </div>
@@ -244,7 +244,7 @@
               </div>
             </main>
             <!-- main page1 -->
-            <main class="page1-container">
+            <main class="page1-container" id="page1">
                 <div class="page1__flex-box">
                   <div class="page1-left">
                     <img src="{% static 'image/camera.svg' %}" alt="">
@@ -271,7 +271,7 @@
               </div>
             </main>
             <!-- main page3 -->
-            <main class="page3-container">
+            <main class="page3-container" id="page3">
               <div class="page3__flex-box">
                 <div class="page3-left">
                   <img src="{% static 'image/location.svg' %}" alt="">
@@ -285,7 +285,7 @@
               </div>
             </main>
             <!-- main page4 -->
-            <main class="page4-container">
+            <main class="page4-container" id="page4">
               <div class="page4__flex-box">
                 <div class="page4-title"><img src="{% static 'image/createframe.svg' %}">제작프레임 공유</div>
                 <div class="page4-info">키워드 필터링 기능을 통해 내가 원하는 프레임을 편리하게 구경해보세요!</div>
@@ -293,7 +293,7 @@
               </div>
             </main>
             <!-- main page5 -->
-            <main class="page5-container">
+            <main class="page5-container" id="page5">
               <div class="page5__flex-box">
                 <img src="{% static 'image/frameicon.svg' %}" alt="">
                 <div class="page5-title">한정판 프레임</div>
