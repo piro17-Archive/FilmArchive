@@ -179,11 +179,6 @@
     color: var(--main-color);
   }
 
-  .main__navbar a:hover {
-    color: var(--main-red);
-    transition: 0.4s;
-  }
-
   .main__left {
     width: 45%;
   }
@@ -193,6 +188,11 @@
     font-size: 3.4rem;
     color: var(--main-color);
     font-family: 'Galada', cursive;
+  }
+
+  .main__left .main__logo:hover {
+    color: var(--main-red);
+    transition: 0.3s;
   }
 
   .main-bottom {
@@ -213,10 +213,44 @@
 
   .main__right ul li {
     text-align: center;
-    line-height: 1.3rem;
     width: 100%;
     font-weight: 500;
+    opacity: 0.75;
     font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  .main__right ul li:hover {
+    opacity: 1;
+  }
+
+  .nav-link {
+    padding: 20px 0px;
+    margin: 0px 20px;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .nav-link:hover {
+    opacity: 1;
+  }
+  
+  .nav-link::before {
+    transition: 300ms;
+    height: 0.3rem;
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+  }
+
+  .nav-link-fade-up::before {
+    width: 100%;
+    bottom: 1px;
+    opacity: 0;
+  }
+  
+  .nav-link-fade-up:hover::before {
+    bottom: 5px;
+    opacity: 1;
   }
 
   .main__user {

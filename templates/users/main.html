@@ -65,26 +65,24 @@
             </div>
             <div class="main-bottom">
               <div class="main__left">
-                <a href="{% url 'users:main' %}" class="main__logo">FourCut Archive </a>
+                <a href="{% url 'users:main' %}" class="main__logo">FourCut Archive</a>
               </div>
               <div class="main__right">
                 <ul>
                   {%if user.is_authenticated %}
-                    <li><a href="{% url 'albums:album' user.id %}">My 네 컷 앨범</a></li>
+                    <li><a class="nav-link nav-link-fade-up" href="{% url 'albums:album' user.id %}">My 네 컷 앨범</a></li>
                   {% else %}
-                    <li><a href="{% url 'users:login' %}">My 네 컷 앨범</a></li>
+                    <li><a class="nav-link nav-link-fade-up" href="{% url 'users:login' %}">My 네 컷 앨범</a></li>
                   {% endif %}
                   
                   {%if user.is_authenticated %}
-                  <li><a href="{% url 'framesharings:frame' %}">제작프레임 공유</a></li>
+                  <li><a class="nav-link nav-link-fade-up" href="{% url 'framesharings:frame' %}">제작프레임 공유</a></li>
                   {% else %}
-                  <li><a href="{% url 'users:login' %}">제작프레임 공유</a></li>
+                  <li><a class="nav-link nav-link-fade-up" href="{% url 'users:login' %}">제작프레임 공유</a></li>
                   {% endif %}
 
-                  <li>
-                    <a href="{% url 'recommends:recommend_list' %}">포즈/컨셉 추천</a>
-                  </li>
-                  <li><a href="{% url 'limitedframes:limited'%}">한정판 프레임</a></li>
+                  <li><a class="nav-link nav-link-fade-up" href="{% url 'recommends:recommend_list' %}">포즈/컨셉 추천</a></li>
+                  <li><a class="nav-link nav-link-fade-up" href="{% url 'limitedframes:limited'%}">한정판 프레임</a></li>
                   <li class="main__navbar-btn">
                     <img src="{% static 'image/navbar.svg' %}" alt="네브바">
                   </li>
