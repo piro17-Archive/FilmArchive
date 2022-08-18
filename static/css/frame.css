@@ -753,9 +753,7 @@
 /* framedetail */
 @media screen and (max-width: 480px) {
   .framedetail {
-    width: 80%;
-    margin: 0 auto;
-    padding: 4rem 0;
+    margin: 3rem 10%;
   }
 
   .framedetail__head{
@@ -889,9 +887,7 @@
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .framedetail {
-    width: 80%;
-    margin: 0 auto;
-    padding: 5rem 0;
+    margin: 4rem 10%;
   }
 
   .framedetail__head{
@@ -1025,9 +1021,7 @@
 
 @media screen and (min-width: 1024px) {
   .framedetail {
-    width: 80%;
-    margin: 0 auto;
-    padding: 5rem 0;
+    margin: 4rem 10%;
   }
 
   .framedetail__head{
