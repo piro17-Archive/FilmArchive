@@ -18,15 +18,13 @@
     padding: 0 1rem;
   }
 
-  .frame__left .frame__title {
+  .frame__title {
     font-size: 1.8rem;
     font-weight: 800;
   }
 
-  .frame__left .frame__create {
-    color: var(--main-color);
-    font-size: 3rem;
-    margin-left: 1rem;
+  .frame__create {
+    font-size: 2.8rem;
   }
 
   .frame__right {
@@ -83,11 +81,6 @@
   .frame__right .frame__search .glass__icon{
     position: absolute;
     right: 1rem;
-  }
-
-  .frame__create {
-    width: 100%;
-    text-align: center;
   }
 
   .frame__main__keyword{
@@ -173,15 +166,13 @@
     align-items: center;
   }
 
-  .frame__left .frame__title {
+  .frame__title {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 800;
     width: 100%;
   }
 
-  .frame__left .frame__create {
-    width: 10%;
-    color: var(--main-color);
+  .frame__create {
     font-size: 3rem;
     margin-left: 1rem;
   }
@@ -328,17 +319,15 @@
     align-items: center;
   }
 
-  .frame__left .frame__title {
-    font-size: 2rem;
-    font-weight: 700;
+  .frame__title {
+    font-size: 2.1rem;
+    font-weight: 800;
     width: 100%;
     white-space: nowrap;
   }
 
-  .frame__left .frame__create {
-    width: 10%;
-    color: var(--main-color);
-    font-size: 3rem;
+  .frame__create {
+    font-size: 3.2rem;
     margin-left: 1rem;
   }
 
@@ -493,6 +482,10 @@
   background: transparent;
   color: rgb(255, 213, 0);
   transition: 0.1s;
+}
+
+.frame__left{
+  color: var(--main-color);
 }
 
 /* framecreate */

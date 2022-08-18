@@ -7,6 +7,7 @@
   .album__left {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     margin-bottom: 1rem;
     padding: 0 1rem;
@@ -18,20 +19,15 @@
     align-items: center;
   }
 
-  .album__left-right {
-    width: 20%;
-    text-align: right;
-  }
-
   .calendar__btn img {
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
   }
 
   .album__title {
     font-size: 1.8rem;
     font-weight: 800;
-    margin-right: 1rem;
+    margin-right: 0.8rem;
   }
 
   .album__flex-box {
@@ -98,8 +94,7 @@
   }
 
   .album__create {
-    font-size: 3rem;
-    color: var(--main-color);
+    font-size: 2.7rem;
     margin-left: 1rem;
   }
 
@@ -157,16 +152,21 @@
     align-items: center;
   }
 
-  .album__left .album__title {
+
+  .calendar__btn img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .album__title {
     font-size: 2rem;
     font-weight: 800;
     margin-right: 1rem;
     white-space: nowrap;
   }
 
-  .album__left .album__create {
-    color: var(--main-color);
-    font-size: 3.2rem;
+  .album__create {
+    font-size: 3rem;
     margin-left: 1rem;
     display: flex;
     align-items: center;
@@ -253,11 +253,24 @@
     width: 30%;
   }
 
-  .album__left .album__title {
-    font-size: 2rem;
+  .album__title {
+    font-size: 2.1rem;
     font-weight: 700;
     width: 100%;
     margin-right: 1rem;
+    white-space: nowrap;
+  }
+
+  .calendar__btn img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .album__create {
+    font-size: 3.2rem;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
   }
 
   .album__left-left {
@@ -302,14 +315,6 @@
     border: 1px solid var(--main-gray600);
     border-radius: 0.5rem;
     width: 100%;
-  }
-
-  .album__create {
-    font-size: 3rem;
-    color: var(--main-color);
-    margin-left: 1rem;
-    display: flex;
-    align-items: center;
   }
 
   .album__box{
@@ -357,9 +362,8 @@
   object-fit: contain;
 }
 
-.calendar__section i {
+.album__left{
   color: var(--main-color);
-  font-size: 2.8rem;
 }
 
 /* albumcreate */

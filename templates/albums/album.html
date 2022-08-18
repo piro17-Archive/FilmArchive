@@ -5,12 +5,12 @@
 			<div class="album__left">
 				<div class="album__left-left">
 					<div class="album__title">My 네 컷 앨범</div>
-					<a href="{% url 'albums:albumcalendar' user.id %}" class="calendar__section">
-						<i class="fa-solid fa-calendar-days"></i>
+					<a href="{% url 'albums:albumcalendar' user.id %}" class="calendar__btn">
+						<img src="{% static 'image/Calendar_icon.svg' %}" alt="캘린더 아이콘">
 					</a>
 				</div>
 				<div class="album__left-right">
-					<a href="/albumcreate"><div class="album__create"><i class="fa-solid fa-circle-plus"></i></div></a>
+					<a href="/albumcreate" class="album__create"><i class="fa-solid fa-circle-plus"></i></a>
 				</div>
 			</div>
 			<div class="album__right">
