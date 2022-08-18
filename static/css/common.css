@@ -27,7 +27,6 @@ ul {
 
 .overlay {
   position: relative;
-  transition: 0.3s;
 }
 
 .overlay::after {
@@ -45,10 +44,6 @@ button {
   cursor: pointer;
 }
 
-main {
-  padding-top: 8rem;
-}
-
 html, body {
   height: 100%;
 }
@@ -61,4 +56,34 @@ html, body {
 
 footer {
   bottom: 0;
+}
+
+@media screen and (max-width: 475px) {
+  .nav-padding {
+    height: 5rem;
+  }
+
+  .nav-nopadding {
+    transform:translate(0, -5rem);
+  }
+}
+
+@media screen and (min-width: 475px) and (max-width: 1024px) { 
+  .nav-padding {
+    height: 6rem;
+  }
+
+  .nav-nopadding {
+    transform:translate(0, -6rem);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-padding {
+    height: 8rem;
+  }
+
+  .nav-nopadding {
+    transform:translate(0, -8rem);
+  }
 }

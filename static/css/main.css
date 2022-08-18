@@ -20,10 +20,6 @@
     width: 100%;
   }
 
-  main {
-    padding: 5rem 0 0 0;
-  }
-
   .main__navbar-list ul {
     position: fixed;
     top: 5rem;
@@ -93,10 +89,6 @@
 
   .main__navbar-flexbox {
     width: 100%;
-  }
-
-  main {
-    padding: 6rem 0 0 0;
   }
 
   .main__navbar-list ul {

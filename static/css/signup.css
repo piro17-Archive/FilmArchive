@@ -1,13 +1,13 @@
 @media screen and (max-width: 480px) {
   .signup-form {
-    width: 30rem;
+    width: 34rem;
     margin: 1rem auto;
     text-align: center;
     padding: 5rem 0;
   }
 
   .signup-form .signup__title {
-    font-size: 2rem;
+    font-size: 2.1rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -29,8 +29,8 @@
   }
 
   .signup__info div input {
-    width: 18rem;
-    height: 3.8rem;
+    width: 22rem;
+    height: 3.5rem;
     font-size: 1.3rem;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
@@ -56,6 +56,7 @@
     border-radius: 0.5rem;
     padding: 0.6rem 1.7rem;
     cursor: pointer;
+    font-size: 1.2rem;
   }
 
   .signup__btn:hover {

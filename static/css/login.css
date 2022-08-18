@@ -1,14 +1,14 @@
 /* login */
 @media screen and (max-width: 480px) {
   .login--section {
-    width: 30rem;
-    margin: 5rem auto;
+    width: 34rem;
+    margin: 1rem auto;
     text-align: center;
     padding: 5rem 0;
   }
 
   .login--main--text {
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: 800;
     padding-bottom: 2rem;
   }
@@ -43,8 +43,8 @@
   }
 
   .login--input input {
-    width: 20rem;
-    height: 3.8rem;
+    width: 22rem;
+    height: 3.5rem;
     font-size: 1.2rem;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
@@ -64,7 +64,7 @@
     width: 12rem;
     height: 3.5rem;
     border-radius: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-top: 1.2rem;
   }
 
