@@ -75,11 +75,11 @@ footer {
 
 @media screen and (min-width: 475px) and (max-width: 1024px) { 
   .nav-padding {
-    height: 6rem;
+    height: 8rem;
   }
 
   .nav-nopadding {
-    transform:translate(0, -6rem);
+    transform:translate(0, -8rem);
   }
 }
 
