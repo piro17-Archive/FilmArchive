@@ -457,11 +457,15 @@ footer {
   .swiper-left {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 25rem;
     margin: 0 3rem;
   }
   
   .swiper-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 25rem;
     margin: 0 3rem;
   }
@@ -500,19 +504,23 @@ footer {
 
 @media screen and (min-width: 800px) {
   .swiper {
-    width: 100%;
+    display: flex;
     height: 58rem;
   }
   
   .swiper-left {
     display: flex;
     flex-direction: column;
-    width: 35rem;
+    justify-content: center;
+    width: 40rem;
     margin: 0 5rem;
   }
   
   .swiper-right {
-    width: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40rem;
     margin: 0 5rem;
   }
   
@@ -536,15 +544,6 @@ footer {
     padding: 1rem;
     font-size: 1.5rem;
     text-align: center;
-  }
-
-  #slide3 img {
-    width: 40rem;
-  }
-
-  #slide3 .swiper-left,
-  #slide3 .swiper-right {
-    margin: 0;
   }
 }
 
