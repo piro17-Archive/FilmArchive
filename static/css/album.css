@@ -19,6 +19,11 @@
     align-items: center;
   }
 
+  .album__left-left a {
+    display: flex;
+    align-items: center;
+  }
+
   .calendar__btn img {
     width: 3rem;
     height: 3rem;
@@ -152,6 +157,10 @@
     align-items: center;
   }
 
+  .album__left-left a {
+    display: flex;
+    align-items: center;
+  }
 
   .calendar__btn img {
     width: 3.5rem;
@@ -274,6 +283,11 @@
   }
 
   .album__left-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .album__left-left a {
     display: flex;
     align-items: center;
   }
