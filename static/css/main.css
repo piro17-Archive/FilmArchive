@@ -298,14 +298,20 @@
 }
 
 /* footer */
-footer {
-  /* footer를 aside위에 올리기 위해 사용(부유객체) */
+/* footer {
   position: absolute;
   height: 6rem;
   width: 100%;
   padding: 2rem 5rem;
   background-color: var(--main-color);
+  bottom: 0;
 }
+
+.wrap {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 60px;
+} */
 
 /* main swiper */
 .slide-button {
