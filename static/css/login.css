@@ -407,10 +407,263 @@
   }
 }
 
+/* 아이디 찾기 */
+@media screen and (max-width: 480px) {
+  .find-username-form {
+    width: 34rem;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 8rem 0;
+  }
+
+  .find-username-form .find-username__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .find-username__subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 5rem 0 2rem 0;
+  }
+
+  .find-username__hr {
+    background-color: var(--main-color);
+    height: 0.2rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .find-username__info {
+    margin: 5rem 0;
+  }
+
+  .find-username__info div {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .find-username__info div input {
+    width: 22rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin: 0 0 1rem 0.5rem;
+    padding: 1rem;
+  }
+
+  .find-username__info div input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+  }
+
+  .find-username__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    width: 4rem;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .find-username__btn-box {
+    text-align: center;
+    margin: 3rem 0 5rem 0;
+  }
+
+  .find-username__btn {
+    background: white;
+    border: 1px solid var(--main-color);
+    border-radius: 0.5rem;
+    color: var(--main-color);
+    padding: 0.6rem 1.7rem;
+    font-size: 1.2rem;
+    width: 8rem;
+    height: 3rem;
+  }
+  
+  .find-username__btn:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .find-username-form {
+    width: 40rem;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 8rem 0;
+  }
+
+  .find-username-form .find-username__title {
+    font-size: 2.2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .find-username__subtitle {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 5rem 0 2rem 0;
+  }
+
+  .find-username__hr {
+    background-color: var(--main-color);
+    height: 0.2rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .find-username__info {
+    margin: 5rem 0;
+  }
+
+  .find-username__info div {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .find-username__info div input {
+    width: 22rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin: 0 0 1rem 0.5rem;
+    padding: 1rem;
+  }
+
+  .find-username__info div input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+  }
+
+  .find-username__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    width: 6rem;
+    margin-right: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .find-username__btn-box {
+    text-align: center;
+    margin: 4rem 0 5rem 0;
+  }
+
+  .find-username__btn {
+    background: white;
+    border: 1px solid var(--main-color);
+    border-radius: 0.5rem;
+    color: var(--main-color);
+    padding: 0.6rem 1.7rem;
+    font-size: 1.5rem;
+    width: 10rem;
+    height: 3.5rem;
+  }
+  
+  .find-username__btn:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .find-username-form {
+    width: 50rem;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 8rem 0;
+  }
+
+  .find-username-form .find-username__title {
+    font-size: 2.2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .find-username__subtitle {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 5rem 0 2rem 0;
+  }
+
+  .find-username__hr {
+    background-color: var(--main-color);
+    height: 0.2rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .find-username__info {
+    margin: 5rem 0;
+  }
+
+  .find-username__info div {
+    font-size: 1.4rem;
+  }
+
+  .find-username__info div input {
+    width: 25rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin: 0 0 1rem 0.5rem;
+    padding: 1rem;
+  }
+
+  .find-username__info div {
+    margin-bottom: 1rem;
+  }
+
+  .find-username__info div input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+  }
+
+  .find-username__info div span {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4rem;
+    width: 6rem;
+    margin-right: 1.5rem;
+    font-size: 1.6rem;
+  }
+
+  .find-username__btn-box {
+    text-align: center;
+    margin: 4rem 0 5rem 0;
+  }
+
+  .find-username__btn {
+    background: white;
+    border: 1px solid var(--main-color);
+    border-radius: 0.5rem;
+    color: var(--main-color);
+    padding: 0.6rem 1.7rem;
+    font-size: 1.5rem;
+    width: 12rem;
+    height: 3.5rem;
+  }
+  
+  .find-username__btn:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
+  }
+}
+
 /* 비밀번호 찾기 */
 @media screen and (max-width: 480px) {
   .password-reset-form {
-    width: 30rem;
+    width: 34rem;
     margin: 1rem auto;
     text-align: center;
     padding: 8rem 0;
