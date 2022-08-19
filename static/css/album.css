@@ -1450,6 +1450,26 @@
     margin: 0 1.5rem 1.5rem 0;
     font-size: 1.2rem;
   }
+
+  .albumupdate__photo {
+    display: flex;
+  }
+
+  #albumupdate__phototitle {
+    margin: 0 0 0 1.8rem;
+  }
+
+  .box {
+    width: 30rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 1.5rem;
+  }
+
+  #albumphoto1 {
+    margin: 0 0 1rem 6.9rem;
+  }
   
   .albumupdate__info div input {
     margin-bottom: 1.5rem;
@@ -1546,6 +1566,26 @@
     width: 5rem;
     margin: 0 1.5rem 1.5rem 0;
     font-size: 1.4rem;
+  }
+
+  .albumupdate__photo {
+    display: flex;
+  }
+
+  #albumupdate__phototitle {
+    margin: 0 0 0 1.8rem;
+  }
+
+  .box {
+    width: 30rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 1.5rem;
+  }
+
+  #albumphoto1 {
+    margin: 0 0 1rem 6.9rem;
   }
   
   .albumupdate__info div input {
@@ -1644,6 +1684,21 @@
     margin: 0 1.5rem 1.5rem 0;
     font-size: 1.6rem;
   }
+
+  .albumupdate__photo {
+    display: flex;
+  }
+
+  .box {
+    width: 30rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  #albumphoto1 {
+    margin: 0 0 1rem 6.9rem;
+  }
   
   .albumupdate__info div input {
     margin-bottom: 1.5rem;
@@ -1676,7 +1731,7 @@
     width: 30rem;
     height: 17rem;
     padding: 1rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .albumupdate__btn-box {
