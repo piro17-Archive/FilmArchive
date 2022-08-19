@@ -4,14 +4,13 @@
 <link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
 
 <main>
-    
   <form action="/framecreate" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="framecreate-form">
       <div class="framecreate__title">프레임 공유 글 작성</div>
       <div class="framecreate__hr"></div>
       <div class="framecreate__info">
-        <div><span>사진</span><input type="file" name="framephoto"/>
+        <div><span>사진</span><input type="file" name="framephoto" id="framephoto" />
           {% if messages %}
           <ul class="messages">
           {% for message in messages %}

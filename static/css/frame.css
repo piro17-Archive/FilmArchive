@@ -575,6 +575,18 @@
     color: white;
     transition: 0.2s;
   }
+
+  #framephoto {
+    margin-bottom: 0;
+  }
+
+  .framecreate__info .messages {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--main-red);
+    margin-left: 8rem;
+    margin-bottom: 1rem;
+  }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
@@ -658,6 +670,18 @@
     background-color: var(--main-color);
     color: white;
     transition: 0.2s;
+  }
+
+  #framephoto {
+    margin-bottom: 0.2rem;
+  }
+
+  .framecreate__info .messages {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--main-red);
+    margin-left: 9.5rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -743,6 +767,18 @@
     background-color: var(--main-color);
     color: white;
     transition: 0.2s;
+  }
+
+  #framephoto {
+    margin-bottom: 0.2rem;
+  }
+
+  .framecreate__info .messages {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--main-red);
+    margin-left: 9.5rem;
+    margin-bottom: 1rem;
   }
 }
 
