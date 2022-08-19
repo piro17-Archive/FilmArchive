@@ -821,8 +821,8 @@
     padding: 0 2rem;
   }
 
-  /* .swiper {
-    width: 30rem;
+  .swiper {
+    width: 100%;
   }
 
   .swiper-slide {
@@ -835,7 +835,7 @@
   .swiper-button-next:after {
     font-size: 2rem;
     color: gray;
-  } */
+  }
 
   .modal {
     position: fixed;
@@ -1053,7 +1053,7 @@
     padding: 0 2rem;
   }
 
-  /* .swiper {
+  .swiper {
     width: 100%;
   }
 
@@ -1067,7 +1067,7 @@
   .swiper-button-next:after {
     font-size: 2.5rem;
     color: gray;
-  } */
+  }
 
   .modal {
     position: fixed;
@@ -1285,7 +1285,7 @@
     padding: 0 2rem;
   }
 
-  /* 
+  
   .swiper {
     width: 100%;
   }
@@ -1300,7 +1300,7 @@
   .swiper-button-next:after {
     font-size: 3.5rem;
     color: gray;
-  } */
+  }
 
   
 
