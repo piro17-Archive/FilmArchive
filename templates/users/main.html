@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="{% static 'css/limitedlife.css' %}" />
     <link rel="stylesheet" href="{% static 'css/moredetail.css' %}" />
     <link rel="stylesheet" href="{% static 'css/recommend.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/map.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,26 +66,25 @@
             </div>
             <div class="main-bottom">
               <div class="main__left">
-                <a href="{% url 'users:main' %}" class="main__logo">FourCut Archive </a>
+                <a href="{% url 'users:main' %}" class="main__logo">FourCut Archive</a>
               </div>
               <div class="main__right">
                 <ul>
                   {%if user.is_authenticated %}
-                    <li><a href="{% url 'albums:album' user.id %}">My 네 컷 앨범</a></li>
+                    <li><a class="nav-link nav-link-fade-up" href="{% url 'albums:album' user.id %}">My 네 컷 앨범</a></li>
                   {% else %}
-                    <li><a href="{% url 'users:login' %}">My 네 컷 앨범</a></li>
+                    <li><a class="nav-link nav-link-fade-up" href="{% url 'users:login' %}">My 네 컷 앨범</a></li>
                   {% endif %}
                   
+                  <li><a class="nav-link nav-link-fade-up" href="{% url 'recommends:map' %}">포토부스 위치</a></li>
+
                   {%if user.is_authenticated %}
-                  <li><a href="{% url 'framesharings:frame' %}">제작프레임 공유</a></li>
+                  <li><a class="nav-link nav-link-fade-up" href="{% url 'framesharings:frame' %}">제작프레임 공유</a></li>
                   {% else %}
-                  <li><a href="{% url 'users:login' %}">제작프레임 공유</a></li>
+                  <li><a class="nav-link nav-link-fade-up" href="{% url 'users:login' %}">제작프레임 공유</a></li>
                   {% endif %}
 
-                  <li>
-                    <a href="{% url 'recommends:recommend_list' %}">포즈/컨셉 추천</a>
-                  </li>
-                  <li><a href="{% url 'limitedframes:limited'%}">한정판 프레임</a></li>
+                  <li><a class="nav-link nav-link-fade-up" href="{% url 'limitedframes:limited'%}">한정판 프레임</a></li>
                   <li class="main__navbar-btn">
                     <img src="{% static 'image/navbar.svg' %}" alt="네브바">
                   </li>
@@ -101,8 +101,8 @@
             {% else %}
             <a href="{% url 'users:login' %}"><li>My 네 컷 앨범</li></a>
             {% endif %}
+            <a href="{% url 'recommends:map' %}"><li>포토부스 위치</li></a>
             <a href="{% url 'framesharings:frame' %}"><li>제작프레임 공유</li></a>
-            <a href="{% url 'recommends:recommend_list' %}"><li>포즈/컨셉 추천</li></a>
             <a href="{% url 'limitedframes:limited'%}"><li>한정판 프레임</li></a>
             {% if user.is_authenticated %}
             <a href="{% url 'users:log_out' %}" class="main__user"><li>로그아웃</li></a> 
@@ -126,7 +126,11 @@
                     <div class="swiper-left">
                       <div class="slide-title">My 네 컷 앨범</div>
                       <div class="slide-subtitle">세상에 없는 나만의 네 컷 앨범을<br />만들어보세요.</div>
-                      <div class="slide-button">자세히 보기</div>
+                      {%if user.is_authenticated %}
+                      <a href="{% url 'albums:album' user.id %}"><div class="slide-button">자세히 보기</div></a>
+                      {% else %}
+                      <a href="{% url 'users:login' %}"><div class="slide-button">자세히 보기</div></a>
+                      {% endif %}
                     </div>
                     <div class="swiper-right">
                       <img src="{% static 'image/maincalendar.svg' %}" alt="">
@@ -134,22 +138,22 @@
                   </div>
                   <div class="swiper-slide" id="slide2">
                     <div class="swiper-left">
+                      <div class="slide-title">포토부스 위치</div>
+                      <div class="slide-subtitle">근처에 있는 포토부스를 찾아보세요! :)</div>
+                      <a href="{% url 'recommends:map' %}"><div class="slide-button">자세히 보기</div></a>
+                    </div>
+                    <div class="swiper-right">
+                      <img src="{% static 'image/photobooth1.svg' %}" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide" id="slide3">
+                    <div class="swiper-left">
                       <img src="{% static 'image/swiper2.svg' %}" alt="">
                     </div>
                     <div class="swiper-right">
                       <div class="slide-title">제작프레임 공유</div>
                       <div class="slide-subtitle">다양한 제작 프레임을 공유하고<br />사용해보세요!</div>
-                      <div class="slide-button">자세히 보기</div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide" id="slide3">
-                    <div class="swiper-left">
-                      <div class="slide-title">포토부스 위치</div>
-                      <div class="slide-subtitle">근처에 있는 포토부스를<br /> 찾아보세요! :)</div>
-                      <div class="slide-button">자세히 보기</div>
-                    </div>
-                    <div class="swiper-right">
-                      <img src="{% static 'image/photobooth1.svg' %}" alt="">
+                      <a href="{% url 'framesharings:frame' %}"><div class="slide-button">자세히 보기</div></a>
                     </div>
                   </div>
                   <div class="swiper-slide" id="slide4">
@@ -159,7 +163,7 @@
                     <div class="swiper-right">
                       <div class="slide-title">한정판 프레임</div>
                       <div class="slide-subtitle">매일 새로워지는 한정판 프레임을<br /> 만나보세요!</div>
-                      <div class="slide-button">자세히 보기</div>
+                      <a href="{% url 'limitedframes:limited'%}"><div class="slide-button">자세히 보기</div></a>
                     </div>
                   </div>
                 </div>

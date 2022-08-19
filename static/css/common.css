@@ -23,6 +23,7 @@ ul {
 
 .hidden {
   display: none;
+  transition: 0.2s;
 }
 
 .overlay {
@@ -48,33 +49,32 @@ html, body {
   height: 100%;
 }
 
-#wrap {
-  min-height: 100%;
-  position: relative;
-  padding-bottom: 60px;
+.navbar-background {
+  background: var(--main);
 }
 
-footer {
-  bottom: 0;
+.navbar-background-list {
+  background: var(--main);
+  transition: 0.2s;
 }
 
 @media screen and (max-width: 475px) {
-  .nav-padding {
-    height: 5rem;
-  }
-
-  .nav-nopadding {
-    transform:translate(0, -5rem);
-  }
-}
-
-@media screen and (min-width: 475px) and (max-width: 1024px) { 
   .nav-padding {
     height: 6rem;
   }
 
   .nav-nopadding {
     transform:translate(0, -6rem);
+  }
+}
+
+@media screen and (min-width: 475px) and (max-width: 1024px) { 
+  .nav-padding {
+    height: 8rem;
+  }
+
+  .nav-nopadding {
+    transform:translate(0, -8rem);
   }
 }
 

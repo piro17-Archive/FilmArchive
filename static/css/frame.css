@@ -491,7 +491,7 @@
 /* framecreate */
 @media screen and (max-width: 480px) {
   .framecreate-form {
-    width: 32rem;
+    width: 34rem;
     margin: 3rem auto;
     padding: 3rem 0;
   }
@@ -517,7 +517,7 @@
   .framecreate__info div span {
     display: inline-block;
     text-align: right;
-    margin: 0 1.5rem 1.5rem 0;
+    margin: 0 1rem 1.5rem 0;
     font-size: 1.2rem;
     width: 7rem;
   }
@@ -532,11 +532,11 @@
   }
 
   .framecreate__info div input[type="file"] {
-    width: 20rem;
+    width: 22rem;
   }
 
   .framecreate__info div input[type="text"] {
-    width: 20rem;
+    width: 22rem;
     height: 3.2rem;
     font-size: 1.2rem;
     border-radius: 0.5rem;
@@ -551,7 +551,7 @@
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     background-color: white;
-    width: 20rem;
+    width: 22rem;
     height: 12rem;
     padding: 1rem;
   }
@@ -1156,7 +1156,7 @@
 /* frameupdate */
 @media screen and (max-width: 480px) {
   .frameupdate-form {
-    width: 32rem;
+    width: 34rem;
     margin: 3rem auto;
     padding: 3rem 0;
   }
@@ -1192,11 +1192,11 @@
   }
 
   .frameupdate__info div input[type="file"] {
-    width: 20rem;
+    width: 22rem;
   }
 
   .frameupdate__info div input[type="text"] {
-    width: 20rem;
+    width: 22rem;
     height: 3.2rem;
     font-size: 1.2rem;
     border-radius: 0.5rem;
@@ -1211,7 +1211,7 @@
     border: 1px solid var(--main-gray400);
     background-color: white;
     font-size: 1.2rem;
-    width: 20rem;
+    width: 22rem;
     height: 13rem;
     padding: 1rem;
   }

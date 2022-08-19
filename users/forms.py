@@ -32,13 +32,13 @@ class SignupForm(UserCreationForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
         self.fields['username']
         self.fields['email'].widget.attrs.update({'placeholder': 'example@example.com'})
         self.fields['password1'].widget.attrs.update({'placeholder':'숫자+ 대/소문자 8자리 이상'})        
         self.fields['password2'].widget.attrs.update()
         self.fields['name'].widget.attrs.update()
         self.fields['nickname'].widget.attrs.update()
-
 
 class MyUpdateForm(forms.ModelForm):
     class Meta:
