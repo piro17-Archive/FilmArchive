@@ -290,7 +290,7 @@
 }
 
 .main__navbar-list ul li:hover{
-  color: var(--main-color);
+  color: var(--main-red);
   transition: 0.2s;
 }
 
