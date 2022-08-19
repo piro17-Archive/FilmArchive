@@ -731,7 +731,7 @@
   .framecreate__info div input[type="text"] {
     width: 30rem;
     height: 3.2rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     background-color: white;
@@ -740,7 +740,7 @@
   }
 
   .framecreate__info div textarea{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     background-color: white;
@@ -1402,7 +1402,7 @@
   .frameupdate__info div input[type="text"] {
     width: 30rem;
     height: 3.2rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     background-color: white;
@@ -1414,7 +1414,7 @@
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     background-color: white;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     width: 30rem;
     height: 17rem;
     padding: 1rem;
