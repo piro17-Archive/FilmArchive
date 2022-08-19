@@ -3,17 +3,19 @@
 <main>
   <div class="morepage--container">
     <div class="morepage--header">
-      <div class="morepage--title">인생네컷</div>
       <a href="{% url 'limitedframes:limited' %}" class="goto--home">
-        <i class="fa-solid fa-house"></i>
+        <i class="fa-solid fa-angle-left"></i>
       </a>
+      <div class="morepage--title">인생네컷</div>
     </div>
-    <div class="line"></div>
+    <div class="morepage--line"></div>
 
     <div class="lifedetail--grid--section">
       {% for lifeframeinfo in lifeframeinfo %}
       <div class="per--lifedetail">
+        <div class="lifedetail__img__section">
           <img src="{{ lifeframeinfo.lifephotourl }}">
+        </div>
           <div class="limited--detail--text">{{lifeframeinfo.lifecontext}}</div>
         
         

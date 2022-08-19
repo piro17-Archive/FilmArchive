@@ -1,6 +1,6 @@
 @media screen and (max-width: 480px){
   .per--lifedetail:hover .limited--detail--text{
-    font-size: 1.2rem;
+    font-size: 0.5rem;
     line-height: 1.8rem;
     font-weight: 400;
   }
@@ -14,15 +14,15 @@
 
 @media screen and (min-width: 480px) and (max-width: 740px){
   .per--lifedetail:hover .limited--detail--text{
-    font-size: 1.5rem;
+    font-size: 0.7rem;
     line-height: 1.8rem;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .limited-frame--section a:hover div{
-    font-size: 1.2rem;
+    font-size: 0.7rem;
     line-height: 1.5rem;
-    font-weight: 400;
+    font-weight: 500;
   }
 }
 
@@ -44,93 +44,165 @@
   .per--lifedetail:hover .limited--detail--text{
     font-size: 1.5rem;
     line-height: 2rem;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .limited-frame--section a:hover div{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 500;
   }
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 480px) {
   .morepage--container{
-    margin: 3rem;
+    width: 100%;
+    padding: 3rem 10%;
   }
 
   .morepage--title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    }
+
+  .morepage--line{
+    margin: 1rem 0 2rem 0;
   }
 
   .lifedetail--grid--section{
-    width: 95%;
+    width: 80%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1.5rem;
-    row-gap: 1rem;
+    grid-template-columns: repeat(3, 33%);
+    column-gap: 1rem;
+    row-gap: 1.5rem;
+    justify-content: center;
   }
-  .per--lifedetail img{
+
+  .per--lifedetail{
     width: 100%;
-    height: 100%;
+  }
+
+  .per--lifedetail img{
+    height: 25rem;
   }
 
   .goto--home{
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 740px){
+  .morepage--container{
+    width: 100%;
+    padding: 4rem 10%;
+  }
+
+  .morepage--title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    }
+
+  .morepage--line{
+    margin: 1rem 0 2rem 0;
+  }
+
+  .lifedetail--grid--section{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    column-gap: 1rem;
+    row-gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .per--lifedetail{
+    width: 100%;
+  }
+
+  .per--lifedetail img{
+    height: 32rem;
+  }
+
+  .goto--home{
+    font-size: 1.7rem;
   }
 }
 
 @media screen and (min-width: 740px) and (max-width: 1024px){
   .morepage--container{
-    margin: 4rem 6rem;
+    width: 100%;
+    padding: 4rem 10%;
   }
 
   .morepage--title {
     font-size: 2rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    }
+
+  .morepage--line{
+    margin: 1rem 0 2rem 0;
   }
 
   .lifedetail--grid--section{
-    width: 95%;
+    width: 80%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 2rem;
-    row-gap: 1.5rem;
+    grid-template-columns: repeat(4, 25%);
+    column-gap: 1rem;
+    row-gap: 2rem;
+    justify-content: center;
+  }
+
+  .per--lifedetail{
+    width: 100%;
   }
 
   .per--lifedetail img{
-    width: 100%;
-    height: 100%;
+    height: 37rem;
   }
 
   .goto--home{
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .morepage--container{
-    margin: 4rem 6rem;
+    width: 100%;
+    padding: 4rem 10%;
   }
 
   .morepage--title {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    }
+
+  .morepage--line{
+    margin: 1rem 0 2.5rem 0;
   }
 
   .lifedetail--grid--section{
-    width: 95%;
+    width: 80%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 3rem;
+    grid-template-columns: repeat(4, 25%);
+    column-gap: 1rem;
     row-gap: 2rem;
+    justify-content: center;
+  }
+
+  .per--lifedetail{
+    width: 100%;
   }
 
   .per--lifedetail img{
-    width: 100%;
-    height: 100%;
+    height: 45rem;
   }
 
   .goto--home{
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -143,19 +215,14 @@
 .morepage--header{
   display: flex;
   width: 100%;
-  justify-content : space-between;
   align-items: center;
-  margin-bottom: 1.3rem;
+  padding: 0 1rem;
 }
 
-.goto--home:hover{
-  color: var(--main-color);
-}
-
-.morepage--title {
-  font-weight: 600;
-  width: 100%;  
-  text-align: center;
+.morepage--line{
+  width: 95%;
+  height: 0.15rem;
+  background-color: var(--main-color);
 }
 
 .per--lifedetail{
@@ -163,10 +230,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
 }
 
-.per--lifedetail a,
+.per--lifedetail,
 .limited-frame--section a{
   position: relative;
 }
@@ -179,7 +245,13 @@
   display: none;
 }
 
-.per--lifedetail:hover img{
+.lifedetail__img__section{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.per--lifedetail:hover .lifedetail__img__section{
   filter:brightness(40%);
   transition: filter, 0.5s;
 }
