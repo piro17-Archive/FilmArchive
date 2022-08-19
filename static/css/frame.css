@@ -1222,6 +1222,26 @@
     font-size: 1.2rem;
     width: 7rem;
   }
+
+  .frameupdate__photo {
+    display: flex;
+  }
+
+  #frameupdate__phototitle {
+    margin: 0 0 0 0.8rem;
+  }
+
+  .framebox {
+    width: 22rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 1.5rem;
+  }
+
+  #framephoto1 {
+    margin: 0 0 1rem 8.8rem;
+  }
   
   .frameupdate__info div input {
     margin-bottom: 1.5rem;
@@ -1306,6 +1326,26 @@
     font-size: 1.4rem;
     width: 7rem;
   }
+
+  .frameupdate__photo {
+    display: flex;
+  }
+
+  .framebox {
+    width: 25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 1.5rem;
+  }
+
+  #framephoto1 {
+    margin: 0 0 1rem 8.8rem;
+  }
+
+  #frameupdate__phototitle {
+    margin: 0 0 0 0.8rem;
+  }
   
   .frameupdate__info div input {
     margin-bottom: 1.5rem;
@@ -1389,6 +1429,22 @@
     margin: 0 1.5rem 1.5rem 0;
     font-size: 1.6rem;
     width: 7rem;
+  }
+
+  .frameupdate__photo {
+    display: flex;
+  }
+
+  .framebox {
+    width: 30rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 0.5rem;
+  }
+
+  #framephoto1 {
+    margin: 0 0 1rem 8.8rem;
   }
   
   .frameupdate__info div input {

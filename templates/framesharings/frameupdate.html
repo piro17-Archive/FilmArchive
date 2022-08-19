@@ -7,9 +7,12 @@
       <div class="frameupdate__hr"></div>
       <div class="frameupdate__info">
         {%if frameinfo.framephoto %}
-        <div><span>이전사진</span>{{frameinfo.framephoto.url}} <input type="checkbox" name="clearphoto" value="clearphoto" id="clearphoto"><label for="clearphoto">clear</label></div> 
+        <div class="frameupdate__photo">
+          <span id="frameupdate__phototitle">이전사진</span><div class="framebox">{{frameinfo.framephoto.url}} </div>
+          <input type="checkbox" name="clearphoto" value="clearphoto" id="clearphoto"><label for="clearphoto">clear</label>
+        </div> 
         {% endif %}
-        <input type="file" name="framephoto">
+        <input type="file" name="framephoto" id="framephoto1">
 
         <div><span>제목</span> <input type="text" name="frametitle" placeholder="프레임제목" value="{{ frameinfo.frametitle}}"/></div>
         <div>
