@@ -140,6 +140,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = ((os.path.join(BASE_DIR, 'static')), )
+# collectstatic 과정에서 static2 로 모든 static 파일들을 옮겨서 카피하기 위해 static2/ 로 지정
 STATIC_ROOT = os.path.join(BASE_DIR, 'static2/')
 
 
