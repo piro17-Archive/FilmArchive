@@ -7,12 +7,14 @@
       <div class="albumupdate__hr"></div>
       <div class="albumupdate__info">
         <div>
-          <span>사진</span>
-          {% if albuminfo.albumphoto %} 
-          {{albuminfo.albumphoto.url}}
-          <input type="checkbox" name="clearphoto" value="clearphoto" id="clearphoto"/><label for="clearphoto">clear</label>
-          {% endif %}
-          <input type="file" name="albumphoto" />
+          <div class="albumupdate__photo">
+            <span id="albumupdate__phototitle">사진</span>
+            {% if albuminfo.albumphoto %} 
+            <div class="box">{{albuminfo.albumphoto.url}}</div>
+            <input type="checkbox" name="clearphoto" value="clearphoto" id="clearphoto"/><label for="clearphoto">clear</label>
+            {% endif %}
+          </div>
+          <input type="file" name="albumphoto" id="albumphoto1" />
         </div>
         <div>
           <span>동영상</span> 
@@ -51,7 +53,7 @@
           </select>
         </div>
         <div>
-          <span>위치</span><input type="text" name="albumlocation" placeholder="앨범위치" value="{{albuminfo.albumlocation}}" />
+          <span>장소</span><input type="text" name="albumlocation" value="{{albuminfo.albumlocation}}" />
         </div>
         <div>
           <span>메모</span>

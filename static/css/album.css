@@ -560,7 +560,7 @@
     width: 28rem;
     height: 15rem;
     padding: 1rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .albumcreate__btn-box {
@@ -642,7 +642,7 @@
   .albumcreate__info div input[type="text"] {
     width: 32rem;
     height: 3.2rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     border-radius: 0.5rem;
     background-color: white;
     border: 1px solid var(--main-gray400);
@@ -666,7 +666,7 @@
     width: 32rem;
     height: 15rem;
     padding: 1rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .albumcreate__btn-box {
@@ -1450,6 +1450,26 @@
     margin: 0 1.5rem 1.5rem 0;
     font-size: 1.2rem;
   }
+
+  .albumupdate__photo {
+    display: flex;
+  }
+
+  #albumupdate__phototitle {
+    margin: 0 0 0 1.8rem;
+  }
+
+  .box {
+    width: 30rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 1.5rem;
+  }
+
+  #albumphoto1 {
+    margin: 0 0 1rem 6.9rem;
+  }
   
   .albumupdate__info div input {
     margin-bottom: 1.5rem;
@@ -1468,7 +1488,7 @@
   }
 
   .albumupdate__info div input[type="text"] {
-    width: 23.3rem;
+    width: 23rem;
     height: 3.2rem;
     font-size: 1.2rem;
     border-radius: 0.5rem;
@@ -1476,6 +1496,7 @@
     background-color: white;
     margin-bottom: 1rem;
     padding: 1rem;
+    margin-left: 0.4rem;
   }
 
   .albumupdate__info div textarea{
@@ -1546,6 +1567,26 @@
     margin: 0 1.5rem 1.5rem 0;
     font-size: 1.4rem;
   }
+
+  .albumupdate__photo {
+    display: flex;
+  }
+
+  #albumupdate__phototitle {
+    margin: 0 0 0 1.8rem;
+  }
+
+  .box {
+    width: 30rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 1.5rem;
+  }
+
+  #albumphoto1 {
+    margin: 0 0 1rem 6.9rem;
+  }
   
   .albumupdate__info div input {
     margin-bottom: 1.5rem;
@@ -1572,6 +1613,7 @@
     background-color: white;
     margin-bottom: 1rem;
     padding: 1rem;
+    margin-left: 0.4rem;
   }
 
   .albumupdate__info div textarea{
@@ -1642,6 +1684,21 @@
     margin: 0 1.5rem 1.5rem 0;
     font-size: 1.6rem;
   }
+
+  .albumupdate__photo {
+    display: flex;
+  }
+
+  .box {
+    width: 30rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  #albumphoto1 {
+    margin: 0 0 1rem 6.9rem;
+  }
   
   .albumupdate__info div input {
     margin-bottom: 1.5rem;
@@ -1658,12 +1715,13 @@
   .albumupdate__info div input[type="text"] {
     width: 30rem;
     height: 3.2rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     background-color: white;
     margin-bottom: 1rem;
     padding: 1rem;
+    margin-left: 0.5rem;
   }
 
   .albumupdate__info div textarea{
@@ -1673,7 +1731,7 @@
     width: 30rem;
     height: 17rem;
     padding: 1rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .albumupdate__btn-box {
