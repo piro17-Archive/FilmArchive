@@ -32,13 +32,13 @@ class SignupForm(UserCreationForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['username'].widget.attrs.update({'placeholder':'예) honggildong123'})
-        self.fields['email'].widget.attrs.update({'placeholder':'예) honggildong@gmail.com'})
-        self.fields['password1'].widget.attrs.update({'placeholder':'8자리 이상, 숫자만으로 조합 불가'})        
-        self.fields['password2'].widget.attrs.update({'placeholder':'비밀번호를 다시 한 번 입력해주세요.'})
-        self.fields['name'].widget.attrs.update({'placeholder':'예) 홍길동'})
-        self.fields['nickname'].widget.attrs.update({'placeholder':'예) 나는야 길동이'})
 
+        self.fields['username']
+        self.fields['email'].widget.attrs.update({'placeholder': 'example@example.com'})
+        self.fields['password1'].widget.attrs.update({'placeholder':'숫자+ 대/소문자 8자리 이상'})        
+        self.fields['password2'].widget.attrs.update()
+        self.fields['name'].widget.attrs.update()
+        self.fields['nickname'].widget.attrs.update()
 
 class MyUpdateForm(forms.ModelForm):
     class Meta:
@@ -79,8 +79,8 @@ class CheckPasswordForm(forms.Form):
 
 
 class FindUsernameForm(forms.Form):
-    name = forms.CharField(label='name', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '예) 김OO',}))
-    email = forms.EmailField(label='email', widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'user@gmail.com',}))
+    name = forms.CharField(label='name', widget=forms.TextInput(attrs={'class': 'form-control'}))
+    email = forms.EmailField(label='email', widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'example@example.com',}))
 
     class Meta:
         model = User
@@ -106,6 +106,6 @@ class UserPasswordResetForm(PasswordResetForm):
         super(UserPasswordResetForm, self).__init__(*args, **kwargs)
 
     email = forms.EmailField(label='', widget=forms.EmailInput(attrs={
-        'placeholder': 'user@gmail.com',
+        'placeholder': 'example@example.com',
         'name': 'email'
         }))
