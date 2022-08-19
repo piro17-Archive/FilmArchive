@@ -177,6 +177,7 @@
     font-weight: 500;
     line-height: 1.3em;
     color: var(--main-color);
+    white-space: nowrap;
   }
 
   .main__left {
