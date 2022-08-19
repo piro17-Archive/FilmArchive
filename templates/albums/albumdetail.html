@@ -19,36 +19,33 @@
 	<div class="albumdetail">
 		<div class="albumdetail__header">
 			<div class="albumdetail__header-left">
+				<a href="{% url 'albums:album' user.id %}" class="back__album">
+					<i class="fa-solid fa-angle-left"></i>
+				</a>
 				<div class="albumdetail__header-title">My 네 컷 앨범</div>
-				<a href="{% url 'albums:albumcalendar' user.id %}" class="calendar__section">
-					<i class="fa-solid fa-calendar-days"></i>
+				<a href="{% url 'albums:albumcalendar' user.id %}" class="detail__calendar__btn">
+					<img src="{% static 'image/Calendar_icon.svg' %}" alt="캘린더 아이콘">
 				</a>
 			</div>
 			<div class="albumdetail__header-right">
-				<a href="/albumupdate/{{albuminfo.id}}"><i class="fa-solid fa-pen-to-square"></i></a>
-				<button class="openBtn"><i class="fa-solid fa-trash-can"></i></button>
+				<a href="/albumupdate/{{albuminfo.id}}" class="album__detail__update">수정</a>
+				<div class="btn__border"><button class="openBtn album__detail__delete">삭제</button></div>
 			</div>
 		</div>
+		<div class="album__detail__line"></div>
 
-		<div class="albumdetail__date">
-			<i class="fa-solid fa-angle-left"></i>
-			<span>{{ albuminfo.albumdate}}</span>
-			<i class="fa-solid fa-angle-right"></i>
-		</div>
-
-		<div class="albumdetail__flex-box">
-			<div class="albumdetail__bg">
-				<div class="swiper">
+		<div class="album__detail__content">
+			<div class="albumdetail__img-box">
+				<img src="{{ albuminfo.albumphoto.url }}" alt="" class="albumdetail__img">
+				<!-- <div class="swiper">
 					<div class="swiper-wrapper">
+
 						<div class="swiper-slide">
 							<div class="albumdetail__img">
-								{% if albuminfo.albumphoto %}
 								<img src="{{ albuminfo.albumphoto.url }}" alt="">
-								{% else %}
-								<div>사진이 없습니다.</div>
-								{% endif %}
 							</div>
 						</div>
+
 						<div class="swiper-slide">
 							<div class="albumdetail__video">
 								{% if albuminfo.albumvideo %}
@@ -59,18 +56,37 @@
 							</div>
 						</div>
 					</div>
-					<div class="swiper-pagination"></div>
+					<div class="swiper-pagination"></div> -->
 				</div>
-			</div>
 
-			<div class="albumdetail__memo">
-				<img src="{% static 'image/memo.png' %}" alt="">
-				<div>
-					<div class="albumdetail__kind">종류 | {{albuminfo.albumtype.name}}</div>
-					<div class="albumdetail__position" id="locationel">위치 | {{albuminfo.albumlocation}}</div>
-					<div class="albumdetail__memos">메모 | {{albuminfo.albummemo}}</div>
+			<div class="albumdetail__memo-box">
+				<div class="albumdetail__date">
+					<span>{{ albuminfo.albumdate}}</span>
+				</div>
+				<div class="albumdetail__type album__per-memo">
+					<div class="albumdetail__section__title">
+						<img src="{% static 'image/Image.svg' %}" alt="사진아이콘">
+						<span>종류</span>
+					</div>
+					<div class="type__content">{{albuminfo.albumtype.name}}</div>
+				</div>
+				<div class="albumdetail__position album__per-memo">
+					<div class="albumdetail__section__title">
+						<img src="{% static 'image/MapPin.svg' %}" alt="위치아이콘">
+						<span>위치</span>
+					</div>
+					<div class="position__content">{{albuminfo.albumlocation}}</div>
+				</div>
+				<div class="albumdetail__memo">
+					<div class="albumdetail__section__title">
+						<img src="{% static 'image/PushPin.svg' %}" alt="핀아이콘">
+						<span>메모</span>
+					</div>
+					<div class="memo__content">{{albuminfo.albummemo}}</div>
 				</div>
 			</div>
+		</div>
+
 		</div>
 	</div>
 </main>
