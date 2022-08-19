@@ -140,6 +140,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = ((os.path.join(BASE_DIR, 'static')), )
+STATIC_ROOT = os.path.join(BASE_DIR, 'static2/')
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -192,4 +194,5 @@ EMAIL_USE_TLS = True
 # 이건 내 정보여서 숨김처리했음!
 EMAIL_HOST_USER = os.environ.get('4cutarchive@gmail.com')
 EMAIL_HOST_PASSWORD = os.environ.get('piro4cut')
+
 
