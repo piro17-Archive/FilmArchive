@@ -299,20 +299,137 @@
 }
 
 /* footer */
-/* footer {
-  position: absolute;
-  height: 6rem;
-  width: 100%;
-  padding: 2rem 5rem;
-  background-color: var(--main-color);
-  bottom: 0;
+@media screen and (max-width: 570px) {
+  footer {
+    padding: 0 5% 4rem 5%;
+    display: flex;
+  }
+
+  .footer__flex-left {
+    width: 25%;
+  }
+
+  .footer__title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--main-color);
+  }
+
+  .footer__subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--main-gray600);
+    margin-top: 0.5rem;
+  }
+
+  .footer__flex-right {
+    width: 75%;
+    display: flex;
+    justify-content: right;
+    font-size: 0.7rem;
+    color: var(--main-gray600);
+  }
+
+  .footer__flex-right div {
+    margin-bottom: 0.2rem;
+    margin-right: 0.5rem;
+  }
+
+  #footer__name {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--main-color);
+  }
 }
 
-.wrap {
-  min-height: 100%;
-  position: relative;
-  padding-bottom: 60px;
-} */
+@media screen and (min-width: 570px) and (max-width: 1024px) {  
+  footer {
+    padding: 0 10% 6rem 10%;
+    display: flex;
+  }
+
+  .footer__flex-left {
+    width: 35%;
+  }
+
+  .footer__title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--main-color);
+  }
+
+  .footer__subtitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--main-gray600);
+    margin-top: 0.5rem;
+  }
+
+  .footer__flex-right {
+    width: 65%;
+    display: flex;
+    justify-content: right;
+    font-size: 1rem;
+    color: var(--main-gray600);
+  }
+
+  .footer__flex-right div {
+    margin-bottom: 0.2rem;
+    margin-right: 1rem;
+  }
+
+  #footer__name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--main-color);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  footer {
+    padding: 0 15% 6rem 15%;
+    display: flex;
+  }
+
+  .footer__flex-left {
+    width: 60%;
+  }
+
+  .footer__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--main-color);
+  }
+
+  .footer__subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--main-gray600);
+    margin-top: 0.5rem;
+  }
+
+  .footer__flex-right {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    color: var(--main-gray600);
+  }
+
+  .footer__flex-right div {
+    margin-bottom: 0.2rem;
+  }
+
+  #footer__name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--main-color);
+  }
+}
+
 
 /* main swiper */
 .slide-button {

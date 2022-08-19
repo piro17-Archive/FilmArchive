@@ -304,16 +304,33 @@
         </div>
       </main>
     </div>
-    {% endblock content %}
-    <!-- <footer>
-      <h6>@ 네 컷 Archive</h6>
-      <div>
-        <a href="">서비스 소개</a>
-        <a href="">커뮤니티</a>
-        <a href="">About us</a>
+    <footer>
+      <div class="footer__flex-left">
+        <div class="footer__title">@FourCutArchive</div>
+        <div class="footer__subtitle">편리한 네 컷 사진 기록 서비스</div>
       </div>
-      <p>서비스 소개 내용 쓰기</p>
-    </footer> -->
+      <div class="footer__flex-right">
+        <div>
+          <div id="footer__name">서비스 소개</div>
+          <div>My 네 컷 앨범</div>
+          <div>포토부스 위치</div>
+          <div>제작프레임 공유</div>
+          <div>한정판 프레임</div>
+        </div>
+        <div>
+          <div id="footer__name">커뮤니티</div>
+          <div>공지사항</div>
+          <div>자유게시판</div>
+          <div>제작프레임 공유</div>
+        </div>
+        <div>
+          <div id="footer__name">About us</div>
+          <div>서비스 소개</div>
+          <div>CONTACT US</div>
+        </div>
+      </div>
+    </footer>
+    {% endblock content %}
     <script src="{% static 'js/navbar.js' %}"></script>
     <script src="{% static 'js/albumswiper.js' %}"></script>
     <script src="{% static 'js/mainswiper.js' %}"></script>

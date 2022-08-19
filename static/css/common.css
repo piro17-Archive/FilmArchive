@@ -8,8 +8,9 @@ html {
   min-height: 100%;
 }
 
-body {
+body, main {
   line-height: normal;
+  min-height: 100%;
 }
 
 a {
