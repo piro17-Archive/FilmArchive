@@ -27,14 +27,14 @@
         </div>
       </div>
       <div class="mypage__right">
-        <div class="mypage__storage-title">나의 찜 목록</div>
+        <div class="mypage__storage-flex">
+          <div class="mypage__storage-title">저장목록</div>
+          <div><a href="{% url 'users:saved_detail' %}">더보기<img src="{% static 'image/chevron-right.svg' %}" class="arrow-icon"></a></div>
+        </div>
         <div class="mypage__hr"></div>
         <div class="mypage__storage-box">
           <!-- <div class="mypage__storage"><img src="" alt="" /></div> -->
           <!--여기에 찜한 아이들이 들어감-->
-          <div>
-            <a href="{% url 'users:saved_detail' %}">찜한 프레임 모두보기</a> 
-          </div>
           <div>
             {% for savedframe in save %}
             {% if savedframe.framephoto %}
