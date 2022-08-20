@@ -18,14 +18,17 @@
         </div>
         <div>
           <div class="albumupdate__photo">
-            <span id="albumupdate__phototitle">동영상</span> 
             {%if albuminfo.albumvideo %} 
+            <span id="albumupdate__phototitle">동영상</span> 
             <div class="box">{{albuminfo.albumvideo.url}}</div>
             <input type="checkbox" name="clearvideo" value="clearvideo" id="clearvideo"/>
             <label for="clearvideo">clear</label>
-            {%endif%}
           </div>
           <input type="file" name="albumvideo" id="albumphoto1" />
+          {% else %}
+          <span>동영상</span> 
+          <input type="file" name="albumvideo" id="albumphoto2"/>
+          {%endif%}
         </div>
         <div>
           <span>날짜</span>
