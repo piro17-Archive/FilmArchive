@@ -296,10 +296,10 @@ def like_ajax(request):
     print(1)
     today = date.today()
     req = json.loads(request.body)
-    comment_id = req['id']
+    post_id = req['id']
     button_type = req['type']
 
-    sltframe = Frame.objects.get(id = comment_id)
+    sltframe = Frame.objects.get(id = post_id)
     if button_type == 'like':
         button_type = 'dislike'
         sltframe.framelikeuser.remove(request.user)
@@ -313,12 +313,13 @@ def like_ajax(request):
 
     else:
         button_type = 'like'
+        print("liked")
         sltframe.framelikeuser.add(request.user)
         sltframe.framelikedate = sltframe.framelikedate+str(request.user)+str(today)+'/'
         sltframe.save()
     sltframe.save()
 
-    return JsonResponse({'id': comment_id, 'type': button_type})
+    return JsonResponse({'id': post_id, 'type': button_type})
 
 
 @csrf_exempt
