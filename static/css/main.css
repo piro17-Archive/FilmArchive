@@ -823,7 +823,7 @@
 /* main info */
 @media screen and (max-width: 600px) {
   .info-container {
-    padding: 3rem 15%;
+    padding: 3rem 7%;
     text-align: center;
   }
 
@@ -846,7 +846,7 @@
     background: white;
     width: 20%;
     height: 0;
-    padding: 9% 0;
+    padding: 10% 0;
     border-radius: 50%;
     margin: 0 0.2rem;
   }
@@ -856,8 +856,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 0.5rem;
-    font-weight: 800;
+    font-size: 0.7rem;
+    font-weight: 600;
   }
 
   .info__flex-box img {
@@ -969,7 +969,7 @@
 /* main archive */
 @media screen and (max-width: 600px) {
   .archive-container {
-    padding: 5rem 15% 12rem 15%;
+    padding: 5rem 10% 12rem 10%;
   }
 
   .archive {
@@ -1209,7 +1209,7 @@
 /* main page1 */
 @media screen and (max-width: 600px) {
   .page1-container {
-    padding: 4rem 15%;
+    padding: 4rem 7%;
   }
 
   .page1__flex-box {
@@ -1303,6 +1303,7 @@
 
 @media screen and (min-width: 1024px) {
   .page1-container {
+    height: 100%;
     padding: 10rem 15%;
   }
 
@@ -1357,7 +1358,7 @@
 /* main page2 */
 @media screen and (max-width: 600px) {
   .page2-container {
-    padding: 4rem 15%;
+    padding: 4rem 7%;
   }
 
   .page2__flex-box {
@@ -1515,7 +1516,7 @@
 /* main page3 */
 @media screen and (max-width: 600px) {
   .page3-container {
-    padding: 4rem 15%;
+    padding: 4rem 7%;
   }
 
   .page3__flex-box {
@@ -1677,7 +1678,7 @@
 /* main page4 */
 @media screen and (max-width: 600px) {
   .page4-container {
-    padding: 4rem 15% 0 15%;
+    padding: 4rem 7% 0 7%;
   }
 
   .page4__flex-box {
@@ -1802,7 +1803,7 @@
 /* main page5 */
 @media screen and (max-width: 600px) {
   .page5-container {
-    padding: 4rem 15%;
+    padding: 4rem 7%;
   }
 
   .page5__flex-box {
