@@ -1,17 +1,19 @@
 {% extends 'users/main.html' %} {% block content %} {% load static %}
-<main class="mypage">
-  <div>
-    <h1>나의 찜 목록</h1>
-    <hr/>
-  </div>
-    <div>
+<main>
+  <div class="mypagedetail__container">
+    <div class="mypagedetail__title">저장목록</div>
+    <div class="mypagedetail__hr"></div>
+    <div class="mypagedeatil__grid-box">
       {% for savedframe in save %}
       {% if savedframe.framephoto %}
+      <div class="mypagedetail__grid-img">
         <a href="{%url 'framesharings:framedetail' savedframe.id %}">
-            <img src="{{ savedframe.framephoto.url }}" alt="프레임사진" style="width:270px;height:392px"/>
+          <img src="{{ savedframe.framephoto.url }}" alt="프레임사진" style="width:270px;height:392px"/>
         </a>
+      </div>
       {% endif %}
       {% endfor%}
     </div>
+  </div>
 </main>
 {% endblock content %}

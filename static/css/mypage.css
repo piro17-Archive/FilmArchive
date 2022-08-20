@@ -85,13 +85,14 @@
 
   .mypage__storage-title {
     font-size: 1.5rem;
+    font-weight: 800;
   }
 
   .mypage__hr {
     background: var(--main-color);
     border-color: var(--main-color);
     margin: 1.5rem 0 3.5rem 0;
-    height: 0.15rem;
+    height: 0.2rem;
   }
 
   .mypage__right .mypage__storage-box {
@@ -103,6 +104,20 @@
     background: var(--main-background);
     margin-bottom: 2rem;
     height: 12rem;
+  }
+
+  .mypage__storage-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mypage__storage-flex div a {
+    font-size: 1.2rem;
+  }
+
+  .mypage__storage-flex .arrow-icon {
+    margin-top: 0.5rem;
   }
 }
 
@@ -178,13 +193,14 @@
 
   .mypage__storage-title {
     font-size: 1.5rem;
+    font-weight: 800;
   }
 
   .mypage__hr {
     background: var(--main-color);
     border-color: var(--main-color);
     margin: 1rem 0 3rem 0;
-    height: 0.15rem;
+    height: 0.2rem;
   }
 
   .mypage__right {
@@ -206,6 +222,20 @@
 
   .mypage__right .mypage__storage-box .mypage__storage:last-child {
     margin-right: 0;
+  }
+
+  .mypage__storage-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mypage__storage-flex div a {
+    font-size: 1.3rem;
+  }
+
+  .mypage__storage-flex .arrow-icon {
+    margin-top: 0.5rem;
   }
 }
 
@@ -281,13 +311,14 @@
 
   .mypage__storage-title {
     font-size: 1.7rem;
+    font-weight: 800;
   }
 
   .mypage__hr {
     background: var(--main-color);
     border-color: var(--main-color);
     margin: 1.5rem 0 3.5rem 0;
-    height: 0.15rem;
+    height: 0.2rem;
   }
 
   .mypage__right {
@@ -309,6 +340,20 @@
 
   .mypage__right .mypage__storage-box .mypage__storage:last-child {
     margin-right: 0;
+  }
+
+  .mypage__storage-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mypage__storage-flex div a {
+    font-size: 1.5rem;
+  }
+
+  .mypage__storage-flex .arrow-icon {
+    margin-top: 0.5rem;
   }
 }
 
@@ -1165,5 +1210,55 @@
     background: var(--main-color);
     color: white;
     transition: 0.2s;
+  }
+}
+
+/* 저장목록 */
+@media screen and (max-width: 480px) { 
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) { 
+}
+
+@media screen and (min-width: 1024px) {
+  .mypagedetail__container {
+    margin: 4rem 10%;
+  }
+
+  .mypagedetail__title {
+    font-weight: 800;
+    font-size: 2.1rem;
+    color: var(--main-color);
+    margin: 1rem 0;
+    padding: 0 2rem;
+  }
+
+  .mypagedetail__hr {
+    background-color: var(--main-color);
+    height: 0.2rem;
+    margin-bottom: 4rem;
+  }
+
+  .mypagedeatil__grid-box {
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-gap: 2rem;
+  }
+
+  .mypagedetail__grid-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(241, 241, 241);
+    width: 100%;
+    height: 25rem;
+    overflow: hidden;
+  }
+
+  .mypagedetail__grid-img a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }
