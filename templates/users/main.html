@@ -77,11 +77,11 @@
                 
                 <li><a class="nav-link nav-link-fade-up" href="{% url 'recommends:map' %}">포토부스 위치</a></li>
 
-                {%if user.is_authenticated %}
+                
                 <li><a class="nav-link nav-link-fade-up" href="{% url 'framesharings:frame' %}">제작프레임 공유</a></li>
-                {% else %}
-                <li><a class="nav-link nav-link-fade-up" href="{% url 'users:login' %}">제작프레임 공유</a></li>
-                {% endif %}
+                
+                <!-- <li><a class="nav-link nav-link-fade-up" href="{% url 'users:login' %}">제작프레임 공유</a></li> -->
+                
 
                 <li><a class="nav-link nav-link-fade-up" href="{% url 'limitedframes:limited'%}">한정판 프레임</a></li>
                 <li class="main__navbar-btn">
