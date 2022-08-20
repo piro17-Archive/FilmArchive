@@ -2,6 +2,11 @@ const swiper = new Swiper('.swiper', {
   direction: 'vertical',
   loop: true,
 
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: false,
+  // },
+
   pagination: {
     el: '.swiper-pagination',
   },
