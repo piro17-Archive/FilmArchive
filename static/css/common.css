@@ -93,3 +93,15 @@ textarea, button, select {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
 }
+
+input::-ms-clear,
+input::-ms-reveal{
+    display:none;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration{
+    display:none;
+}

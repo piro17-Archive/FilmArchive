@@ -66,7 +66,7 @@
 
   .frame__search form input {
     background-color: white;
-    padding: 0.7rem;
+    padding: 0.7rem 3.5rem 0.7rem 0.7rem;
     border: 1px solid var(--main-gray600);
     border-radius: 0.5rem;
     width: 100%;
@@ -204,7 +204,7 @@
   }
   .frame__search form input {
     background-color: white;
-    padding: 0.7rem;
+    padding: 0.7rem 3.5rem 0.7rem 0.7rem;
     border: 1px solid var(--main-gray600);
     border-radius: 0.5rem;
     width: 100%;
@@ -358,7 +358,7 @@
   }
   .frame__search form input {
     background-color: white;
-    padding: 0.7rem;
+    padding: 0.7rem 3.5rem 0.7rem 0.7rem;
     border: 1px solid var(--main-gray600);
     border-radius: 0.5rem;
     width: 100%;
