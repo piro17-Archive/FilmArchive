@@ -418,17 +418,15 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-
   }
 
   .frame__frametitle {
     width: 90%;
     font-size: 1.8rem;
-    margin 0 auto;
+    margin: 0 auto;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-
   }
 
   .frame__btn__section{

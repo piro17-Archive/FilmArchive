@@ -17,17 +17,15 @@
           <input type="file" name="albumphoto" id="albumphoto1" />
         </div>
         <div>
-          <span>동영상</span> 
-          {%if albuminfo.albumvideo %} 
-          {{albuminfo.albumvideo.url}}
-          <input
-            type="checkbox"
-            name="clearvideo"
-            value="clearvideo"
-            id="clearvideo"
-          /><label for="clearvideo">clear</label>
-          {%endif%}
-          <input type="file" name="albumvideo" />
+          <div class="albumupdate__photo">
+            <span id="albumupdate__phototitle">동영상</span> 
+            {%if albuminfo.albumvideo %} 
+            <div class="box">{{albuminfo.albumvideo.url}}</div>
+            <input type="checkbox" name="clearvideo" value="clearvideo" id="clearvideo"/>
+            <label for="clearvideo">clear</label>
+            {%endif%}
+          </div>
+          <input type="file" name="albumvideo" id="albumphoto1" />
         </div>
         <div>
           <span>날짜</span>

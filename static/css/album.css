@@ -1556,15 +1556,14 @@
   }
 
   #albumupdate__phototitle {
-    margin: 0 0 0 1.8rem;
+    width: 6rem;
   }
 
   .box {
-    width: 30rem;
+    width: 20rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin-left: 1.5rem;
   }
 
   #albumphoto1 {
@@ -1673,15 +1672,16 @@
   }
 
   #albumupdate__phototitle {
-    margin: 0 0 0 1.8rem;
+    width: 7rem;
+    margin-right: 1rem;
   }
 
   .box {
-    width: 30rem;
+    width: 25rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin-left: 1.5rem;
+    margin-left: 0.5rem;
   }
 
   #albumphoto1 {
@@ -1790,7 +1790,7 @@
   }
 
   .box {
-    width: 30rem;
+    width: 25rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
