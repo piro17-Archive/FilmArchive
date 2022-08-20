@@ -68,7 +68,88 @@
   width:36px;
     height:37px;
   margin:10px 0 0 10px;
-  background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;
+  background:url(/static/image/marker_number_blue.png) no-repeat;
+}
+/* https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png */
+#placesList .item .markerbg2 {
+  float:left;
+  position:absolute;
+  width:36px;
+    height:37px;
+  margin:10px 0 0 10px;
+  background:url(/static/image/marker_number_blue2.png) no-repeat;
+}
+#placesList .item .markerbg3 {
+  float:left;
+  position:absolute;
+  width:36px;
+    height:37px;
+  margin:10px 0 0 10px;
+  background:url(/static/image/marker_number_blue3.png) no-repeat;
+}
+#placesList .item .markerbg4 {
+  float:left;
+  position:absolute;
+  width:36px;
+    height:37px;
+  margin:10px 0 0 10px;
+  background:url(/static/image/marker_number_blue4.png) no-repeat;
+}
+#placesList .item .markerbg5 {
+  float:left;
+  position:absolute;
+  width:36px;
+    height:37px;
+  margin:10px 0 0 10px;
+  background:url(/static/image/marker_number_blue5.png) no-repeat;
+}
+#placesList .item .markerbg6 {
+  float:left;
+  position:absolute;
+  width:36px;
+    height:37px;
+  margin:10px 0 0 10px;
+  background:url(/static/image/marker_number_blue6.png) no-repeat;
+}
+#placesList .item .markerbg7 {
+  float:left;
+  position:absolute;
+  width:36px;
+    height:37px;
+  margin:10px 0 0 10px;
+  background:url(/static/image/marker_number_blue7.png) no-repeat;
+}
+#placesList .item .markerbg8 {
+  float:left;
+  position:absolute;
+  width:36px;
+    height:37px;
+  margin:10px 0 0 10px;
+  background:url(/static/image/marker_number_blue8.png) no-repeat;
+}
+#placesList .item .markerbg9 {
+  float:left;
+  position:absolute;
+  width:36px;
+    height:37px;
+  margin:10px 0 0 10px;
+  background:url(/static/image/marker_number_blue9.png) no-repeat;
+}
+#placesList .item .markerbg10 {
+  float:left;
+  position:absolute;
+  width:36px;
+    height:37px;
+  margin:10px 0 0 10px;
+  background:url(/static/image/marker_number_blue10.png) no-repeat;
+}
+#placesList .item .markerbg11 {
+  float:left;
+  position:absolute;
+  width:36px;
+    height:37px;
+  margin:10px 0 0 10px;
+  background:url(/static/image/marker_number_blue11.png) no-repeat;
 }
 
 #placesList .item .marker_1 {

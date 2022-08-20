@@ -1,11 +1,29 @@
 {% extends 'users/main.html' %} {% block content %}
 {% load static %}
 <main>
+  <div class="modal hidden">
+		<div class="bg"></div>
+		<div class="modalBox">
+			<div class="modal-title">
+				<h2>로그인을 해주세요.</h2>
+			</div>
+			<div class="modal-btn">
+				<button class="closeBtn" id="btn-cancle">닫기</button>
+        <button ><a href ="{% url 'users:login' %}">로그인하기</a></button>
+			</div>
+		</div>
+	</div>
+
+
   <div class="frame__container">
     <div class="frame__flex-box">
       <div class="frame__left">
         <div class="frame__title">제작프레임 공유</div>
+        {% if user.is_authenticated %}
         <a href="/framecreate" class="frame__create"><i class="fa-solid fa-circle-plus"></i></a>
+        {% else %}
+        <a  class="frame__create openBtn"><i class="fa-solid fa-circle-plus"></i></a>
+        {% endif %}
       </div>
       <div class="frame__right">
         <div class="frame__sort">
@@ -51,11 +69,16 @@
         <div class="ranking__one-box grid__one-box">
           <div class="img-box">
             <div class="grid__img">
+              {% if user.is_authenticated %}
               <a href="{%url 'framesharings:framedetail' frameweekinfo.id %}">
+                {% else %}
+                <a class="openBtn">
+                {% endif%}
                 <img src="{{ frameweekinfo.framephoto.url }}" alt="프레임사진"/>
               </a>
             </div>
             <div class="frame__btn__section">
+              {% if user.is_authenticated %}
               {% if frameweekinfo in save %}
               <button class="bookmarkBtn bookmarkactive" id="butweeksave{{frameweekinfo.id}}" onclick="onClickSave( {{frameweekinfo.id}},'save' )" name="save" value="{{frameweekinfo.id}}"><i class="fa-solid fa-bookmark"></i></button>
               {% else %}
@@ -66,6 +89,10 @@
                 {% else %}
                 <button class="recommendBtn" id="butweeklike{{frameweekinfo.id}}" onclick="onClickLike( {{frameweekinfo.id}},'dislike' )" name="like" value="{{frameweekinfo.id}}"><i class="fa-regular fa-heart"></i></button>
                 {% endif %}
+                {% else %}
+                <a class="openBtn bookmarkBtn" ><i class="openBtn fa-regular fa-bookmark "></i></a>
+                <a class="recommendBtn openBtn"><i class="fa-regular fa-heart openBtn"></i></a>
+                {% endif%}
             </div>
           </div>
 
@@ -87,11 +114,16 @@
         <div class="frame__one-box grid__one-box">
           <div class="img-box">
             <div class="grid__img">
+              {% if user.is_authenticated %}
               <a href="{%url 'framesharings:framedetail' frameinfo.id %}">
+                {% else %}
+                <a class="openBtn">
+                {% endif%}
                 <img src="{{ frameinfo.framephoto.url }}" alt="프레임사진"/>
               </a>
             </div>
             <div class="frame__btn__section">
+              {% if user.is_authenticated %}
               {% if frameinfo in save %}
               <button class="bookmarkBtn bookmarkactive" id="butsave{{frameinfo.id}}" onclick="onClickSave( {{frameinfo.id}},'save' )" name="save" value="{{frameinfo.id}}"><i class="fa-solid fa-bookmark"></i></button>
               {% else %}
@@ -102,6 +134,10 @@
               {% else %}
               <button class="recommendBtn" id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'dislike' )" name="like" value="{{frameinfo.id}}"><i class="fa-regular fa-heart"></i></button>
               {% endif %}
+              {% else %}
+                <a class="openBtn bookmarkBtn" ><i class="openBtn fa-regular fa-bookmark "></i></a>
+                <a class="recommendBtn openBtn"><i class="fa-regular fa-heart openBtn"></i></a>
+                {% endif%}
             </div>
           </div>
 
@@ -212,5 +248,17 @@
             }
         }
     }
+const open = () => {
+  document.querySelector(".modal").classList.remove("hidden");
+}
+
+const close = () => {
+  document.querySelector(".modal").classList.add("hidden");
+}
+
+document.querySelector(".openBtn").addEventListener("click", open);
+document.querySelector(".closeBtn").addEventListener("click", close);
+document.querySelector(".bg").addEventListener("click", close);
+
 </script>
 {% endblock content %}
