@@ -18,7 +18,7 @@
 					<form action="{% url 'albums:album' user.id %}" >
 						<select name="sort" onchange="this.form.submit()">
 							<option selected="selected"  value="none">정렬기준</option>
-							<option value="1">날짜순</option>
+							<option value="1">오래된순</option>
 							<option value="2">최신순</option>
 						</select>
 					</form>
@@ -36,17 +36,20 @@
 			<div class="album__box">
 				{% for albuminfo in allalbum %}
 				<div class="album__one-box">
-					<div class="album__photo-date">{{albuminfo.albumdate}}</div>
 					<div class="album__img">
 						{% if albuminfo.albumphoto %}
 						<a href="/albumdetail/{{albuminfo.id}}" class="album__photo__id">
 							<img src="{{ albuminfo.albumphoto.url }}">
 						</a>
-						{% else %}
-						<a href="/albumdetail/{{albuminfo.id}}" class="album__photo__id">
-							<span class="photo__none">사진이 존재하지 않습니다.</span>
-						</a>
 						{% endif %}
+					</div>
+					<div class="album__photo-date">
+						<img src="{% static 'image/album_check.svg' %}" alt="캘린더체크 아이콘">
+						<span class="date__content">{{albuminfo.albumdate}}</span>
+					</div>
+					<div class="album__location">
+						<img src="{% static 'image/album_location.svg' %}" alt="위치핀 아이콘">
+						<span class="location__content">{{albuminfo.albumlocation}}</span>
 					</div>
 				</div>
 				{% endfor %}
