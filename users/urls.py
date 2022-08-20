@@ -18,6 +18,7 @@ urlpatterns = [
     re_path(r'^mypage/myupdate$', views.user_update, name="user_update"),
     re_path(r'^mypage/changepw$', views.change_pw, name="change_pw"),
     re_path(r'^mypage/update-profpic$', views.profile_update, name="update_profpic"),
+    re_path(r'^mypage/saved-detail$', views.saved_detail, name="saved_detail"),
     re_path(r'^password-reset/$', PasswordResetView.as_view(template_name='registration/password_reset_form.html', form_class=UserPasswordResetForm), name='reset_password'),
     re_path(r'^password-reset/done/$', PasswordResetDoneView.as_view(template_name='registration/password_reset_done.html'), name='password_reset_done'),
     re_path(r'^password-reset-confirm/<uidb64>/<token>/$', PasswordResetConfirmView.as_view(template_name='registration/password_reset_confirm.html'), name='password_reset_confirm'),
