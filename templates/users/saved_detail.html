@@ -1,0 +1,17 @@
+{% extends 'users/main.html' %} {% block content %} {% load static %}
+<main class="mypage">
+  <div>
+    <h1>나의 찜 목록</h1>
+    <hr/>
+  </div>
+    <div>
+      {% for savedframe in save %}
+      {% if savedframe.framephoto %}
+        <a href="{%url 'framesharings:framedetail' savedframe.id %}">
+            <img src="{{ savedframe.framephoto.url }}" alt="프레임사진" style="width:270px;height:392px"/>
+        </a>
+      {% endif %}
+      {% endfor%}
+    </div>
+</main>
+{% endblock content %}
