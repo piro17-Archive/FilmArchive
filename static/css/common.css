@@ -5,11 +5,12 @@
 html {
   font-size: 62.5%;
   background: var(--main);
-  /* 1rem = 10px */
+  min-height: 100%;
 }
 
-body {
+body, main {
   line-height: normal;
+  min-height: 100%;
 }
 
 a {
@@ -38,25 +39,11 @@ ul {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 0.1;
+  z-index: 2;
 }
 
 button {
   cursor: pointer;
-}
-
-html, body {
-  height: 100%;
-}
-
-#wrap {
-  min-height: 100%;
-  position: relative;
-  padding-bottom: 60px;
-}
-
-footer {
-  bottom: 0;
 }
 
 .navbar-background {
@@ -80,11 +67,11 @@ footer {
 
 @media screen and (min-width: 475px) and (max-width: 1024px) { 
   .nav-padding {
-    height: 6rem;
+    height: 8rem;
   }
 
   .nav-nopadding {
-    transform:translate(0, -6rem);
+    transform:translate(0, -8rem);
   }
 }
 

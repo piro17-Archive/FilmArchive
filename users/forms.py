@@ -2,7 +2,7 @@ from cProfile import Profile
 from django import forms
 from .models import User
 from .models import Profile
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, PasswordResetForm
 from django.contrib.auth.hashers import check_password
 
 
@@ -30,6 +30,15 @@ class SignupForm(UserCreationForm):
         model = User
         fields = ["username", "email", "password1", "password2", "name", "nickname"]
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['username']
+        self.fields['email'].widget.attrs.update({'placeholder': 'example@example.com'})
+        self.fields['password1'].widget.attrs.update({'placeholder':'숫자+ 대/소문자 8자리 이상'})        
+        self.fields['password2'].widget.attrs.update()
+        self.fields['name'].widget.attrs.update()
+        self.fields['nickname'].widget.attrs.update()
 
 class MyUpdateForm(forms.ModelForm):
     class Meta:
@@ -69,10 +78,9 @@ class CheckPasswordForm(forms.Form):
                 self.add_error('password', '비밀번호가 일치하지 않습니다.')
 
 
-
 class FindUsernameForm(forms.Form):
-    name = forms.CharField(label='name', widget=forms.TextInput(attrs={'class': 'form-control',}))
-    email = forms.EmailField(label='email', widget=forms.EmailInput(attrs={'class': 'form-control',}))
+    name = forms.CharField(label='name', widget=forms.TextInput(attrs={'class': 'form-control'}))
+    email = forms.EmailField(label='email', widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'example@example.com',}))
 
     class Meta:
         model = User
@@ -90,3 +98,14 @@ class FindUsernameForm(forms.Form):
             'class': 'form-control',
             'id': 'form_email' 
         })
+
+
+# placeholder 생성을 위한 django form 커스텀
+class UserPasswordResetForm(PasswordResetForm):
+    def __init__(self, *args, **kwargs):
+        super(UserPasswordResetForm, self).__init__(*args, **kwargs)
+
+    email = forms.EmailField(label='', widget=forms.EmailInput(attrs={
+        'placeholder': 'example@example.com',
+        'name': 'email'
+        }))

@@ -575,6 +575,18 @@
     color: white;
     transition: 0.2s;
   }
+
+  #framephoto {
+    margin-bottom: 0;
+  }
+
+  .framecreate__info .messages {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--main-red);
+    margin-left: 8rem;
+    margin-bottom: 1rem;
+  }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
@@ -659,6 +671,18 @@
     color: white;
     transition: 0.2s;
   }
+
+  #framephoto {
+    margin-bottom: 0.2rem;
+  }
+
+  .framecreate__info .messages {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--main-red);
+    margin-left: 9.5rem;
+    margin-bottom: 1rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -707,7 +731,7 @@
   .framecreate__info div input[type="text"] {
     width: 30rem;
     height: 3.2rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     background-color: white;
@@ -716,7 +740,7 @@
   }
 
   .framecreate__info div textarea{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     background-color: white;
@@ -743,6 +767,18 @@
     background-color: var(--main-color);
     color: white;
     transition: 0.2s;
+  }
+
+  #framephoto {
+    margin-bottom: 0.2rem;
+  }
+
+  .framecreate__info .messages {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--main-red);
+    margin-left: 9.5rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -1186,6 +1222,26 @@
     font-size: 1.2rem;
     width: 7rem;
   }
+
+  .frameupdate__photo {
+    display: flex;
+  }
+
+  #frameupdate__phototitle {
+    margin: 0 0 0 0.8rem;
+  }
+
+  .framebox {
+    width: 22rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 1.5rem;
+  }
+
+  #framephoto1 {
+    margin: 0 0 1rem 8.8rem;
+  }
   
   .frameupdate__info div input {
     margin-bottom: 1.5rem;
@@ -1269,6 +1325,26 @@
     margin: 0 1.5rem 1.5rem 0;
     font-size: 1.4rem;
     width: 7rem;
+  }
+
+  .frameupdate__photo {
+    display: flex;
+  }
+
+  .framebox {
+    width: 25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 1.5rem;
+  }
+
+  #framephoto1 {
+    margin: 0 0 1rem 8.8rem;
+  }
+
+  #frameupdate__phototitle {
+    margin: 0 0 0 0.8rem;
   }
   
   .frameupdate__info div input {
@@ -1354,6 +1430,22 @@
     font-size: 1.6rem;
     width: 7rem;
   }
+
+  .frameupdate__photo {
+    display: flex;
+  }
+
+  .framebox {
+    width: 30rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 0.5rem;
+  }
+
+  #framephoto1 {
+    margin: 0 0 1rem 8.8rem;
+  }
   
   .frameupdate__info div input {
     margin-bottom: 1.5rem;
@@ -1366,7 +1458,7 @@
   .frameupdate__info div input[type="text"] {
     width: 30rem;
     height: 3.2rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     background-color: white;
@@ -1378,7 +1470,7 @@
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     background-color: white;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     width: 30rem;
     height: 17rem;
     padding: 1rem;

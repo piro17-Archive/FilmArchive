@@ -14,6 +14,15 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 from limitedframes.models import Signature
+#리눅스 여기추가
+from selenium.webdriver.chrome.options import Options
+
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument("--single-process")
+chrome_options.add_argument("--disable-dev-shm-usage")
+#-----------------------
 
 
 #이슈테스트
@@ -28,8 +37,12 @@ def parse_signature():
   result = []
 
   baseUrl = 'https://www.instagram.com/photosignature_official/'
+  #리눅스 여기추가
+  path = '/home/ubuntu/FilmArchive/chromedriver'
+  driver = webdriver.Chrome(path,chrome_options=chrome_options)
+  #----------------------------------
 
-  driver = webdriver.Chrome(executable_path='/Users/idoyun/dev/FilmArchive/chromedriver')
+#   driver = webdriver.Chrome(executable_path='/Users/idoyun/dev/FilmArchive/chromedriver')
   driver.get('https://www.instagram.com/accounts/login/')
   # driver.get(baseUrl)
   time.sleep(2)
@@ -54,9 +67,9 @@ def parse_signature():
   save_late_button1.click()
 
   driver.implicitly_wait(3)
-
-  save_late_button2 = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div/div/div/div[3]/button[2]')
-  save_late_button2.click()
+#리눅스 2번째 버튼제거 도윤이 임시계정사용 크롤링
+#   save_late_button2 = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div/div/div/div[3]/button[2]')
+#   save_late_button2.click()
 
   driver.get(baseUrl)
   time.sleep(5)

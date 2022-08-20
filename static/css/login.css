@@ -489,6 +489,12 @@
     color: white;
     transition: 0.2s;
   }
+
+  .find-username__info ul li{
+    color: var(--main-red);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
@@ -571,6 +577,12 @@
     background: var(--main-color);
     color: white;
     transition: 0.2s;
+  }
+
+  .find-username__info ul li{
+    color: var(--main-red);
+    font-size: 1.3rem;
+    font-weight: 600;
   }
 }
 
@@ -657,6 +669,12 @@
     background: var(--main-color);
     color: white;
     transition: 0.2s;
+  }
+
+  .find-username__info ul li{
+    color: var(--main-red);
+    font-size: 1.4rem;
+    font-weight: 600;
   }
 }
 

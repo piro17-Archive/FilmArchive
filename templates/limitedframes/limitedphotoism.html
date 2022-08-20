@@ -2,12 +2,12 @@
 <main>
   <div class="morepage--container">
     <div class="morepage--header">
-      <div class="morepage--title">포토이즘</div>
       <a href="{% url 'limitedframes:limited' %}" class="goto--home">
-        <i class="fa-solid fa-house"></i>
+        <i class="fa-solid fa-angle-left"></i>
       </a>
+      <div class="morepage--title">포토이즘</div>
     </div>
-    <div class="line"></div>
+    <div class="morepage--line"></div>
 
     <div class="detail--photo--grid">
       {% for photoisminfo in photoisminfo %}
