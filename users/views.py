@@ -28,6 +28,8 @@ def date_range(start, end):
     end = datetime.strptime(end, "%Y-%m-%d")
     dates = [(start + timedelta(days=i)).strftime("%Y-%m-%d") for i in range((end-start).days+1)]
     return dates
+    
+
 def start(request):
     # return render(request, "main.html")
     #새로추가
@@ -89,7 +91,6 @@ class LoginView(View):
         return render(request, "users/login.html", context=context)
 
 
-@method_decorator(csrf_exempt)
 @login_required(login_url='login')
 def Log_out(request):
     logout(request)
@@ -102,7 +103,6 @@ def sign_up(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            logout(request)
             return render(request, "users/main.html")
         return redirect("users:sign_up")
     else:
@@ -112,10 +112,19 @@ def sign_up(request):
 
 def mypage(request):
     users=User.objects.all()
+    save = request.user.saveMany.all().order_by('-id')[:8]
     context={
         "users": users,
+        "save": save,
     }
     return render(request, "users/mypage.html", context=context)
+
+def saved_detail(request):
+    save = request.user.saveMany.all().order_by('-id')
+    context = {
+        "save": save,
+    }
+    return render(request, "users/saved_detail.html", context=context)
 
 
 @login_required(login_url='login')
