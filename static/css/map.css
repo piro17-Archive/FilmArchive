@@ -1,3 +1,19 @@
+.map-input {
+  display: none;
+}
+
+.map-btn {
+  border: 1px solid var(--main-gray400);
+  border-radius: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  background: white;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0 1rem 1rem 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
 .bg_white {
   background:#fff;
 }
