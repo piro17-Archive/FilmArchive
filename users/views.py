@@ -83,8 +83,7 @@ class LoginView(View):
             if user is not None:
                 login(request, user)
                 return render(request, "users/main.html")
-            else:
-                return HttpResponse('로그인 실패. 다시 시도 해보세요.')
+        messages.error(request, '아이디 또는 비밀번호를 잘못 입력했습니다. 입력하신 내용을 다시 확인해주세요.')
         context = {
             "forms":form,
         }
@@ -198,26 +197,6 @@ def profile_update(request):
 #     post.save()
 
 #     return JsonResponse({'id': post_id, 'type': button_type})
-
-
-
-# def delete_user(request, username):
-#     context = {}
-
-#     if request.method == "POST":
-#         try:
-#             u = User.objects.get(username=username)
-#             u.delete()
-#             context['msg'] = '회원 탈퇴가 성공적으로 완료되었습니다.'     
-#             return redirect('users:main')
-
-#         except User.DoesNotExist: 
-#             context['msg'] = '존재하지 않는 회원입니다.'
-
-#         except Exception as e: 
-#             context['msg'] = e.message
-
-#     return render(request, 'users/delete_user.html', context=context) 
 
 
 @login_required(login_url='login')
