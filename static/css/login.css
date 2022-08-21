@@ -133,6 +133,12 @@
   .naver-btn {
     margin: 0 2rem;
   }
+
+  #login-error {
+    font-size: 1rem;
+    color: var(--main-red);
+    margin-bottom: 0.3rem;
+  }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
@@ -269,11 +275,17 @@
   .naver-btn {
     margin: 0 3rem;
   }
+
+  #login-error {
+    font-size: 1.2rem;
+    color: var(--main-red);
+    margin-bottom: 0.5rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .login--section {
-    width: 45rem;
+    width: 50rem;
     margin: 5rem auto;
     text-align: center;
     padding: 5rem 0;
@@ -297,7 +309,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 5rem 0 4rem 0;
+    margin: 7rem 0 6rem 0;
   }
 
   .login--input {
@@ -404,6 +416,12 @@
   
   .naver-btn {
     margin: 0 3rem;
+  }
+
+  #login-error {
+    font-size: 1.3rem;
+    color: var(--main-red);
+    margin-bottom: 0.5rem;
   }
 }
 

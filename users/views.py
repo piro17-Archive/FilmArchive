@@ -83,7 +83,8 @@ class LoginView(View):
             if user is not None:
                 login(request, user)
                 return render(request, "users/main.html")
-        messages.error(request, '아이디 또는 비밀번호를 잘못 입력했습니다. 입력하신 내용을 다시 확인해주세요.')
+        messages.error(request, '아이디 또는 비밀번호를 잘못 입력했습니다.')
+        messages.error(request, '입력하신 내용을 다시 확인해주세요.')
         context = {
             "forms":form,
         }
