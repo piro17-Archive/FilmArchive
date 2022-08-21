@@ -1,5 +1,4 @@
 /* frame */
-
 .css-toggle-switch { display: none; }
 .css-toggle-switch         + label:before{ content: "키워드 숨기기"; }
 .css-toggle-switch:checked + label:before { content: "키워드 보기"; }
