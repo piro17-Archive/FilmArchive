@@ -1462,6 +1462,13 @@
   color: var(--main-color);
 }
 
+.framedetail__update:hover,
+.framedetail__delete .openBtn:hover{
+  background-color: var(--main-color);
+  color: white;
+  outline: none;
+  transition: 0.2s;
+}
 
 /* frameupdate */
 @media screen and (max-width: 480px) {
