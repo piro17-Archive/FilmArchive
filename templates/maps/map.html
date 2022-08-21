@@ -4,17 +4,38 @@
     <div id="result" hidden></div>
     <div class="map__title">포토부스 위치</div>
     <div class="map__btn-box">
-      <div><button onclick="getCurrentPosBtn()" >내위치</button></div>
-      <div><button onclick="lifeinout()" >인생네컷</button></div>
-      <div><button onclick="signatureinout()" >포토시그니처</button></div>
-      <div><button onclick="photoisminout()">포토이즘</button></div>
-      <div><button onclick="Haurinout()">하루필름</button></div>
-      <div><button onclick="Selpixinout()">셀픽스</button></div>
-      <div><button onclick="Drinkinout()">포토드링크</button></div>
-      <div><button onclick="Grayinout()">포토그레이</button></div>
-      <div><button onclick="Thefilminout()">더필름</button></div>
-      <div><button onclick="Maticinout()">포토매틱</button></div>
-      <div><button onclick="Hongdaeinout()">홍대네컷</button></div>
+			<input type="checkbox" id="map__current" class="map-input" checked>
+			<label for="map__current" id="map__current-label" class="map-btn" onclick="getCurrentPosBtn()">내위치</label>
+
+      <input type="checkbox" id="map__lifeinout" class="map-input" checked>
+			<label for="map__lifeinout" id="map__lifeinout-label" class="map-btn" onclick="getCurrentPosBtn()">인생네컷</label>
+
+      <input type="checkbox" id="map__signatureinout" class="map-input" checked>
+			<label for="map__signatureinout" id="map__signatureinout-label" class="map-btn" onclick="getCurrentPosBtn()">포토시그니처</label>
+
+      <input type="checkbox" id="map__photoisminout" class="map-input" checked>
+			<label for="map__photoisminout" id="map__photoisminout-label" class="map-btn" onclick="getCurrentPosBtn()">포토이즘</label>
+
+      <input type="checkbox" id="map__Haurinout" class="map-input" checked>
+			<label for="map__Haurinout" id="map__Haurinout-label" class="map-btn" onclick="getCurrentPosBtn()">하루필름</label>
+
+      <input type="checkbox" id="map__Selpixinout" class="map-input" checked>
+			<label for="map__Selpixinout" id="map__Selpixinout-label" class="map-btn" onclick="getCurrentPosBtn()">셀픽스</label>
+
+      <input type="checkbox" id="map__Drinkinout" class="map-input" checked>
+			<label for="map__Drinkinout" id="map__Drinkinout-label" class="map-btn" onclick="getCurrentPosBtn()">포토드링크</label>
+
+      <input type="checkbox" id="map__Grayinout" class="map-input" checked>
+			<label for="map__Grayinout" id="map__Grayinout-label" class="map-btn" onclick="getCurrentPosBtn()">포토그레이</label>
+
+      <input type="checkbox" id="map__Thefilminout" class="map-input" checked>
+			<label for="map__Thefilminout" id="map__Thefilminout-label" class="map-btn" onclick="getCurrentPosBtn()">더필름</label>
+
+      <input type="checkbox" id="map__Maticinout" class="map-input" checked>
+			<label for="map__Maticinout" id="map__Maticinout-label" class="map-btn" onclick="getCurrentPosBtn()">포토매틱</label>
+
+      <input type="checkbox" id="map__Hongdaeinout" class="map-input" checked>
+			<label for="map__Hongdaeinout" id="map__Hongdaeinout-label" class="map-btn" onclick="getCurrentPosBtn()">홍대네컷</label>
     </div>
     <!-- <div><button onclick="valueChangeLife">인생네컷 찾기</button></div>
     <div><button onclick="getCurrentPosBtnphotoism()">내주변 포토이즘</button></div>
@@ -24,11 +45,11 @@
       <div id="menu_wrap" class="bg_white">
         <div class="option">
           <div hidden >
-            키워드 : <input type="text" value="" id="keyword" size="15"> 
+            키워드 <input type="text" value="" id="keyword" size="15"> 
             <button onclick="searchPlaces(); return false;">검색하기</button> 
           </div>
           <div >
-            장소 : <input type="text" value="" id="keyword2" size="15" placeholder="ex:신촌역"> 
+            장소 <input type="text" value="" id="keyword2" size="15" placeholder="ex) 신촌역"> 
             <button onclick="serchlo(); return false;">검색하기</button> 
           </div>
         </div>
@@ -228,11 +249,9 @@ var infowindow = new kakao.maps.InfoWindow({zIndex:1, disableAutoPan: true});
 var pslo = new kakao.maps.services.Places(); 
 function serchlo(){
 var keyword2 = document.getElementById('keyword2').value;
-console.log(keyword2)
 ps.keywordSearch(keyword2, placesSearchCB); 
 function placesSearchCB (data, status, pagination) {
     if (status === kakao.maps.services.Status.OK) {
-        console.log("테스트")
         // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
         // LatLngBounds 객체에 좌표를 추가합니다
         var placePosition = new kakao.maps.LatLng(data[0].y, data[0].x)
@@ -249,7 +268,6 @@ function placesSearchCB (data, status, pagination) {
 
 // 키워드 검색을 요청하는 함수입니다
 function searchcustom(mylo) {
-    console.log('반복1')
       // 검색 결과 목록에 추가된 항목들을 제거합니다
   removeAllChildNods(document.getElementById('placesList'));
   
@@ -289,7 +307,6 @@ if (company.indexOf('홍대네컷') !== -1){
 
     
 function searchPlaces(mylo) {
-    console.log('반복2')
 //   var keyword = document.getElementById('keyword').value;
     var keyword = "인생네컷";
   if (!keyword.replace(/^\s+|\s+$/g, '')) {
@@ -325,7 +342,6 @@ function searchPlaces2(mylo) {
   
 }
 function searchPlaces3(mylo) {
-    console.log('반복2')
 //   var keyword = document.getElementById('keyword').value;
     var keyword = "포토이즘";
   if (!keyword.replace(/^\s+|\s+$/g, '')) {
@@ -341,7 +357,6 @@ function searchPlaces3(mylo) {
   }); 
 }
 function searchPlaces4(mylo) {
-    console.log('반복2')
 //   var keyword = document.getElementById('keyword').value;
     var keyword = "하루필름";
   if (!keyword.replace(/^\s+|\s+$/g, '')) {
@@ -357,7 +372,6 @@ function searchPlaces4(mylo) {
   }); 
 }
 function searchPlaces5(mylo) {
-    console.log('반복2')
 //   var keyword = document.getElementById('keyword').value;
     var keyword = "셀픽스";
   if (!keyword.replace(/^\s+|\s+$/g, '')) {
@@ -373,7 +387,6 @@ function searchPlaces5(mylo) {
   }); 
 }
 function searchPlaces6(mylo) {
-    console.log('반복2')
 //   var keyword = document.getElementById('keyword').value;
     var keyword = "포토드링크";
   if (!keyword.replace(/^\s+|\s+$/g, '')) {
@@ -389,7 +402,6 @@ function searchPlaces6(mylo) {
   }); 
 }
 function searchPlaces7(mylo) {
-    console.log('반복2')
 //   var keyword = document.getElementById('keyword').value;
     var keyword = "포토그레이";
   if (!keyword.replace(/^\s+|\s+$/g, '')) {
@@ -405,7 +417,6 @@ function searchPlaces7(mylo) {
   }); 
 }
 function searchPlaces8(mylo) {
-    console.log('반복2')
 //   var keyword = document.getElementById('keyword').value;
     var keyword = "더필름";
   if (!keyword.replace(/^\s+|\s+$/g, '')) {
@@ -421,7 +432,6 @@ function searchPlaces8(mylo) {
   }); 
 }
 function searchPlaces9(mylo) {
-    console.log('반복2')
 //   var keyword = document.getElementById('keyword').value;
     var keyword = "포토매틱";
   if (!keyword.replace(/^\s+|\s+$/g, '')) {
@@ -437,7 +447,6 @@ function searchPlaces9(mylo) {
   }); 
 }
 function searchPlaces10(mylo) {
-    console.log('반복2')
 //   var keyword = document.getElementById('keyword').value;
     var keyword = "홍대네컷";
   if (!keyword.replace(/^\s+|\s+$/g, '')) {
@@ -457,7 +466,6 @@ function searchPlaces10(mylo) {
 // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
 function placesSearchCB(data, status, pagination) {
   if (status === kakao.maps.services.Status.OK) {
-    console.log('반복?')
 
       // 정상적으로 검색이 완료됐으면
       // 검색 목록과 마커를 표출합니다
@@ -597,7 +605,6 @@ else{
 
 // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
 function addMarker(position, idx, title) {
-    console.log(title);
 if(title.place_name.includes('인생네컷')){
   var imageSrc = 'static/image/marker_number_blue.png' // 마커 이미지 url, 스프라이트 이미지를 씁니다
 }

@@ -170,22 +170,6 @@
           <div class="swiper-button-next"></div>
         </div>
       </main>
-      <!-- ranking section -->
-      <!-- <main class="main-ranking--container">
-        <div class="main--ranking--title">주간 BEST</div>
-        <div class="frame-ranking--grid">
-          {% for frameweekinfo in frameweekinfo %}
-          <div class="per--frame--ranking">
-            <div class="ranking--grid--img">
-              <a href="{%url 'framesharings:framedetail' frameweekinfo.id %}">
-                <img src="{{ frameweekinfo.framephoto.url }}" alt="프레임사진"/>
-              </a>
-            </div>
-          </div>
-          {% endfor%}
-        </div>
-      </main> -->
-      <!-- main archive -->
       <main class="archive-container">
         <div class="archive">
           <div class="archive-title"><img src="{% static 'image/archiveicon.svg' %}">네 컷 아카이브란?</div>
@@ -333,6 +317,7 @@
     <script src="{% static 'js/albumswiper.js' %}"></script>
     <script src="{% static 'js/mainswiper.js' %}"></script>
     <script src="{% static 'js/albummodal.js' %}"></script>
+    <script src="{% static 'js/map.js' %}"></script>
     <script src="https://kit.fontawesome.com/a8a24f1fa9.js" crossorigin="anonymous"></script>
   </body>
 </html>
