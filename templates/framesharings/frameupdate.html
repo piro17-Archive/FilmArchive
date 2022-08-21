@@ -8,11 +8,11 @@
     {% csrf_token %}
     <div class="frameupdate-form">
       <div class="frameupdate__title">프레임 공유 글 수정</div>
-      <div class="frameupdate__hr"></div>
       <div class="frameupdate__info">
+        <div class="frameupdate__hr"></div>
         {%if frameinfo.framephoto %}
         <div class="frameupdate__photo">
-          <span id="frameupdate__phototitle" class="section__title">이전사진</span><div class="framebox">{{frameinfo.framephoto.url}} </div>
+          <span id="frameupdate__phototitle" class="section__title">이전 사진</span><div class="framebox">{{frameinfo.framephoto.url}} </div>
           <input type="checkbox" name="clearphoto" value="clearphoto" id="clearphoto"><label for="clearphoto">clear</label>
         </div> 
         {% endif %}
@@ -26,9 +26,9 @@
           <input hidden type="checkbox" name="{{forloop.counter}}" value="{{forloop.counter}}" id="keywordid{{forloop.counter}}"><label hidden for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
           {% endfor %}
         </div>
-        <div>
+        <div class="frameupdate__photo">
           {%if frameinfo.frameexample %}
-          <span class="section__title">이전 적용 예시</span> {{frameinfo.frameexample.url}} <input type="checkbox" name="clearexample" value="clearexample" id="clearexample"><label for="clearexample">clear</label>
+          <span class="section__title" id="frameupdate__phototitle">이전 적용예시</span></span><div class="framebox">{{frameinfo.frameexample.url}}</div><input type="checkbox" name="clearexample" value="clearexample" id="clearexample"><label for="clearexample">clear</label>
           {% endif %}
         </div>
         <div>
@@ -44,8 +44,8 @@
         <div class="frameupdate__btn-box">
           <input type="submit" value="글 수정" class="frameupdate__btn"/>
         </div>
+        <div class="frameupdate__hr"></div>
       </div>
-      <div class="frameupdate__hr"></div>
     </div>
   </form>
 </main>

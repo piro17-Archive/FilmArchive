@@ -233,6 +233,7 @@
     font-size: 2rem;
     font-weight: 800;
     width: 100%;
+    white-space: nowrap; 
   }
 
   .frame__create {
@@ -1460,13 +1461,12 @@ color: var(--main-color);
 }
 
 
-
 /* frameupdate */
 @media screen and (max-width: 480px) {
   .frameupdate-form {
-    width: 34rem;
-    margin: 3rem auto;
-    padding: 3rem 0;
+    width: 42rem;
+    margin: 0 auto;
+    padding: 5rem 0;
   }
 
   .frameupdate-form .frameupdate__title {
@@ -1484,32 +1484,27 @@ color: var(--main-color);
   }
 
   .frameupdate__info {
-    padding: 0 1rem;
+    padding: 0 5rem;
   }
 
   .section__title{
     display: inline-block;
     text-align: right;
-    margin: 0 1rem 1.5rem 0;
+    margin: 0 0.5rem 1.5rem 0;
     font-size: 1.2rem;
-    width: 7rem;
-    line-height: 1.2rem;
+    width: 9rem;
   }
 
   .frameupdate__photo {
     display: flex;
   }
 
-  #frameupdate__phototitle {
-    margin: 0 0 0 0.8rem;
-  }
-
   .framebox {
-    width: 22rem;
+    width: 30rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin-left: 1.5rem;
+    margin-left: 0.5rem;
   }
 
   #framephoto1 {
@@ -1521,13 +1516,13 @@ color: var(--main-color);
   }
 
   .frameupdate__info div input[type="file"] {
-    width: 22rem;
+    width: 19rem;
   }
 
   .frameupdate__info div input[type="text"] {
-    width: 22rem;
+    width: 19rem;
     height: 3.2rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     background-color: white;
@@ -1540,7 +1535,7 @@ color: var(--main-color);
     border: 1px solid var(--main-gray400);
     background-color: white;
     font-size: 1.2rem;
-    width: 22rem;
+    width: 20rem;
     height: 13rem;
     padding: 1rem;
   }
@@ -1557,7 +1552,7 @@ color: var(--main-color);
     width: 12rem;
     height: 3.2rem;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .frameupdate__btn:hover {
@@ -1574,11 +1569,12 @@ color: var(--main-color);
   }
 
   .tag__section{
-    width: 70%;
+    width: 19rem;
     background-color: white;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     margin-bottom: 1rem;
+    margin-left: 0.4rem;
   }
 
   .keyword__tags{
@@ -1600,18 +1596,27 @@ color: var(--main-color);
     padding: 0.2rem 0.3rem; 
     font-size: 1.2rem;
   }
+
+  .framebox {
+    width: 17rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  #framephoto1 {
+    margin-left: 9.5rem;
+  }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .frameupdate-form {
-    width: 40rem;
+    width: 50rem;
     margin: 5rem auto;
     padding: 5rem 0;
   }
 
   .frameupdate-form .frameupdate__title {
     width: 100%;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     text-align: center;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -1624,15 +1629,15 @@ color: var(--main-color);
   }
 
   .frameupdate__info {
-    padding: 0 2rem;
+    padding: 0 5rem;
   }
 
   .section__title{
     display: inline-block;
     text-align: right;
-    margin: 0 1.5rem 1.5rem 0;
-    font-size: 1.4rem;
-    width: 7rem;
+    margin: 0 1rem 1.5rem 0;
+    font-size: 1.5rem;
+    width: 11rem;
   }
 
   .frameupdate__photo {
@@ -1640,19 +1645,15 @@ color: var(--main-color);
   }
 
   .framebox {
-    width: 25rem;
+    width: 30rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin-left: 1.5rem;
+    margin-left: 0.5rem;
   }
 
   #framephoto1 {
     margin: 0 0 1rem 8.8rem;
-  }
-
-  #frameupdate__phototitle {
-    margin: 0 0 0 0.8rem;
   }
   
   .frameupdate__info div input {
@@ -1660,13 +1661,13 @@ color: var(--main-color);
   }
 
   .frameupdate__info div input[type="file"] {
-    width: 25rem;
+    width: 22rem;
   }
 
   .frameupdate__info div input[type="text"] {
-    width: 25rem;
+    width: 22rem;
     height: 3.2rem;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     background-color: white;
@@ -1678,9 +1679,9 @@ color: var(--main-color);
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     background-color: white;
-    font-size: 1.4rem;
-    width: 25rem;
-    height: 17rem;
+    font-size: 1.3rem;
+    width: 22rem;
+    height: 15rem;
     padding: 1rem;
   }
 
@@ -1696,7 +1697,7 @@ color: var(--main-color);
     width: 12rem;
     height: 3.2rem;
     cursor: pointer;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .frameupdate__btn:hover {
@@ -1713,11 +1714,12 @@ color: var(--main-color);
   }
 
   .tag__section{
-    width: 70%;
+    width: 22rem;
     background-color: white;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     margin-bottom: 1rem;
+    margin-left: 0.4rem;
   }
 
   .keyword__tags{
@@ -1739,11 +1741,20 @@ color: var(--main-color);
     padding: 0.2rem 0.3rem; 
     font-size: 1.4rem;
   }
+
+  .framebox {
+    width: 20rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  #framephoto1 {
+    margin-left: 12.5rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .frameupdate-form {
-    width: 50rem;
+    width: 60rem;
     margin: 5rem auto;
     padding: 5rem 0;
   }
@@ -1769,9 +1780,9 @@ color: var(--main-color);
   .section__title{
     display: inline-block;
     text-align: right;
-    margin: 0 1.5rem 1.5rem 0;
+    margin: 0 1rem 1.5rem 0;
     font-size: 1.6rem;
-    width: 7rem;
+    width: 11rem;
   }
 
   .frameupdate__photo {
@@ -1795,11 +1806,11 @@ color: var(--main-color);
   }
 
   .frameupdate__info div input[type="file"] {
-    width: 30rem;
+    width: 27rem;
   }
 
   .frameupdate__info div input[type="text"] {
-    width: 30rem;
+    width: 27rem;
     height: 3.2rem;
     font-size: 1.4rem;
     border-radius: 0.5rem;
@@ -1814,8 +1825,8 @@ color: var(--main-color);
     border: 1px solid var(--main-gray400);
     background-color: white;
     font-size: 1.4rem;
-    width: 30rem;
-    height: 17rem;
+    width: 27rem;
+    height: 15rem;
     padding: 1rem;
   }
 
@@ -1839,6 +1850,7 @@ color: var(--main-color);
     color: white;
     transition: 0.2s;
   }
+
   .write__keyword{
     width: 100%;
     display: flex;
@@ -1847,11 +1859,12 @@ color: var(--main-color);
   }
 
   .tag__section{
-    width: 80%;
+    width: 27rem;
     background-color: white;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     margin-bottom: 1rem;
+    margin-left: 0.4rem;
   }
 
   .keyword__tags{
@@ -1873,4 +1886,14 @@ color: var(--main-color);
     padding: 0.2rem 0.3rem; 
     font-size: 1.4rem;
   }
+
+  .framebox {
+    width: 23rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  #framephoto1 {
+    margin-left: 12.5rem;
+  }
 }
+
