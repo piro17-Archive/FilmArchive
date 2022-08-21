@@ -36,58 +36,51 @@
 
 		<div class="album__detail__content">
 			<div class="albumdetail__img-box">
-				<img src="{{ albuminfo.albumphoto.url }}" alt="" class="albumdetail__img">
-				<!-- <div class="swiper">
+				<div class="swiper swiper2">
 					<div class="swiper-wrapper">
-
 						<div class="swiper-slide">
-							<div class="albumdetail__img">
-								<img src="{{ albuminfo.albumphoto.url }}" alt="">
-							</div>
+							<img src="{{ albuminfo.albumphoto.url }}"class="albumdetail__img"  alt="">
 						</div>
-
 						<div class="swiper-slide">
-							<div class="albumdetail__video">
-								{% if albuminfo.albumvideo %}
-								<video autoplay loop controls> <source src="{{ albuminfo.albumvideo.url }}"></video>
-								{% else %}
-								<div>동영상이 없습니다.</div>
-								{% endif %}
-							</div>
+							{% if albuminfo.albumvideo %}
+							<video autoplay loop controls class="albumdetail__video"> <source src="{{ albuminfo.albumvideo.url }}"></video>
+							{% else %}
+							<div>동영상이 없습니다.</div>
+							{% endif %}
 						</div>
 					</div>
-					<div class="swiper-pagination"></div> -->
-				</div>
-
-			<div class="albumdetail__memo-box">
-				<div class="albumdetail__date">
-					<span>{{ albuminfo.albumdate}}</span>
-				</div>
-				<div class="albumdetail__type album__per-memo">
-					<div class="albumdetail__section__title">
-						<img src="{% static 'image/Image.svg' %}" alt="사진아이콘">
-						<span>종류</span>
-					</div>
-					<div class="type__content">{{albuminfo.albumtype.name}}</div>
-				</div>
-				<div class="albumdetail__position album__per-memo">
-					<div class="albumdetail__section__title">
-						<img src="{% static 'image/MapPin.svg' %}" alt="위치아이콘">
-						<span>위치</span>
-					</div>
-					<div class="position__content">{{albuminfo.albumlocation}}</div>
-				</div>
-				<div class="albumdetail__memo">
-					<div class="albumdetail__section__title">
-						<img src="{% static 'image/PushPin.svg' %}" alt="핀아이콘">
-						<span>메모</span>
-					</div>
-					<div class="memo__content">{{albuminfo.albummemo}}</div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-pagination">
 				</div>
 			</div>
 		</div>
 
+		<div class="albumdetail__memo-box">
+			<div class="albumdetail__date">
+				<span>{{ albuminfo.albumdate}}</span>
+			</div>
+			<div class="albumdetail__type album__per-memo">
+				<div class="albumdetail__section__title">
+					<img src="{% static 'image/Image.svg' %}" alt="사진아이콘">
+					<span>종류</span>
+				</div>
+				<div class="type__content">{{albuminfo.albumtype.name}}</div>
+			</div>
+			<div class="albumdetail__position album__per-memo">
+				<div class="albumdetail__section__title">
+					<img src="{% static 'image/MapPin.svg' %}" alt="위치아이콘">
+					<span>위치</span>
+				</div>
+				<div class="position__content">{{albuminfo.albumlocation}}</div>
+			</div>
+			<div class="albumdetail__memo">
+				<div class="albumdetail__section__title">
+					<img src="{% static 'image/PushPin.svg' %}" alt="핀아이콘">
+					<span>메모</span>
+				</div>
+				<div class="memo__content">{{albuminfo.albummemo}}</div>
+			</div>
 		</div>
-	</div>
 </main>
 {% endblock content %}
