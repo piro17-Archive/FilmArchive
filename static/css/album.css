@@ -477,6 +477,11 @@
   white-space: nowrap;
 }
 
+.album__img:hover{
+  filter:brightness(60%);
+  transition: filter, 0.4s;
+}
+
 /* albumcreate */
 @media screen and (max-width: 480px) {
   .albumcreate-form {
@@ -955,7 +960,8 @@
     line-height: 1.8rem;
   }
 
-  .swiper {
+  .swiper,
+  .mmainswiper {
     width: 100%;
   }
 
@@ -1188,7 +1194,8 @@
     line-height: 2.1rem;
   }
 
-  .swiper {
+  .swiper,
+  .mainswiper {
     width: 100%;
   }
 
@@ -1422,7 +1429,8 @@
   }
 
   
-  .swiper {
+  .swiper,
+  .mainswiper {
     width: 100%;
   }
 
@@ -1437,8 +1445,6 @@
     font-size: 3.5rem;
     color: gray;
   }
-
-  
 
   .modal {
     position: fixed;

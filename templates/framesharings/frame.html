@@ -43,24 +43,33 @@
       </div>
     </div>
 
-    <div class="frame__main__keyword">
-      <form action="{% url 'framesharings:frame' %}">
-        <div class="keyword__section">
-          <button name="sortkeyword" value="None">Reset</button>
-          {% for keywordinfo in keywordinfo  %}
-          <div class="per__frame__keyword">
-            {% if querykeyword == keywordinfo.id %}
-            <button name="sortkeyword" value="{{keywordinfo.id}}" style="background-color: black;">#{{keywordinfo.name}}</button>
-            {% else %}
-            <button name="sortkeyword" value="{{keywordinfo.id}}">{{keywordinfo.name}}</button>
-            {% endif%}
-          </div>
-          {% endfor%}
+    <div class="keyword__toggle">
+      <input type='checkbox' id='css-toggle-switch' checked='checked' class='css-toggle-switch'>
+      <label for='css-toggle-switch' class='keyword__show'></label>
+      <div class='css-toggle-content'>
+        <div class="frame__main__keyword">
+          <form action="{% url 'framesharings:frame' %}">
+            <div class="keyword__section">
+              <button name="sortkeyword" value="None" class="reset__keyword">Reset</button>
+              {% for keywordinfo in keywordinfo  %}
+              <div class="per__frame__keyword">
+                {% if querykeyword == keywordinfo.id %}
+                <button name="sortkeyword" value="{{keywordinfo.id}}" class="keyword__selected keyword__one-box">#{{keywordinfo.name}}</button>
+                {% else %}
+                <button name="sortkeyword" value="{{keywordinfo.id}}" class="keyword__original keyword__one-box">#{{keywordinfo.name}}</button>
+                {% endif%}
+              </div>
+              {% endfor%}
+            </div>
+          </form>
         </div>
-      </form>
+      </div >
     </div>
 
-    <div class="ranking__grid__section">
+  
+
+    <!-- ranking section -->
+<!--<div class="ranking__grid__section">
       <div class="frame__ranking__title">주간 BEST</div>
       <div class="ranking__box grid__box">
         {% for frameweekinfo in frameweekinfo %} {% if frameweekinfo.framepublic %} 
@@ -94,7 +103,6 @@
                 {% endif%}
             </div>
           </div>
-
           <div class="frame__info-box">
             <div class="frame__frametitle">{{ frameweekinfo.frametitle }}</div>
             {% for keyword in frameweekinfo.framekeyword.all %} {% endfor%}
@@ -103,8 +111,7 @@
         {% endif %} {% endif %} {% endfor %}
       </div>
     </div>
-
-    <hr class="frame__main__hr">
+    <hr class="frame__main__hr"> -->
 
     <div class="frame__grid__section">
       <div class="frame__box grid__box">
@@ -121,6 +128,9 @@
                 <img src="{{ frameinfo.framephoto.url }}" alt="프레임사진"/>
               </a>
             </div>
+          </div>
+          <div class="frame__info-box">          
+            <div class="frame__frametitle">{{ frameinfo.frametitle }}</div>
             <div class="frame__btn__section">
               {% if user.is_authenticated %}
               {% if frameinfo in save %}
@@ -134,15 +144,16 @@
               <button class="recommendBtn" id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'dislike' )" name="like" value="{{frameinfo.id}}"><i class="fa-regular fa-heart"></i></button>
               {% endif %}
               {% else %}
-                <a class="openBtn bookmarkBtn" ><i class="openBtn fa-regular fa-bookmark "></i></a>
-                <a class="recommendBtn openBtn"><i class="fa-regular fa-heart openBtn"></i></a>
-                {% endif%}
+              <a class="openBtn bookmarkBtn" ><i class="openBtn fa-regular fa-bookmark "></i></a>
+              <a class="recommendBtn openBtn"><i class="fa-regular fa-heart openBtn"></i></a>
+              {% endif%}
             </div>
+              <!-- <div class="post__keyword">
+                {% for keyword in frameinfo.framekeyword.all %} {% endfor%}
+              </div> -->
           </div>
-
-          <div class="frame__info-box">
-            <div class="frame__frametitle">{{ frameinfo.frametitle }}</div>
-            {% for keyword in frameinfo.framekeyword.all %} {% endfor%}
+          <div class="post__user">
+            작성자 | {{frameinfo.userid}}
           </div>
         </div>
         {% endif %} {% endif %} {% endfor %}
