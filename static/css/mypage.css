@@ -1214,10 +1214,88 @@
 }
 
 /* 저장목록 */
-@media screen and (max-width: 480px) { 
+@media screen and (max-width: 600px) { 
+  .mypagedetail__container {
+    margin: 4rem 10%;
+  }
+
+  .mypagedetail__title {
+    font-weight: 800;
+    font-size: 2.1rem;
+    color: var(--main-color);
+    margin: 1rem 0;
+    padding: 0 2rem;
+  }
+
+  .mypagedetail__hr {
+    background-color: var(--main-color);
+    height: 0.2rem;
+    margin-bottom: 4rem;
+  }
+
+  .mypagedeatil__grid-box {
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-gap: 1rem;
+  }
+
+  .mypagedetail__grid-img {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(241, 241, 241);
+    width: 100%;
+    height: 14rem;
+    overflow: hidden;
+  }
+
+  .mypagedetail__grid-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
 
-@media screen and (min-width: 480px) and (max-width: 1024px) { 
+@media screen and (min-width: 600px) and (max-width: 1024px) { 
+  .mypagedetail__container {
+    margin: 4rem 10%;
+  }
+
+  .mypagedetail__title {
+    font-weight: 800;
+    font-size: 2.1rem;
+    color: var(--main-color);
+    margin: 1rem 0;
+    padding: 0 2rem;
+  }
+
+  .mypagedetail__hr {
+    background-color: var(--main-color);
+    height: 0.2rem;
+    margin-bottom: 4rem;
+  }
+
+  .mypagedeatil__grid-box {
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-gap: 2rem;
+  }
+
+  .mypagedetail__grid-img {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(241, 241, 241);
+    width: 100%;
+    height: 22rem;
+    overflow: hidden;
+  }
+
+  .mypagedetail__grid-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -1249,14 +1327,13 @@
   .mypagedetail__grid-img {
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: rgb(241, 241, 241);
     width: 100%;
-    height: 25rem;
+    height: 28rem;
     overflow: hidden;
   }
 
-  .mypagedetail__grid-img a img {
+  .mypagedetail__grid-img img {
     width: 100%;
     height: 100%;
     object-fit: contain;
