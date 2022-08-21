@@ -119,10 +119,11 @@
           <div class="img-box">
           {% if user.is_authenticated %}
           <a href="{%url 'framesharings:framedetail' frameinfo.id %}">
-            <div class="grid__img">
+            
               {% else %}
               <a class="openBtn">
               {% endif%}
+              <div class="grid__img">
               <img src="{{ frameinfo.framephoto.url }}" alt="프레임사진"/>
             </div>
           </a>
