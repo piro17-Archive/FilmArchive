@@ -1,4 +1,8 @@
 {% extends 'users/main.html' %} {% block content %}
+<script src="https://unpkg.com/@yaireo/tagify"></script>
+<!--<script src="https://unpkg.com/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>-->
+<link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+
 <main>
   <form action="/frameupdate/{{frameinfo.id}}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
@@ -8,38 +12,34 @@
       <div class="frameupdate__info">
         {%if frameinfo.framephoto %}
         <div class="frameupdate__photo">
-          <span id="frameupdate__phototitle">이전사진</span><div class="framebox">{{frameinfo.framephoto.url}} </div>
+          <span id="frameupdate__phototitle" class="section__title">이전사진</span><div class="framebox">{{frameinfo.framephoto.url}} </div>
           <input type="checkbox" name="clearphoto" value="clearphoto" id="clearphoto"><label for="clearphoto">clear</label>
         </div> 
         {% endif %}
         <input type="file" name="framephoto" id="framephoto1">
 
-        <div><span>제목</span> <input type="text" name="frametitle" placeholder="프레임제목" value="{{ frameinfo.frametitle}}"/></div>
-        <div>
-          <span>키워드</span>
-          <input type="file" name="frameexample">
+        <div><span class="section__title">제목</span> <input type="text" name="frametitle" placeholder="프레임제목" value="{{ frameinfo.frametitle}}"/></div>
+        <div class="write__keyword per__create-section">
+          <span class="section__title">키워드</span>
+          <div class="tag__section"><input name='tags' placeholder="최대 10개까지 입력 가능" class='keyword__tags' value='' type="hidden"></div>
           {%  for keywordinfo in keywordinfo %}
-          {% if keywordinfo in frameinfo.framekeyword.all %}
-          <input type="checkbox" name="{{forloop.counter}}" value="{{forloop.counter}}" id="keywordid{{forloop.counter}}" checked="checked"><label for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
-          {% else %}
-          <input type="checkbox" name="{{forloop.counter}}" value="{{forloop.counter}}" id="keywordid{{forloop.counter}}"><label for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
-          {% endif %}
+          <input hidden type="checkbox" name="{{forloop.counter}}" value="{{forloop.counter}}" id="keywordid{{forloop.counter}}"><label hidden for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
           {% endfor %}
         </div>
         <div>
           {%if frameinfo.frameexample %}
-          <span>이전 적용 예시</span> {{frameinfo.frameexample.url}} <input type="checkbox" name="clearexample" value="clearexample" id="clearexample"><label for="clearexample">clear</label>
+          <span class="section__title">이전 적용 예시</span> {{frameinfo.frameexample.url}} <input type="checkbox" name="clearexample" value="clearexample" id="clearexample"><label for="clearexample">clear</label>
           {% endif %}
         </div>
         <div>
           {% if frameinfo.framepublic %}
-          <span>공개범위</span><input type="checkbox" name="framepublic" value="False" id="framepublic"><label for="framepublic">비공개</label>
+          <span class="section__title">공개범위</span><input type="checkbox" name="framepublic" value="False" id="framepublic"><label for="framepublic">비공개</label>
           {% else %}
-          <span>공개범위</span><input checked="checked" type="checkbox" name="framepublic" value="False" id="framepublic"><label for="framepublic">비공개</label>
+          <span class="section__title">공개범위</span><input checked="checked" type="checkbox" name="framepublic" value="False" id="framepublic"><label for="framepublic">비공개</label>
           {% endif %}
         </div>
         <div>
-          <span>메모</span><textarea name="framememo" id="" cols="30" rows="10">{{frameinfo.framememo}}</textarea>
+          <div class="per__create-section"><span class="section__title">메모</span><textarea name="framememo" id="" cols="30" rows="10">{{frameinfo.framememo}}</textarea>
         </div>
         <div class="frameupdate__btn-box">
           <input type="submit" value="글 수정" class="frameupdate__btn"/>
@@ -49,4 +49,23 @@
     </div>
   </form>
 </main>
+
+<script>
+  var input = document.querySelector('input[name="tags"]');
+  var whitelist = []
+  '{%  for keywordinfo in keywordinfo %}';
+  whitelist['{{forloop.counter}}']  = '{{keywordinfo.name}}';
+  '{% endfor %}'
+  console.log(whitelist)
+  var tagify = new Tagify(input, {
+      whitelist:whitelist,
+      maxTags: 10,
+      dropdown: {
+        maxItems: 20,          
+        classname: "tags-look", 
+        enabled: 0,            
+        closeOnSelect: false   
+      }
+    })
+</script>
 {% endblock content %}
