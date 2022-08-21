@@ -106,9 +106,10 @@
       albumdate = "{{albuminfo.albumdate}}";
       if (condition == "this" && albumdate == (viewYear).toString()+'년 '+(viewMonth+1).toString()+'월 '+(date).toString()+'일') {
           if (k == 0){
-          dates[i] = `<div class="date" ><span class="photoday">${date}</span><a href="/albumdetail/{{albuminfo.id}}" ><img src="/media/{{ albuminfo.albumphoto }}" style="overflow: hidden;" " alt=""></a>`;
+          dates[i] = `<div class="date" ><a href="/albumdetail/{{albuminfo.id}}" ><span class="photoday">${date}</span><img src="/media/{{ albuminfo.albumphoto }}" style="overflow: hidden;" " alt=""></a>`;
           } if (k > 0) {
-              dates[i] = dates[i] + '<a href="/albumdetail/{{albuminfo.id}}"><img src="/media/{{ albuminfo.albumphoto }}" style="overflow: hidden;" alt=""></a>'
+            //date[i] = date[i].replace(`<span class="photoday">${date}</span>`,'');
+              dates[i] = dates[i] + `<a href="/albumdetail/{{albuminfo.id}}"><img src="/media/{{ albuminfo.albumphoto }}" style="overflow: hidden;" alt=""></a>`
           }
           k++
       }
