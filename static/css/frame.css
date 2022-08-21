@@ -738,7 +738,7 @@
   }
 
   .tag__section{
-    width: 70%;
+    width: 22rem;
     background-color: white;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
@@ -870,7 +870,7 @@
   }
 
   .tag__section{
-    width: 70%;
+    width: 25rem;
     background-color: white;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
@@ -1002,7 +1002,7 @@
   }
 
   .tag__section{
-    width: 80%;
+    width: 30rem;
     background-color: white;
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
@@ -1490,7 +1490,7 @@
     padding: 0 5rem;
   }
 
-  .section__title{
+  .updatesection__title{
     display: inline-block;
     text-align: right;
     margin: 0 0.5rem 1.5rem 0;
@@ -1571,7 +1571,7 @@
     align-items: center;
   }
 
-  .tag__section{
+  .updatetag__section{
     width: 19rem;
     background-color: white;
     border-radius: 0.5rem;
@@ -1635,7 +1635,7 @@
     padding: 0 5rem;
   }
 
-  .section__title{
+  .updatesection__title{
     display: inline-block;
     text-align: right;
     margin: 0 1rem 1.5rem 0;
@@ -1716,7 +1716,7 @@
     align-items: center;
   }
 
-  .tag__section{
+  .updatetag__section{
     width: 22rem;
     background-color: white;
     border-radius: 0.5rem;
@@ -1780,7 +1780,7 @@
     padding: 0 5rem;
   }
 
-  .section__title{
+  .updatesection__title{
     display: inline-block;
     text-align: right;
     margin: 0 1rem 1.5rem 0;
@@ -1861,7 +1861,7 @@
     align-items: center;
   }
 
-  .tag__section{
+  .updatetag__section{
     width: 27rem;
     background-color: white;
     border-radius: 0.5rem;
