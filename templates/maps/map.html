@@ -1,20 +1,32 @@
 {% extends 'users/main.html' %} {% block content %} {% load static %}
 <main>
+    <style>
+    #hovercss{
+    background-color: var(--main-gray400);
+    border : none;
+    color: var(--main-color);
+  }
+  #hovercss:hover {
+    background: var(--main-color);
+    color: white;
+    transition: 0.2s;
+  }
+    </style>
   <div class="map__container">
     <div id="result" hidden></div>
     <div class="map__title">포토부스 위치</div>
     <div class="map__btn-box">
-      <div><button onclick="getCurrentPosBtn()" >내위치</button></div>
-      <div><button onclick="lifeinout()" >인생네컷</button></div>
-      <div><button onclick="signatureinout()" >포토시그니처</button></div>
-      <div><button onclick="photoisminout()">포토이즘</button></div>
-      <div><button onclick="Haurinout()">하루필름</button></div>
-      <div><button onclick="Selpixinout()">셀픽스</button></div>
-      <div><button onclick="Drinkinout()">포토드링크</button></div>
-      <div><button onclick="Grayinout()">포토그레이</button></div>
-      <div><button onclick="Thefilminout()">더필름</button></div>
-      <div><button onclick="Maticinout()">포토매틱</button></div>
-      <div><button onclick="Hongdaeinout()">홍대네컷</button></div>
+      <div><button  id="1" onclick="getCurrentPosBtn()" >내위치</button></div>
+      <div><button class="2" id="" onclick="lifeinout()"  >인생네컷</button></div>
+      <div><button class="3" id="" onclick="signatureinout()" >포토시그니처</button></div>
+      <div><button class="4" id="" onclick="photoisminout()">포토이즘</button></div>
+      <div><button class="5" id="" onclick="Haurinout()">하루필름</button></div>
+      <div><button class="6" id="" onclick="Selpixinout()">셀픽스</button></div>
+      <div><button class="7" id="" onclick="Drinkinout()">포토드링크</button></div>
+      <div><button class="8" id="" onclick="Grayinout()">포토그레이</button></div>
+      <div><button class="9" id="" onclick="Thefilminout()">더필름</button></div>
+      <div><button class="10" id="" onclick="Maticinout()">포토매틱</button></div>
+      <div><button class="11" id="" onclick="Hongdaeinout()">홍대네컷</button></div>
     </div>
     <!-- <div><button onclick="valueChangeLife">인생네컷 찾기</button></div>
     <div><button onclick="getCurrentPosBtnphotoism()">내주변 포토이즘</button></div>
@@ -45,9 +57,18 @@ var company = ['인생네컷','포토시그니처','포토이즘','하루필름'
 function lifeinout() {
     if (company.indexOf('인생네컷') !== -1){
         company.splice(company.indexOf('인생네컷'),1);
+        
+        const text = document.getElementsByClassName("2")[0];
+        text.id = 'hovercss';
+
     } 
     else{
         company.push('인생네컷')
+        const text = document.getElementsByClassName("2")[0];
+        text.id = '';
+        text.style = 'none';
+        //text.style.border = '1px solid var(--main-gray400)';
+
     }
     var latlng = map.getCenter();
     searchcustom(latlng);
@@ -56,9 +77,14 @@ function lifeinout() {
 function signatureinout() {
     if (company.indexOf('포토시그니처') !== -1){
         company.splice(company.indexOf('포토시그니처'),1);
+        const text = document.getElementsByClassName("3")[0];
+        text.id = 'hovercss';
     } 
     else{
         company.push('포토시그니처')
+        const text = document.getElementsByClassName("3")[0];
+        text.id = '';
+        text.style = 'none';
     }
     var latlng = map.getCenter();
     searchcustom(latlng);
@@ -67,9 +93,14 @@ function signatureinout() {
 function photoisminout() {
     if (company.indexOf('포토이즘') !== -1){
         company.splice(company.indexOf('포토이즘'),1);
+        const text = document.getElementsByClassName("4")[0];
+        text.id = 'hovercss';
     } 
     else{
         company.push('포토이즘')
+        const text = document.getElementsByClassName("4")[0];
+        text.id = '';
+        text.style = 'none';
     }
     var latlng = map.getCenter();
     searchcustom(latlng);
@@ -78,9 +109,14 @@ function photoisminout() {
 function Haurinout() {
     if (company.indexOf('하루필름') !== -1){
         company.splice(company.indexOf('하루필름'),1);
+        const text = document.getElementsByClassName("5")[0];
+        text.id = 'hovercss';
     } 
     else{
         company.push('하루필름')
+        const text = document.getElementsByClassName("5")[0];
+        text.id = '';
+        text.style = 'none';
     }
     var latlng = map.getCenter();
     searchcustom(latlng);
@@ -89,9 +125,14 @@ function Haurinout() {
 function Selpixinout() {
     if (company.indexOf('셀픽스') !== -1){
         company.splice(company.indexOf('셀픽스'),1);
+        const text = document.getElementsByClassName("6")[0];
+        text.id = 'hovercss';
     } 
     else{
         company.push('셀픽스')
+        const text = document.getElementsByClassName("6")[0];
+        text.id = '';
+        text.style = 'none';
     }
     var latlng = map.getCenter();
     searchcustom(latlng);
@@ -100,9 +141,14 @@ function Selpixinout() {
 function Drinkinout() {
     if (company.indexOf('포토드링크') !== -1){
         company.splice(company.indexOf('포토드링크'),1);
+        const text = document.getElementsByClassName("7")[0];
+        text.id = 'hovercss';
     } 
     else{
         company.push('포토드링크')
+        const text = document.getElementsByClassName("7")[0];
+        text.id = '';
+        text.style = 'none';
     }
     var latlng = map.getCenter();
     searchcustom(latlng);
@@ -111,9 +157,14 @@ function Drinkinout() {
 function Grayinout() {
     if (company.indexOf('포토그레이') !== -1){
         company.splice(company.indexOf('포토그레이'),1);
+        const text = document.getElementsByClassName("8")[0];
+        text.id = 'hovercss';
     } 
     else{
         company.push('포토그레이')
+        const text = document.getElementsByClassName("8")[0];
+        text.id = '';
+        text.style = 'none';
     }
     var latlng = map.getCenter();
     searchcustom(latlng);
@@ -123,9 +174,14 @@ function Grayinout() {
 function Thefilminout() {
     if (company.indexOf('더필름') !== -1){
         company.splice(company.indexOf('더필름'),1);
+        const text = document.getElementsByClassName("9")[0];
+        text.id = 'hovercss';
     } 
     else{
         company.push('더필름')
+        const text = document.getElementsByClassName("9")[0];
+        text.id = '';
+        text.style = 'none';
     }
     var latlng = map.getCenter();
     searchcustom(latlng);
@@ -134,9 +190,14 @@ function Thefilminout() {
 function Maticinout() {
     if (company.indexOf('포토매틱') !== -1){
         company.splice(company.indexOf('포토매틱'),1);
+        const text = document.getElementsByClassName("10")[0];
+        text.id = 'hovercss';
     } 
     else{
         company.push('포토매틱')
+        const text = document.getElementsByClassName("10")[0];
+        text.id = '';
+        text.style = 'none';
     }
     var latlng = map.getCenter();
     searchcustom(latlng);
@@ -145,9 +206,14 @@ function Maticinout() {
 function Hongdaeinout() {
     if (company.indexOf('홍대네컷') !== -1){
         company.splice(company.indexOf('홍대네컷'),1);
+        const text = document.getElementsByClassName("11")[0];
+        text.id = 'hovercss';
     } 
     else{
         company.push('홍대네컷')
+        const text = document.getElementsByClassName("11")[0];
+        text.id = '';
+        text.style = 'none';
     }
     var latlng = map.getCenter();
     searchcustom(latlng);
