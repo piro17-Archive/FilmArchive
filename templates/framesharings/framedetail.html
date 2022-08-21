@@ -110,7 +110,7 @@
                     element.onclick = function(){onClickLike( id, 'like')};
                     element.innerHTML = `<i class="fa-solid fa-heart"></i>`
                     element.classList.add("recommendactive");
-                    element.classList.remove("like__non__selected");
+                    element.classList.remove("like__none__selected");
                     numelement[0].innerHTML = ` 추천수 ${parseInt(likenum[1])+1}`
                 }
                 else{
@@ -118,7 +118,7 @@
                     element.onclick = function(){onClickLike( id, 'dislike')}
                     element.innerHTML = `<i class="fa-regular fa-heart" ></i>`
                     element.classList.remove("recommendactive");
-                    element.classList.add("like__non__selected");
+                    element.classList.add("like__none__selected");
                     numelement[0].innerHTML = ` 추천수 ${parseInt(likenum[1])-1}`
                 }
                 
