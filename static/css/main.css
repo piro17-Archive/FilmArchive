@@ -685,12 +685,14 @@
   .swiper-slide img {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
     border-radius: 0.5rem;
+    max-width: 600px;
   }
 
   #slide4 img{
     box-shadow: none;
     width: 85%;
     height: 85%;
+    max-width: 500px;
   }
 
   #slide1 .swiper-left,
