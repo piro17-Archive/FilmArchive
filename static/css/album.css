@@ -913,7 +913,16 @@
   }
 
   .albumdetail__img{
-    width: 80%;
+    height: 90%;
+    margin-bottom: 2rem;
+  }
+
+  .albumdetail__video {
+    width: 95%;
+  }
+  
+  .swiper2 .swiper-slide {
+    padding: 1rem 2rem;
   }
 
   .albumdetail__memo-box{
@@ -1147,7 +1156,16 @@
   }
 
   .albumdetail__img{
-    width: 90%;
+    height: 90%;
+    margin-bottom: 3.5rem;
+  }
+
+  .albumdetail__video {
+    width: 95%;
+  }
+  
+  .swiper2 .swiper-slide{
+    padding: 3rem;
   }
 
   .albumdetail__memo-box{
@@ -1381,7 +1399,16 @@
   }
 
   .albumdetail__img{
+    height: 90%;
+    margin-bottom: 5rem;
+  }
+
+  .albumdetail__video {
     width: 90%;
+  }
+  
+  .swiper2 .swiper-slide {
+    padding: 3rem 5rem;
   }
 
   .albumdetail__memo-box{
@@ -1426,12 +1453,6 @@
     color: var(--main-color);
     padding: 0 2rem;
     line-height: 2.2rem;
-  }
-
-  
-  .swiper,
-  .mainswiper {
-    width: 100%;
   }
 
   .swiper-slide {

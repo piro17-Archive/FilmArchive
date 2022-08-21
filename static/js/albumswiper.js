@@ -1,10 +1,5 @@
-new Swiper('.swiper1', {
+new Swiper('.swiper2', {
   slidesPerView: 1, //레이아웃 뷰 개수
-
-  autoplay: {
-    delay: 4000,
-    disableOnInteraction: false,
-  },
 
   // Optional parameters
   direction: 'horizontal', 
