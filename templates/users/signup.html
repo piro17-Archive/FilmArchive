@@ -1,24 +1,4 @@
 {% extends 'users/main.html' %}
-<!-- {% block javascript %}   
-<script>     
-   $("#id_username").change(function () {       
-      var username = $(this).val();        
-      $.ajax({        
-            url: '/check_username/',         
-            data: {           
-                'username': username          
-            },         
-            dataType: 'json',            
-            success: function (data) {           
-                 if (data.username_exists) {             
-                 alert("Username already taken");
-                  
-                 }         
-            }       
-      });      
-   });   
-</script> 
-{% endblock %} -->
 {% block content %}
 <main>
   <form method="POST" action="">

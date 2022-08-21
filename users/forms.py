@@ -40,6 +40,7 @@ class SignupForm(UserCreationForm):
         self.fields['name'].widget.attrs.update()
         self.fields['nickname'].widget.attrs.update()
 
+
 class MyUpdateForm(forms.ModelForm):
     class Meta:
         model = User
