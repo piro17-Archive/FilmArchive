@@ -1077,6 +1077,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 2rem;
   }
 
   .framedetail__frametitle {
@@ -1209,6 +1210,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 2rem;
   }
 
   .framedetail__frametitle {
@@ -1341,6 +1343,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 2rem;
   }
 
   .framedetail__frametitle {
@@ -1455,9 +1458,9 @@
   }
 }
 
-.like__selected,
-.bookmark__selected{
-color: var(--main-color);
+.like__none__selected,
+.bookmark__none__selected{
+  color: var(--main-color);
 }
 
 
