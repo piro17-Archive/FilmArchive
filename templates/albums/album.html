@@ -36,13 +36,13 @@
 			<div class="album__box">
 				{% for albuminfo in allalbum %}
 				<div class="album__one-box">
-					<div class="album__img">
-						{% if albuminfo.albumphoto %}
-						<a href="/albumdetail/{{albuminfo.id}}" class="album__photo__id">
+					{% if albuminfo.albumphoto %}
+					<a href="/albumdetail/{{albuminfo.id}}" class="album__photo__id">
+						<div class="album__img">
 							<img src="{{ albuminfo.albumphoto.url }}">
-						</a>
-						{% endif %}
-					</div>
+						</div>
+					</a>
+					{% endif %}
 					<div class="album__photo-date">
 						<img src="{% static 'image/album_check.svg' %}" alt="캘린더체크 아이콘">
 						<span class="date__content">{{albuminfo.albumdate}}</span>
