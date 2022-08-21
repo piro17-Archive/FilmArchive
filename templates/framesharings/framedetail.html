@@ -42,7 +42,7 @@
           {% if frameinfo in like %}
           <button name="like" value="{{frameinfo.id}}" class="like__selected recommendactive " onclick="onClickLike({{frameinfo.id}}, 'like' )" id="butlike{{frameinfo.id}}"><i class="fa-solid fa-heart"></i></button>
           {% else %}
-          <button name="like" value="{{frameinfo.id}}" class="recommendactive"><i class="fa-regular fa-heart" onclick="onClickLike({{frameinfo.id}}, 'dislike' )" id="butlike{{frameinfo.id}}"></i></button>
+          <button name="like" value="{{frameinfo.id}}" class="recommendactive" onclick="onClickLike({{frameinfo.id}}, 'dislike' )" id="butlike{{frameinfo.id}}"><i class="fa-regular fa-heart" ></i></button>
           {% endif %}
 
           {% if frameinfo in save %}
@@ -92,7 +92,7 @@
                 else{
                     element.removeEventListener('onclick',onClickLike)
                     element.onclick = function(){onClickLike( id, 'dislike')}
-                    element.innerHTML = `<i class="fa-regular fa-heart"></i>`
+                    element.innerHTML = `<i class="fa-regular fa-heart" ></i>`
                     element.classList.remove("recommendactive");
                 }
                 
