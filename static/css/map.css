@@ -1,17 +1,13 @@
-.map-input {
-  display: none;
-}
-
-.map-btn {
+#keyword2 {
   border: 1px solid var(--main-gray400);
   border-radius: 0.5rem;
-  padding: 0.8rem 1.2rem;
-  background: white;
-  font-size: 1.4rem;
-  font-weight: 800;
-  margin: 0 1rem 1rem 0;
-  cursor: pointer;
-  transition: 0.2s;
+  padding: 0.4rem 0.5rem;
+}
+
+#search {
+  border: 1px solid var(--main-gray400);
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.5rem;
 }
 
 .bg_white {
@@ -227,6 +223,10 @@
   color:#777;
 }
 
+.option {
+  display: flex;
+}
+
 @media screen and (max-width: 750px) {
   .map__container {
     margin: 3rem 7%;
@@ -248,20 +248,14 @@
 
   .map__btn-box div button {
     border: 1px solid var(--main-gray400);
+    background: rgb(79, 59, 59);
     border-radius: 0.5rem;
     padding: 0.6rem 1.5rem;
-    background: white;
+    color: white;
     font-size: 1.2rem;
     font-weight: 800;
     margin: 0 1rem 1rem 0;
   }
-
-  .map__btn-box div button:hover {
-    background: var(--main-color);
-    color: white;
-    transition: 0.2s;
-  }
-
   
   .map_wrap {
     display: flex;
@@ -299,6 +293,10 @@
 }
 
 @media screen and (min-width: 770px) and (max-width: 1024px) {
+  .option #keyword2 {
+    width: 50%;
+  }
+    
   .map__container {
     margin: 4rem 10%;
     padding: 0 2rem;
@@ -319,21 +317,16 @@
   }
 
   .map__btn-box div button {
+    background: rgb(79, 59, 59);
     border: 1px solid var(--main-gray400);
     border-radius: 0.5rem;
     padding: 0.8rem 1.2rem;
-    background: white;
+    color: white;
     font-size: 1.4rem;
     font-weight: 800;
     margin: 0 1rem 1rem 0;
   }
 
-  .map__btn-box div button:hover {
-    background: var(--main-color);
-    color: white;
-    transition: 0.2s;
-  }
-  
   .map_wrap {
     display: flex;
     position: relative;
@@ -393,16 +386,11 @@
     border: 1px solid var(--main-gray400);
     border-radius: 0.5rem;
     padding: 0.8rem 1.2rem;
-    background: white;
+    background: rgb(79, 59, 59);
+    color: white;
     font-size: 1.4rem;
     font-weight: 800;
     margin: 0 1rem 1rem 0;
-  }
-
-  .map__btn-box div button:hover {
-    background: var(--main-color);
-    color: white;
-    transition: 0.2s;
   }
   
   .map_wrap {
