@@ -93,18 +93,26 @@
             if(requestLike.status < 400){
                 const {id, type} = JSON.parse(requestLike.response);
                 let element = document.getElementById(`butlike${id}`);
+                let numelement = document.getElementsByClassName('like__cnt');
+                console.log(numelement)
+                let numchange = numelement[0].innerText;
+                console.log(numchange)
+                let likenum = numchange.split(' ');
+                console.log(likenum[1])
 
                 if(type == 'like'){
                     element.removeEventListener('onclick',onClickLike)
                     element.onclick = function(){onClickLike( id, 'like')};
                     element.innerHTML = `<i class="fa-solid fa-heart"></i>`
                     element.classList.add("recommendactive");
+                    numelement[0].innerHTML = ` 추천수 ${parseInt(likenum[1])+1}`
                 }
                 else{
                     element.removeEventListener('onclick',onClickLike)
                     element.onclick = function(){onClickLike( id, 'dislike')}
                     element.innerHTML = `<i class="fa-regular fa-heart" ></i>`
                     element.classList.remove("recommendactive");
+                    numelement[0].innerHTML = ` 추천수 ${parseInt(likenum[1])-1}`
                 }
                 
             }
