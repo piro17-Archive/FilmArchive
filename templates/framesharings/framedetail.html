@@ -1,5 +1,20 @@
 {% extends 'users/main.html' %} {% block content %}
 <main>
+  <div class="modal hidden">
+		<div class="bg"></div>
+		<div class="modalBox">
+			<div class="modal-title">
+				<h2>정말로 삭제하시겠습니까?</h2>
+			</div>
+			<div class="modal-btn">
+				<button class="closeBtn" id="btn-cancle">취소</button>
+				<form action="/framedelete/{{frameinfo.id}}" method="post">
+					{% csrf_token %}<button type="submit">삭제</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
   <div class="framedetail">
     <div class="framedetail__head">
       <a href="{% url 'framesharings:frame'%}">
@@ -55,11 +70,7 @@
         <a href="/frameupdate/{{frameinfo.id}}">
           <button class="framedetail__update">수정</button>
         </a>
-        <div class="framedetail__delete">
-          <form action="/framedelete/{{frameinfo.id}}" method="post">
-            {% csrf_token %} <button type="submit" style="all: none;">삭제</button>
-          </form>
-        </div>
+        <div class="framedetail__delete"><button class="openBtn">삭제</button></div>
       </div>
     </div>
   </div>

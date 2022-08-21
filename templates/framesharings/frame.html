@@ -9,11 +9,10 @@
 			</div>
 			<div class="modal-btn">
 				<button class="closeBtn" id="btn-cancle">닫기</button>
-        <button ><a href ="{% url 'users:login' %}">로그인하기</a></button>
+        <a href ="{% url 'users:login' %}"><button >로그인하기</button></a>
 			</div>
 		</div>
 	</div>
-
 
   <div class="frame__container">
     <div class="frame__flex-box">
@@ -22,7 +21,7 @@
         {% if user.is_authenticated %}
         <a href="/framecreate" class="frame__create"><i class="fa-solid fa-circle-plus"></i></a>
         {% else %}
-        <a  class="frame__create openBtn"><i class="fa-solid fa-circle-plus"></i></a>
+        <a class="frame__create openBtn" style="cursor: pointer"><i class="fa-solid fa-circle-plus"></i></a>
         {% endif %}
       </div>
       <div class="frame__right">
