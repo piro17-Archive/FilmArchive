@@ -513,6 +513,11 @@
     font-size: 1.1rem;
     font-weight: 600;
   }
+
+  .find-username {
+    font-size: 1.4rem;
+    margin: 5rem 0;
+  }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
@@ -601,6 +606,11 @@
     color: var(--main-red);
     font-size: 1.3rem;
     font-weight: 600;
+  }
+
+  .find-username {
+    font-size: 1.5rem;
+    margin: 6rem 0;
   }
 }
 
@@ -694,6 +704,11 @@
     font-size: 1.4rem;
     font-weight: 600;
   }
+
+  .find-username {
+    font-size: 1.7rem;
+    margin: 7rem 0 7rem 0;
+  }
 }
 
 /* 비밀번호 찾기 */
@@ -724,54 +739,8 @@
     margin: 2rem 0 4rem 0;
   }
 
-  .password-reset__info div {
+  .password-reset__info {
     font-size: 1.2rem;
-  }
-
-  .password-reset__info div input {
-    width: 20rem;
-    height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--main-gray400);
-    background-color: white;
-    margin: 0 0 1rem 0.5rem;
-    padding: 1rem;
-  }
-
-  .password-reset__info div input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px white inset;
-  }
-
-  .password-reset__info div span {
-    display: inline-block;
-    text-align: center;
-    line-height: 1.4rem;
-    width: 6rem;
-    margin-right: 1.5rem;
-    font-size: 1.3rem;
-  }
-
-  .password-reset__btn-box {
-    text-align: center;
-    margin: 4rem 0 5rem 0;
-  }
-
-  .password-reset__btn {
-    background: white;
-    border: 1px solid var(--main-color);
-    border-radius: 0.5rem;
-    color: var(--main-color);
-    padding: 0.6rem 1.7rem;
-    font-size: 1.2rem;
-    width: 8rem;
-    height: 3rem;
-  }
-  
-  .password-reset__btn:hover {
-    background: var(--main-color);
-    color: white;
-    transition: 0.2s;
   }
 }
 
@@ -802,54 +771,8 @@
     margin: 2rem 0 4rem 0;
   }
 
-  .password-reset__info div {
+  .password-reset__info {
     font-size: 1.4rem;
-  }
-
-  .password-reset__info div input {
-    width: 22rem;
-    height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--main-gray400);
-    background-color: white;
-    margin: 0 0 1rem 0.5rem;
-    padding: 1rem;
-  }
-
-  .password-reset__info div input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px white inset;
-  }
-
-  .password-reset__info div span {
-    display: inline-block;
-    text-align: center;
-    line-height: 1.4rem;
-    width: 6rem;
-    margin-right: 1.5rem;
-    font-size: 1.3rem;
-  }
-
-  .password-reset__btn-box {
-    text-align: center;
-    margin: 4rem 0 5rem 0;
-  }
-
-  .password-reset__btn {
-    background: white;
-    border: 1px solid var(--main-color);
-    border-radius: 0.5rem;
-    color: var(--main-color);
-    padding: 0.6rem 1.7rem;
-    font-size: 1.5rem;
-    width: 10rem;
-    height: 3.5rem;
-  }
-  
-  .password-reset__btn:hover {
-    background: var(--main-color);
-    color: white;
-    transition: 0.2s;
   }
 }
 
@@ -880,53 +803,7 @@
     margin: 2rem 0 4rem 0;
   }
 
-  .password-reset__info div {
+  .password-reset__info {
     font-size: 1.4rem;
-  }
-
-  .password-reset__info div input {
-    width: 25rem;
-    height: 3.2rem;
-    font-size: 1.3rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--main-gray400);
-    background-color: white;
-    margin: 0 0 1rem 0.5rem;
-    padding: 1rem;
-  }
-
-  .password-reset__info div input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px white inset;
-  }
-
-  .password-reset__info div span {
-    display: inline-block;
-    text-align: center;
-    line-height: 1.4rem;
-    width: 6rem;
-    margin-right: 1.5rem;
-    font-size: 1.3rem;
-  }
-
-  .password-reset__btn-box {
-    text-align: center;
-    margin: 4rem 0 5rem 0;
-  }
-
-  .password-reset__btn {
-    background: white;
-    border: 1px solid var(--main-color);
-    border-radius: 0.5rem;
-    color: var(--main-color);
-    padding: 0.6rem 1.7rem;
-    font-size: 1.5rem;
-    width: 12rem;
-    height: 3.5rem;
-  }
-  
-  .password-reset__btn:hover {
-    background: var(--main-color);
-    color: white;
-    transition: 0.2s;
   }
 }
