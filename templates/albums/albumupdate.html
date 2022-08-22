@@ -1,74 +1,72 @@
 {% extends 'users/main.html' %} {% block content %}
 <main>
-  <form
-    action="/albumupdate/{{albuminfo.id}}"
-    method="post"
-    enctype="multipart/form-data"
-  >
+  <form action="/albumupdate/{{albuminfo.id}}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <p>
-      {%if albuminfo.albumphoto %} 이전사진 {{albuminfo.albumphoto.url}}
-      <input
-        type="checkbox"
-        name="clearphoto"
-        value="clearphoto"
-        id="clearphoto"
-      /><label for="clearphoto">clear</label>
-      {%endif%}
-      <input type="file" name="albumphoto" />
-    </p>
-    <p>
-      {%if albuminfo.albumvideo %} 이전동영상 {{albuminfo.albumvideo.url}}
-      <input
-        type="checkbox"
-        name="clearvideo"
-        value="clearvideo"
-        id="clearvideo"
-      /><label for="clearvideo">clear</label>
-      {%endif%}
-      <input type="file" name="albumvideo" />
-    </p>
-    <p>
-      날짜
-      <input
-        type="date"
-        name="albumdate"
-        placeholder="앨범날짜"
-        value="{{albuminfo.albumdate| date:'Y-m-d'}}"
-        min="2022-01-01"
-        max="2023-01-01"
-      />
-    </p>
-    <p>
-      종류
-      <select name="albumtypename" id="">
-        {% for typeinfo in typeinfo %} {%if albuminfo.albumtype == typeinfo.name
-        %}
-        <option selected="selected" value="{{typeinfo.id}}">
-          {{typeinfo.name}}
-        </option>
-        {%else%}
-        <option value="{{typeinfo.id}}">{{typeinfo.name}}</option>
-        {%endif%} {% endfor %}
-      </select>
-    </p>
-
-    <p>
-      위치
-      <input
-        type="text"
-        name="albumlocation"
-        placeholder="앨범위치"
-        value="{{albuminfo.albumlocation}}"
-      />
-    </p>
-    <p>
-      메모
-      <textarea name="albummemo" id="" cols="30" rows="10">
-{{albuminfo.albummemo}}</textarea
-      >
-    </p>
-    <input type="submit" value="글 수정" />
+    <div class="albumupdate-form">
+      <div class="albumupdate__title">My 네 컷 앨범 글 수정</div>
+      <div class="albumupdate__hr"></div>
+      <div class="albumupdate__info">
+        <div>
+          <div class="albumupdate__photo">
+            <span id="albumupdate__phototitle">사진</span>
+            {% if albuminfo.albumphoto %} 
+            <div class="box">{{albuminfo.albumphoto.url}}</div>
+            <input type="checkbox" name="clearphoto" value="clearphoto" id="clearphoto"/><label for="clearphoto">clear</label>
+            {% endif %}
+          </div>
+          <input type="file" name="albumphoto" id="albumphoto1" />
+        </div>
+        <div>
+          <div class="albumupdate__photo">
+            {%if albuminfo.albumvideo %} 
+            <span id="albumupdate__phototitle">동영상</span> 
+            <div class="box">{{albuminfo.albumvideo.url}}</div>
+            <input type="checkbox" name="clearvideo" value="clearvideo" id="clearvideo"/>
+            <label for="clearvideo">clear</label>
+          </div>
+          <input type="file" name="albumvideo" id="albumphoto1" />
+          {% else %}
+          <span>동영상</span> 
+          <input type="file" name="albumvideo" id="albumphoto2"/>
+          {%endif%}
+        </div>
+        <div>
+          <span>날짜</span>
+          <input
+            type="date"
+            name="albumdate"
+            placeholder="앨범날짜"
+            value="{{albuminfo.albumdate| date:'Y-m-d'}}"
+            min="2022-01-01"
+            max="2023-01-01"
+          />
+        </div>
+        <div>
+          <span>종류</span>
+          <select name="albumtypename" id="">
+            {% for typeinfo in typeinfo %} {%if albuminfo.albumtype == typeinfo.name%}
+            <option selected="selected" value="{{typeinfo.id}}">
+              {{typeinfo.name}}
+            </option>
+            {%else%}
+            <option value="{{typeinfo.id}}">{{typeinfo.name}}</option>
+            {%endif%} {% endfor %}
+          </select>
+        </div>
+        <div>
+          <span>장소</span><input type="text" name="albumlocation" value="{{albuminfo.albumlocation}}" />
+        </div>
+        <div>
+          <span>메모</span>
+          <textarea name="albummemo" id="" cols="30" rows="10">{{albuminfo.albummemo}}</textarea>
+        </div>
+        <div class="albumupdate__btn-box">
+          <input type="submit" value="글 수정" class="albumupdate__btn" />
+				  <a href="{% url 'albums:album' user.id %}"><input value="취소하기" class="albumupdate__btn" id="cancel"/></a>
+        </div>
+      </div>
+      <div class="albumupdate__hr"></div>
+    </div>
   </form>
 </main>
 {% endblock content %}

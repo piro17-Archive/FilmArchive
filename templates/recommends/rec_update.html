@@ -1,45 +1,45 @@
 {% extends 'users/main.html' %} {% block content %} {% load static %}
-<form action="/update/{{recommend.id}}" method="post">
-  <h1>업데이트 페이지</h1>
-  {% csrf_token %}
-  <h2>
-    제목:
-    <input
-      type="text"
-      name="title"
-      placeholder="제목"
-      value="{{recommend.title}}"
-    />
-  </h2>
-  <p>
-    키워드
-    {% for keywordinfo in keywordinfo %}
-      {% if keywordinfo in recommend.recKeyword.all %}
-        <input
-          type="checkbox"
-          name="{{forloop.counter}}"
-          value="{{forloop.counter}}"
-          id="keywordid{{forloop.counter}}"
-          checked="checked"
-        /><label for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
-      {% else %}
-        <input
-          type="checkbox"
-          name="{{forloop.counter}}"
-          value="{{forloop.counter}}"
-          id="keywordid{{forloop.counter}}"
-        /><label for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
-      {% endif %}
-    {% endfor %}
-  </p>
-  <p>
-    설명:
-    <textarea name="content" id="" cols="30" rows="10">
-        {{recommend.content}}</textarea
-    >
-  </p>
-  <div>
-    <input type="submit" value="Save" />
-  </div>
-</form>
+<main>
+  <form action="/update/{{recommend.id}}" method="post">
+    {% csrf_token %}
+    <div class="recommendupdate-form">
+      <div class="recommendupdate__title">포즈/컨셉 추천 글 수정</div>
+      <div class="recommendupdate__hr"></div>
+      <div class="recommendupdate__info">
+        <div>
+          <span>제목</span><input type="text" name="title" value="{{recommend.title}}" />
+        </div>
+        <div>
+          <span>키워드</span>
+          {% for keywordinfo in keywordinfo %}
+            {% if keywordinfo in recommend.recKeyword.all %}
+              <input
+                type="checkbox"
+                name="{{forloop.counter}}"
+                value="{{forloop.counter}}"
+                id="keywordid{{forloop.counter}}"
+                checked="checked"
+              /><label for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
+            {% else %}
+              <input
+                type="checkbox"
+                name="{{forloop.counter}}"
+                value="{{forloop.counter}}"
+                id="keywordid{{forloop.counter}}"
+              /><label for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div>
+          <span>설명</span>
+          <textarea name="content" id="" cols="30" rows="10">{{recommend.content}}</textarea>
+        </div>
+        <div class="recommendupdate__btn-box">
+          <input type="submit" value="글 수정" class="recommendupdate__btn"/>
+        </div>
+      </div>
+      <div class="recommendupdate__hr"></div>
+    </div>
+  </form>
+</main>
 {% endblock content %}

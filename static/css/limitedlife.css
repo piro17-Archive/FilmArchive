@@ -1,0 +1,276 @@
+@media screen and (max-width: 480px){
+  .per--lifedetail:hover .limited--detail--text{
+    font-size: 0.5rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+  }
+
+  .limited-frame--section a:hover div{
+    font-size: 0.5rem;
+    line-height: 1.2rem;
+    font-weight: 400;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 740px){
+  .per--lifedetail:hover .limited--detail--text{
+    font-size: 0.7rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+  }
+
+  .limited-frame--section a:hover div{
+    font-size: 0.7rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-width: 740px) and (max-width: 1024px){
+  .per--lifedetail:hover .limited--detail--text{
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+  }
+
+  .limited-frame--section a:hover div{
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .per--lifedetail:hover .limited--detail--text{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+
+  .limited-frame--section a:hover div{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .morepage--container{
+    width: 100%;
+    padding: 3rem 10%;
+  }
+
+  .morepage--title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    }
+
+  .morepage--line{
+    margin: 1rem 0 2rem 0;
+  }
+
+  .lifedetail--grid--section{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    column-gap: 1rem;
+    row-gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .per--lifedetail{
+    width: 100%;
+  }
+
+  .per--lifedetail img{
+    height: 25rem;
+  }
+
+  .goto--home{
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 740px){
+  .morepage--container{
+    width: 100%;
+    padding: 4rem 10%;
+  }
+
+  .morepage--title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    }
+
+  .morepage--line{
+    margin: 1rem 0 2rem 0;
+  }
+
+  .lifedetail--grid--section{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    column-gap: 1rem;
+    row-gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .per--lifedetail{
+    width: 100%;
+  }
+
+  .per--lifedetail img{
+    height: 32rem;
+  }
+
+  .goto--home{
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (min-width: 740px) and (max-width: 1024px){
+  .morepage--container{
+    width: 100%;
+    padding: 4rem 10%;
+  }
+
+  .morepage--title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    }
+
+  .morepage--line{
+    margin: 1rem 0 2rem 0;
+  }
+
+  .lifedetail--grid--section{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    column-gap: 1rem;
+    row-gap: 2rem;
+    justify-content: center;
+  }
+
+  .per--lifedetail{
+    width: 100%;
+  }
+
+  .per--lifedetail img{
+    height: 37rem;
+  }
+
+  .goto--home{
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .morepage--container{
+    width: 100%;
+    padding: 4rem 10%;
+  }
+
+  .morepage--title {
+    font-size: 2.1rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    }
+
+  .morepage--line{
+    margin: 1rem 0 2.5rem 0;
+  }
+
+  .lifedetail--grid--section{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    column-gap: 1rem;
+    row-gap: 2rem;
+    justify-content: center;
+  }
+
+  .per--lifedetail{
+    width: 100%;
+  }
+
+  .per--lifedetail img{
+    height: 45rem;
+  }
+
+  .goto--home{
+    font-size: 1.8rem;
+  }
+}
+
+.morepage--container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.morepage--header{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.morepage--line{
+  width: 95%;
+  height: 0.15rem;
+  background-color: var(--main-color);
+}
+
+.per--lifedetail{
+  background-color:rgb(247, 247, 247); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.per--lifedetail,
+.limited-frame--section a{
+  position: relative;
+}
+
+.lifedetail--grid--section{
+  margin-bottom: 3rem;
+}
+
+.limited--detail--text{
+  display: none;
+}
+
+.lifedetail__img__section{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.per--lifedetail:hover .lifedetail__img__section{
+  filter:brightness(40%);
+  transition: filter, 0.5s;
+}
+
+.limited-frame--section img:hover{
+  filter:brightness(40%);
+  transition: filter, 0.5s;
+}
+
+.per--lifedetail:hover .limited--detail--text,
+.limited-frame--section a:hover div{
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  z-index: 1;
+}
+

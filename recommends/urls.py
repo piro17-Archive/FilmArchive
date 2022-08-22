@@ -11,4 +11,5 @@ urlpatterns = [
     path('create', views.rec_create,name='rec_create'),
     path('update/<int:id>', views.rec_update,name='rec_update'),
     path('delete/<int:id>',views.rec_delete,name='rec_delete'),
+    path('map', views.map,name='map'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

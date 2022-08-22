@@ -15,3 +15,5 @@ class Frame(models.Model):
     framememo = models.TextField(verbose_name="프레임메모")
     framelikeuser = models.ManyToManyField(User,blank=True,verbose_name='프레임좋아요수',related_name='likeMany')
     framesaveuser = models.ManyToManyField(User,blank=True,related_name='saveMany')
+    framelikedate = models.TextField(blank=True,null=True,default="null", verbose_name="좋아요날짜")
+    frameweeklike = models.IntegerField(blank=True,null=True,default=0,verbose_name="주간좋아요수")

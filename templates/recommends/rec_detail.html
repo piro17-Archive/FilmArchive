@@ -1,35 +1,38 @@
 {% extends 'users/main.html' %} {% block content %} {% load static %}
-<hr />
 <main>
-  <article>
+  <div class="recommenddetail">
+    <div class="recommenddetail__title">포즈/컨셉 추천</div>
+    <div class="recommenddetail__hr"></div>
+    <div class="recommenddetail__recommendtitle">{{ recommend.title }}</div>
     {% if recommend.recImage %}
-    <p>
-      <img
-        src="{{ recommend.recImage.url }}"
-        style="width: 300px; height: 300px"
-      />
-    </p>
+    <div class="recommenddetail__img">
+      <img src="{{ recommend.recImage.url }}" />
+    </div>
     {% endif %}
-    <h2>제목 : {{ recommend.title }}</h2>
-    <p>
+    <div>
       {% for keyword in recommend.recKeyword.all %}
         #{{ keyword.name }} 
       {% endfor %}
-    </p>
-    <div>{{recommend.content}}</div>
-  </article>
-  <div>
-    <form action="{% url 'recommends:rec_delete' recommend.id %}" method="post">
-      {% csrf_token %}
-      <button>글 삭제</button>
-    </form>
-    <div>
-      <a href="{% url 'recommends:rec_update' recommend.id %}"><button>업데이트</button></a>
     </div>
-    <div>
-      <a href="{% url 'recommends:recommend_list' %}"><button>Home</button></a>
+    <div>{{recommend.content}}</div>
+    <div class="recommenddetail__hr"></div>
+    <div class="recommenddetail__btn-box">
+      <div>
+        <a href="{% url 'recommends:recommend_list' %}">
+          <div class="recommenddetail__home"><i class="fa-solid fa-house"></i></div>
+        </a>
+      </div>
+      <div>
+        <a href="{% url 'recommends:rec_update' recommend.id %}">
+          <div class="recommenddetail__update"><i class="fa-solid fa-pen-to-square"></i></div>
+        </a>
+      </div>
+      <div class="recommenddetail__delete">
+        <form action="{% url 'recommends:rec_delete' recommend.id %}" method="post">
+          {% csrf_token %}<i class="fa-solid fa-trash-can"></i>
+        </form>
+      </div>
     </div>
   </div>
 </main>
-<hr />
 {% endblock content %}

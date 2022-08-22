@@ -26,12 +26,15 @@ SECRET_KEY = 'django-insecure-4%(_=+p2-%^#cm#p6v9f9dvqre+6rr_gas24drsf#h^6hi&_w+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://a132-59-16-45-98.jp.ngrok.io']
+
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "users",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sites',
@@ -39,11 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "users",
 
     'recommends',
     'albums',
     'framesharings',
+    'limitedframes',
 
     #allauth
     'allauth',
@@ -137,6 +140,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = ((os.path.join(BASE_DIR, 'static')), )
+# collectstatic 과정에서 static2 로 모든 static 파일들을 옮겨서 카피하기 위해 static2/ 로 지정
+STATIC_ROOT = os.path.join(BASE_DIR, 'static2/')
+
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -150,8 +157,8 @@ AUTH_USER_MODEL = 'users.User'
 
 AUTHENTICATION_BACKENDS = (
 
-    #Needed to login by username in Django admin, regardless of 'allauth'
-    'django.contrib.auth.backends.ModelBackend',
+    # #Needed to login by username in Django admin, regardless of 'allauth'
+    # 'django.contrib.auth.backends.ModelBackend',
 
     # 'allauth' specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
@@ -162,8 +169,6 @@ LOGIN_REDIRECT_URL = '/'
 
 #여기부터추가
 ACCOUNT_EMAIL_VERIFICATION = "none"
-
-# LOGIN_REDIRECT_URL = "/"
 
 ACCOUNT_LOGOUT_REDIRECT_URL = "/"
 
@@ -182,4 +187,14 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+#RESET PASSWORD
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+# 이건 내 정보여서 숨김처리했음!
+EMAIL_HOST_USER = os.environ.get('4cutarchive@gmail.com')
+EMAIL_HOST_PASSWORD = os.environ.get('piro4cut')
+
 

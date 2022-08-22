@@ -1,0 +1,746 @@
+{% extends 'users/main.html' %} {% block content %} {% load static %}
+<main>
+  <div class="map__container">
+    <div id="result" hidden></div>
+    <div class="map__title">포토부스 위치</div>
+    <div class="map__btn-box">
+      <div><button id="1" style="color: black; border: 1px solid var(--main-gray400); background: white;" onclick="getCurrentPosBtn()" >내위치</button></div>
+      <div><button class="2" id="lifeinout" onclick="lifeinout()"  >인생네컷</button></div>
+      <div><button class="3" id="signatureinout" onclick="signatureinout()" >포토시그니처</button></div>
+      <div><button class="4" id="photoisminout" onclick="photoisminout()">포토이즘</button></div>
+      <div><button class="5" id="Haurinout" onclick="Haurinout()">하루필름</button></div>
+      <div><button class="6" id="Selpixinout" onclick="Selpixinout()">셀픽스</button></div>
+      <div><button class="7" id="Drinkinout" onclick="Drinkinout()">포토드링크</button></div>
+      <div><button class="8" id="Grayinout" onclick="Grayinout()">포토그레이</button></div>
+      <div><button class="9" id="Thefilminout" onclick="Thefilminout()">더필름</button></div>
+      <div><button class="10" id="Maticinout" onclick="Maticinout()">포토매틱</button></div>
+      <div><button class="11" id="Hongdaeinout" onclick="Hongdaeinout()">홍대네컷</button></div>
+    </div>
+    <div class="map_wrap navbar-map">
+      <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+      <div id="menu_wrap" class="bg_white">
+        <div class="option">
+          <div hidden>
+            키워드 <input type="text" value="" id="keyword" size="15"> 
+            <button onclick="searchPlaces(); return false;">검색하기</button> 
+          </div>
+          <div >
+            장소 <input type="text" value="" id="keyword2" size="15" placeholder="ex) 신촌역"> 
+            <button onclick="serchlo(); return false;" id="search">검색</button> 
+          </div>
+        </div>
+        <hr>
+        <ul id="placesList"></ul>
+        <div id="pagination"></div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=100d82a24904c488a9d2f2ecd52bc0a7&libraries=services"></script>
+<script>
+var company = ['인생네컷','포토시그니처','포토이즘','하루필름','셀픽스','포토드링크','포토그레이','더필름','포토매틱','홍대네컷'];
+var windowWidth = window.innerWidth;
+console.log(windowWidth)
+var widthauto = true;
+if (windowWidth < 750){
+  widthauto = false;
+}
+function lifeinout() {
+    if (company.indexOf('인생네컷') !== -1){
+        company.splice(company.indexOf('인생네컷'),1);
+        const text = document.getElementsByClassName("2")[0];
+        text.id = 'hovercss';
+    } 
+    else{
+        company.push('인생네컷')
+        const text = document.getElementsByClassName("2")[0];
+        text.id = 'lifeinout';
+    }
+    var latlng = map.getCenter();
+    searchcustom(latlng);
+}
+    
+function signatureinout() {
+    if (company.indexOf('포토시그니처') !== -1){
+        company.splice(company.indexOf('포토시그니처'),1);
+        const text = document.getElementsByClassName("3")[0];
+        text.id = 'hovercss';
+    } 
+    else{
+        company.push('포토시그니처')
+        const text = document.getElementsByClassName("3")[0];
+        text.id = 'signatureinout';
+    }
+    var latlng = map.getCenter();
+    searchcustom(latlng);
+    
+}
+function photoisminout() {
+    if (company.indexOf('포토이즘') !== -1){
+        company.splice(company.indexOf('포토이즘'),1);
+        const text = document.getElementsByClassName("4")[0];
+        text.id = 'hovercss';
+    } 
+    else{
+        company.push('포토이즘')
+        const text = document.getElementsByClassName("4")[0];
+        text.id = 'photoisminout';
+    }
+    var latlng = map.getCenter();
+    searchcustom(latlng);
+    
+}
+function Haurinout() {
+    if (company.indexOf('하루필름') !== -1){
+        company.splice(company.indexOf('하루필름'),1);
+        const text = document.getElementsByClassName("5")[0];
+        text.id = 'hovercss';
+    } 
+    else{
+        company.push('하루필름')
+        const text = document.getElementsByClassName("5")[0];
+        text.id = 'Haurinout';
+    }
+    var latlng = map.getCenter();
+    searchcustom(latlng);
+    
+}
+function Selpixinout() {
+    if (company.indexOf('셀픽스') !== -1){
+        company.splice(company.indexOf('셀픽스'),1);
+        const text = document.getElementsByClassName("6")[0];
+        text.id = 'hovercss';
+    } 
+    else{
+        company.push('셀픽스')
+        const text = document.getElementsByClassName("6")[0];
+        text.id = 'Selpixinout';
+    }
+    var latlng = map.getCenter();
+    searchcustom(latlng);
+    
+}
+function Drinkinout() {
+    if (company.indexOf('포토드링크') !== -1){
+        company.splice(company.indexOf('포토드링크'),1);
+        const text = document.getElementsByClassName("7")[0];
+        text.id = 'hovercss';
+    } 
+    else{
+        company.push('포토드링크')
+        const text = document.getElementsByClassName("7")[0];
+        text.id = 'Drinkinout';
+    }
+    var latlng = map.getCenter();
+    searchcustom(latlng);
+    
+}
+function Grayinout() {
+    if (company.indexOf('포토그레이') !== -1){
+        company.splice(company.indexOf('포토그레이'),1);
+        const text = document.getElementsByClassName("8")[0];
+        text.id = 'hovercss';
+    } 
+    else{
+        company.push('포토그레이')
+        const text = document.getElementsByClassName("8")[0];
+        text.id = 'Grayinout';
+    }
+    var latlng = map.getCenter();
+    searchcustom(latlng);
+    
+}
+
+function Thefilminout() {
+    if (company.indexOf('더필름') !== -1){
+        company.splice(company.indexOf('더필름'),1);
+        const text = document.getElementsByClassName("9")[0];
+        text.id = 'hovercss';
+    } 
+    else{
+        company.push('더필름')
+        const text = document.getElementsByClassName("9")[0];
+        text.id = 'Thefilminout';
+    }
+    var latlng = map.getCenter();
+    searchcustom(latlng);
+    
+}
+function Maticinout() {
+    if (company.indexOf('포토매틱') !== -1){
+        company.splice(company.indexOf('포토매틱'),1);
+        const text = document.getElementsByClassName("10")[0];
+        text.id = 'hovercss';
+    } 
+    else{
+        company.push('포토매틱')
+        const text = document.getElementsByClassName("10")[0];
+        text.id = 'Maticinout';
+    }
+    var latlng = map.getCenter();
+    searchcustom(latlng);
+    
+}
+function Hongdaeinout() {
+    if (company.indexOf('홍대네컷') !== -1){
+        company.splice(company.indexOf('홍대네컷'),1);
+        const text = document.getElementsByClassName("11")[0];
+        text.id = 'hovercss';
+    } 
+    else{
+        company.push('홍대네컷')
+        const text = document.getElementsByClassName("11")[0];
+        text.id = 'Hongdaeinout';
+    }
+    var latlng = map.getCenter();
+    searchcustom(latlng);
+}
+
+var markers = [];
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+    mapOption = {
+        center: new kakao.maps.LatLng(37.56646, 126.98121), // 지도의 중심좌표
+        level: 5, // 지도의 확대 레벨
+        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+    };
+
+// 지도를 생성한다
+var map = new kakao.maps.Map(mapContainer, mapOption);
+
+//임시줄--------------------------------------------------------------------------
+function locationLoadSuccess(pos){
+    // 현재 위치 받아오기
+    var currentPos = new kakao.maps.LatLng(pos.coords.latitude,pos.coords.longitude);
+
+    // 지도 이동(기존 위치와 가깝다면 부드럽게 이동)
+    map.panTo(currentPos);
+    
+    var message = '<div style="padding:5px;">현위치</div>';
+    var iwContent = message, // 인포윈도우에 표시할 내용
+		iwRemoveable = true;
+
+	// 인포윈도우를 생성합니다
+	var infowindow = new kakao.maps.InfoWindow({
+		content : iwContent,
+		removable : iwRemoveable
+	});
+
+	// 인포윈도우를 마커위에 표시합니다
+	valuekey = document.getElementById('keyword');
+    valuekey.value = '';
+    
+    // 마커 생성
+    var marker = new kakao.maps.Marker({
+        position: currentPos
+    });
+    // 기존에 마커가 있다면 제거
+    marker.setMap(null);
+
+    marker.setMap(map);
+    infowindow.open(map, marker);
+};
+
+function locationLoadError(pos){
+    alert('위치 정보를 가져오는데 실패했습니다.');
+};
+
+// 위치 가져오기 버튼 클릭시
+function getCurrentPosBtn(){
+  navigator.geolocation.getCurrentPosition(locationLoadSuccess,locationLoadError);
+};
+
+// 장소 검색 객체를 생성합니다
+var ps = new kakao.maps.services.Places();  
+
+// 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
+var infowindow = new kakao.maps.InfoWindow({zIndex:1, disableAutoPan: widthauto});
+
+var pslo = new kakao.maps.services.Places(); 
+function serchlo(){
+var keyword2 = document.getElementById('keyword2').value;
+ps.keywordSearch(keyword2, placesSearchCB); 
+function placesSearchCB (data, status, pagination) {
+    if (status === kakao.maps.services.Status.OK) {
+        // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+        // LatLngBounds 객체에 좌표를 추가합니다
+        var placePosition = new kakao.maps.LatLng(data[0].y, data[0].x)
+        // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+        map.setCenter(placePosition);
+    } 
+}
+}
+
+// 키워드로 장소를 검색합니다
+// if (document.getElementById('keyword').value !== ""){
+//   console.log('이프문')
+// searchPlaces()}
+
+// 키워드 검색을 요청하는 함수입니다
+function searchcustom(mylo) {
+      // 검색 결과 목록에 추가된 항목들을 제거합니다
+  removeAllChildNods(document.getElementById('placesList'));
+  
+
+// 지도에 표시되고 있는 마커를 제거합니다
+removeMarker();
+if (company.indexOf('인생네컷') !== -1){
+searchPlaces(mylo)
+}
+if (company.indexOf('포토시그니처') !== -1){
+searchPlaces2(mylo)
+}
+if (company.indexOf('포토이즘') !== -1){
+searchPlaces3(mylo)
+}
+if (company.indexOf('하루필름') !== -1){
+ searchPlaces4(mylo)
+}
+if (company.indexOf('셀픽스') !== -1){
+    searchPlaces5(mylo)
+}
+if (company.indexOf('포토드링크') !== -1){
+    searchPlaces6(mylo)
+}
+if (company.indexOf('포토그레이') !== -1){
+    searchPlaces7(mylo)
+}
+if (company.indexOf('더필름') !== -1){
+    searchPlaces8(mylo)
+}
+if (company.indexOf('포토매틱') !== -1){
+    searchPlaces9(mylo)
+}
+if (company.indexOf('홍대네컷') !== -1){
+    searchPlaces10(mylo)
+}
+
+    
+function searchPlaces(mylo) {
+//   var keyword = document.getElementById('keyword').value;
+    var keyword = "인생네컷";
+  if (!keyword.replace(/^\s+|\s+$/g, '')) {
+      // alert('키워드를 입력해주세요!');
+      return false;
+  }
+
+  // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+  ps.keywordSearch( keyword, placesSearchCB,{
+    radius : 2000,
+    location: mylo,
+
+  }); 
+  return true;
+}
+
+function searchPlaces2(mylo) {
+
+//   var keyword = document.getElementById('keyword').value;
+    var keyword = "포토시그니처";
+  if (!keyword.replace(/^\s+|\s+$/g, '')) {
+      // alert('키워드를 입력해주세요!');
+      return false;
+  }
+
+  // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+  ps.keywordSearch( keyword, placesSearchCB,{
+    radius : 2000,
+    location: mylo,
+
+  }); 
+  
+  
+}
+function searchPlaces3(mylo) {
+//   var keyword = document.getElementById('keyword').value;
+    var keyword = "포토이즘";
+  if (!keyword.replace(/^\s+|\s+$/g, '')) {
+      // alert('키워드를 입력해주세요!');
+      return false;
+  }
+
+  // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+  ps.keywordSearch( keyword, placesSearchCB,{
+    radius : 2000,
+    location: mylo,
+
+  }); 
+}
+function searchPlaces4(mylo) {
+//   var keyword = document.getElementById('keyword').value;
+    var keyword = "하루필름";
+  if (!keyword.replace(/^\s+|\s+$/g, '')) {
+      // alert('키워드를 입력해주세요!');
+      return false;
+  }
+
+  // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+  ps.keywordSearch( keyword, placesSearchCB,{
+    radius : 2000,
+    location: mylo,
+
+  }); 
+}
+function searchPlaces5(mylo) {
+//   var keyword = document.getElementById('keyword').value;
+    var keyword = "셀픽스";
+  if (!keyword.replace(/^\s+|\s+$/g, '')) {
+      // alert('키워드를 입력해주세요!');
+      return false;
+  }
+
+  // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+  ps.keywordSearch( keyword, placesSearchCB,{
+    radius : 2000,
+    location: mylo,
+
+  }); 
+}
+function searchPlaces6(mylo) {
+//   var keyword = document.getElementById('keyword').value;
+    var keyword = "포토드링크";
+  if (!keyword.replace(/^\s+|\s+$/g, '')) {
+      // alert('키워드를 입력해주세요!');
+      return false;
+  }
+
+  // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+  ps.keywordSearch( keyword, placesSearchCB,{
+    radius : 2000,
+    location: mylo,
+
+  }); 
+}
+function searchPlaces7(mylo) {
+//   var keyword = document.getElementById('keyword').value;
+    var keyword = "포토그레이";
+  if (!keyword.replace(/^\s+|\s+$/g, '')) {
+      // alert('키워드를 입력해주세요!');
+      return false;
+  }
+
+  // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+  ps.keywordSearch( keyword, placesSearchCB,{
+    radius : 2000,
+    location: mylo,
+
+  }); 
+}
+function searchPlaces8(mylo) {
+//   var keyword = document.getElementById('keyword').value;
+    var keyword = "더필름";
+  if (!keyword.replace(/^\s+|\s+$/g, '')) {
+      // alert('키워드를 입력해주세요!');
+      return false;
+  }
+
+  // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+  ps.keywordSearch( keyword, placesSearchCB,{
+    radius : 2000,
+    location: mylo,
+
+  }); 
+}
+function searchPlaces9(mylo) {
+//   var keyword = document.getElementById('keyword').value;
+    var keyword = "포토매틱";
+  if (!keyword.replace(/^\s+|\s+$/g, '')) {
+      // alert('키워드를 입력해주세요!');
+      return false;
+  }
+
+  // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+  ps.keywordSearch( keyword, placesSearchCB,{
+    radius : 2000,
+    location: mylo,
+
+  }); 
+}
+function searchPlaces10(mylo) {
+//   var keyword = document.getElementById('keyword').value;
+    var keyword = "홍대네컷";
+  if (!keyword.replace(/^\s+|\s+$/g, '')) {
+      // alert('키워드를 입력해주세요!');
+      return false;
+  }
+
+  // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+  ps.keywordSearch( keyword, placesSearchCB,{
+    radius : 2000,
+    location: mylo,
+
+  }); 
+}
+}
+
+// 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
+function placesSearchCB(data, status, pagination) {
+  if (status === kakao.maps.services.Status.OK) {
+
+      // 정상적으로 검색이 완료됐으면
+      // 검색 목록과 마커를 표출합니다
+      displayPlaces(data);
+
+      // 페이지 번호를 표출합니다
+      displayPagination(pagination);
+
+  } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
+
+      // alert('검색 결과가 존재하지 않습니다.');
+      return;
+
+  } else if (status === kakao.maps.services.Status.ERROR) {
+
+      alert('검색 결과 중 오류가 발생했습니다.');
+      return;
+
+  }
+}
+
+// 검색 결과 목록과 마커를 표출하는 함수입니다
+function displayPlaces(places) {
+
+  var listEl = document.getElementById('placesList'), 
+  menuEl = document.getElementById('menu_wrap'),
+  fragment = document.createDocumentFragment(), 
+  bounds = new kakao.maps.LatLngBounds(), 
+  listStr = '';
+  
+//   // 검색 결과 목록에 추가된 항목들을 제거합니다
+//   removeAllChildNods(listEl);
+
+//   // 지도에 표시되고 있는 마커를 제거합니다
+//   removeMarker();
+  
+  for ( var i=0; i<places.length; i++ ) {
+
+      // 마커를 생성하고 지도에 표시합니다
+      var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
+          marker = addMarker(placePosition, i, places[i]), 
+          itemEl = getListItem(i, places[i]); // 검색 결과 항목 Element를 생성합니다
+
+      // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+      // LatLngBounds 객체에 좌표를 추가합니다
+      bounds.extend(placePosition);
+
+      // 마커와 검색결과 항목에 mouseover 했을때
+      // 해당 장소에 인포윈도우에 장소명을 표시합니다
+      // mouseout 했을 때는 인포윈도우를 닫습니다
+      (function(marker, title) {
+          kakao.maps.event.addListener(marker, 'mouseover', function() {
+              displayInfowindow(marker, title);
+          });
+
+          kakao.maps.event.addListener(marker, 'mouseout', function() {
+              infowindow.close();
+          });
+
+          itemEl.onmouseover =  function () {
+              displayInfowindow(marker, title);
+          };
+
+          itemEl.onmouseout =  function () {
+              infowindow.close();
+          };
+      })(marker, places[i].place_name);
+
+      fragment.appendChild(itemEl);
+  }
+
+  // 검색결과 항목들을 검색결과 목록 Element에 추가합니다
+  listEl.appendChild(fragment);
+  menuEl.scrollTop = 0;
+
+  // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+  // map.setBounds(bounds);
+}
+
+// 검색결과 항목을 Element로 반환하는 함수입니다
+function getListItem(index, places) {
+    var tagname
+    if(places.place_name.includes('인생네컷')){
+  tagname = 'markerbg'  // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(places.place_name.includes('포토시그니처')){
+    tagname = 'markerbg2' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(places.place_name.includes('포토이즘')){
+    tagname = 'markerbg3' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(places.place_name.includes('하루필름')){
+    tagname = 'markerbg4' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(places.place_name.includes('셀픽스')){
+    tagname = 'markerbg5' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(places.place_name.includes('포토드링크')){
+    tagname = 'markerbg6' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(places.place_name.includes('포토그레이')){
+    tagname = 'markerbg7' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(places.place_name.includes('더필름')){
+    tagname = 'markerbg8' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(places.place_name.includes('포토매틱')){
+    tagname = 'markerbg9' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(places.place_name.includes('홍대네컷')){
+    tagname = 'markerbg10' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else{
+    tagname = 'markerbg11' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+
+  var el = document.createElement('li'),
+  itemStr = '<span class="'+(tagname)+ ' marker_' + (index+1) + '"></span>' +
+              '<div class="info">' +
+              '   <h5>' + places.place_name + '</h5>';
+
+  if (places.road_address_name) {
+      itemStr += '    <span>' + places.road_address_name + '</span>' +
+                  '   <span class="jibun gray">' +  places.address_name  + '</span>';
+  } else {
+      itemStr += '    <span>' +  places.address_name  + '</span>'; 
+  }
+               
+    itemStr += '  <span class="tel">' + places.phone  + '</span>' +
+              '</div>';           
+
+  el.innerHTML = itemStr;
+  el.className = 'item';
+
+  return el;
+}
+
+// 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
+function addMarker(position, idx, title) {
+if(title.place_name.includes('인생네컷')){
+  var imageSrc = 'static/image/marker_number_blue.png' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(title.place_name.includes('포토시그니처')){
+  var imageSrc = 'static/image/marker_number_blue2.png' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(title.place_name.includes('포토이즘')){
+  var imageSrc = 'static/image/marker_number_blue3.png' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(title.place_name.includes('하루필름')){
+  var imageSrc = 'static/image/marker_number_blue4.png' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(title.place_name.includes('셀픽스')){
+  var imageSrc = 'static/image/marker_number_blue5.png' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(title.place_name.includes('포토드링크')){
+  var imageSrc = 'static/image/marker_number_blue6.png' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(title.place_name.includes('포토그레이')){
+  var imageSrc = 'static/image/marker_number_blue7.png' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(title.place_name.includes('더필름')){
+  var imageSrc = 'static/image/marker_number_blue8.png' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(title.place_name.includes('포토매틱')){
+  var imageSrc = 'static/image/marker_number_blue9.png' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else if(title.place_name.includes('홍대네컷')){
+  var imageSrc = 'static/image/marker_number_blue10.png' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+else{
+  var imageSrc = 'static/image/marker_number_blue11.png' // 마커 이미지 url, 스프라이트 이미지를 씁니다
+}
+
+      var imageSize = new kakao.maps.Size(36, 37),  // 마커 이미지의 크기
+      imgOptions =  {
+          spriteSize : new kakao.maps.Size(36, 691), // 스프라이트 이미지의 크기
+          spriteOrigin : new kakao.maps.Point(0, (idx*46)+10), // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
+          offset: new kakao.maps.Point(13, 37) // 마커 좌표에 일치시킬 이미지 내에서의 좌표
+      },
+      markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
+          marker = new kakao.maps.Marker({
+          position: position, // 마커의 위치
+          image: markerImage 
+      });
+
+  marker.setMap(map); // 지도 위에 마커를 표출합니다
+  markers.push(marker);  // 배열에 생성된 마커를 추가합니다
+
+  return marker;
+}
+
+// 지도 위에 표시되고 있는 마커를 모두 제거합니다
+function removeMarker() {
+  for ( var i = 0; i < markers.length; i++ ) {
+      markers[i].setMap(null);
+  }   
+  markers = [];
+}
+
+// 검색결과 목록 하단에 페이지번호를 표시는 함수입니다
+function displayPagination(pagination) {
+  var paginationEl = document.getElementById('pagination'),
+      fragment = document.createDocumentFragment(),
+      i; 
+
+  // 기존에 추가된 페이지번호를 삭제합니다
+  while (paginationEl.hasChildNodes()) {
+      paginationEl.removeChild (paginationEl.lastChild);
+  }
+
+  for (i=1; i<=pagination.last; i++) {
+      var el = document.createElement('a');
+      el.href = "#";
+      el.innerHTML = i;
+
+      if (i===pagination.current) {
+          el.className = 'on';
+      } else {
+          el.onclick = (function(i) {
+              return function() {
+                  pagination.gotoPage(i);
+              }
+          })(i);
+      }
+
+      fragment.appendChild(el);
+  }
+  paginationEl.appendChild(fragment);
+}
+
+// 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
+// 인포윈도우에 장소명을 표시합니다
+function displayInfowindow(marker, title) {
+  var content = '<div style="padding:5px;z-index:1;">' + title + '</div>';
+  infowindow.setContent(content);
+  infowindow.open(map, marker);
+}
+
+// 검색결과 목록의 자식 Element를 제거하는 함수입니다
+function removeAllChildNods(el) {   
+  while (el.hasChildNodes()) {
+      el.removeChild (el.lastChild);
+  }
+}
+
+kakao.maps.event.addListener(map, 'tilesloaded', function() {
+      // 검색 결과 목록에 추가된 항목들을 제거합니다
+removeAllChildNods(document.getElementById('placesList'));
+
+// 지도에 표시되고 있는 마커를 제거합니다
+removeMarker();
+var level = map.getLevel();
+
+// 지도의 중심좌표를 얻어옵니다 
+var latlng = map.getCenter(); 
+
+// console.log('반복?')
+
+searchcustom(latlng);
+
+var message = '<p>지도 레벨은 ' + level + ' 이고</p>';
+message += '<p>중심 좌표는 위도 ' + latlng.getLat() + ', 경도 ' + latlng.getLng() + '입니다</p>';
+
+var resultDiv = document.getElementById('result');
+resultDiv.innerHTML = message;
+})
+
+</script>
+</main>
+{% endblock content %}

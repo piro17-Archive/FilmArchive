@@ -1,0 +1,841 @@
+/* recommend */
+@media screen and (max-width: 600px) {
+  .recommend__container {
+    margin: 3rem 7%;
+  }
+
+  .recommend__flex-box {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+
+  .recommend__left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+
+  .recommend__left .recommend__title {
+    font-size: 1.8rem;
+    font-weight: 800;
+  }
+
+  .recommend__left .recommend__create {
+    color: var(--main-color);
+    font-size: 3.2rem;
+    margin-left: 1rem;
+  }
+
+  .recommend__right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .recommend__right .recommend__search {
+    width: 100%;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .recommend__right .recommend__search form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .recommend__right .recommend__search input {
+    background-color: var(--main-skin);
+    border: none;
+    padding: 1rem 0.7rem;
+    border-radius: 1rem;
+    width: 100%;
+  }
+
+  .recommend__right .recommend__search .glass__icon {
+    margin-left: 0.5rem;
+    position: absolute;
+    top: 0.6rem;
+    right: 1rem;
+  }
+
+  .recommend__recommendtitle {
+    font-size: 1.15rem;
+    margin: 0.5rem 0;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .recommend__container {
+    margin: 4rem 10%;
+  }
+
+  .recommend__flex-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0 3rem 0;
+  }
+
+  .recommend__left {
+    display: flex;
+    align-items: center;
+  }
+
+  .recommend__left .recommend__title {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+  .recommend__left .recommend__create {
+    color: var(--main-color);
+    font-size: 3.2rem;
+    margin-left: 1rem;
+  }
+
+  .recommend__right {
+    display: flex;
+    align-items: center;
+  }
+
+  .recommend__right .recommend__search {
+    margin-right: 0.5rem;
+    display: flex;
+    position: relative;
+  }
+
+  .recommend__right .recommend__search input {
+    background-color: var(--main-skin);
+    border: none;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    width: 20rem;
+  }
+
+  .recommend__right .recommend__search .glass__icon {
+    margin-left: 0.5rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+  }
+
+  .recommend__recommendtitle {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .recommend__container {
+    margin: 4rem 10%;
+  }
+
+  .recommend__flex-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0 3rem 0;
+  }
+
+  .recommend__left {
+    display: flex;
+    align-items: center;
+  }
+
+  .recommend__left .recommend__title {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+  .recommend__left .recommend__create {
+    color: var(--main-color);
+    font-size: 3.2rem;
+    margin-left: 1rem;
+  }
+
+  .recommend__right {
+    display: flex;
+    align-items: center;
+  }
+
+  .recommend__right .recommend__search {
+    margin-right: 0.5rem;
+    display: flex;
+    position: relative;
+  }
+
+  .recommend__right .recommend__search input {
+    background-color: var(--main-skin);
+    border: none;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    width: 22rem;
+  }
+
+  .recommend__right .recommend__search .glass__icon {
+    margin-left: 0.5rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+  }
+
+  .recommend__recommendtitle {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+}
+
+/* recommendcreate */
+@media screen and (max-width: 480px) {
+  .recommendcreate-form {
+    width: 32rem;
+    margin: 3rem auto;
+    padding: 3rem 0;
+  }
+
+  .recommendcreate-form .recommendcreate__title {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .recommendcreate-form .recommendcreate__hr {
+    background-color: var(--main-color);
+    height: 0.2rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .recommendcreate__info {
+    padding: 0 1rem;
+  }
+
+  .recommendcreate__info div span {
+    display: inline-block;
+    text-align: right;
+    margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.2rem;
+    width: 5rem;
+  }
+  
+  .recommendcreate__info div input {
+    margin-bottom: 1.5rem;
+  }
+
+  .recommendcreate__info div input[type="file"] {
+    width: 20rem;
+  }
+
+  .recommendcreate__info div input[type="text"] {
+    width: 20rem;
+    height: 3.2rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .recommendcreate__info div textarea{
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 20rem;
+    height: 12rem;
+    padding: 1rem;
+  }
+
+  .recommendcreate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .recommendcreate__btn {
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray600);
+    background-color: white;
+    width: 12rem;
+    height: 3.2rem;
+  }
+
+  .recommendcreate__btn:hover {
+    background-color: var(--main-color);
+    color: white;
+    transition: 0.2s;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .recommendcreate-form {
+    width: 40rem;
+    margin: 5rem auto;
+    padding: 5rem 0;
+  }
+
+  .recommendcreate-form .recommendcreate__title {
+    width: 100%;
+    font-size: 2.2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .recommendcreate-form .recommendcreate__hr {
+    background-color: var(--main-color);
+    height: 0.2rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .recommendcreate__info {
+    padding: 0 3rem;
+  }
+
+  .recommendcreate__info div span {
+    display: inline-block;
+    text-align: right;
+    margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.4rem;
+    width: 6rem;
+  }
+  
+  .recommendcreate__info div input {
+    margin-bottom: 1.5rem;
+  }
+
+  .recommendcreate__info div input[type="text"] {
+    width: 25rem;
+    height: 3.2rem;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .recommendcreate__info div textarea{
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 25rem;
+    height: 17rem;
+    padding: 1rem;
+  }
+
+  .recommendcreate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .recommendcreate__btn {
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray600);
+    background-color: white;
+    width: 12rem;
+    height: 3.2rem;
+  }
+
+  .recommendcreate__btn:hover {
+    background-color: var(--main-color);
+    color: white;
+    transition: 0.2s;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .recommendcreate-form {
+    width: 50rem;
+    margin: 5rem auto;
+    padding: 5rem 0;
+  }
+
+  .recommendcreate-form .recommendcreate__title {
+    width: 100%;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .recommendcreate-form .recommendcreate__hr {
+    background-color: var(--main-color);
+    height: 0.2rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .recommendcreate__info {
+    padding: 0 5rem;
+  }
+
+  .recommendcreate__info div span {
+    display: inline-block;
+    text-align: right;
+    margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.6rem;
+    width: 6rem;
+  }
+  
+  .recommendcreate__info div input {
+    margin-bottom: 1.5rem;
+  }
+
+  .recommendcreate__info div input[type="text"] {
+    width: 30rem;
+    height: 3.2rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .recommendcreate__info div textarea{
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 30rem;
+    height: 17rem;
+    padding: 1rem;
+  }
+
+  .recommendcreate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .recommendcreate__btn {
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray600);
+    background-color: white;
+    width: 12rem;
+    height: 3.2rem;
+  }
+
+  .recommendcreate__btn:hover {
+    background-color: var(--main-color);
+    color: white;
+    transition: 0.2s;
+  }
+}
+
+.recommendcreate__btn {
+  cursor: pointer;
+}
+
+/* recommenddetail */
+@media screen and (max-width: 480px) {
+  .recommenddetail {
+    width: 30rem;
+    margin: 0 auto;
+    padding: 5rem 0;
+  }
+
+  .recommenddetail__title {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .recommenddetail__hr {
+    background-color: var(--main-color);
+    height: 0.1rem;
+    margin: 2rem 0;
+  }
+
+  .recommenddetail__recommendtitle {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .recommenddetail__img img{
+    width: 100%;
+    height: auto;
+  }
+
+  .recommenddetail__memo {
+    font-size: 1.4rem;
+    margin: 2rem 0;
+  }
+
+  .recommenddetail__btn-box {
+    display: flex;
+    justify-content: right;
+  }
+
+  .recommenddetail__btn-box .recommenddetail__home,
+  .recommenddetail__btn-box .recommenddetail__update,
+  .recommenddetail__btn-box .recommenddetail__delete {
+   font-size: 2rem;
+  }
+
+  .recommenddetail__btn-box .recommenddetail__update,
+  .recommenddetail__btn-box .recommenddetail__delete {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .recommenddetail {
+    width: 50rem;
+    margin: 0 auto;
+    padding: 5rem 0;
+  }
+
+  .recommenddetail__title {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .recommenddetail__hr {
+    background-color: var(--main-color);
+    height: 0.1rem;
+    margin: 2rem 0;
+  }
+
+  .recommenddetail__recommendtitle {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .recommenddetail__img img{
+    width: 100%;
+    height: auto;
+  }
+
+  .recommenddetail__memo {
+    font-size: 1.4rem;
+    margin: 2rem 0;
+  }
+
+  .recommenddetail__btn-box {
+    display: flex;
+  }
+
+  .recommenddetail__btn-box {
+    display: flex;
+    justify-content: right;
+  }
+
+  .recommenddetail__btn-box .recommenddetail__home,
+  .recommenddetail__btn-box .recommenddetail__update,
+  .recommenddetail__btn-box .recommenddetail__delete {
+   font-size: 2rem;
+  }
+
+  .recommenddetail__btn-box .recommenddetail__update,
+  .recommenddetail__btn-box .recommenddetail__delete {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .recommenddetail {
+    width: 50rem;
+    margin: 0 auto;
+    padding: 5rem 0;
+  }
+
+  .recommenddetail__title {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .recommenddetail__hr {
+    background-color: var(--main-color);
+    height: 0.1rem;
+    margin: 2rem 0;
+  }
+
+  .recommenddetail__recommendtitle {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .recommenddetail__img img{
+    width: 100%;
+    height: auto;
+  }
+
+  .recommenddetail__memo {
+    font-size: 1.4rem;
+    margin: 2rem 0;
+  }
+
+  .recommenddetail__btn-box {
+    display: flex;
+  }
+
+  .recommenddetail__btn-box {
+    display: flex;
+    justify-content: right;
+  }
+
+  .recommenddetail__btn-box .recommenddetail__home,
+  .recommenddetail__btn-box .recommenddetail__update,
+  .recommenddetail__btn-box .recommenddetail__delete {
+   font-size: 2.5rem;
+  }
+
+  .recommenddetail__btn-box .recommenddetail__update,
+  .recommenddetail__btn-box .recommenddetail__delete {
+    margin-left: 1rem;
+  }
+}
+
+/* recommendupdate */
+@media screen and (max-width: 480px) {
+  .recommendupdate-form {
+    width: 32rem;
+    margin: 5rem auto;
+    padding: 3rem 0;
+  }
+
+  .recommendupdate-form .recommendupdate__title {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .recommendupdate__hr {
+    background-color: var(--main-color);
+    height: 0.2rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .recommendupdate__info {
+    padding: 0 1rem;
+  }
+
+  .recommendupdate__info div span {
+    display: inline-block;
+    text-align: right;
+    margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.2rem;
+    width: 7rem;
+  }
+  
+  .recommendupdate__info div input {
+    margin-bottom: 1.5rem;
+  }
+
+  .recommendupdate__info div input[type="text"] {
+    width: 20rem;
+    height: 3.2rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .recommendupdate__info div textarea{
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 20rem;
+    height: 12rem;
+    padding: 1rem;
+  }
+
+  .recommendupdate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .recommendupdate__btn {
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray600);
+    background-color: white;
+    width: 12rem;
+    height: 3.2rem;
+    cursor: pointer;
+  }
+
+  .recommendupdate__btn:hover {
+    background-color: var(--main-color);
+    color: white;
+    transition: 0.2s;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .recommendupdate-form {
+    width: 40rem;
+    margin: 5rem auto;
+    padding: 5rem 0;
+  }
+
+  .recommendupdate-form .recommendupdate__title {
+    width: 100%;
+    font-size: 2.2rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .recommendupdate__hr {
+    background-color: var(--main-color);
+    height: 0.2rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .recommendupdate__info {
+    padding: 0 2rem;
+  }
+
+  .recommendupdate__info div span {
+    display: inline-block;
+    text-align: right;
+    margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.4rem;
+    width: 7rem;
+  }
+  
+  .recommendupdate__info div input {
+    margin-bottom: 1.5rem;
+  }
+
+  .recommendupdate__info div input[type="text"] {
+    width: 25rem;
+    height: 3.2rem;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .recommendupdate__info div textarea{
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 25rem;
+    height: 15rem;
+    padding: 1rem;
+  }
+
+  .recommendupdate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .recommendupdate__btn {
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray600);
+    background-color: white;
+    width: 12rem;
+    height: 3.2rem;
+    cursor: pointer;
+  }
+
+  .recommendupdate__btn:hover {
+    background-color: var(--main-color);
+    color: white;
+    transition: 0.2s;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .recommendupdate-form {
+    width: 50rem;
+    margin: 5rem auto;
+    padding: 5rem 0;
+  }
+
+  .recommendupdate-form .recommendupdate__title {
+    width: 100%;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+  }
+
+  .recommendupdate__hr {
+    background-color: var(--main-color);
+    height: 0.2rem;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .recommendupdate__info {
+    padding: 0 5rem;
+  }
+
+  .recommendupdate__info div span {
+    display: inline-block;
+    text-align: right;
+    margin: 0 1.5rem 1.5rem 0;
+    font-size: 1.6rem;
+    width: 7rem;
+  }
+  
+  .recommendupdate__info div input {
+    margin-bottom: 1.5rem;
+  }
+
+  .recommendupdate__info div input[type="text"] {
+    width: 30rem;
+    height: 3.2rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .recommendupdate__info div textarea{
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray400);
+    background-color: white;
+    width: 30rem;
+    padding: 1rem;
+  }
+
+  .recommendupdate__btn-box {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .recommendupdate__btn {
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--main-gray600);
+    background-color: white;
+    width: 12rem;
+    height: 3.2rem;
+    cursor: pointer;
+  }
+
+  .recommendupdate__btn:hover {
+    background-color: var(--main-color);
+    color: white;
+    transition: 0.2s;
+  }
+}
