@@ -72,10 +72,12 @@
           {% endif %}
       </div>
       <div class="btn--right">
+        {% if user.id == frameinfo.userid.id %}
         <a href="/frameupdate/{{frameinfo.id}}">
           <button class="framedetail__update">수정</button>
         </a>
         <div class="framedetail__delete"><button class="openBtn">삭제</button></div>
+        {% endif %}
       </div>
     </div>
   </div>

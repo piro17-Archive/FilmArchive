@@ -29,6 +29,7 @@ def album(request,id):
 
     context = {
         "allalbum": allalbum,
+        "sort": sort,
     }
     return render(request, template_name='albums/album.html',context=context)
 
@@ -58,6 +59,7 @@ def albumcreate(request):
     context = {
         "typeinfo": typeinfo,
         'today': today,
+        
     }
     return render(request, template_name="albums/albumcreate.html",context = context)
 
