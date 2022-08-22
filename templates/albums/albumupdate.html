@@ -62,6 +62,7 @@
         </div>
         <div class="albumupdate__btn-box">
           <input type="submit" value="글 수정" class="albumupdate__btn" />
+				  <a href="{% url 'albums:album' user.id %}"><input value="취소하기" class="albumupdate__btn" id="cancel"/></a>
         </div>
       </div>
       <div class="albumupdate__hr"></div>

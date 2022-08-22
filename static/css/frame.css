@@ -1558,10 +1558,10 @@
     border-radius: 0.5rem;
     border: 1px solid var(--main-gray400);
     background-color: white;
-    width: 12rem;
+    width: 10rem;
     height: 3.2rem;
     cursor: pointer;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 
   .frameupdate__btn:hover {
@@ -1706,7 +1706,7 @@
     width: 12rem;
     height: 3.2rem;
     cursor: pointer;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .frameupdate__btn:hover {
@@ -1851,7 +1851,7 @@
     width: 12rem;
     height: 3.2rem;
     cursor: pointer;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .frameupdate__btn:hover {
