@@ -8,7 +8,7 @@
 				<h2>로그인을 해주세요.</h2>
 			</div>
 			<div class="modal-btn">
-				<button class="closeBtn" id="btn-cancle">닫기</button>
+				<button class="closeBtn" id="btn-cancel">닫기</button>
         <a href ="{% url 'users:login' %}"><button >로그인하기</button></a>
 			</div>
 		</div>
@@ -66,6 +66,7 @@
       </div >
     </div>  
 
+
     <!-- ranking section -->
 <!--<div class="ranking__grid__section">
       <div class="frame__ranking__title">주간 BEST</div>
@@ -118,11 +119,11 @@
         <div class="frame__one-box grid__one-box">
           <div class="img-box">
           {% if user.is_authenticated %}
-          <a href="{%url 'framesharings:framedetail' frameinfo.id %}">
+            <a href="{%url 'framesharings:framedetail' frameinfo.id %}">
             
-              {% else %}
-              <a class="openBtn">
-              {% endif%}
+          {% else %}
+            <a class="openBtn">
+          {% endif%}
               <div class="grid__img">
               <img src="{{ frameinfo.framephoto.url }}" alt="프레임사진"/>
             </div>
@@ -265,7 +266,10 @@ const close = () => {
   document.querySelector(".modal").classList.add("hidden");
 }
 
-document.querySelector(".openBtn").addEventListener("click", open);
+var x = document.getElementsByClassName("openBtn")
+  for (var i = 0; i < x.length; i++){
+    x[i].addEventListener("click", open);
+  }
 document.querySelector(".closeBtn").addEventListener("click", close);
 document.querySelector(".bg").addEventListener("click", close);
 
