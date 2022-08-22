@@ -1,3 +1,8 @@
+#hovercss{
+  background-color: #B5B6CB;
+  transition: 0.2s;
+}
+
 #keyword2 {
   border: 1px solid var(--main-gray400);
   border-radius: 0.5rem;
@@ -8,6 +13,56 @@
   border: 1px solid var(--main-gray400);
   border-radius: 0.5rem;
   padding: 0.4rem 0.5rem;
+}
+
+#lifeinout {
+  background: #82b7ff;
+  transition: 0.2s;
+}
+
+#signatureinout {
+  background: #e1ae69;
+  transition: 0.2s;
+}
+
+#photoisminout {
+  background: #91C867;
+  transition: 0.2s;
+}
+
+#Haurinout {
+  background: #aea9ff;
+  transition: 0.2s;
+}
+
+#Selpixinout {
+  background: #ff8a3c;
+  transition: 0.2s;
+}
+
+#Drinkinout {
+  background: #ee98f5;
+  transition: 0.2s;
+}
+
+#Grayinout {
+  background: #fca786;
+  transition: 0.2s;
+}
+
+#Thefilminout {
+  background: #a2a2a2;
+  transition: 0.2s;
+}
+
+#Maticinout {
+  background: #ff6a49;
+  transition: 0.2s;
+}
+
+#Hongdaeinout {
+  background: #89d2e6;
+  transition: 0.2s;
 }
 
 .bg_white {
@@ -247,13 +302,12 @@
   }
 
   .map__btn-box div button {
-    border: 1px solid var(--main-gray400);
-    background: rgb(79, 59, 59);
     border-radius: 0.5rem;
+    border: none;
     padding: 0.6rem 1.5rem;
     color: white;
-    font-size: 1.2rem;
-    font-weight: 800;
+    font-size: 1.3rem;
+    font-weight: 500;
     margin: 0 1rem 1rem 0;
   }
   
@@ -317,13 +371,12 @@
   }
 
   .map__btn-box div button {
-    background: rgb(79, 59, 59);
-    border: 1px solid var(--main-gray400);
     border-radius: 0.5rem;
+    border: none;
     padding: 0.8rem 1.2rem;
     color: white;
-    font-size: 1.4rem;
-    font-weight: 800;
+    font-size: 1.3rem;
+    font-weight: 500;
     margin: 0 1rem 1rem 0;
   }
 
@@ -383,13 +436,12 @@
   }
 
   .map__btn-box div button {
-    border: 1px solid var(--main-gray400);
     border-radius: 0.5rem;
+    border: none;
     padding: 0.8rem 1.2rem;
-    background: rgb(79, 59, 59);
     color: white;
     font-size: 1.4rem;
-    font-weight: 800;
+    font-weight: 600;
     margin: 0 1rem 1rem 0;
   }
   
