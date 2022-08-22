@@ -17,11 +17,11 @@
         </div> 
         {% endif %}
         <input type="file" name="framephoto" id="framephoto1">
-
+        {% for keyword in frameinfo.framekeyword.all %}{{keyword.name}},{%endfor%}
         <div><span class="updatesection__title">제목</span> <input type="text" name="frametitle" placeholder="프레임제목" value="{{ frameinfo.frametitle}}"/></div>
         <div class="write__keyword per__create-section">
           <span class="updatesection__title">키워드</span>
-          <div class="updatetag__section"><input name='tags' placeholder="최대 10개까지 입력 가능" class='keyword__tags' value='' type="hidden"></div>
+          <div class="updatetag__section"><input name='tags' placeholder="최대 10개까지 입력 가능" class='keyword__tags' value='{% for keyword in frameinfo.framekeyword.all %}{{keyword.name}},{%endfor%}' type="hidden"></div>
           {%  for keywordinfo in keywordinfo %}
           <input hidden type="checkbox" name="{{forloop.counter}}" value="{{forloop.counter}}" id="keywordid{{forloop.counter}}"><label hidden for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
           {% endfor %}
