@@ -38,6 +38,12 @@
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=100d82a24904c488a9d2f2ecd52bc0a7&libraries=services"></script>
 <script>
 var company = ['인생네컷','포토시그니처','포토이즘','하루필름','셀픽스','포토드링크','포토그레이','더필름','포토매틱','홍대네컷'];
+var windowWidth = window.innerWidth;
+console.log(windowWidth)
+var widthauto = true;
+if (windowWidth < 750){
+  widthauto = false;
+}
 function lifeinout() {
     if (company.indexOf('인생네컷') !== -1){
         company.splice(company.indexOf('인생네컷'),1);
@@ -246,7 +252,7 @@ function getCurrentPosBtn(){
 var ps = new kakao.maps.services.Places();  
 
 // 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
-var infowindow = new kakao.maps.InfoWindow({zIndex:1, disableAutoPan: true});
+var infowindow = new kakao.maps.InfoWindow({zIndex:1, disableAutoPan: widthauto});
 
 var pslo = new kakao.maps.services.Places(); 
 function serchlo(){

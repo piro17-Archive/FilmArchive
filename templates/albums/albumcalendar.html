@@ -107,9 +107,10 @@
       if (condition == "this" && albumdate == (viewYear).toString()+'년 '+(viewMonth+1).toString()+'월 '+(date).toString()+'일') {
           if (k == 0){
           dates[i] = `<div class="date" ><a href="/albumdetail/{{albuminfo.id}}" ><span class="photoday">${date}</span><img src="/media/{{ albuminfo.albumphoto }}" style="overflow: hidden;" " alt=""></a>`;
+            console.log(dates[i])
           } if (k > 0) {
-            //date[i] = date[i].replace(`<span class="photoday">${date}</span>`,'');
-              dates[i] = dates[i] + `<a href="/albumdetail/{{albuminfo.id}}"><img src="/media/{{ albuminfo.albumphoto }}" style="overflow: hidden;" alt=""></a>`
+            dates[i] = dates[i].replace(`<span class="photoday">${date}</span>`,'');
+              dates[i] = dates[i] + `<a href="/albumdetail/{{albuminfo.id}}"><span class="photoday">${date}</span><img src="/media/{{ albuminfo.albumphoto }}" style="overflow: hidden;" alt=""></a>`
           }
           k++
       }

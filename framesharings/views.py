@@ -99,6 +99,7 @@ def frame(request):
         "keywordinfo": keywordinfo,
         "querykeyword": querykeyword,
         "frameweekinfo": frameweekinfo,
+        "sort": sort,
     }
 
     return render(request, template_name='framesharings/frame.html',context=context)
