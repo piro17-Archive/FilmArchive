@@ -28,9 +28,19 @@
         <div class="frame__sort">
           <form action="{% url 'framesharings:frame' %}" >
             <select name="sort" onchange="this.form.submit()">
-              <option selected="selected"  value="none">정렬기준</option>
-              <option value="1">인기순</option>
-              <option value="2">최신순</option>
+              {% if sort == '1' %}
+							<option   value="none">정렬기준</option>
+							<option  selected="selected" value="1">인기순</option>
+							<option value="2">최신순</option>
+							{% elif sort == '2' %}
+							<option   value="none">정렬기준</option>
+							<option   value="1">인기순</option>
+							<option  selected="selected" value="2">최신순</option>
+							{% else %}
+							<option  selected="selected"  value="none">정렬기준</option>
+							<option   value="1">인기순</option>
+							<option  value="2">최신순</option>
+							{% endif %}
             </select>
           </form>
           </div>
@@ -267,9 +277,15 @@ const close = () => {
 }
 
 var x = document.getElementsByClassName("openBtn")
+<<<<<<< Updated upstream
   for (var i = 0; i < x.length; i++){
     x[i].addEventListener("click", open);
   }
+=======
+for (var i = 0; i < x.length; i++){
+  x[i].addEventListener("click", open);
+}
+>>>>>>> Stashed changes
 document.querySelector(".closeBtn").addEventListener("click", close);
 document.querySelector(".bg").addEventListener("click", close);
 

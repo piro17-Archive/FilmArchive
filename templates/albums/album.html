@@ -17,9 +17,20 @@
 				<div class="album__sort">
 					<form action="{% url 'albums:album' user.id %}" >
 						<select name="sort" onchange="this.form.submit()">
-							<option selected="selected"  value="none">정렬기준</option>
-							<option value="1">오래된순</option>
+							{% if sort == '1' %}
+							<option   value="none">정렬기준</option>
+							<option  selected="selected" value="1">오래된순</option>
 							<option value="2">최신순</option>
+							{% elif sort == '2' %}
+							<option   value="none">정렬기준</option>
+							<option   value="1">오래된순</option>
+							<option  selected="selected" value="2">최신순</option>
+							{% else %}
+							<option  selected="selected"  value="none">정렬기준</option>
+							<option   value="1">오래된순</option>
+							<option  value="2">최신순</option>
+							{% endif %}
+
 						</select>
 					</form>
 				</div>
