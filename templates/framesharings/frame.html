@@ -58,15 +58,16 @@
       <label for='css-toggle-switch' class='keyword__show'></label>
       <div class='css-toggle-content'>
         <div class="frame__main__keyword">
-          <form action="{% url 'framesharings:frame' %}">
+          <form id="sortkeyword" action="{% url 'framesharings:frame' %}">
+          
             <div class="keyword__section">
               <button name="sortkeyword" value="None" class="reset__keyword">Reset</button>
               {% for keywordinfo in keywordinfo  %}
               <div class="per__frame__keyword">
-                {% if querykeyword == keywordinfo.id %}
-                <button name="sortkeyword" value="{{keywordinfo.id}}" class="keyword__selected keyword__one-box">#{{keywordinfo.name}}</button>
+                {% if keywordinfo.id in elementkeyword %}
+                <button onclick="changesort(this.value,this.id)" id="sortkeyword{{forloop.counter}}" name="sortkeyword" value="{{keywordinfo.id}}" class="keyword__selected keyword__one-box">#{{keywordinfo.name}}</button>
                 {% else %}
-                <button name="sortkeyword" value="{{keywordinfo.id}}" class="keyword__original keyword__one-box">#{{keywordinfo.name}}</button>
+                <button onclick="changesort(this.value,this.id)" id="sortkeyword{{forloop.counter}}" name="sortkeyword" value="{{keywordinfo.id}}" class="keyword__original keyword__one-box">#{{keywordinfo.name}}</button>
                 {% endif%}
               </div>
               {% endfor%}
@@ -277,17 +278,30 @@ const close = () => {
 }
 
 var x = document.getElementsByClassName("openBtn")
-<<<<<<< Updated upstream
   for (var i = 0; i < x.length; i++){
     x[i].addEventListener("click", open);
   }
-=======
-for (var i = 0; i < x.length; i++){
-  x[i].addEventListener("click", open);
-}
->>>>>>> Stashed changes
+
 document.querySelector(".closeBtn").addEventListener("click", close);
 document.querySelector(".bg").addEventListener("click", close);
+var sortlist = `{{querykeyword}}`;
+if(sortlist == 'None' ){
+  sortlist = ''
+}
+function changesort(idnum,elid){
+  if (sortlist.includes(idnum)){
+    sortlist = sortlist.replace(`${idnum},`, '');
+    console.log(sortlist)
+    document.getElementById(elid).value = sortlist
+    document.getElementById("sortkeyword").submit();
+  }
+  else {
+    sortlist += idnum+','
+    console.log(sortlist)
+    document.getElementById(elid).value = sortlist
+    document.getElementById("sortkeyword").submit();
+  }
+}
 
 </script>
 {% endblock content %}

@@ -64,9 +64,15 @@ def frame(request):
     likereq = request.GET.get('like',None)
     savereq = request.GET.get('save',None)
     querykeyword = request.GET.get('sortkeyword',"None")
-    if querykeyword != "None":
-        frameinfo = Frame.objects.filter(framekeyword__id__contains=querykeyword)
-        querykeyword = int(querykeyword)
+    print(type(querykeyword))
+    elementkeyword = 0;
+    if querykeyword != "" and querykeyword != "None":
+        elementkeyword = querykeyword.split(',')
+        elementkeyword = elementkeyword[:-1]
+        elementkeyword = list(map(int,elementkeyword))
+        print(elementkeyword)
+        frameinfo = Frame.objects.filter(framekeyword__id__in=elementkeyword)
+
     if likereq != None:
         sltframe = Frame.objects.get(id = likereq)
         if request.user in sltframe.framelikeuser.all():
@@ -92,6 +98,7 @@ def frame(request):
         else:
             sltframe.framesaveuser.add(request.user)
         sltframe.save()
+        
     context = {
         "frameinfo": frameinfo,
         "like": like,
@@ -100,6 +107,7 @@ def frame(request):
         "querykeyword": querykeyword,
         "frameweekinfo": frameweekinfo,
         "sort": sort,
+        "elementkeyword":elementkeyword,
     }
 
     return render(request, template_name='framesharings/frame.html',context=context)
@@ -267,15 +275,24 @@ def frameupdate(request,id):
 
 
 
-
+        frametags = request.POST["tags"]
+        sf = frametags.split('"')
         Frame.objects.filter(id=id).delete()
         a = Frame.objects.all()
         keywordoj = a.last()
-        for i in range(1,len(keywordinfo)+1):
-            keywordap = request.POST.get(str(i))
-            if keywordap:
-                keywordoj.framekeyword.add(Keyword.objects.filter(id = i)[0])
+        for i in range (1,len(sf)//4 +1):
+            print(sf[i*4-1])
+            if Keyword.objects.filter(name = sf[i*4-1]):
+                keywordoj.framekeyword.add(Keyword.objects.filter(name = sf[i*4-1])[0])
+            else:
+                Keyword.objects.create(name = sf[i*4-1])
+                keywordoj.framekeyword.add(Keyword.objects.filter(name = sf[i*4-1])[0])
         keywordoj.save()
+        # for i in range(1,len(keywordinfo)+1):
+        #     keywordap = request.POST.get(str(i))
+        #     if keywordap:
+        #         keywordoj.framekeyword.add(Keyword.objects.filter(id = i)[0])
+        # keywordoj.save()
 
 
         return redirect(f"/framedetail/{a.last().id}")
