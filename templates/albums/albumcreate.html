@@ -30,6 +30,7 @@
 			<div><span>메모</span><textarea name="albummemo" id="" cols="30" rows="10"></textarea></div>
 			<div class="albumcreate__btn-box">
 				<input type="submit" value="글 작성" class="albumcreate__btn"/>
+				<a href="{% url 'albums:album' user.id %}"><input value="취소하기" class="albumcreate__btn" id="cancel"/></a>
 			</div>
 		</div>
 		<div class="albumcreate__hr"></div>

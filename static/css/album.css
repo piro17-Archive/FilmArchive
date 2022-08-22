@@ -547,7 +547,7 @@
     font-size: 1.2rem;
     cursor: pointer;
     border: 1px solid var(--main-gray400);
-    padding-left: 1rem;
+    padding: 0 0.5rem;
   }
 
   .albumcreate__info div textarea{
@@ -591,6 +591,11 @@
     color: var(--main-red);
     margin-left: 5.5rem;
     margin-bottom: 1rem;
+  }
+
+  #cancel {
+    margin-left: 1rem;
+    text-align: center;
   }
 }
 
@@ -654,7 +659,7 @@
     font-size: 1.4rem;
     cursor: pointer;
     border: 1px solid var(--main-gray400);
-    padding-left: 1rem;
+    padding: 0 0.5rem;
   }
 
   .albumcreate__info div textarea{
@@ -698,6 +703,11 @@
     color: var(--main-red);
     margin-left: 6.5rem;
     margin-bottom: 1rem;
+  }
+
+  #cancel {
+    margin-left: 1.5rem;
+    text-align: center;
   }
 }
 
@@ -761,7 +771,7 @@
     font-size: 1.4rem;
     cursor: pointer;
     border: 1px solid var(--main-gray400);
-    padding-left: 1rem;
+    padding: 0 0.5rem;
   }
 
   .albumcreate__info div textarea{
@@ -805,6 +815,11 @@
     color: var(--main-red);
     margin-left: 6.5rem;
     margin-bottom: 1rem;
+  }
+
+  #cancel {
+    margin-left: 2rem;
+    text-align: center;
   }
 }
 
@@ -1614,7 +1629,7 @@
     font-size: 1.2rem;
     cursor: pointer;
     border: 1px solid var(--main-gray400);
-    padding-left: 1rem;
+    padding: 0 0.5rem;
   }
 
   .albumupdate__info div input[type="text"] {
@@ -1737,7 +1752,7 @@
     font-size: 1.4rem;
     cursor: pointer;
     border: 1px solid var(--main-gray400);
-    padding-left: 1rem;
+    padding: 0 0.5rem;
   }
 
   .albumupdate__info div input[type="text"] {
@@ -1850,7 +1865,7 @@
     font-size: 1.4rem;
     cursor: pointer;
     border: 1px solid var(--main-gray400);
-    padding-left: 1rem;
+    padding: 0 0.5rem;
   }
 
   .albumupdate__info div input[type="text"] {
