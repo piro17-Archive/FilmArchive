@@ -95,7 +95,7 @@ class LoginView(View):
 def Log_out(request):
     logout(request)
     return redirect("users:main")
-
+  
 
 def sign_up(request):
     if request.method == "POST":
@@ -104,7 +104,19 @@ def sign_up(request):
             user = form.save()
             login(request, user)
             return render(request, "users/main.html")
-        return redirect("users:sign_up")
+        # else:
+        if User.objects.filter(username=request.POST['username']).exists():
+            messages.error(request, '이미 존재하는 아이디입니다.')
+            messages.error(request, '다른 아이디를 입력해주세요.')
+            return redirect('users:sign_up')
+        if request.POST['password1'] != request.POST['password2']:
+            messages.error(request, '비밀번호가 일치하지 않습니다.')
+            return redirect('users:sign_up')
+        else:
+            messages.error(request, '비밀번호가 올바르지 않습니다.')
+            messages.error(request, '생성하신 비밀번호가 8자리 이상이며, 문자로만 이루어지지 않았는지 다시 한 번 확인해주세요.')
+            return redirect('users:sign_up')
+    # get
     else:
         form = forms.SignupForm()
         return render(request, "users/signup.html", {"form": form})
@@ -180,24 +192,6 @@ def profile_update(request):
         'p_form': p_form,
     }
     return render(request, 'users/update_profpic.html', context)
-
-
-# @csrf_exempt
-# def like_ajax(request):
-#     req = json.loads(request.body) #json 형식에서 python 객체로! {'id': 1, 'type': 'like'} 형식으로 저장되어 있음
-#     post_id = req['id'] #각각 추출
-#     button_type = req['type']
-
-#     post = Post.objects.get(id=post_id)
-
-#     if button_type =='like':
-#         post.like += 1
-#     else:
-#         post.dislike += 1
-
-#     post.save()
-
-#     return JsonResponse({'id': post_id, 'type': button_type})
 
 
 @login_required(login_url='login')
