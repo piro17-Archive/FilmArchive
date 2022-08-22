@@ -57,7 +57,7 @@
 @media screen and (max-width: 480px) {
   .morepage--container{
     width: 100%;
-    padding: 3rem 10%;
+    padding: 3rem 7%;
   }
 
   .morepage--title {
@@ -95,7 +95,7 @@
 @media screen and (min-width: 480px) and (max-width: 740px){
   .morepage--container{
     width: 100%;
-    padding: 4rem 10%;
+    padding: 4rem 7%;
   }
 
   .morepage--title {
@@ -133,7 +133,7 @@
 @media screen and (min-width: 740px) and (max-width: 1024px){
   .morepage--container{
     width: 100%;
-    padding: 4rem 10%;
+    padding: 4rem 7%;
   }
 
   .morepage--title {

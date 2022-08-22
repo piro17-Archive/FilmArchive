@@ -58,7 +58,7 @@
     cursor: pointer;
     font-size: 1.2rem;
     margin-top: 0.5rem;
-  }
+    color: var(--main-color);
 
   .signup__btn:hover {
     background: var(--main-color);
@@ -132,6 +132,7 @@
     padding: 0.6rem 1.7rem;
     cursor: pointer;
     margin-top: 1rem;
+    color: var(--main-color);
   }
 
   .signup__btn:hover {
@@ -206,6 +207,7 @@
     padding: 0.6rem 1.7rem;
     cursor: pointer;
     margin-top: 1rem;
+    color: var(--main-color);
   }
 
   .signup__btn:hover {
