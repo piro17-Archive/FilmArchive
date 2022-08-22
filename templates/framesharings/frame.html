@@ -1,0 +1,307 @@
+{% extends 'users/main.html' %} {% block content %}
+{% load static %}
+<main>
+  <div class="modal hidden">
+		<div class="bg"></div>
+		<div class="modalBox">
+			<div class="modal-title">
+				<h2>로그인을 해주세요.</h2>
+			</div>
+			<div class="modal-btn">
+				<button class="closeBtn" id="btn-cancel">닫기</button>
+        <a href ="{% url 'users:login' %}"><button style="margin-left: 2rem">로그인하기</button></a>
+			</div>
+		</div>
+	</div>
+
+  <div class="frame__container">
+    <div class="frame__flex-box">
+      <div class="frame__left">
+        <div class="frame__title">제작프레임 공유</div>
+        {% if user.is_authenticated %}
+        <a href="/framecreate" class="frame__create"><i class="fa-solid fa-circle-plus"></i></a>
+        {% else %}
+        <a class="frame__create openBtn" style="cursor: pointer"><i class="fa-solid fa-circle-plus"></i></a>
+        {% endif %}
+      </div>
+      <div class="frame__right">
+        <div class="frame__sort">
+          <form action="{% url 'framesharings:frame' %}" >
+            <select name="sort" onchange="this.form.submit()">
+              {% if sort == '1' %}
+							<option   value="none">정렬기준</option>
+							<option  selected="selected" value="1">인기순</option>
+							<option value="2">최신순</option>
+							{% elif sort == '2' %}
+							<option   value="none">정렬기준</option>
+							<option   value="1">인기순</option>
+							<option  selected="selected" value="2">최신순</option>
+							{% else %}
+							<option  selected="selected"  value="none">정렬기준</option>
+							<option   value="1">인기순</option>
+							<option  value="2">최신순</option>
+							{% endif %}
+            </select>
+          </form>
+          </div>
+        <div class="frame__search">
+          <form action="{% url 'framesharings:frame' %}">
+            <input type="search" name="title" placeholder="프레임 검색" />
+						<img src="{% static 'image/glass.svg' %}" class="glass__icon">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="keyword__toggle">
+      <input type='checkbox' id='css-toggle-switch' checked='checked' class='css-toggle-switch'>
+      <label for='css-toggle-switch' class='keyword__show'></label>
+      <div class='css-toggle-content'>
+        <div class="frame__main__keyword">
+          <form id="sortkeyword" action="{% url 'framesharings:frame' %}">
+          
+            <div class="keyword__section">
+              <button name="sortkeyword" value="None" class="reset__keyword">Reset</button>
+              {% for keywordinfo in keywordinfo  %}
+              <div class="per__frame__keyword">
+                {% if keywordinfo.id in elementkeyword %}
+                <button onclick="changesort(this.value,this.id)" id="sortkeyword{{forloop.counter}}" name="sortkeyword" value="{{keywordinfo.id}}" class="keyword__selected keyword__one-box">#{{keywordinfo.name}}</button>
+                {% else %}
+                <button onclick="changesort(this.value,this.id)" id="sortkeyword{{forloop.counter}}" name="sortkeyword" value="{{keywordinfo.id}}" class="keyword__original keyword__one-box">#{{keywordinfo.name}}</button>
+                {% endif%}
+              </div>
+              {% endfor%}
+            </div>
+          </form>
+        </div>
+      </div >
+    </div>  
+
+
+    <!-- ranking section -->
+<!--<div class="ranking__grid__section">
+      <div class="frame__ranking__title">주간 BEST</div>
+      <div class="ranking__box grid__box">
+        {% for frameweekinfo in frameweekinfo %} {% if frameweekinfo.framepublic %} 
+        {% if frameweekinfo.framephoto %}
+        <div class="ranking__one-box grid__one-box">
+          <div class="img-box">
+            <div class="grid__img">
+              {% if user.is_authenticated %}
+              <a href="{%url 'framesharings:framedetail' frameweekinfo.id %}">
+                {% else %}
+                <a class="openBtn">
+                {% endif%}
+                <img src="{{ frameweekinfo.framephoto.url }}" alt="프레임사진"/>
+              </a>
+            </div>
+            <div class="frame__btn__section">
+              {% if user.is_authenticated %}
+              {% if frameweekinfo in save %}
+              <button class="bookmarkBtn bookmarkactive" id="butweeksave{{frameweekinfo.id}}" onclick="onClickSave( {{frameweekinfo.id}},'save' )" name="save" value="{{frameweekinfo.id}}"><i class="fa-solid fa-bookmark"></i></button>
+              {% else %}
+              <button class="bookmarkBtn" id="butweeksave{{frameweekinfo.id}}" onclick="onClickSave( {{frameweekinfo.id}},'notsave' )" name="save" value="{{frameweekinfo.id}}"><i class="fa-regular fa-bookmark"></i></button>
+              {% endif %}
+                {% if frameweekinfo in like %}
+                <button class="recommendBtn recommendactive" id="butweeklike{{frameweekinfo.id}}" onclick="onClickLike( {{frameweekinfo.id}},'like' )" name="like" value="{{frameweekinfo.id}}"><i class="fa-solid fa-heart"></i></button>
+                {% else %}
+                <button class="recommendBtn" id="butweeklike{{frameweekinfo.id}}" onclick="onClickLike( {{frameweekinfo.id}},'dislike' )" name="like" value="{{frameweekinfo.id}}"><i class="fa-regular fa-heart"></i></button>
+                {% endif %}
+                {% else %}
+                <a class="openBtn bookmarkBtn" ><i class="openBtn fa-regular fa-bookmark "></i></a>
+                <a class="recommendBtn openBtn"><i class="fa-regular fa-heart openBtn"></i></a>
+                {% endif%}
+            </div>
+          </div>
+          <div class="frame__info-box">
+            <div class="frame__frametitle">{{ frameweekinfo.frametitle }}</div>
+            {% for keyword in frameweekinfo.framekeyword.all %} {% endfor%}
+          </div>
+        </div>
+        {% endif %} {% endif %} {% endfor %}
+      </div>
+    </div>
+    <hr class="frame__main__hr"> -->
+
+    <div class="frame__grid__section">
+      <div class="frame__box grid__box">
+        {% for frameinfo in frameinfo %} {% if frameinfo.framepublic %} 
+        {% if frameinfo.framephoto %}
+        <div class="frame__one-box grid__one-box">
+          <div class="img-box">
+          {% if user.is_authenticated %}
+            <a href="{%url 'framesharings:framedetail' frameinfo.id %}">
+            
+          {% else %}
+            <a class="openBtn">
+          {% endif%}
+              <div class="grid__img">
+              <img src="{{ frameinfo.framephoto.url }}" alt="프레임사진"/>
+            </div>
+          </a>
+        </div>
+        <div class="frame__info-box">          
+          <div class="frame__frametitle">{{ frameinfo.frametitle }}</div>
+          <div class="frame__btn__section">
+            {% if user.is_authenticated %}
+            {% if frameinfo in save %}
+            <button class="bookmarkBtn bookmarkactive" id="butsave{{frameinfo.id}}" onclick="onClickSave( {{frameinfo.id}},'save' )" name="save" value="{{frameinfo.id}}"><i class="fa-solid fa-bookmark"></i></button>
+            {% else %}
+            <button class="bookmarkBtn" id="butsave{{frameinfo.id}}" onclick="onClickSave( {{frameinfo.id}},'notsave' )" name="save" value="{{frameinfo.id}}"><i class="fa-regular fa-bookmark"></i></button>
+            {% endif %}
+            {% if frameinfo in like %}
+            <button class="recommendBtn recommendactive" id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'like' )" name="like" value="{{frameinfo.id}}"><i class="fa-solid fa-heart"></i></button>
+            {% else %}
+            <button class="recommendBtn" id="butlike{{frameinfo.id}}" onclick="onClickLike( {{frameinfo.id}},'dislike' )" name="like" value="{{frameinfo.id}}"><i class="fa-regular fa-heart"></i></button>
+            {% endif %}
+            {% else %}
+            <a class="openBtn bookmarkBtn" ><i class="openBtn fa-regular fa-bookmark "></i></a>
+            <a class="recommendBtn openBtn"><i class="fa-regular fa-heart openBtn"></i></a>
+            {% endif%}
+          </div>
+            <!-- <div class="post__keyword">
+              {% for keyword in frameinfo.framekeyword.all %} {% endfor%}
+            </div> -->
+        </div>
+        <div class="post__user">
+          작성자 | {{frameinfo.userid}}
+        </div>
+        </div>
+        {% endif %} {% endif %} {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  const requestLike = new XMLHttpRequest();
+
+  const onClickLike = (id,type) => {
+    
+            const url = "/like_ajax/";
+            requestLike.open("POST",url,true);
+            requestLike.setRequestHeader(
+                "Content-Type",
+                "application/x-www-form-unlencoded"
+            );
+            requestLike.send(JSON.stringify({id: id, type:type}));
+        }
+  requestLike.onreadystatechange = () => {
+        if (requestLike.readyState === XMLHttpRequest.DONE){
+            if(requestLike.status < 400){
+                const {id, type} = JSON.parse(requestLike.response);
+                let element = document.getElementById(`butlike${id}`);
+                let weekelement = document.getElementById(`butweeklike${id}`);
+
+                if(type == 'like'){
+                  if (weekelement != null) {
+                    weekelement.removeEventListener('onclick',onClickLike)
+                    weekelement.onclick = function(){onClickLike( id, 'like')};
+                    weekelement.innerHTML = `<i class="fa-solid fa-heart"></i>`
+                    weekelement.classList.add("recommendactive");
+                  }
+                    element.removeEventListener('onclick',onClickLike)
+                    element.onclick = function(){onClickLike( id, 'like')};
+                    element.innerHTML = `<i class="fa-solid fa-heart"></i>`
+                    element.classList.add("recommendactive");
+                }
+                else{
+                  if (weekelement != null) {
+                    weekelement.removeEventListener('onclick',onClickLike)
+                    weekelement.onclick = function(){onClickLike( id, 'dislike')};
+                    weekelement.innerHTML = `<i class="fa-regular fa-heart"></i>`
+                    weekelement.classList.remove("recommendactive");
+                  }
+                    element.removeEventListener('onclick',onClickLike)
+                    element.onclick = function(){onClickLike( id, 'dislike')}
+                    element.innerHTML = `<i class="fa-regular fa-heart"></i>`
+                    element.classList.remove("recommendactive");
+                }
+                
+            }
+        }
+    }
+
+    const requestSave = new XMLHttpRequest();
+
+  const onClickSave = (id,type) => {
+            const url = "/save_ajax/";
+            requestSave.open("POST",url,true);
+            requestSave.setRequestHeader(
+                "Content-Type",
+                "application/x-www-form-unlencoded"
+            );
+            requestSave.send(JSON.stringify({id: id, type:type}));
+        }
+  requestSave.onreadystatechange = () => {
+        if (requestSave.readyState === XMLHttpRequest.DONE){
+            if(requestSave.status < 400){
+              
+                const {id, type} = JSON.parse(requestSave.response);
+                let element2 = document.getElementById(`butsave${id}`);
+                let weekelement2 = document.getElementById(`butweeksave${id}`);
+                
+                if(type == 'save') {
+                  if (weekelement2 != null) {
+                    weekelement2.removeEventListener('onclick',onClickSave)
+                    weekelement2.onclick = function(){onClickSave( id, 'save')};
+                    weekelement2.innerHTML = `<i class="fa-solid fa-bookmark"></i>`
+                    weekelement2.classList.add("bookmarkactive");
+                  }
+                    element2.removeEventListener('onclick',onClickSave)
+                    element2.onclick = function(){onClickSave( id, 'save')};
+                    element2.innerHTML = `<i class="fa-solid fa-bookmark"></i>`
+                    element2.classList.add("bookmarkactive");
+                }
+                else{
+                  if (weekelement2 != null) {
+                    weekelement2.removeEventListener('onclick',onClickSave)
+                    weekelement2.onclick = function(){onClickSave( id, 'notsave')};
+                    weekelement2.innerHTML = `<i class="fa-regular fa-bookmark"></i>`
+                    weekelement2.classList.remove("bookmarkactive");
+                  }
+                    element2.removeEventListener('onclick',onClickSave)
+                    element2.onclick = function(){onClickSave( id, 'notsave')}
+                    element2.innerHTML = `<i class="fa-regular fa-bookmark"></i>`
+                    element2.classList.remove("bookmarkactive");
+                }
+                
+            }
+        }
+    }
+const open = () => {
+  document.querySelector(".modal").classList.remove("hidden");
+}
+
+const close = () => {
+  document.querySelector(".modal").classList.add("hidden");
+}
+
+var x = document.getElementsByClassName("openBtn")
+  for (var i = 0; i < x.length; i++){
+    x[i].addEventListener("click", open);
+  }
+
+document.querySelector(".closeBtn").addEventListener("click", close);
+document.querySelector(".bg").addEventListener("click", close);
+var sortlist = `{{querykeyword}}`;
+if(sortlist == 'None' ){
+  sortlist = ''
+}
+function changesort(idnum,elid){
+  if (sortlist.includes(idnum)){
+    sortlist = sortlist.replace(`${idnum},`, '');
+    console.log(sortlist)
+    document.getElementById(elid).value = sortlist
+    document.getElementById("sortkeyword").submit();
+  }
+  else {
+    sortlist += idnum+','
+    console.log(sortlist)
+    document.getElementById(elid).value = sortlist
+    document.getElementById("sortkeyword").submit();
+  }
+}
+
+</script>
+{% endblock content %}

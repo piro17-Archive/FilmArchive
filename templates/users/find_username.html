@@ -1,0 +1,26 @@
+{% extends 'users/main.html' %} {% block content %} {% load static %}
+<main>
+  <form method="POST" action="{% url 'users:find_username' %}">
+    {% csrf_token %}
+    <div class="find-username-form">
+      <div class="find-username__title">아이디 찾기</div>
+      <div class="find-username__hr"></div>
+      <div class="find-username__info">
+        <div><span>이름 </span>{{ form.name }}</div>
+        <div><span>이메일 </span>{{ form.email }}</div>
+        {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="find-username__btn-box">
+          <button id="find_username" name="find_username" class="find-username__btn">찾기</button>
+        </div>
+      </div>
+      <div class="find-username__hr"></div>
+    </div>
+  </form>
+</main>
+{% endblock content %}

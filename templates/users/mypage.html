@@ -1,0 +1,51 @@
+{% extends 'users/main.html' %} {% block content %} {% load static %}
+<main class="mypage">
+  <div class="mypage__container">
+    <h1 class="mypage__title">마이페이지</h1>
+    <div class="mypage__flexbox">
+      <div class="mypage__left">
+        <div class="mypage__profile">
+          {% if user.profile.image %}
+          <img
+            src="{{ user.profile.image.url }}"
+            alt="프로필사진"
+          />
+          {% else %}
+          <img
+            src="{% static 'image/profile.svg' %}"
+            alt="프로필기본"
+          />
+          {% endif %}
+          <a href="{% url 'users:update_profpic' %}">
+            <div class="mypage__profile-update"><i class="fa-solid fa-plus"></i></div>
+          </a>
+        </div>
+        <div class="mypage__btn-box">
+          <a href="{% url 'users:user_update' %}"><div class="mypage__btn">회원정보 수정</div></a>
+          {% csrf_token %}
+          <a href="{% url 'users:delete_user' user.username %}"><div class="mypage__btn">회원 탈퇴</div></a>
+        </div>
+      </div>
+      <div class="mypage__right">
+        <div class="mypage__storage-flex">
+          <div class="mypage__storage-title">저장목록</div>
+          <div><a href="{% url 'users:saved_detail' %}">더보기<img src="{% static 'image/chevron-right.svg' %}" class="arrow-icon"></a></div>
+        </div>
+        <div class="mypage__hr"></div>
+        <div class="mypage__storage-grid-box">
+          {% for savedframe in save %}
+          {% if savedframe.framephoto %}
+          <div class="mypage__storage-grid-img">
+            <a href="{%url 'framesharings:framedetail' savedframe.id %}">
+              <img src="{{ savedframe.framephoto.url }}" alt="프레임사진"/>
+            </a>
+          </div>
+          {% endif %}
+          {% endfor%}
+        </div>
+        <!-- <div class="mypage__storage"><img src="" alt="" /></div> -->
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}

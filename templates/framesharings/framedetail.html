@@ -1,0 +1,168 @@
+{% extends 'users/main.html' %} {% block content %}
+<main>
+  <div class="modal hidden">
+		<div class="bg"></div>
+		<div class="modalBox">
+			<div class="modal-title">
+				<h2>정말로 삭제하시겠습니까?</h2>
+			</div>
+			<div class="modal-btn">
+				<button class="closeBtn" id="btn-cancle">취소</button>
+				<form action="/framedelete/{{frameinfo.id}}" method="post">
+					{% csrf_token %}<button type="submit">삭제</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+  <div class="framedetail">
+    <div class="framedetail__head">
+      <a href="{% url 'framesharings:frame'%}">
+        <i class="fa-solid fa-angle-left"></i>
+      </a>
+
+      <div class="framedetail__title">제작프레임 공유</div>
+    </div>
+    <div class="frame__post">
+      <div class="frame__post__top">
+        <div class="framedetail__frametitle">{{ frameinfo.frametitle }}</div>
+        <div class="like__cnt"> 추천수 {{frameinfo.framelikeuser.count}}</div>
+      </div>
+      <div class="framedetail__hr"></div>
+      
+      {% if frameinfo.frameexample %}
+      <div class="detail__img__section">
+        {% if frameinfo.framephoto %}
+        <div class="framedetail__img">
+          <img src="{{ frameinfo.framephoto.url }}" alt="프레임공유">
+        </div>
+        {% endif %}
+        <div class="frame__example">
+          <img src="{{ frameinfo.frameexample.url }}" alt="예시사진">
+        </div>
+      </div>
+      {% else %}
+      <div class="framedetail__img">
+        <img src="{{ frameinfo.framephoto.url }}" alt="프레임공유">
+      </div>
+      {% endif %}
+
+      <div class="framedetail__memo">{{ frameinfo.framememo }}</div>
+
+      <div class="frame__keyword">
+        {% for keyword in frameinfo.framekeyword.all %}
+        <span class="frame__per-keyword">#{{keyword.name}}</span>
+        {% endfor%}
+        </div>
+    </div>
+
+    <div class="framedetail__hr"></div>
+    <div class="framedetail__btn-box">
+      <div class="btn--left">      
+          {% if frameinfo in like %}
+          <button name="like" value="{{frameinfo.id}}" class="recommendactive btn__common" onclick="onClickLike({{frameinfo.id}}, 'like' )" id="butlike{{frameinfo.id}}"><i class="fa-solid fa-heart"></i></button>
+          {% else %}
+          <button name="like" value="{{frameinfo.id}}" class="btn__common like__none__selected" onclick="onClickLike({{frameinfo.id}}, 'dislike' )" id="butlike{{frameinfo.id}}"><i class="fa-regular fa-heart" ></i></button>
+          {% endif %}
+
+          {% if frameinfo in save %}
+          <button name="save" value="{{frameinfo.id}}" class="bookmarkactive btn__common" onclick="onClickSave( {{frameinfo.id}},'save' )" id="butsave{{frameinfo.id}}"><i class="fa-solid fa-bookmark"></i></button>
+          {% else %}
+          <button name="save" value="{{frameinfo.id}}" class="btn__common bookmark__none__selected" onclick="onClickSave( {{frameinfo.id}},'notsave' )" id="butsave{{frameinfo.id}}"><i class="fa-regular fa-bookmark"></i></button>
+          {% endif %}
+      </div>
+      <div class="btn--right">
+        {% if user.id == frameinfo.userid.id %}
+        <a href="/frameupdate/{{frameinfo.id}}">
+          <button class="framedetail__update">수정</button>
+        </a>
+        <div class="framedetail__delete"><button class="openBtn">삭제</button></div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+  const requestLike = new XMLHttpRequest();
+
+  const onClickLike = (id,type) => {
+    
+            const url = "/like_ajax/";
+            requestLike.open("POST",url,true);
+            requestLike.setRequestHeader(
+                "Content-Type",
+                "application/x-www-form-unlencoded"
+            );
+            requestLike.send(JSON.stringify({id: id, type:type}));
+        }
+  requestLike.onreadystatechange = () => {
+        if (requestLike.readyState === XMLHttpRequest.DONE){
+            if(requestLike.status < 400){
+                const {id, type} = JSON.parse(requestLike.response);
+                let element = document.getElementById(`butlike${id}`);
+                let numelement = document.getElementsByClassName('like__cnt');
+                console.log(numelement)
+                let numchange = numelement[0].innerText;
+                console.log(numchange)
+                let likenum = numchange.split(' ');
+                console.log(likenum[1])
+
+                if(type == 'like'){
+                    element.removeEventListener('onclick',onClickLike)
+                    element.onclick = function(){onClickLike( id, 'like')};
+                    element.innerHTML = `<i class="fa-solid fa-heart"></i>`
+                    element.classList.add("recommendactive");
+                    element.classList.remove("like__none__selected");
+                    numelement[0].innerHTML = ` 추천수 ${parseInt(likenum[1])+1}`
+                }
+                else{
+                    element.removeEventListener('onclick',onClickLike)
+                    element.onclick = function(){onClickLike( id, 'dislike')}
+                    element.innerHTML = `<i class="fa-regular fa-heart" ></i>`
+                    element.classList.remove("recommendactive");
+                    element.classList.add("like__none__selected");
+                    numelement[0].innerHTML = ` 추천수 ${parseInt(likenum[1])-1}`
+                }
+                
+            }
+        }
+    }
+
+    const requestSave = new XMLHttpRequest();
+
+  const onClickSave = (id,type) => {
+            const url = "/save_ajax/";
+            requestSave.open("POST",url,true);
+            requestSave.setRequestHeader(
+                "Content-Type",
+                "application/x-www-form-unlencoded"
+            );
+            requestSave.send(JSON.stringify({id: id, type:type}));
+        }
+  requestSave.onreadystatechange = () => {
+        if (requestSave.readyState === XMLHttpRequest.DONE){
+            if(requestSave.status < 400){
+              
+                const {id, type} = JSON.parse(requestSave.response);
+                let element2 = document.getElementById(`butsave${id}`);
+                
+                if(type == 'save') {
+                    element2.removeEventListener('onclick',onClickSave)
+                    element2.onclick = function(){onClickSave( id, 'save')};
+                    element2.innerHTML = `<i class="fa-solid fa-bookmark"></i>`
+                    element2.classList.add("bookmarkactive");
+                    element2.classList.remove("bookmark__none__selected");
+                }
+                else{
+                    element2.removeEventListener('onclick',onClickSave)
+                    element2.onclick = function(){onClickSave( id, 'notsave')}
+                    element2.innerHTML = `<i class="fa-regular fa-bookmark"></i>`
+                    element2.classList.remove("bookmarkactive");
+                    element2.classList.add("bookmark__none__selected");
+                }
+                
+            }
+        }
+    }
+</script>
+{% endblock content %}

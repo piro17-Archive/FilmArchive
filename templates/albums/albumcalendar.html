@@ -1,0 +1,174 @@
+{% extends 'users/main.html' %} {% block content %}
+<main>
+  <div class="calendar-container">
+    <div class="calendar__flex-box">
+      <div class="calendar__left">
+        <div class="calendar__back"><a href="{% url 'albums:album' user.id %}"><i class="fa-solid fa-angle-left"></i></a></div>
+        <div class="calendar__title">My 네 컷 앨범</div>
+      </div>
+      <div class="calendar__right">
+        <div class="calendar__createBtn"><a href="/albumcreate"><i class="fa-solid fa-circle-plus"></i></a></div>
+      </div>
+    </div>
+    <div class="calendar">
+      <!-- 캘린더 위쪽 헤더 영역 -->
+      <!-- 2022.07 버튼3개 -->
+      <div class="header">
+        <button class="nav-btn go-prev" onclick="prevMonth()"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="year-month"></div>
+        <button class="nav-btn go-next" onclick="nextMonth()"><i class="fa-solid fa-chevron-right"></i></button>
+        <!--<input type="month" id='field1' ><button onclick="dateget()">날짜선택</button> -->
+      </div>
+      <!-- 캘린더 메인 영역 -->
+      <!-- 요일, 날짜들 -->
+      <div class="main">
+        <!-- 요일 영역 -->
+        <div class="days">
+          <div class="day">Sun</div>
+          <div class="day">Mon</div>
+          <div class="day">Tue</div>
+          <div class="day">Wed</div>
+          <div class="day">Thu</div>
+          <div class="day">Fri</div>
+          <div class="day">Sat</div>
+        </div>
+        <div class="calendar__hr"></div>
+        <!-- 날짜들 -->
+        <div class="dates"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+  const makeCalendar = () => {
+    const date2 = new Date(2022, 8, 7);
+    console.log(date)
+    const viewYear = date.getFullYear();
+
+    const viewMonth = date.getMonth();
+    const viewDate = date.getDate();
+    const viewDay = date.getDay();
+
+    //캘린더 년도 달 채우기
+    document.querySelector(".year-month").textContent = `${viewYear}년 ${
+      viewMonth + 1
+    }월`;
+
+    //이번달
+    // 0을넣으면 마지막날자를 가진 date 객체 생성
+    const thisLast = new Date(viewYear, viewMonth + 1, 0);
+    const thisDate = thisLast.getDate();
+    const thisDay = thisLast.getDay();
+
+    //저번달
+    const prevLast = new Date(viewYear, viewMonth, 0);
+    const prevDate = prevLast.getDate();
+    const prevDay = prevLast.getDay();
+
+    const prevDates = [];
+    const thisDates = [...Array(thisDate + 1).keys()].slice(1);
+    const nextDates = [];
+
+    if (prevDay !== 6) {
+      for (let i = 0; i < prevDay + 1; i++) {
+        prevDates.unshift(prevDate - i);
+      }
+    }
+    for (let i = 1; i < 7 - thisDay; i++) {
+      nextDates.push(i);
+    }
+
+    const dates = prevDates.concat(thisDates, nextDates);
+    const firstDateIndex = dates.indexOf(1);
+    const lastDateIndex = dates.lastIndexOf(thisDate);
+    let albumdate = 0
+
+    dates.forEach((date, i) => {
+      var condition = i >= firstDateIndex && i < lastDateIndex + 1 ? "this" : "other";
+      var testnow = new Date();	// 현재 날짜 및 시간
+      var testmonth = testnow.getMonth();
+      var testday = testnow.getDate();
+      var testyear = testnow.getFullYear()
+      console.log(testyear,viewYear)
+      
+      if (testyear < viewYear){
+        condition = "other";
+      }
+      
+      if (testmonth < viewMonth && testyear === viewYear){
+        condition = "other";
+      }
+      if (testday < i && testmonth === viewMonth && testyear === viewYear){
+        condition = "other";
+      }
+      for(var j=0;j<1;j++){
+      var k = 0;
+      "{% for albuminfo in allalbum %}";
+      albumdate = "{{albuminfo.albumdate}}";
+      if (condition == "this" && albumdate == (viewYear).toString()+'년 '+(viewMonth+1).toString()+'월 '+(date).toString()+'일') {
+          if (k == 0){
+          dates[i] = `<div class="date" ><a href="/albumdetail/{{albuminfo.id}}" ><span class="photoday">${date}</span><img src="/media/{{ albuminfo.albumphoto }}" style="overflow: hidden;" " alt=""></a>`;
+            console.log(dates[i])
+          } if (k > 0) {
+            dates[i] = dates[i].replace(`<span class="photoday">${date}</span>`,'');
+              dates[i] = dates[i] + `<a href="/albumdetail/{{albuminfo.id}}"><span class="photoday">${date}</span><img src="/media/{{ albuminfo.albumphoto }}" style="overflow: hidden;" alt=""></a>`
+          }
+          k++
+      }
+      "{% endfor %}";
+      if (k == 0) {
+      dates[i] = `<div class="date" ><span class="${condition}">${date}</span><div style="overflow: hidden;"></div>`; 
+      }
+      dates[i] = dates[i] + '</div>'
+      }
+    });
+
+    document.querySelector(".dates").innerHTML = dates.join("");
+
+    const today = new Date();
+    if (viewMonth === today.getMonth() && viewYear === today.getFullYear()) {
+      for (let date of document.querySelectorAll(".this")) {
+        if (+date.innerText === today.getDate()) {
+          date.classList.add("todaynot"); //오늘이면 빨간색 today
+          break;
+        }
+      }
+    }
+  };
+
+  let date = new Date();
+
+  makeCalendar();
+
+  //이전 달 그리기
+  const prevMonth = () => {
+    date.setDate(1);
+    date.setMonth(date.getMonth() - 1);
+    makeCalendar();
+  };
+
+  //다음 달 그리기
+  const nextMonth = () => {
+    date.setDate(1);
+    date.setMonth(date.getMonth() + 1);
+    makeCalendar();
+  };
+
+  //현재 달 그리기
+  const curMonth = () => {
+    date = new Date();
+    makeCalendar();
+  };
+
+  function dateget() {
+      const field1Value = document.getElementById('field1').value;
+      const day = field1Value.split('-');
+      day[1] = day[1].replace(/(^0+)/, "");
+      date.setFullYear(Number(day[0]));
+      date.setMonth(Number(day[1])-1);
+      date.setDate(1);
+      makeCalendar();
+  };
+  </script>
+</main>
+{% endblock content %}
+

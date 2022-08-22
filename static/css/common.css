@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  background: var(--main);
+  min-height: 100%;
+}
+
+body, main {
+  line-height: normal;
+  min-height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.modal-btn button a:hover {
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.hidden {
+  display: none;
+  transition: 0.2s;
+}
+
+.overlay {
+  position: relative;
+}
+
+.overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+button {
+  cursor: pointer;
+}
+
+.navbar-background {
+  background: var(--main);
+}
+
+.navbar-background-list {
+  background: var(--main);
+  transition: 0.2s;
+}
+
+@media screen and (max-width: 475px) {
+  .nav-padding {
+    height: 6rem;
+  }
+
+  .nav-nopadding {
+    transform:translate(0, -6rem);
+  }
+}
+
+@media screen and (min-width: 475px) and (max-width: 1024px) { 
+  .nav-padding {
+    height: 8rem;
+  }
+
+  .nav-nopadding {
+    transform:translate(0, -8rem);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-padding {
+    height: 8rem;
+  }
+
+  .nav-nopadding {
+    transform:translate(0, -8rem);
+  }
+}
+
+input, textarea, button, select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+}
+
+input[type="checkbox"] {
+  appearance: auto;
+} 
+
+input::-ms-clear,
+input::-ms-reveal{
+    display:none;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration{
+    display:none;
+}

@@ -1,0 +1,10 @@
+{% extends 'users/main.html' %} {% block content %} {% load static %}
+<main>
+	<div class="find-username-form">
+		<div class="find-username__title">아이디찾기</div>
+		<div class="find-username__hr"></div>
+		<div  class="find-username">회원님의 아이디는 {{ found_user.username }} 입니다</div>
+		<div class="find-username__hr"></div>
+	</div>
+</main>
+{% endblock content %}

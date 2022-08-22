@@ -1,0 +1,24 @@
+{% extends 'users/main.html' %} {% block content %}{% load static %}
+<main>
+  <div class="morepage--container">
+    <div class="morepage--header">
+      <a href="{% url 'limitedframes:limited' %}" class="goto--home">
+        <i class="fa-solid fa-angle-left"></i>
+      </a>
+      <div class="morepage--title">포토이즘</div>
+    </div>
+    <div class="morepage--line"></div>
+
+    <div class="detail--photo--grid">
+      {% for photoisminfo in photoisminfo %}
+      <div class="per--photoism--detail">
+        <a href="{{ photoisminfo.photoismurl }}">
+          <img src="{% static '' %}{{photoisminfo.photoismphotourl}}" alt="">
+          <div class="limited--detail--text">@photoism.kr</div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+{% endblock content %}

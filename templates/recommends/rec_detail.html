@@ -1,0 +1,38 @@
+{% extends 'users/main.html' %} {% block content %} {% load static %}
+<main>
+  <div class="recommenddetail">
+    <div class="recommenddetail__title">포즈/컨셉 추천</div>
+    <div class="recommenddetail__hr"></div>
+    <div class="recommenddetail__recommendtitle">{{ recommend.title }}</div>
+    {% if recommend.recImage %}
+    <div class="recommenddetail__img">
+      <img src="{{ recommend.recImage.url }}" />
+    </div>
+    {% endif %}
+    <div>
+      {% for keyword in recommend.recKeyword.all %}
+        #{{ keyword.name }} 
+      {% endfor %}
+    </div>
+    <div>{{recommend.content}}</div>
+    <div class="recommenddetail__hr"></div>
+    <div class="recommenddetail__btn-box">
+      <div>
+        <a href="{% url 'recommends:recommend_list' %}">
+          <div class="recommenddetail__home"><i class="fa-solid fa-house"></i></div>
+        </a>
+      </div>
+      <div>
+        <a href="{% url 'recommends:rec_update' recommend.id %}">
+          <div class="recommenddetail__update"><i class="fa-solid fa-pen-to-square"></i></div>
+        </a>
+      </div>
+      <div class="recommenddetail__delete">
+        <form action="{% url 'recommends:rec_delete' recommend.id %}" method="post">
+          {% csrf_token %}<i class="fa-solid fa-trash-can"></i>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}

@@ -1,0 +1,76 @@
+{% extends 'users/main.html' %} {% block content %} {% load static %}{% load socialaccount %}
+{% providers_media_js %}
+<main>
+  <div class="login--section">
+    <div class="login--main--text">로그인</div>
+    <div class="login-line"></div>
+    <div class="login--main--section">
+      <form action="{% url 'users:login' %}" method="POST">
+        <div class="login--form">
+          {% csrf_token %}
+          <div class="login--input">
+            <span class="login--text">아이디 </span>
+            {{ forms.username }}
+          </div>
+          <div class="login--input">
+            <span class="login--text">비밀번호 </span>
+            {{ forms.password }}
+          </div>
+
+          {% if messages %}
+          <ul class="messages">
+          {% for message in messages %}
+          <li {% if message.tags %} class="{{ message.tags }}" id="login-error" {% endif %}> {{ message }}</li>
+          {% endfor %}
+          </ul>
+          {% endif %}
+
+          <div class="login--btn--section">
+            <button class="login--btn">로그인</button>
+          </div>
+        </div>
+      </form>
+      <div class="login-line"></div>
+      <div class="login__bottom">
+        <!--아이디 찾기 기능-->
+        <div class="login--reset"><a href="{% url 'users:find_username' %}">아이디 찾기</a></div>
+        <div class="login__bar">|</div>
+        <!--비밀번호 리셋하기 기능-->
+        <div class="login--reset"><a href="{% url 'users:reset_password' %}">비밀번호 찾기</a></div>
+        <div class="login__bar">|</div>
+        <div class="signup--btn--section">
+          <a href="{% url 'users:sign_up' %}" class="signup--link"><button class="signup--btn">회원가입</button></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="social-login">
+      <div class="social-title">간편 로그인</div>
+      <div class="social-login__box">
+        <form action="{% provider_login_url 'google' %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="google-btn">
+            <img src="{% static 'image/google-logo.png' %}" alt="">
+          </button>
+          </form>
+          <form action="{% provider_login_url 'naver' %}" method="post">
+            {% csrf_token %}
+          <button type="submit" class="naver-btn">
+            <img src="{% static 'image/naver-logo1.png' %}" alt="">
+          </button>
+          </form>
+          <form action="{% provider_login_url 'kakao' %}" method="post">
+            {% csrf_token %}
+          <button type="submit">
+            <img src="{% static 'image/kakao-logo.png' %}" alt="">
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+></script>
+{% endblock content %}

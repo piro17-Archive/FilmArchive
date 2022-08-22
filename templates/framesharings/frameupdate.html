@@ -1,0 +1,72 @@
+{% extends 'users/main.html' %} {% block content %}
+<script src="https://unpkg.com/@yaireo/tagify"></script>
+<!--<script src="https://unpkg.com/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>-->
+<link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+
+<main>
+  <form action="/frameupdate/{{frameinfo.id}}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="frameupdate-form">
+      <div class="frameupdate__title">프레임 공유 글 수정</div>
+      <div class="frameupdate__info">
+        <div class="frameupdate__hr"></div>
+        {%if frameinfo.framephoto %}
+        <div class="frameupdate__photo">
+          <span id="frameupdate__phototitle" class="updatesection__title">이전 사진</span><div class="framebox">{{frameinfo.framephoto.url}} </div>
+          <input type="checkbox" name="clearphoto" value="clearphoto" id="clearphoto"><label for="clearphoto">clear</label>
+        </div> 
+        {% endif %}
+        <input type="file" name="framephoto" id="framephoto1">
+        {% for keyword in frameinfo.framekeyword.all %}{{keyword.name}},{%endfor%}
+        <div><span class="updatesection__title">제목</span> <input type="text" name="frametitle" placeholder="프레임제목" value="{{ frameinfo.frametitle}}"/></div>
+        <div class="write__keyword per__create-section">
+          <span class="updatesection__title">키워드</span>
+          <div class="updatetag__section"><input name='tags' placeholder="최대 10개까지 입력 가능" class='keyword__tags' value='{% for keyword in frameinfo.framekeyword.all %}{{keyword.name}},{%endfor%}' type="hidden"></div>
+          {%  for keywordinfo in keywordinfo %}
+          <input hidden type="checkbox" name="{{forloop.counter}}" value="{{forloop.counter}}" id="keywordid{{forloop.counter}}"><label hidden for="keywordid{{forloop.counter}}">{{keywordinfo.name}}</label>
+          {% endfor %}
+        </div>
+        <div class="frameupdate__photo">
+          {%if frameinfo.frameexample %}
+          <span class="updatesection__title" id="frameupdate__phototitle">이전 적용예시</span></span><div class="framebox">{{frameinfo.frameexample.url}}</div><input type="checkbox" name="clearexample" value="clearexample" id="clearexample"><label for="clearexample">clear</label>
+          {% endif %}
+        </div>
+        <div>
+          {% if frameinfo.framepublic %}
+          <span class="updatesection__title">공개범위</span><input type="checkbox" name="framepublic" value="False" id="framepublic"><label for="framepublic">비공개</label>
+          {% else %}
+          <span class="updatesection__title">공개범위</span><input checked="checked" type="checkbox" name="framepublic" value="False" id="framepublic"><label for="framepublic">비공개</label>
+          {% endif %}
+        </div>
+        <div>
+          <div class="per__create-section"><span class="updatesection__title">메모</span><textarea name="framememo" id="" cols="30" rows="10">{{frameinfo.framememo}}</textarea>
+        </div>
+        <div class="frameupdate__btn-box">
+          <input type="submit" value="글 수정" class="frameupdate__btn"/>
+				  <a href="{% url 'framesharings:frame' %}"><input value="취소하기" class="frameupdate__btn" id="cancel"/></a>
+        </div>
+        <div class="frameupdate__hr"></div>
+      </div>
+    </div>
+  </form>
+</main>
+
+<script>
+  var input = document.querySelector('input[name="tags"]');
+  var whitelist = []
+  '{%  for keywordinfo in keywordinfo %}';
+  whitelist['{{forloop.counter}}']  = '{{keywordinfo.name}}';
+  '{% endfor %}'
+  console.log(whitelist)
+  var tagify = new Tagify(input, {
+      whitelist:whitelist,
+      maxTags: 10,
+      dropdown: {
+        maxItems: 20,          
+        classname: "tags-look", 
+        enabled: 0,            
+        closeOnSelect: false   
+      }
+    })
+</script>
+{% endblock content %}

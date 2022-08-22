@@ -1,0 +1,40 @@
+{% extends 'users/main.html' %} {% block content %}
+<main>
+<form action="/albumcreate" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<div class="albumcreate-form">
+		<div class="albumcreate__title">My 네 컷 앨범 글 작성</div>
+		<div class="albumcreate__hr"></div>
+		<div class="albumcreate__info">
+			<div><span>사진</span><input type="file" name="albumphoto" id="albumphoto">
+				{% if messages %}
+				<ul class="messages">
+				{% for message in messages %}
+				<li {% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }}</li>
+				{% endfor %}
+				</ul>
+				{% endif %}
+			</div>
+			<div><span>동영상</span><input type="file" name="albumvideo"></div>
+			<div><span>날짜</span><input type="date" name="albumdate" placeholder="앨범날짜" value="{{today}}" min="2022-01-01" max="2023-01-01" /></div>
+			<div>
+				<span>종류</span><select name="albumtypename" id="">
+					{%  for typeinfo in typeinfo %}
+					<option value="{{typeinfo.id}}">{{typeinfo.name}}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div><span>장소</span><input type="text" name="albumlocation" />
+			</div>
+			
+			<div><span>메모</span><textarea name="albummemo" id="" cols="30" rows="10"></textarea></div>
+			<div class="albumcreate__btn-box">
+				<input type="submit" value="글 작성" class="albumcreate__btn"/>
+				<a href="{% url 'albums:album' user.id %}"><input value="취소하기" class="albumcreate__btn" id="cancel"/></a>
+			</div>
+		</div>
+		<div class="albumcreate__hr"></div>
+	</div>
+</form>
+</main>
+{% endblock content %}

@@ -1,0 +1,71 @@
+{% extends 'users/main.html' %} {% block content %} {% load static %}
+<main>
+  <div class="album__container">
+    <div class="album__flex-box">
+			<div class="album__left">
+				<div class="album__left-left">
+					<div class="album__title">My 네 컷 앨범</div>
+					<a href="{% url 'albums:albumcalendar' user.id %}" class="calendar__btn">
+						<img src="{% static 'image/Calendar_icon.svg' %}" alt="캘린더 아이콘">
+					</a>
+				</div>
+				<div class="album__left-right">
+					<a href="/albumcreate" class="album__create"><i class="fa-solid fa-circle-plus"></i></a>
+				</div>
+			</div>
+			<div class="album__right">
+				<div class="album__sort">
+					<form action="{% url 'albums:album' user.id %}" >
+						<select name="sort" onchange="this.form.submit()">
+							{% if sort == '1' %}
+							<option   value="none">정렬기준</option>
+							<option  selected="selected" value="1">오래된순</option>
+							<option value="2">최신순</option>
+							{% elif sort == '2' %}
+							<option   value="none">정렬기준</option>
+							<option   value="1">오래된순</option>
+							<option  selected="selected" value="2">최신순</option>
+							{% else %}
+							<option  selected="selected"  value="none">정렬기준</option>
+							<option   value="1">오래된순</option>
+							<option  value="2">최신순</option>
+							{% endif %}
+
+						</select>
+					</form>
+				</div>
+				<div class="album__search">
+					<form action="{% url 'albums:album' user.id%}">
+						<input type="search" name="title" placeholder="메모로 검색" />
+						<img src="{% static 'image/glass.svg' %}" class="glass__icon">
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="album--grid--section">
+			<div class="album__box">
+				{% for albuminfo in allalbum %}
+				<div class="album__one-box">
+					{% if albuminfo.albumphoto %}
+					<a href="/albumdetail/{{albuminfo.id}}" class="album__photo__id">
+						<div class="album__img">
+							<img src="{{ albuminfo.albumphoto.url }}">
+						</div>
+					</a>
+					{% endif %}
+					<div class="album__photo-date">
+						<img src="{% static 'image/album_check.svg' %}" alt="캘린더체크 아이콘">
+						<span class="date__content">{{albuminfo.albumdate}}</span>
+					</div>
+					<div class="album__location">
+						<img src="{% static 'image/album_location.svg' %}" alt="위치핀 아이콘">
+						<span class="location__content">{{albuminfo.albumlocation}}</span>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock content %}
