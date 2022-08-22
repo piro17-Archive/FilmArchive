@@ -709,6 +709,7 @@
     background-color: white;
     width: 10rem;
     height: 3.2rem;
+    color: var(--main-color);
   }
 
   .framecreate__btn:hover {
@@ -841,6 +842,7 @@
     background-color: white;
     width: 12rem;
     height: 3.2rem;
+    color: var(--main-color);
   }
 
   .framecreate__btn:hover {
@@ -973,6 +975,7 @@
     background-color: white;
     width: 12rem;
     height: 3.2rem;
+    color: var(--main-color);
   }
 
   .framecreate__btn:hover {
@@ -1036,7 +1039,7 @@
 /* framedetail */
 @media screen and (max-width: 480px) {
   .framedetail {
-    margin: 3rem 10%;
+    margin: 3rem 5%;
   }
 
   .framedetail__head{
@@ -1164,6 +1167,7 @@
 
   .btn__common{
     margin-right: 0.5rem;
+    padding: 0 1rem;
   }
 }
 
@@ -1473,9 +1477,9 @@
 /* frameupdate */
 @media screen and (max-width: 480px) {
   .frameupdate-form {
-    width: 42rem;
-    margin: 0 auto;
-    padding: 5rem 0;
+    width: 38rem;
+    margin: 3rem auto;
+    padding: 3rem 0
   }
 
   .frameupdate-form .frameupdate__title {
@@ -1493,7 +1497,7 @@
   }
 
   .frameupdate__info {
-    padding: 0 5rem;
+    padding: 0 3rem;
   }
 
   .updatesection__title{
@@ -1562,6 +1566,7 @@
     height: 3.2rem;
     cursor: pointer;
     font-size: 1.2rem;
+    color: var(--main-color);
   }
 
   .frameupdate__btn:hover {
@@ -1707,6 +1712,7 @@
     height: 3.2rem;
     cursor: pointer;
     font-size: 1.4rem;
+    color: var(--main-color);
   }
 
   .frameupdate__btn:hover {
@@ -1852,6 +1858,7 @@
     height: 3.2rem;
     cursor: pointer;
     font-size: 1.5rem;
+    color: var(--main-color);
   }
 
   .frameupdate__btn:hover {
