@@ -284,27 +284,30 @@
     </div>
     <footer>
       <div class="footer__flex-left">
-        <div class="footer__title">@FourCutArchive</div>
+        <div class="footer__title"><a href="" class="scrollup">@FourCutArchive</a></div>
         <div class="footer__subtitle">편리한 네 컷 사진 기록 서비스</div>
       </div>
       <div class="footer__flex-right">
         <div>
           <div id="footer__name">서비스 소개</div>
-          <div>My 네 컷 앨범</div>
-          <div>포토부스 위치</div>
-          <div>제작프레임 공유</div>
-          <div>한정판 프레임</div>
+          {%if user.is_authenticated %}
+          <div><a href="{% url 'albums:album' user.id %}">My 네 컷 앨범</a></div>
+          {% else %}
+          <div><a href="{% url 'users:login' %}">My 네 컷 앨범</a></div>
+          {% endif %}
+          <div><a href="{% url 'recommends:map' %}">포토부스 위치</a></div>
+          <div><a href="{% url 'framesharings:frame' %}">제작프레임 공유</a></div>
+          <div><a href="{% url 'limitedframes:limited'%}">한정판 프레임</a></div>
         </div>
         <div>
-          <div id="footer__name">커뮤니티</div>
-          <div>공지사항</div>
-          <div>자유게시판</div>
-          <div>제작프레임 공유</div>
+          <div id="footer__name" class="scrollup">커뮤니티</div>
+          <div><a href="">공지사항</a></div>
+          <div><a href="">자유게시판</a></div>
         </div>
         <div>
-          <div id="footer__name">About us</div>
-          <div>서비스 소개</div>
-          <div>CONTACT US</div>
+          <a href="" class="scrollup"><div id="footer__name">About us</div></a>
+          <div><a href="">서비스 소개</a></div>
+          <div><a href="">CONTACT US</a></div>
         </div>
       </div>
     </footer>
@@ -313,6 +316,7 @@
     <script src="{% static 'js/albumswiper.js' %}"></script>
     <script src="{% static 'js/mainswiper.js' %}"></script>
     <script src="{% static 'js/modal.js' %}"></script>
+    <script src="{% static 'js/scrollup.js' %}"></script>
     <script src="https://kit.fontawesome.com/a8a24f1fa9.js" crossorigin="anonymous"></script>
   </body>
 </html>

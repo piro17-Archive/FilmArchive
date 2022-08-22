@@ -414,6 +414,9 @@
     width: 40%;
     display: flex;
     justify-content: space-between;
+  }
+
+  .footer__flex-right div div a {
     font-size: 1.1rem;
     color: var(--main-gray600);
   }
