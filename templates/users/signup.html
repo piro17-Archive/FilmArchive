@@ -14,33 +14,18 @@
         <div><span>이메일</span>{{ form.email }}</div>
         <div><span>닉네임</span>{{ form.nickname }}</div>
       </div>
-      <input type="submit" value="회원가입" class="signup__btn"/>
+
+      {% if messages %}
+      <ul class="messages">
+      {% for message in messages %}
+      <li {% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }}</li>
+      {% endfor %}
+      </ul>
+      {% endif %}
+      
+      <input type="submit" value="회원가입" onclick="test()" class="signup__btn"/>
       <div class="signup__hr"></div>
     </div>
   </form>
 </main>
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script>
-  const strip = (string) => {
-    return string.replace(/^\s+|\s+$/g, "");
-  };
-  const onClickCheck = async (id, username) => {
-    const url = "/check_username/";
-    const { data } = await axios.post(url, {
-      id,
-      username,
-    });
-    likeHandleResponse(data.id, data.type);
-  };
-
-  const likeHandleResponse = (id, username) => {
-    const element = document.querySelector(`.post-id-${id} .post__${username}`);
-    const originHTML = element.innerHTML;
-    const [buttonType, num] = strip(originHTML).split(" ");
-    const count = Number(num) + 1;
-
-    element.innerHTML = `${buttonType} ${count}`;
-  };
-</script> -->
 {% endblock content %}
