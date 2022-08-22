@@ -59,6 +59,7 @@
     font-size: 1.2rem;
     margin-top: 0.5rem;
     color: var(--main-color);
+  }
 
   .signup__btn:hover {
     background: var(--main-color);
