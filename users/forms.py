@@ -115,7 +115,6 @@ class UserPasswordResetForm(PasswordResetForm):
         email = self.cleaned_data['email']
         if not User.objects.filter(email__iexact=email).exists():
             raise forms.ValidationError("등록되지 않은 이메일입니다. 이메일주소를 다시 확인해주세요.")
-        return email
 
 
 # class ChangePWForm(PasswordChangeForm):
