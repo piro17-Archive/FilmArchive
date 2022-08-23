@@ -6,11 +6,6 @@
 			<div class="changepw__hr"></div>
 			{% csrf_token %}
 			{{ form.as_p }}
-
-			{% for field in form %}
-				{{ field.errors }}
-			{% endfor %}
-
 			<div class="changepw__btn-box">
 				<button type="submit" class="changepw__btn">제출</button>
 			</div>
