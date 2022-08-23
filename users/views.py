@@ -85,6 +85,7 @@ class LoginView(View):
                 return render(request, "users/main.html")
         messages.error(request, '아이디 또는 비밀번호를 잘못 입력했습니다.')
         messages.error(request, '입력하신 내용을 다시 확인해주세요.')
+        messages.error(request, '회원가입을 하신 적이 없으시다면 회원가입 후 로그인창을 이용해주세요.')
         context = {
             "forms":form,
         }
@@ -156,15 +157,13 @@ def user_update(request):
 @login_required(login_url='login')
 def change_pw(request):
     if request.method == "POST":
-        form = PasswordChangeForm(data=request.POST, user=request.user)
+        form = ChangePWForm(data=request.POST, user=request.user)
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
-            return redirect('users:mypage')
-        else:
-            return redirect('users:change_pw')
+            return redirect('users:mypage')  
     else:
-        form = PasswordChangeForm(user=request.user)
+        form = ChangePWForm(user=request.user)
         args = {'form':form}
         return render(request, 'users/change_pw.html', args)
 
