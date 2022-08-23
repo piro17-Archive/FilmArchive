@@ -157,13 +157,13 @@ def user_update(request):
 @login_required(login_url='login')
 def change_pw(request):
     if request.method == "POST":
-        form = ChangePWForm(data=request.POST, user=request.user)
+        form = PasswordChangeForm(data=request.POST, user=request.user)
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
             return redirect('users:mypage')  
     else:
-        form = ChangePWForm(user=request.user)
+        form = PasswordChangeForm(user=request.user)
         args = {'form':form}
         return render(request, 'users/change_pw.html', args)
 
