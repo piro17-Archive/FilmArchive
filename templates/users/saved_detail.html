@@ -1,7 +1,12 @@
 {% extends 'users/main.html' %} {% block content %} {% load static %}
 <main>
   <div class="mypagedetail__container">
-    <div class="mypagedetail__title">저장목록</div>
+    <div class="mypagedetail__title">
+      <a href="{% url 'users:mypage' %}">
+        <i class="fa-solid fa-angle-left" style="margin-right: 0.5rem;"></i>
+      </a>
+      저장목록
+    </div>
     <div class="mypagedetail__hr"></div>
     <div class="mypagedeatil__grid-box">
       {% for savedframe in save %}
