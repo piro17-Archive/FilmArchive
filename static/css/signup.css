@@ -201,3 +201,7 @@
     transition: 0.2s;
   }
 }
+
+#signup-error {
+  color: var(--main-red);
+}
