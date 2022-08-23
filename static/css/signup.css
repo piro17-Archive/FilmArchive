@@ -223,3 +223,6 @@
   }
 }
 
+#signup-error {
+  color: var(--main-red);
+}
