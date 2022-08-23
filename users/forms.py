@@ -2,7 +2,7 @@ from cProfile import Profile
 from django import forms
 from .models import User
 from .models import Profile
-from django.contrib.auth.forms import UserCreationForm, PasswordResetForm
+from django.contrib.auth.forms import UserCreationForm, PasswordResetForm, PasswordChangeForm
 from django.contrib.auth.hashers import check_password
 
 
@@ -115,4 +115,14 @@ class UserPasswordResetForm(PasswordResetForm):
         email = self.cleaned_data['email']
         if not User.objects.filter(email__iexact=email).exists():
             raise forms.ValidationError("등록되지 않은 이메일입니다. 이메일주소를 다시 확인해주세요.")
-        return email
+
+
+# class ChangePWForm(PasswordChangeForm):
+#     def __init__(self, *args, **kwargs):
+#         super(ChangePWForm, self).__init__(*args, **kwargs)
+
+#     def clean_old_password(self):
+#         old_password = self.cleaned_data["old_password"]
+#         if not self.user.check_password(old_password):
+#             raise forms.ValidationError("기존 비밀번호가 올바르지 않습니다. 비밀번호를 다시 확인해주세요.")
+#         return old_password
