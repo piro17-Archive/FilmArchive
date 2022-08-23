@@ -162,6 +162,8 @@ def change_pw(request):
             form.save()
             update_session_auth_hash(request, form.user)
             return redirect('users:mypage')  
+        else:
+            return redirect('users:change_pw')
     else:
         form = PasswordChangeForm(user=request.user)
         args = {'form':form}
