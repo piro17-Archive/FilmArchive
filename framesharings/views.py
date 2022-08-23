@@ -71,7 +71,11 @@ def frame(request):
         elementkeyword = elementkeyword[:-1]
         elementkeyword = list(map(int,elementkeyword))
         print(elementkeyword)
+        # for c in elementkeyword:
+        #     myfilter = Frame.objects.filter(framekeyword__id__in=c)
         frameinfo = Frame.objects.filter(framekeyword__id__in=elementkeyword)
+        frameinfo = set(frameinfo)
+        frameinfo = list(frameinfo)
 
     if likereq != None:
         sltframe = Frame.objects.get(id = likereq)
