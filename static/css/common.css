@@ -15,7 +15,7 @@ body, main {
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--main-color);
 }
 
 .modal-btn button a:hover {
@@ -112,4 +112,8 @@ input::-webkit-search-cancel-button,
 input::-webkit-search-results-button,
 input::-webkit-search-results-decoration{
     display:none;
+}
+
+button, html [type="button"] {
+  -webkit-appearance: none;   
 }

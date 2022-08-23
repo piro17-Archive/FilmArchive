@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-4%(_=+p2-%^#cm#p6v9f9dvqre+6rr_gas24drsf#h^6hi&_w+
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://a132-59-16-45-98.jp.ngrok.io']
+CSRF_TRUSTED_ORIGINS = ['https://537f-1-240-236-163.jp.ngrok.io']
 
 
 
@@ -194,7 +194,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 # 이건 내 정보여서 숨김처리했음!
-EMAIL_HOST_USER = os.environ.get('4cutarchive@gmail.com')
-EMAIL_HOST_PASSWORD = os.environ.get('piro4cut')
+EMAIL_HOST_USER = '4cutarchive@gmail.com'
+EMAIL_HOST_PASSWORD = 'lvevqdnttrzmvebe'
 
 
